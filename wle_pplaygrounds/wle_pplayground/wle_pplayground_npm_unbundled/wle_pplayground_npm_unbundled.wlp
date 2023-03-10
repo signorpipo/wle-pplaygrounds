@@ -46,7 +46,34 @@
         },
         "19": {
             "name": "Player",
-            "parent": "18"
+            "parent": "18",
+            "components": [
+                {
+                    "type": "pp-player-locomotion",
+                    "pp-player-locomotion": {
+                        "_myPhysicsBlockLayerFlags": "0, 1, 0, 0, 0, 0, 0, 0",
+                        "_myMoveThroughCollisionShortcutEnabled": true,
+                        "_myFlyEnabled": false,
+                        "_myMinAngleToFlyRight": 60.0
+                    }
+                }
+            ],
+            "translation": [
+                0.0,
+                0.0,
+                8.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
         },
         "20": {
             "name": "Pivot",
@@ -64,6 +91,9 @@
             "components": [
                 {
                     "type": "view"
+                },
+                {
+                    "type": "mouse-look"
                 }
             ]
         },
@@ -700,6 +730,319 @@
                     }
                 }
             ]
+        },
+        "150": {
+            "name": "Playground",
+            "parent": "18"
+        },
+        "151": {
+            "name": "Floor",
+            "parent": "150",
+            "components": [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "p1",
+                        "material": "148"
+                    }
+                },
+                {
+                    "type": "physx",
+                    "physx": {
+                        "shape": "box",
+                        "box": {
+                            "extents": [
+                                9.5,
+                                1.0,
+                                12.0
+                            ]
+                        },
+                        "groups": 2,
+                        "block": 5,
+                        "gravity": false,
+                        "static": true
+                    }
+                }
+            ],
+            "scale": [
+                9.5,
+                1.0,
+                12.0
+            ],
+            "translation": [
+                0.0,
+                -1.0,
+                0.0
+            ]
+        },
+        "153": {
+            "name": "Walls",
+            "parent": "150"
+        },
+        "154": {
+            "name": "Wall",
+            "parent": "153",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "p1",
+                        "material": "148"
+                    }
+                },
+                {
+                    "type": "physx",
+                    "physx": {
+                        "shape": "box",
+                        "box": {
+                            "extents": [
+                                7.5,
+                                5.0,
+                                1.0
+                            ]
+                        },
+                        "groups": 2,
+                        "block": 5,
+                        "gravity": false,
+                        "static": true
+                    }
+                }
+            ],
+            "scale": [
+                7.5,
+                5.0,
+                1.0
+            ],
+            "translation": [
+                0.0,
+                5.0,
+                -11.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ]
+        },
+        "156": {
+            "name": "Wall",
+            "parent": "153",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "p1",
+                        "material": "148"
+                    }
+                },
+                {
+                    "type": "physx",
+                    "physx": {
+                        "shape": "box",
+                        "box": {
+                            "extents": [
+                                7.5,
+                                5.0,
+                                1.0
+                            ]
+                        },
+                        "groups": 2,
+                        "block": 5,
+                        "gravity": false,
+                        "static": true
+                    }
+                }
+            ],
+            "scale": [
+                7.5,
+                5.0,
+                1.0
+            ],
+            "translation": [
+                0.0,
+                5.0,
+                11.0
+            ]
+        },
+        "157": {
+            "name": "Wall",
+            "parent": "153",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "p1",
+                        "material": "148"
+                    }
+                },
+                {
+                    "type": "physx",
+                    "physx": {
+                        "shape": "box",
+                        "box": {
+                            "extents": [
+                                10.0,
+                                5.0,
+                                1.0
+                            ]
+                        },
+                        "groups": 2,
+                        "block": 5,
+                        "gravity": false,
+                        "static": true
+                    }
+                }
+            ],
+            "scale": [
+                12.0,
+                5.0,
+                1.0
+            ],
+            "translation": [
+                8.5,
+                5.0002608,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.7071068,
+                0.0,
+                0.7071068
+            ]
+        },
+        "158": {
+            "name": "Wall",
+            "parent": "153",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "p1",
+                        "material": "148"
+                    }
+                },
+                {
+                    "type": "physx",
+                    "physx": {
+                        "shape": "box",
+                        "box": {
+                            "extents": [
+                                12.0,
+                                5.0,
+                                1.0
+                            ]
+                        },
+                        "groups": 2,
+                        "block": 5,
+                        "gravity": false,
+                        "static": true
+                    }
+                }
+            ],
+            "scale": [
+                12.0,
+                5.0,
+                1.0
+            ],
+            "translation": [
+                -8.5,
+                5.0002169,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.7071068,
+                0.0,
+                0.7071068
+            ]
         }
     },
     "meshes": {
@@ -1311,7 +1654,14 @@
             }
         },
         "physx": {
-            "enable": true
+            "enable": true,
+            "groupNames": {
+                "0": "player",
+                "1": "solid",
+                "2": "interactable",
+                "3": "group3",
+                "4": "group4"
+            }
         }
     },
     "files": [
