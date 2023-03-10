@@ -1,0 +1,37 @@
+{
+  "name": "wle_pplayground_npm_unbundled",
+  "version": "0.1.0",
+  "author": "Pipo",
+  "description": "Playground project for the Wonderland Engine - NPM Unbundled Version",
+  "homepage": "https://github.com/SignorPipo/wle_pplaygrounds",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SignorPipo/wle_pplaygrounds"
+  },
+  "license": "ISC",
+  "files": [
+    "assets",
+    "js",
+    "package-lock.json",
+    "wle_pplayground_npm_unbundled.wlp"
+  ],
+  "keywords": [
+    "wonderland",
+    "wonderlandengine",
+    "wonderland engine",
+    "wle",
+    "webxr"
+  ],
+  "dependencies": {
+    "@wonderlandengine/api": "0.9.4",
+    "@wonderlandengine/components": "^0.8.16",
+    "gl-matrix": "^3.4.3",
+    "howler": "^2.2.3"
+  },
+  "devDependencies": {
+    "esbuild": "^0.14.54"
+  },
+  "scripts": {
+    "build": "esbuild ./js/bundle.js --sourcemap --bundle --outfile=\"deploy/wle_pplayground_npm_unbundled-bundle.js\""
+  }
+}
