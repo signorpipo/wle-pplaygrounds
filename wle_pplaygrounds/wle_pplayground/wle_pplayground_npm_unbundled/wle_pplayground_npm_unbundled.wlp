@@ -178,30 +178,34 @@
                 {
                     "type": "light",
                     "light": {
-                        "attenuation": 0.075,
+                        "attenuation": 1.0,
                         "color": [
-                            0.9529411,
-                            0.8,
-                            0.3372549
-                        ]
-                    }
+                            0.3921568,
+                            0.329466,
+                            0.1384083
+                        ],
+                        "type": "sun",
+                        "range": 1.0,
+                        "shadows": true
+                    },
+                    "active": true
                 }
             ],
             "translation": [
-                1.0,
-                3.0,
-                1.0
+                -7.152557373046875e-7,
+                20.0000514,
+                -9.5367431640625e-7
             ],
             "rotation": [
-                0.0,
-                0.0,
-                0.0,
-                1.0
+                -0.1999661,
+                0.3736121,
+                0.0828285,
+                0.9019794
             ],
             "scale": [
-                1.0,
-                1.0,
-                1.0
+                0.9999992,
+                0.9999981,
+                0.9999992
             ]
         },
         "30": {
@@ -211,30 +215,34 @@
                 {
                     "type": "light",
                     "light": {
-                        "attenuation": 0.075,
+                        "attenuation": 1.0,
                         "color": [
-                            0.3607843,
-                            0.7568627,
-                            0.6509804
-                        ]
-                    }
+                            0.1876201,
+                            0.3921568,
+                            0.3368116
+                        ],
+                        "type": "sun",
+                        "range": 1.0,
+                        "shadows": false
+                    },
+                    "active": true
                 }
             ],
             "translation": [
-                -1.0,
-                3.0,
-                -1.0
+                -0.0000011,
+                20.0000514,
+                -0.0000021
             ],
             "rotation": [
-                0.0,
-                0.0,
-                0.0,
-                1.0
+                0.199964,
+                0.3736123,
+                -0.0828277,
+                0.9019798
             ],
             "scale": [
-                1.0,
-                1.0,
-                1.0
+                0.9999999,
+                0.9999994,
+                0.9999997
             ]
         },
         "71": {
@@ -350,7 +358,7 @@
                     "type": "pp-tracked-hand-draw-all-joints",
                     "pp-tracked-hand-draw-all-joints": {
                         "_myJointMesh": "p1",
-                        "_myJointMaterial": "144"
+                        "_myJointMaterial": "148"
                     }
                 }
             ]
@@ -415,7 +423,7 @@
                     "type": "pp-tracked-hand-draw-all-joints",
                     "pp-tracked-hand-draw-all-joints": {
                         "_myJointMesh": "p1",
-                        "_myJointMaterial": "144",
+                        "_myJointMaterial": "148",
                         "_myHandedness": "right"
                     }
                 }
@@ -852,9 +860,9 @@
                 }
             ],
             "scale": [
-                9.5,
+                7.5,
                 1.0,
-                12.0
+                10.0
             ],
             "translation": [
                 0.0,
@@ -875,7 +883,8 @@
                     "mesh": {
                         "mesh": "p1",
                         "material": "148"
-                    }
+                    },
+                    "active": false
                 },
                 {
                     "type": "physx",
@@ -921,7 +930,8 @@
                     "mesh": {
                         "mesh": "p1",
                         "material": "148"
-                    }
+                    },
+                    "active": false
                 },
                 {
                     "type": "physx",
@@ -961,7 +971,8 @@
                     "mesh": {
                         "mesh": "p1",
                         "material": "148"
-                    }
+                    },
+                    "active": false
                 },
                 {
                     "type": "physx",
@@ -1007,7 +1018,8 @@
                     "mesh": {
                         "mesh": "p1",
                         "material": "148"
-                    }
+                    },
+                    "active": false
                 },
                 {
                     "type": "physx",
