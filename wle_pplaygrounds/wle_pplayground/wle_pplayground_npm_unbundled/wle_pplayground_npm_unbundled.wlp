@@ -41,6 +41,10 @@
                 },
                 {
                     "type": "pp-debug-manager"
+                },
+                {
+                    "type": "pp-mute-everything",
+                    "active": false
                 }
             ]
         },
@@ -1916,6 +1920,12 @@
                         "_myParentOnRelease": "null",
                         "_myThrowLinearVelocityMultiplier": 1.0
                     }
+                },
+                {
+                    "type": "scale-on-spawn",
+                    "scale-on-spawn": {
+                        "_myScaleDuration": 0.5
+                    }
                 }
             ],
             "scale": [
@@ -1953,6 +1963,15 @@
                 1.0,
                 1.0,
                 1.0
+            ],
+            "components": [
+                {
+                    "type": "grabbable-spawner",
+                    "grabbable-spawner": {
+                        "_mPrototypesContainer": "185",
+                        "_myPrototypesContainer": "185"
+                    }
+                }
             ]
         },
         "196": {
@@ -2077,6 +2096,12 @@
                         "_myParentOnRelease": "null",
                         "_myThrowLinearVelocityMultiplier": 1.0
                     }
+                },
+                {
+                    "type": "scale-on-spawn",
+                    "scale-on-spawn": {
+                        "_myScaleDuration": 0.5
+                    }
                 }
             ],
             "scale": [
@@ -2134,6 +2159,12 @@
                         "_myParentOnRelease": "null",
                         "_myThrowLinearVelocityMultiplier": 1.0
                     }
+                },
+                {
+                    "type": "scale-on-spawn",
+                    "scale-on-spawn": {
+                        "_myScaleDuration": 0.5
+                    }
                 }
             ],
             "scale": [
@@ -2190,6 +2221,12 @@
                     "pp-grabbable": {
                         "_myParentOnRelease": "null",
                         "_myThrowLinearVelocityMultiplier": 1.0
+                    }
+                },
+                {
+                    "type": "scale-on-spawn",
+                    "scale-on-spawn": {
+                        "_myScaleDuration": 0.5
                     }
                 }
             ],
@@ -2256,6 +2293,12 @@
                         "_myParentOnRelease": "null",
                         "_myThrowLinearVelocityMultiplier": 1.0
                     }
+                },
+                {
+                    "type": "scale-on-spawn",
+                    "scale-on-spawn": {
+                        "_myScaleDuration": 0.5
+                    }
                 }
             ],
             "scale": [
@@ -2320,6 +2363,12 @@
                     "pp-grabbable": {
                         "_myParentOnRelease": "null",
                         "_myThrowLinearVelocityMultiplier": 1.0
+                    }
+                },
+                {
+                    "type": "scale-on-spawn",
+                    "scale-on-spawn": {
+                        "_myScaleDuration": 0.5
                     }
                 }
             ],
@@ -2935,7 +2984,8 @@
                 "js/pp/tool/easy_tune/easy_tune_widgets/none",
                 "js/pp/tool/easy_tune/easy_tune_widgets/number",
                 "js/pp/tool/easy_tune/easy_tune_widgets/transform",
-                "js/pp/tool/widget_frame"
+                "js/pp/tool/widget_frame",
+                "js/playground"
             ],
             "useInternalBundler": false
         },
