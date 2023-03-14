@@ -78,11 +78,21 @@
         "20": {
             "name": "Pivot",
             "parent": "19",
-            "components": [
-                {
-                    "type": "pp-set-player-height",
-                    "active": false
-                }
+            "translation": [
+                0.0,
+                0.094672,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
             ]
         },
         "21": {
@@ -1596,12 +1606,6 @@
                             ]
                         }
                     }
-                },
-                {
-                    "type": "pp-easy-transform",
-                    "pp-easy-transform": {
-                        "_myIsLocal": true
-                    }
                 }
             ],
             "translation": [
@@ -1875,6 +1879,167 @@
                 1.0,
                 1.0,
                 1.0
+            ]
+        },
+        "194": {
+            "name": "1",
+            "parent": "185",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "p1",
+                        "material": "148"
+                    }
+                },
+                {
+                    "type": "physx",
+                    "physx": {
+                        "shape": "box",
+                        "box": {
+                            "extents": [
+                                0.05,
+                                0.05,
+                                0.05
+                            ]
+                        },
+                        "groups": 4,
+                        "block": 7,
+                        "gravity": true,
+                        "static": false,
+                        "kinematic": true
+                    }
+                },
+                {
+                    "type": "pp-grabbable",
+                    "pp-grabbable": {
+                        "_myParentOnRelease": "null",
+                        "_myThrowLinearVelocityMultiplier": 1.0
+                    }
+                }
+            ],
+            "scale": [
+                0.05,
+                0.05,
+                0.05
+            ],
+            "translation": [
+                -0.9000009,
+                0.0999999,
+                0.5499999
+            ],
+            "rotation": [
+                0.0,
+                -0.0,
+                -0.0,
+                1.0
+            ]
+        },
+        "195": {
+            "name": "Spawn Position",
+            "parent": "167",
+            "translation": [
+                0.0000069,
+                -2.0,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                -0.0,
+                1.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        "196": {
+            "name": "Grabber",
+            "parent": "99",
+            "translation": [
+                0.0,
+                -0.0367964,
+                0.0715703
+            ],
+            "rotation": [
+                0.2649303,
+                3.5521853192221897e-7,
+                2.279618911416037e-7,
+                0.9642675
+            ],
+            "scale": [
+                0.9999924,
+                0.9999998,
+                0.9999997
+            ],
+            "components": [
+                {
+                    "type": "physx",
+                    "physx": {
+                        "sphere": {
+                            "radius": 0.05
+                        },
+                        "gravity": false,
+                        "kinematic": true,
+                        "groups": 4,
+                        "block": 4,
+                        "trigger": true,
+                        "allowSimulation": false
+                    }
+                },
+                {
+                    "type": "pp-grabber-hand",
+                    "pp-grabber-hand": {
+                        "_myMaxNumberOfObjects": 9999,
+                        "_myThrowVelocitySource": "hand"
+                    }
+                }
+            ]
+        },
+        "197": {
+            "name": "Grabber",
+            "parent": "107",
+            "translation": [
+                0.0,
+                -0.0367964,
+                0.0715704
+            ],
+            "rotation": [
+                0.2649303,
+                3.5521858876563783e-7,
+                2.2796190535245842e-7,
+                0.9642675
+            ],
+            "scale": [
+                0.9999923,
+                0.9999998,
+                0.9999997
+            ],
+            "components": [
+                {
+                    "type": "physx",
+                    "physx": {
+                        "sphere": {
+                            "radius": 0.05
+                        },
+                        "gravity": false,
+                        "kinematic": true,
+                        "groups": 4,
+                        "block": 4,
+                        "trigger": true,
+                        "allowSimulation": false
+                    }
+                },
+                {
+                    "type": "pp-grabber-hand",
+                    "pp-grabber-hand": {
+                        "_myMaxNumberOfObjects": 9999,
+                        "_myHandedness": "right",
+                        "_myThrowVelocitySource": "grabbable"
+                    }
+                }
             ]
         }
     },
