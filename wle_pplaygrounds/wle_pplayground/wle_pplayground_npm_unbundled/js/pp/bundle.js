@@ -28,7 +28,8 @@ require("./audio/howler/howler_audio_player");
 require("./cauldron/benchmarks/max_physx");
 require("./cauldron/benchmarks/max_visible_triangles");
 
-require("./cauldron/cauldron/object_pool_manager");
+require("./cauldron/cauldron/object_pool");
+require("./cauldron/cauldron/object_pools_manager");
 require("./cauldron/cauldron/save_manager");
 require("./cauldron/cauldron/timer");
 
@@ -206,7 +207,7 @@ require("./input/gamepad/gamepad_cores/keyboard_gamepad_core");
 require("./input/gamepad/gamepad_cores/virtual_gamepad_gamepad_core");
 require("./input/gamepad/gamepad_cores/classic_gamepad_core");
 require("./input/gamepad/cauldron/gamepad_mesh_animator");
-require("./input/gamepad/cauldron/gamepad_manager");
+require("./input/gamepad/cauldron/gamepads_manager");
 require("./input/gamepad/cauldron/gamepad_utils");
 require("./input/gamepad/cauldron/gamepad_control_scheme");
 

@@ -4,7 +4,7 @@ WL.registerComponent("target-hit-check", {
     },
     start() {
         this._myTrigger = this.object.pp_getComponent("physx");
-        this._myParticleSpawner = this.object.pp_getComponent("particle-spawner");
+        this._myParticlesSpawner = this.object.pp_getComponent("particles-spawner");
         this._myCollisionsCollector = new PP.PhysicsCollisionCollector(this._myTrigger, true);
 
         this._mySFX = PP.myAudioManager.createAudioPlayer("strike");
@@ -24,6 +24,6 @@ WL.registerComponent("target-hit-check", {
         this._mySFX.setPitch(Math.pp_random(1.25 - 0.15, 1.25 + 0.05));
         this._mySFX.play();
 
-        this._myParticleSpawner.spawn(strikeSource.pp_getPosition());
+        this._myParticlesSpawner.spawn(strikeSource.pp_getPosition());
     }
 });

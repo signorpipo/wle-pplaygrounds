@@ -765,6 +765,12 @@
                 },
                 {
                     "type": "sfx-on-grab-throw"
+                },
+                {
+                    "type": "particles-spawner",
+                    "particles-spawner": {
+                        "_myParticlesContainer": "185"
+                    }
                 }
             ]
         },
