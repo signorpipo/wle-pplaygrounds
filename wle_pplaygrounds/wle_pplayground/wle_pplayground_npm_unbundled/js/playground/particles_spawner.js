@@ -1,22 +1,46 @@
 WL.registerComponent("particles-spawner", {
-    _myParticlesContainer: { type: WL.Type.Object }
+    _myParticlesContainer: { type: WL.Type.Object },
+    _myRadius: { type: WL.Type.Float, default: 0.25 }
 }, {
     init() {
     },
     start() {
         this._myParticles = this._myParticlesContainer.pp_getChildren();
 
-        this._myObjectPoolManager = new PP.ObjectPoolManager();
+        this._myObjectPoolsManager = new PP.ObjectPoolsManager();
         let poolParams = new PP.ObjectPoolParams();
 
+        poolParams.myInitialPoolSize = 10;
+        poolParams.myAmountToAddWhenEmpty = 1;
+        poolParams.myPercentageToAddWhenEmpty = 1;
+
+        poolParams.myOptimizeObjectsAllocation = true;    //If true it will pre-allocate the memory before adding new objects to the pool
+
+        let cloneParams = new PP.CloneParams();
+        cloneParams.myComponentsToInclude.push("mesh");
 
         for (let i = 0; i < this._myParticles.length; i++) {
-        }
+            let particle = this._myParticles[i].pp_clone(cloneParams);
+            particle.pp_addComponent("particle");
+            particle.pp_setActive(false);
 
+            this._myObjectPoolsManager.addPool(i, particle, poolParams);
+        }
     },
     update(dt) {
     },
-    spaw(position) {
+    spawn(position) {
+        let amount = Math.pp_randomInt(7, 13);
 
+        let direction = PP.vec3_create(0, 0, 1);
+
+        for (let i = 0; i < amount; i++) {
+            let particle = this._myObjectPoolsManager.getObject(Math.pp_randomInt(0, this._myParticles.length - 1));
+            particle.pp_getComponent("particle").onDone(function () { this._myObjectPoolsManager.releaseObject(particle); }.bind(this));
+
+            direction.vec3_rotate([Math.pp_randomInt(-180, 180), Math.pp_randomInt(-180, 180), Math.pp_randomInt(-180, 180)], direction);
+
+            particle.pp_setPosition(position.vec3_add(direction.vec3_scale(Math.pp_random(0, this._myRadius))));
+        }
     }
 });

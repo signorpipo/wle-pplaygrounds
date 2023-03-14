@@ -3,7 +3,7 @@ WL.registerComponent("scale-on-spawn", {
     _myScaleDuration: { type: WL.Type.Float, default: 0.0 }
 }, {
     init() {
-        this._myTargetScale = this.object.pp_getScale();
+        this._myTargetScale = PP.vec3_create(1, 1, 1);
     },
     start() {
         this.object.pp_setScale(0.00001);
@@ -25,8 +25,6 @@ WL.registerComponent("scale-on-spawn", {
 
         clonedComponent._myStartDelay = this._myStartDelay;
         clonedComponent._myScaleDuration = this._myScaleDuration;
-
-        clonedComponent._myTargetScale.vec3_copy(this._myTargetScale);
 
         clonedComponent.start();
 

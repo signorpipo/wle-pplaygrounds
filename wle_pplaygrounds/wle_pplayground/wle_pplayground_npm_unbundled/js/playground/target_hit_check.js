@@ -4,7 +4,7 @@ WL.registerComponent("target-hit-check", {
     },
     start() {
         this._myTrigger = this.object.pp_getComponent("physx");
-        this._myParticlesSpawner = this.object.pp_getComponent("particles-spawner");
+        this._myParticlesSpawner = WL.scene.pp_getRoot().pp_getComponent("particles-spawner");
         this._myCollisionsCollector = new PP.PhysicsCollisionCollector(this._myTrigger, true);
 
         this._mySFX = PP.myAudioManager.createAudioPlayer("strike");
