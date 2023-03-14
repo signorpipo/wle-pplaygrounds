@@ -1,9 +1,9 @@
 WL.registerComponent("load-audio", {
 }, {
     init() {
-        this._loadAudio();
     },
     start() {
+        this._loadAudio();
     },
     update(dt) {
 
@@ -15,7 +15,7 @@ WL.registerComponent("load-audio", {
             let audioSetup = new PP.AudioSetup("assets/audio/music/pp/playground_ambient.mp3");
             audioSetup.myLoop = true;
             audioSetup.mySpatial = false;
-            audioSetup.myVolume = 1;
+            audioSetup.myVolume = 2;
             manager.addAudioSetup("playground_ambient", audioSetup);
         }
 

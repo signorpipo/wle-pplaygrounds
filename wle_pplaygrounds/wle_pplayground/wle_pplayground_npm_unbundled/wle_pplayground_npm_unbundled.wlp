@@ -44,10 +44,6 @@
                 },
                 {
                     "type": "pp-audio-manager"
-                },
-                {
-                    "type": "pp-mute-everything",
-                    "active": false
                 }
             ]
         },
@@ -764,14 +760,20 @@
                     "type": "load-audio"
                 },
                 {
-                    "type": "sfx-on-grab-throw"
-                },
-                {
                     "type": "particles-spawner",
                     "particles-spawner": {
                         "_myParticlesContainer": "185"
-                    },
-                    "active": true
+                    }
+                },
+                {
+                    "type": "play-music"
+                },
+                {
+                    "type": "sfx-on-grab-throw"
+                },
+                {
+                    "type": "pp-mute-everything",
+                    "active": false
                 }
             ]
         },
@@ -1672,7 +1674,7 @@
             "parent": "150",
             "translation": [
                 0.0,
-                3.0358924,
+                3.0,
                 5.0
             ],
             "rotation": [
