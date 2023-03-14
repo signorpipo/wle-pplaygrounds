@@ -23,6 +23,7 @@ WL.registerComponent("particles-spawner", {
             let particle = this._myParticles[i].pp_clone(cloneParams);
             particle.pp_addComponent("particle");
             particle.pp_setActive(false);
+            particle.pp_setParent(null);
 
             this._myObjectPoolsManager.addPool(i, particle, poolParams);
         }

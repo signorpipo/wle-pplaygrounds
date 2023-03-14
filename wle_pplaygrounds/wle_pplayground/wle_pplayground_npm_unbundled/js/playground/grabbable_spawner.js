@@ -34,6 +34,7 @@ WL.registerComponent("grabbable-spawner", {
     },
     _spawn() {
         this._myCurrentGrabbable = Math.pp_randomPick(this._myPrototypes).pp_clone();
+        this._myCurrentGrabbable.pp_setParent(this.object);
         this._myCurrentGrabbable.pp_setPosition(this.object.pp_getPosition());
         this._myCurrentGrabbable.pp_setActive(true);
     }
