@@ -4,7 +4,7 @@ WL.registerComponent("sfx-on-collision", {
     },
     start() {
         this._myPhysX = this.object.pp_getComponent('physx');
-        this._myCollisionsCollector = new PP.PhysicsCollisionCollector(this._myPhysX, true);
+        this._myCollisionsCollector = new PP.PhysicsCollisionCollector(this._myPhysX);
 
         this._mySFX = PP.myAudioManager.createAudioPlayer("collision");
 
