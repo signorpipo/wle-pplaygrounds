@@ -43,6 +43,9 @@
                     "type": "pp-debug-manager"
                 },
                 {
+                    "type": "pp-audio-manager"
+                },
+                {
                     "type": "pp-mute-everything",
                     "active": false
                 }
@@ -755,7 +758,12 @@
         },
         "150": {
             "name": "Playground",
-            "parent": "18"
+            "parent": "18",
+            "components": [
+                {
+                    "type": "playground-gateway"
+                }
+            ]
         },
         "151": {
             "name": "Floor",
@@ -1926,6 +1934,9 @@
                     "scale-on-spawn": {
                         "_myScaleDuration": 0.5
                     }
+                },
+                {
+                    "type": "sfx-on-collision"
                 }
             ],
             "scale": [
@@ -2102,6 +2113,9 @@
                     "scale-on-spawn": {
                         "_myScaleDuration": 0.5
                     }
+                },
+                {
+                    "type": "sfx-on-collision"
                 }
             ],
             "scale": [
@@ -2165,6 +2179,9 @@
                     "scale-on-spawn": {
                         "_myScaleDuration": 0.5
                     }
+                },
+                {
+                    "type": "sfx-on-collision"
                 }
             ],
             "scale": [
@@ -2228,6 +2245,9 @@
                     "scale-on-spawn": {
                         "_myScaleDuration": 0.5
                     }
+                },
+                {
+                    "type": "sfx-on-collision"
                 }
             ],
             "scale": [
@@ -2299,6 +2319,9 @@
                     "scale-on-spawn": {
                         "_myScaleDuration": 0.5
                     }
+                },
+                {
+                    "type": "sfx-on-collision"
                 }
             ],
             "scale": [
@@ -2370,6 +2393,9 @@
                     "scale-on-spawn": {
                         "_myScaleDuration": 0.5
                     }
+                },
+                {
+                    "type": "sfx-on-collision"
                 }
             ],
             "scale": [
