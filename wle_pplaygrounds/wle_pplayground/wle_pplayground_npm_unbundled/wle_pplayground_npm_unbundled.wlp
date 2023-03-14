@@ -757,13 +757,13 @@
             "parent": "18",
             "components": [
                 {
-                    "type": "load-audio"
-                },
-                {
                     "type": "particles-spawner",
                     "particles-spawner": {
                         "_myParticlesContainer": "185"
                     }
+                },
+                {
+                    "type": "load-audio"
                 },
                 {
                     "type": "play-music"
