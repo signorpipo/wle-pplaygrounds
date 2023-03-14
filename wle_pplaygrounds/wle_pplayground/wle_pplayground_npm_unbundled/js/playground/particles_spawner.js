@@ -30,17 +30,18 @@ WL.registerComponent("particles-spawner", {
     update(dt) {
     },
     spawn(position) {
-        let amount = Math.pp_randomInt(7, 13);
-
-        let direction = PP.vec3_create(0, 0, 1);
+        let amount = Math.pp_randomInt(15, 30);
 
         for (let i = 0; i < amount; i++) {
             let particle = this._myObjectPoolsManager.getObject(Math.pp_randomInt(0, this._myParticles.length - 1));
-            particle.pp_getComponent("particle").onDone(function () { this._myObjectPoolsManager.releaseObject(particle); }.bind(this));
+            particle.pp_getComponent("particle").onDone(this.onParticleDone.bind(this, particle));
 
-            direction.vec3_rotate([Math.pp_randomInt(-180, 180), Math.pp_randomInt(-180, 180), Math.pp_randomInt(-180, 180)], direction);
+            particle.pp_setPosition(position.vec3_add(particle.pp_getComponent("particle")._myHorizontalSpeed.vec3_normalize().vec3_scale(Math.pp_random(0, this._myRadius))));
 
-            particle.pp_setPosition(position.vec3_add(direction.vec3_scale(Math.pp_random(0, this._myRadius))));
+            particle.pp_setActive(true);
         }
+    },
+    onParticleDone(particle) {
+        this._myObjectPoolsManager.releaseObject(particle);
     }
 });

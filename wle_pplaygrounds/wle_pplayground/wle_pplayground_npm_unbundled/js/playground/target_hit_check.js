@@ -18,6 +18,10 @@ WL.registerComponent("target-hit-check", {
                 this._strike(collisionStart);
             }
         }
+
+        //if (PP.myLeftGamepad.getButtonInfo(PP.GamepadButtonID.SELECT).isPressStart()) {
+        //    this._myParticlesSpawner.spawn(this.object.pp_getPosition());
+        //}
     },
     _strike(strikeSource) {
         this._mySFX.setPosition(strikeSource.pp_getPosition());
