@@ -61,13 +61,13 @@
             "translation": [
                 0.0,
                 0.0,
-                8.0
+                -8.0
             ],
             "rotation": [
                 0.0,
+                1.0,
                 0.0,
-                0.0,
-                1.0
+                -4.371138828673793e-8
             ],
             "scale": [
                 1.0,
@@ -1058,7 +1058,13 @@
         },
         "159": {
             "name": "Balcony",
-            "parent": "150"
+            "parent": "150",
+            "rotation": [
+                0.0,
+                1.0,
+                0.0,
+                -4.371138828673793e-8
+            ]
         },
         "160": {
             "name": "Ramp",
@@ -1612,7 +1618,7 @@
                 0.0,
                 0.0,
                 1.0,
-                -4.371138828673793e-8
+                -4.3711388286737935e-8
             ]
         },
         "185": {
@@ -1622,6 +1628,242 @@
                 1.25,
                 2.0,
                 -1.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        "186": {
+            "name": "Throw Target",
+            "parent": "150",
+            "translation": [
+                0.0,
+                3.0358924,
+                5.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        "187": {
+            "name": "Visual",
+            "parent": "186"
+        },
+        "188": {
+            "name": "Piece",
+            "parent": "187",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "p1",
+                        "material": "149"
+                    }
+                },
+                {
+                    "type": "physx",
+                    "physx": {
+                        "shape": "box",
+                        "box": {
+                            "extents": [
+                                0.6999999,
+                                0.1,
+                                0.1
+                            ]
+                        },
+                        "groups": 2,
+                        "block": 5,
+                        "gravity": false,
+                        "static": false,
+                        "kinematic": true
+                    }
+                }
+            ],
+            "scale": [
+                0.6999999,
+                0.1,
+                0.1
+            ]
+        },
+        "189": {
+            "name": "Piece",
+            "parent": "187",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "p1",
+                        "material": "149"
+                    }
+                },
+                {
+                    "type": "physx",
+                    "physx": {
+                        "shape": "box",
+                        "box": {
+                            "extents": [
+                                0.6999999,
+                                0.1,
+                                0.1
+                            ]
+                        },
+                        "groups": 2,
+                        "block": 5,
+                        "gravity": false,
+                        "static": false,
+                        "kinematic": true
+                    }
+                }
+            ],
+            "scale": [
+                0.69997,
+                0.0999962,
+                0.1
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.7071068,
+                0.7071067
+            ],
+            "translation": [
+                -0.6,
+                0.6,
+                0.0
+            ]
+        },
+        "191": {
+            "name": "Piece",
+            "parent": "187",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "p1",
+                        "material": "149"
+                    }
+                },
+                {
+                    "type": "physx",
+                    "physx": {
+                        "shape": "box",
+                        "box": {
+                            "extents": [
+                                0.6999999,
+                                0.1,
+                                0.1
+                            ]
+                        },
+                        "groups": 2,
+                        "block": 5,
+                        "gravity": false,
+                        "static": false,
+                        "kinematic": true
+                    }
+                }
+            ],
+            "scale": [
+                0.6999999,
+                0.1,
+                0.1
+            ],
+            "translation": [
+                0.0,
+                1.2,
+                0.0
+            ]
+        },
+        "192": {
+            "name": "Piece",
+            "parent": "187",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "p1",
+                        "material": "149"
+                    }
+                },
+                {
+                    "type": "physx",
+                    "physx": {
+                        "shape": "box",
+                        "box": {
+                            "extents": [
+                                0.6999999,
+                                0.1,
+                                0.1
+                            ]
+                        },
+                        "groups": 2,
+                        "block": 5,
+                        "gravity": false,
+                        "static": false,
+                        "kinematic": true
+                    }
+                }
+            ],
+            "scale": [
+                0.69997,
+                0.0999962,
+                0.1
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.7071068,
+                0.7071067
+            ],
+            "translation": [
+                0.6,
+                0.6,
+                0.0
+            ]
+        },
+        "193": {
+            "name": "Target Hit Trigger",
+            "parent": "186",
+            "components": [
+                {
+                    "type": "physx",
+                    "physx": {
+                        "groups": 4,
+                        "block": 0,
+                        "gravity": false,
+                        "kinematic": true,
+                        "trigger": true,
+                        "allowSimulation": false,
+                        "shape": "box",
+                        "box": {
+                            "extents": [
+                                0.6,
+                                0.6,
+                                0.1
+                            ]
+                        }
+                    }
+                }
+            ],
+            "translation": [
+                0.0,
+                0.5999999,
+                0.25
             ],
             "rotation": [
                 0.0,
@@ -2151,7 +2393,7 @@
             ]
         },
         "runtime": {
-            "xrButtonColor": "#FFA347",
+            "xrButtonColor": "#6CFFDE",
             "webxr": {
                 "optionalFeatures": {
                     "hand-tracking": true
