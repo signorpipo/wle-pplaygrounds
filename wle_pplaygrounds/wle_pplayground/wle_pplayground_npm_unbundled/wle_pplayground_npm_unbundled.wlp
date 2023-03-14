@@ -761,7 +761,10 @@
             "parent": "18",
             "components": [
                 {
-                    "type": "playground-gateway"
+                    "type": "load-audio"
+                },
+                {
+                    "type": "sfx-on-grab-throw"
                 }
             ]
         },
