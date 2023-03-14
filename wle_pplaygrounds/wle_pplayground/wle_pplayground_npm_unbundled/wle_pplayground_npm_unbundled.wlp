@@ -67,7 +67,7 @@
                 0.0,
                 1.0,
                 0.0,
-                -4.371138828673793e-8
+                -4.3711388286737935e-8
             ],
             "scale": [
                 1.0,
@@ -1073,7 +1073,7 @@
                 0.0,
                 1.0,
                 0.0,
-                -4.371138828673793e-8
+                -4.3711388286737935e-8
             ]
         },
         "160": {
@@ -1630,7 +1630,7 @@
             "parent": "159",
             "translation": [
                 1.25,
-                2.0,
+                2.0999999,
                 -1.0
             ],
             "rotation": [
@@ -1924,9 +1924,9 @@
                 0.05
             ],
             "translation": [
-                -0.9000009,
-                0.0999999,
-                0.5499999
+                -0.9000008,
+                0.0,
+                0.5499998
             ],
             "rotation": [
                 0.0,
@@ -2008,7 +2008,7 @@
             ],
             "rotation": [
                 0.2649303,
-                3.5521858876563783e-7,
+                3.552185887656379e-7,
                 2.2796190535245842e-7,
                 0.9642675
             ],
@@ -2040,6 +2040,304 @@
                         "_myThrowVelocitySource": "grabbable"
                     }
                 }
+            ]
+        },
+        "198": {
+            "name": "2",
+            "parent": "185",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "p1",
+                        "material": "149"
+                    }
+                },
+                {
+                    "type": "physx",
+                    "physx": {
+                        "shape": "box",
+                        "box": {
+                            "extents": [
+                                0.05,
+                                0.05,
+                                0.05
+                            ]
+                        },
+                        "groups": 4,
+                        "block": 7,
+                        "gravity": true,
+                        "static": false,
+                        "kinematic": true
+                    }
+                },
+                {
+                    "type": "pp-grabbable",
+                    "pp-grabbable": {
+                        "_myParentOnRelease": "null",
+                        "_myThrowLinearVelocityMultiplier": 1.0
+                    }
+                }
+            ],
+            "scale": [
+                0.05,
+                0.05,
+                0.05
+            ],
+            "translation": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                -0.0,
+                -0.0,
+                1.0
+            ]
+        },
+        "199": {
+            "name": "3",
+            "parent": "185",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "p2",
+                        "material": "148"
+                    }
+                },
+                {
+                    "type": "physx",
+                    "physx": {
+                        "shape": "sphere",
+                        "box": {
+                            "extents": [
+                                0.05,
+                                0.05,
+                                0.05
+                            ]
+                        },
+                        "groups": 4,
+                        "block": 7,
+                        "gravity": true,
+                        "static": false,
+                        "kinematic": true,
+                        "sphere": {
+                            "radius": 0.05
+                        }
+                    }
+                },
+                {
+                    "type": "pp-grabbable",
+                    "pp-grabbable": {
+                        "_myParentOnRelease": "null",
+                        "_myThrowLinearVelocityMultiplier": 1.0
+                    }
+                }
+            ],
+            "scale": [
+                0.05,
+                0.05,
+                0.05
+            ],
+            "translation": [
+                0.0,
+                0.0,
+                0.15
+            ],
+            "rotation": [
+                0.0,
+                -0.0,
+                -0.0,
+                1.0
+            ]
+        },
+        "200": {
+            "name": "4",
+            "parent": "185",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "p2",
+                        "material": "149"
+                    }
+                },
+                {
+                    "type": "physx",
+                    "physx": {
+                        "shape": "sphere",
+                        "box": {
+                            "extents": [
+                                0.05,
+                                0.05,
+                                0.05
+                            ]
+                        },
+                        "groups": 4,
+                        "block": 7,
+                        "gravity": true,
+                        "static": false,
+                        "kinematic": true,
+                        "sphere": {
+                            "radius": 0.05
+                        }
+                    }
+                },
+                {
+                    "type": "pp-grabbable",
+                    "pp-grabbable": {
+                        "_myParentOnRelease": "null",
+                        "_myThrowLinearVelocityMultiplier": 1.0
+                    }
+                }
+            ],
+            "scale": [
+                0.05,
+                0.05,
+                0.05
+            ],
+            "translation": [
+                0.0,
+                0.0,
+                0.3
+            ],
+            "rotation": [
+                0.0,
+                -0.0,
+                -0.0,
+                1.0
+            ]
+        },
+        "201": {
+            "name": "6",
+            "parent": "185",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "p3",
+                        "material": "149"
+                    }
+                },
+                {
+                    "type": "physx",
+                    "physx": {
+                        "shape": "convexMesh",
+                        "box": {
+                            "extents": [
+                                0.05,
+                                0.05,
+                                0.05
+                            ]
+                        },
+                        "groups": 4,
+                        "block": 7,
+                        "gravity": true,
+                        "static": false,
+                        "kinematic": true,
+                        "sphere": {
+                            "radius": 0.05
+                        },
+                        "convexMesh": {
+                            "mesh": "p3",
+                            "scaling": [
+                                0.05,
+                                0.05,
+                                0.05
+                            ]
+                        }
+                    }
+                },
+                {
+                    "type": "pp-grabbable",
+                    "pp-grabbable": {
+                        "_myParentOnRelease": "null",
+                        "_myThrowLinearVelocityMultiplier": 1.0
+                    }
+                }
+            ],
+            "scale": [
+                0.05,
+                0.05,
+                0.05
+            ],
+            "translation": [
+                0.0,
+                0.0,
+                0.6
+            ],
+            "rotation": [
+                0.0,
+                -0.0,
+                -0.0,
+                1.0
+            ]
+        },
+        "202": {
+            "name": "5",
+            "parent": "185",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "p3",
+                        "material": "148"
+                    }
+                },
+                {
+                    "type": "physx",
+                    "physx": {
+                        "shape": "convexMesh",
+                        "box": {
+                            "extents": [
+                                0.05,
+                                0.05,
+                                0.05
+                            ]
+                        },
+                        "groups": 4,
+                        "block": 7,
+                        "gravity": true,
+                        "static": false,
+                        "kinematic": true,
+                        "sphere": {
+                            "radius": 0.05
+                        },
+                        "convexMesh": {
+                            "mesh": "p3",
+                            "scaling": [
+                                0.05,
+                                0.05,
+                                0.05
+                            ]
+                        }
+                    }
+                },
+                {
+                    "type": "pp-grabbable",
+                    "pp-grabbable": {
+                        "_myParentOnRelease": "null",
+                        "_myThrowLinearVelocityMultiplier": 1.0
+                    }
+                }
+            ],
+            "scale": [
+                0.05,
+                0.05,
+                0.05
+            ],
+            "translation": [
+                0.0,
+                0.0,
+                0.4499999
+            ],
+            "rotation": [
+                0.0,
+                -0.0,
+                -0.0,
+                1.0
             ]
         }
     },
