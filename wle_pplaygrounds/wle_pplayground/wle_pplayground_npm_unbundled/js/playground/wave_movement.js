@@ -52,7 +52,7 @@ WL.registerComponent("wave-movement", {
         return new PP.Timer(Math.pp_random(4, 8));
     },
     _randomSpeedMultiplier() {
-        return Math.pp_random(0.5, 2);
+        return Math.pp_random(0.25, 1.5);
     },
     _randomMaxDistance(middle) {
         return Math.pp_random(middle - middle / 3, middle + middle / 3);
