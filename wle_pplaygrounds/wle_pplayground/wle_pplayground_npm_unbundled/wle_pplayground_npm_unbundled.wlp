@@ -2674,7 +2674,7 @@
             ]
         },
         "runtime": {
-            "xrButtonColor": "#6CFFDE",
+            "xrButtonColor": "white",
             "webxr": {
                 "optionalFeatures": {
                     "hand-tracking": true
