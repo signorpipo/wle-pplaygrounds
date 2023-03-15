@@ -4,6 +4,9 @@
             "name": "Scene",
             "components": [
                 {
+                    "type": "pp-gateway"
+                },
+                {
                     "type": "pp-get-player-objects",
                     "pp-get-player-objects": {
                         "_myPlayer": "19",
@@ -32,18 +35,6 @@
                         "_myText": "110",
                         "_myFlatTransparentNoDepth": "90"
                     }
-                },
-                {
-                    "type": "pp-input-manager"
-                },
-                {
-                    "type": "pp-visual-manager"
-                },
-                {
-                    "type": "pp-debug-manager"
-                },
-                {
-                    "type": "pp-audio-manager"
                 }
             ]
         },
