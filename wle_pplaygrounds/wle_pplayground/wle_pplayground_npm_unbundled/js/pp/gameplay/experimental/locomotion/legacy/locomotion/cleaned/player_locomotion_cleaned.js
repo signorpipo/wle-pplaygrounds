@@ -451,7 +451,7 @@ PP.CleanedPlayerLocomotion = class CleanedPlayerLocomotion {
 
     _setupLocomotionMovementFSM() {
         this._myLocomotionMovementFSM = new PP.FSM();
-        this._myLocomotionMovementFSM.setDebugLogActive(true, "Locomotion Movement");
+        //this._myLocomotionMovementFSM.setDebugLogActive(true, "Locomotion Movement");
 
         this._myLocomotionMovementFSM.addState("init");
         this._myLocomotionMovementFSM.addState("smooth", (dt) => this._myPlayerLocomotionSmooth.update(dt));
