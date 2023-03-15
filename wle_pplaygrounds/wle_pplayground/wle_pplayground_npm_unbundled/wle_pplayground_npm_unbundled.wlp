@@ -1003,18 +1003,18 @@
             ]
         },
         "159": {
-            "name": "Balcony",
+            "name": "Throw Platform",
             "parent": "150",
             "rotation": [
                 0.0,
-                1.0,
                 0.0,
-                -4.3711388286737935e-8
+                0.0,
+                1.0
             ]
         },
         "160": {
             "name": "Ramp",
-            "parent": "159",
+            "parent": "227",
             "components": [
                 {
                     "type": "mesh",
@@ -1044,7 +1044,7 @@
             "scale": [
                 0.5,
                 0.1,
-                1.0
+                1.0000001
             ],
             "rotation": [
                 0.258819,
@@ -1060,7 +1060,7 @@
         },
         "162": {
             "name": "Floor",
-            "parent": "159",
+            "parent": "227",
             "components": [
                 {
                     "type": "mesh",
@@ -1106,7 +1106,23 @@
         },
         "163": {
             "name": "Fence",
-            "parent": "159"
+            "parent": "227",
+            "translation": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ]
         },
         "164": {
             "name": "Piece",
@@ -1249,44 +1265,10 @@
         "167": {
             "name": "Spawn Stand",
             "parent": "159",
-            "components": [
-                {
-                    "type": "mesh",
-                    "mesh": {
-                        "mesh": "p3",
-                        "material": "148"
-                    }
-                },
-                {
-                    "type": "physx",
-                    "physx": {
-                        "shape": "convexMesh",
-                        "box": {
-                            "extents": [
-                                1.0,
-                                0.1,
-                                1.0
-                            ]
-                        },
-                        "groups": 4,
-                        "block": 4,
-                        "gravity": false,
-                        "static": true,
-                        "convexMesh": {
-                            "mesh": "p3",
-                            "scaling": [
-                                0.1,
-                                0.1,
-                                0.1
-                            ]
-                        }
-                    }
-                }
-            ],
             "translation": [
-                0.3499999,
-                1.8999999,
-                -0.4499999
+                -0.3499999,
+                1.8999998,
+                0.4499999
             ],
             "scale": [
                 0.1,
@@ -1296,8 +1278,8 @@
             "rotation": [
                 0.0,
                 0.0,
-                1.0,
-                -4.3711388286737935e-8
+                0.0,
+                1.0
             ]
         },
         "185": {
@@ -1608,14 +1590,14 @@
             "name": "Spawn Position",
             "parent": "167",
             "translation": [
-                0.0000069,
-                -2.0,
-                0.0
+                -0.0000066,
+                2.0000019,
+                4.76837158203125e-7
             ],
             "rotation": [
                 0.0,
                 0.0,
-                -0.0,
+                0.0,
                 1.0
             ],
             "scale": [
@@ -1840,9 +1822,9 @@
             "name": "1",
             "parent": "185",
             "translation": [
-                -0.8999999,
+                -2.5,
                 0.0,
-                0.55
+                1.0
             ],
             "components": [
                 {
@@ -1879,6 +1861,17 @@
                 {
                     "type": "sfx-on-collision"
                 }
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
             ]
         },
         "204": {
@@ -1919,15 +1912,31 @@
                 {
                     "type": "sfx-on-collision"
                 }
+            ],
+            "translation": [
+                -2.5,
+                0.0,
+                1.1499999
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
             ]
         },
         "205": {
             "name": "3",
             "parent": "185",
             "translation": [
+                -2.5,
                 0.0,
-                0.0,
-                0.15
+                1.2999999
             ],
             "components": [
                 {
@@ -1967,15 +1976,26 @@
                 {
                     "type": "sfx-on-collision"
                 }
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
             ]
         },
         "206": {
             "name": "4",
             "parent": "185",
             "translation": [
+                -2.5,
                 0.0,
-                0.0,
-                0.3
+                1.45
             ],
             "components": [
                 {
@@ -2015,15 +2035,26 @@
                 {
                     "type": "sfx-on-collision"
                 }
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
             ]
         },
         "208": {
             "name": "5",
             "parent": "185",
             "translation": [
+                -2.5,
                 0.0,
-                0.0,
-                0.4499999
+                1.5999999
             ],
             "components": [
                 {
@@ -2071,15 +2102,26 @@
                 {
                     "type": "sfx-on-collision"
                 }
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
             ]
         },
         "209": {
             "name": "6",
             "parent": "185",
             "translation": [
+                -2.5,
                 0.0,
-                0.0,
-                0.6
+                1.75
             ],
             "components": [
                 {
@@ -2127,6 +2169,17 @@
                 {
                     "type": "sfx-on-collision"
                 }
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
             ]
         },
         "210": {
@@ -2156,6 +2209,377 @@
                 0.0,
                 0.0,
                 1.0
+            ]
+        },
+        "220": {
+            "link": {
+                "name": "Wondermelon",
+                "file": "assets\\models\\pp\\wondermelon.fbx"
+            },
+            "parent": "226",
+            "translation": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                -4.3711388286737935e-8,
+                0.0,
+                1.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "name": "Mesh"
+        },
+        "221": {
+            "link": {
+                "name": "Wondermelon Peel<Wondermelon",
+                "file": "assets\\models\\pp\\wondermelon.fbx"
+            },
+            "parent": "220"
+        },
+        "222": {
+            "link": {
+                "name": "Wondermelon Rind<Wondermelon",
+                "file": "assets\\models\\pp\\wondermelon.fbx"
+            },
+            "parent": "220"
+        },
+        "223": {
+            "link": {
+                "name": "Wondermelon Pulp<Wondermelon",
+                "file": "assets\\models\\pp\\wondermelon.fbx"
+            },
+            "parent": "220"
+        },
+        "224": {
+            "link": {
+                "name": "Wondermelon Seed<Wondermelon",
+                "file": "assets\\models\\pp\\wondermelon.fbx"
+            },
+            "parent": "220"
+        },
+        "226": {
+            "name": "Wondermelon",
+            "parent": "185",
+            "translation": [
+                -1.6000006,
+                0.0,
+                1.45
+            ],
+            "rotation": [
+                0.0,
+                4.3711391839451614e-8,
+                0.0,
+                1.0
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "components": [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                {
+                    "type": "physx",
+                    "physx": {
+                        "shape": "convexMesh",
+                        "box": {
+                            "extents": [
+                                0.05,
+                                0.05,
+                                0.05
+                            ]
+                        },
+                        "groups": 4,
+                        "block": 7,
+                        "gravity": true,
+                        "static": false,
+                        "kinematic": true,
+                        "sphere": {
+                            "radius": 0.05
+                        },
+                        "convexMesh": {
+                            "mesh": "230",
+                            "scaling": [
+                                1.0,
+                                1.0,
+                                1.0
+                            ]
+                        }
+                    }
+                },
+                {
+                    "type": "pp-grabbable",
+                    "pp-grabbable": {
+                        "_myParentOnRelease": "null",
+                        "_myThrowLinearVelocityMultiplier": 1.0
+                    }
+                },
+                {
+                    "type": "scale-on-spawn",
+                    "scale-on-spawn": {
+                        "_myScaleDuration": 0.5
+                    }
+                },
+                {
+                    "type": "sfx-on-collision"
+                }
+            ]
+        },
+        "227": {
+            "name": "Balcony",
+            "parent": "159",
+            "rotation": [
+                0.0,
+                1.0,
+                0.0,
+                -4.3711388286737935e-8
+            ]
+        },
+        "228": {
+            "name": "Spawn Stand Base",
+            "parent": "167",
+            "components": [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "p3",
+                        "material": "148"
+                    }
+                },
+                {
+                    "type": "physx",
+                    "physx": {
+                        "shape": "convexMesh",
+                        "box": {
+                            "extents": [
+                                1.0,
+                                0.1,
+                                1.0
+                            ]
+                        },
+                        "groups": 4,
+                        "block": 4,
+                        "gravity": false,
+                        "static": true,
+                        "convexMesh": {
+                            "mesh": "p3",
+                            "scaling": [
+                                0.1,
+                                0.1,
+                                0.1
+                            ]
+                        }
+                    }
+                }
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                1.0,
+                -4.3711388286737935e-8
             ]
         }
     },
@@ -2278,6 +2702,42 @@
             "link": {
                 "name": "Gamepad Top Button Right",
                 "file": "assets\\models\\pp\\meta_quest_1_gamepads_credits_Jezza3D.fbx"
+            }
+        },
+        "215": {
+            "link": {
+                "name": "Wondermelon Peel",
+                "file": "assets\\models\\pp\\wondermelon.fbx"
+            }
+        },
+        "216": {
+            "link": {
+                "name": "Wondermelon Rind",
+                "file": "assets\\models\\pp\\wondermelon.fbx"
+            }
+        },
+        "217": {
+            "link": {
+                "name": "Wondermelon Pulp",
+                "file": "assets\\models\\pp\\wondermelon.fbx"
+            }
+        },
+        "218": {
+            "link": {
+                "name": "Wondermelon Seed",
+                "file": "assets\\models\\pp\\wondermelon.fbx"
+            }
+        },
+        "229": {
+            "link": {
+                "name": "Wondermelon Convex Mesh Loose",
+                "file": "assets\\models\\pp\\wondermelon.fbx"
+            }
+        },
+        "230": {
+            "link": {
+                "name": "Wondermelon Convex Mesh Fit",
+                "file": "assets\\models\\pp\\wondermelon.fbx"
             }
         }
     },
@@ -2434,6 +2894,94 @@
                     1.0,
                     0.3921568
                 ]
+            }
+        },
+        "211": {
+            "link": {
+                "name": "Wondermelon Peel",
+                "file": "assets\\models\\pp\\wondermelon.fbx"
+            },
+            "Phong": {
+                "diffuseColor": [
+                    0.0,
+                    0.5294117,
+                    0.317647,
+                    1.0
+                ],
+                "specularColor": [
+                    0.0,
+                    0.0,
+                    0.0,
+                    1.0
+                ],
+                "shininess": 2,
+                "ambientFactor": 0.5
+            }
+        },
+        "212": {
+            "link": {
+                "name": "Wondermelon Rind",
+                "file": "assets\\models\\pp\\wondermelon.fbx"
+            },
+            "Phong": {
+                "diffuseColor": [
+                    1.0,
+                    0.8,
+                    0.6666666,
+                    1.0
+                ],
+                "specularColor": [
+                    0.0,
+                    0.0,
+                    0.0,
+                    1.0
+                ],
+                "shininess": 2,
+                "ambientFactor": 0.5
+            }
+        },
+        "213": {
+            "link": {
+                "name": "Wondermelon Pulp",
+                "file": "assets\\models\\pp\\wondermelon.fbx"
+            },
+            "Phong": {
+                "diffuseColor": [
+                    0.8627451,
+                    0.117647,
+                    0.345098,
+                    1.0
+                ],
+                "specularColor": [
+                    0.0,
+                    0.0,
+                    0.0,
+                    1.0
+                ],
+                "shininess": 2,
+                "ambientFactor": 0.5
+            }
+        },
+        "214": {
+            "link": {
+                "name": "Wondermelon Seed",
+                "file": "assets\\models\\pp\\wondermelon.fbx"
+            },
+            "Phong": {
+                "diffuseColor": [
+                    0.0980392,
+                    0.0980392,
+                    0.0980392,
+                    1.0
+                ],
+                "specularColor": [
+                    0.0,
+                    0.0,
+                    0.0,
+                    1.0
+                ],
+                "ambientFactor": 0.5,
+                "shininess": 2
             }
         }
     },
@@ -2625,6 +3173,18 @@
                 "file": "default"
             }
         },
+        "145": {
+            "link": {
+                "name": "Phong Normalmapped",
+                "file": "default"
+            }
+        },
+        "146": {
+            "link": {
+                "name": "Phong Lightmapped",
+                "file": "default"
+            }
+        },
         "89": {
             "link": {
                 "name": "Flat Opaque",
@@ -2642,18 +3202,6 @@
             "blendDestRgb": "one minus source alpha",
             "blendDestAlpha": "one minus source alpha",
             "blendEqAlpha": "max"
-        },
-        "145": {
-            "link": {
-                "name": "Phong Normalmapped",
-                "file": "default"
-            }
-        },
-        "146": {
-            "link": {
-                "name": "Phong Lightmapped",
-                "file": "default"
-            }
         }
     },
     "settings": {
@@ -2780,7 +3328,8 @@
         }
     },
     "files": [
-        "assets/models/pp/meta_quest_1_gamepads_credits_Jezza3D.fbx"
+        "assets/models/pp/meta_quest_1_gamepads_credits_Jezza3D.fbx",
+        "assets/models/pp/wondermelon.fbx"
     ],
     "fonts": {
         "147": {
