@@ -765,6 +765,14 @@
                 {
                     "type": "pp-mute-everything",
                     "active": false
+                },
+                {
+                    "type": "fade-view",
+                    "fade-view": {
+                        "_myStartDelay": 1.0,
+                        "_myTimeToFadeIn": 2.0,
+                        "_myColor": "108, 255, 222"
+                    }
                 }
             ]
         },

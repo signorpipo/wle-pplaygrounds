@@ -8,3 +8,4 @@ require("./particles_spawner");
 require("./particle");
 require("./play_music");
 require("./wave_movement");
+require("./fade_view");
