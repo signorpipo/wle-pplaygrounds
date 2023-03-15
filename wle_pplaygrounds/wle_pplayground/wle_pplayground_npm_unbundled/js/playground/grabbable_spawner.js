@@ -8,7 +8,7 @@ WL.registerComponent("grabbable-spawner", {
         this._myCurrentGrabbable = null;
 
         this._myFirstUpdate = true;
-        this._myStartTimer = new PP.Timer(0.5);
+        this._myStartTimer = new PP.Timer(0);
     },
     update(dt) {
         if (this._myFirstUpdate) {
