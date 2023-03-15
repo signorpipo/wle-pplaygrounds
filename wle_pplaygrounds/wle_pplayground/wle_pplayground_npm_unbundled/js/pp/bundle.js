@@ -1,6 +1,10 @@
 //PP
 
-require("./pp");
+require("./pp/pp");
+
+require("./pp/components/pp_gateway_component");
+require("./pp/components/get_player_objects");
+require("./pp/components/get_default_resources");
 
 //	PLUGIN
 require("./plugin/extensions/array_extension");
@@ -36,8 +40,6 @@ require("./cauldron/cauldron/timer");
 require("./cauldron/components/clear_console_on_xr_session_start");
 require("./cauldron/components/set_active");
 require("./cauldron/components/adjust_hierarchy_physx_scale");
-require("./cauldron/components/get_player_objects");
-require("./cauldron/components/get_default_resources");
 require("./cauldron/components/show_fps");
 
 require("./cauldron/fsm/fsm");
@@ -109,9 +111,9 @@ require("./gameplay/integrations/construct_arcade/ca_display_leaderboard");
 
 //          CAULDRON
 require("./gameplay/experimental/cauldron/player/player_head_controller");
-require("./gameplay/experimental/cauldron/player/player_occlusion");
+require("./gameplay/experimental/cauldron/player/player_view_occlusion");
 //require("./gameplay/experimental/cauldron/player/components/player_head_controller_component");
-//require("./gameplay/experimental/cauldron/player/components/player_occlusion_component");
+//require("./gameplay/experimental/cauldron/player/components/player_view_occlusion_component");
 
 //          CHARACTER CONTROLLER
 require("./gameplay/experimental/character_controller/collision/legacy/collision_check/collision_params");
