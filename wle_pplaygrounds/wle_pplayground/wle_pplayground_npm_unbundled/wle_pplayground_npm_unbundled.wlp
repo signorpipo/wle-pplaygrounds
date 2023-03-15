@@ -1334,6 +1334,9 @@
             "components": [
                 {
                     "type": "target-hit-check"
+                },
+                {
+                    "type": "wave-movement"
                 }
             ]
         },
