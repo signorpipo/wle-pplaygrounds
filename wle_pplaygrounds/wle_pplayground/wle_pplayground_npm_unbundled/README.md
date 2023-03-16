@@ -55,7 +55,7 @@ This is also true for every custom scripts, which can be found in the `playgroun
 ### Downloads
 
 You can download this template through the following links:
-  * [`wle_pplayground_npm_unbundled`](https://github.com/SignorPipo/wle_pplaygrounds/releases/latest/download/wle_pplayground.zip)
+  * [`wle_pplayground_npm_unbundled`](https://github.com/SignorPipo/wle_pplaygrounds/releases/latest/download/wle_pplayground_npm_unbundled.zip)
 
 You can also download this template through `npm`: 
   * [`npm install wle_pplayground_npm_unbundled`](https://www.npmjs.com/package/wle_pplayground_npm_unbundled)
