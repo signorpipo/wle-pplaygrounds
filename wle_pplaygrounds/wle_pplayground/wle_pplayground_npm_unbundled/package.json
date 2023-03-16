@@ -2,7 +2,7 @@
   "name": "wle_pplayground_npm_unbundled",
   "version": "0.1.0",
   "author": "Pipo",
-  "description": "Playground project for the Wonderland Engine - NPM Unbundled Version",
+  "description": "Playground template project for the Wonderland Engine - NPM Unbundled Version",
   "homepage": "https://github.com/SignorPipo/wle_pplaygrounds",
   "repository": {
     "type": "git",
