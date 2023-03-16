@@ -34,6 +34,8 @@ Every playground template usually comes in different versions:
 
 [Playground Folder Link](https://github.com/SignorPipo/wle_pplaygrounds/tree/main/wle_pplaygrounds/wle_pplayground)
 
+[Live Version](https://signor-pipo.itch.io/pplayground-wonderland-engine)
+
 The main playground.
 
 Some of the PP features u will find in this playground are:
