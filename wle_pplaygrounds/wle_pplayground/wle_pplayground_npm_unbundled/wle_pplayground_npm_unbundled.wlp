@@ -35,6 +35,9 @@
                         "_myText": "110",
                         "_myFlatTransparentNoDepth": "90"
                     }
+                },
+                {
+                    "type": "pp-virtual-gamepad"
                 }
             ]
         },
