@@ -32,7 +32,7 @@ Every playground template usually comes in different versions:
 
 ## PPlayground
 
-[Playground Folder Link](https://github.com/SignorPipo/wle_pplaygrounds/tree/main/wle_pplaygrounds/wle_pplayground)
+[Playground Folder](https://github.com/SignorPipo/wle_pplaygrounds/tree/main/wle_pplaygrounds/wle_pplayground)
 
 [Live Version](https://signor-pipo.itch.io/pplayground-wonderland-engine)
 
