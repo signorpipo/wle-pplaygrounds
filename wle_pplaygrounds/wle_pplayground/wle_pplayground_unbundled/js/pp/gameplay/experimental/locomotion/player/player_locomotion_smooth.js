@@ -1,0 +1,5 @@
+class PlayerLocomotionSmooth {
+
+    constructor() {
+    }
+}

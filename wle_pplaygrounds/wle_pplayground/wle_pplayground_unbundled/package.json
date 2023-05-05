@@ -1,0 +1,33 @@
+{
+  "name": "wle_pplayground_unbundled",
+  "version": "0.1.0",
+  "author": "Pipo",
+  "description": "Playground template project for the Wonderland Engine - Unbundled Version",
+  "homepage": "https://github.com/SignorPipo/wle_pplaygrounds",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SignorPipo/wle_pplaygrounds"
+  },
+  "license": "ISC",
+  "files": [
+    "assets",
+    "js",
+    "wle_pplayground_unbundled.wlp"
+  ],
+  "keywords": [
+    "wonderland",
+    "wonderlandengine",
+    "wonderland engine",
+    "wle",
+    "webxr"
+  ],
+  "dependencies": {
+    "@wonderlandengine/api": "^1.0.0",
+    "@wonderlandengine/components": "^1.0.3",
+    "gl-matrix": "^3.4.3",
+    "howler": "^2.2.3"
+  },
+  "devDependencies": {
+    "esbuild": "^0.14.54"
+  }
+}
