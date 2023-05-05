@@ -1,5 +1,5 @@
 import { Component, PhysXComponent } from "@wonderlandengine/api";
-import { Globals, GrabbableComponent, PhysicsCollisionCollector } from "../pp";
+import { Globals, GrabbableComponent, PhysicsCollisionCollector } from "wle-pp";
 import { ParticlesSpawnerComponent } from "./particles_spawner_component";
 
 export class TargetHitCheckComponent extends Component {

@@ -1,5 +1,5 @@
 import { Component } from "@wonderlandengine/api";
-import { Globals, GrabberHandComponent } from "../pp";
+import { Globals, GrabberHandComponent } from "wle-pp";
 
 export class SFXOnGrabThrowComponent extends Component {
     static TypeName = "sfx-on-grab-throw";
