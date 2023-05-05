@@ -50,6 +50,6 @@ This is also true for every custom scripts, which can be found in the `playgroun
 ### Downloads
 
 You can download this template through the following links:
-  * [`wle_pplayground`](https://github.com/SignorPipo/wle_ppefault/releases/latest/download/wle_pplayground.zip)
+  * [`wle_pplayground`](https://github.com/SignorPipo/wle_pplaygrounds/releases/latest/download/wle_pplayground.zip)
   * [`wle_pplayground_unbundled`](https://github.com/SignorPipo/wle_pplaygrounds/releases/latest/download/wle_pplayground_unbundled.zip)
 
