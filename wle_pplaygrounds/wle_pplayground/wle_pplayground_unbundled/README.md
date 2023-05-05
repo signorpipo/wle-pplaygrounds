@@ -16,19 +16,12 @@ A collection of assets that can be useful while working with the Wonderland Engi
 
 ## Playgrounds Versions
 
-Every playground template usually comes in different versions:
+Every playground template usually comes in two versions:
 - standard
-  * a standard project (not `npm`)
-  * the PP library is included as a bundle file
-- npm
-  * an `npm` version of the same project
   * the PP library is included as an `npm` package
-  * u need to run `npm install` in the project folder in order to install the dependencies
-- npm unbundled
-  * an `npm` version of the same project
+- unbundled
   * the PP library is not included as an `npm` package, but as files in the project
   * can be useful if u plan to edit the PP library to adjust them to your need
-  * u need to run `npm install` in the project folder in order to install the dependencies
 
 ## PPlayground
 
@@ -57,8 +50,6 @@ This is also true for every custom scripts, which can be found in the `playgroun
 ### Downloads
 
 You can download this template through the following links:
-  * [`wle_pplayground_npm_unbundled`](https://github.com/SignorPipo/wle_pplaygrounds/releases/latest/download/wle_pplayground_npm_unbundled.zip)
-
-You can also download this template through `npm`: 
-  * [`npm install wle_pplayground_npm_unbundled`](https://www.npmjs.com/package/wle_pplayground_npm_unbundled)
+  * [`wle_pplayground`](https://github.com/SignorPipo/wle_ppefault/releases/latest/download/wle_pplayground.zip)
+  * [`wle_pplayground_unbundled`](https://github.com/SignorPipo/wle_pplaygrounds/releases/latest/download/wle_pplayground_unbundled.zip)
 
