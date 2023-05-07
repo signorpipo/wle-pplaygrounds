@@ -11,12 +11,16 @@
     "license": "ISC",
     "files": [
         "assets",
+        "static",
         "js",
         "wle_pplayground_unbundled.wlp"
     ],
     "keywords": [
+        "pp",
+        "pipo",
         "wonderland",
         "wonderlandengine",
+        "wonderland-engine",
         "wonderland engine",
         "wle",
         "webxr"
