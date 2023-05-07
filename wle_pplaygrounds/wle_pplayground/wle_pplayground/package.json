@@ -1,6 +1,6 @@
 {
     "name": "wle_pplayground",
-    "version": "0.2.0",
+    "version": "0.2.1",
     "author": "Pipo",
     "description": "Playground template project for the Wonderland Engine",
     "homepage": "https://github.com/SignorPipo/wle_pplaygrounds",
@@ -24,11 +24,8 @@
     "dependencies": {
         "@wonderlandengine/api": "^1.0.0",
         "@wonderlandengine/components": "^1.0.3",
-        "wle_pp": "^0.4.0",
         "gl-matrix": "^3.4.3",
-        "howler": "^2.2.3"
-    },
-    "devDependencies": {
-        "esbuild": "^0.14.54"
+        "howler": "^2.2.3",
+        "wle-pp": "^0.4.1"
     }
 }

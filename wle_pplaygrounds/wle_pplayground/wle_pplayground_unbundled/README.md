@@ -4,9 +4,17 @@ A collection of playground template projects for the [Wonderland Engine](https:/
 
 The projects include the [PP library](https://github.com/SignorPipo/wle_pp).
 
-If u prefer to start with a default template project that uses the PP library, you can use the [ppefault template](https://github.com/SignorPipo/wle_ppefault) instead.
+If u prefer to start with a default template project that uses the PP library, you can use the [PPefault template](https://github.com/SignorPipo/wle_ppefault) instead.
 
 A collection of assets that can be useful while working with the Wonderland Engine (like gamepads 3D models) can be found [here](https://github.com/SignorPipo/wle_assets).
+
+# License
+
+You are free to use this in your projects, just remember to credit it somewhere, if possible!
+  
+# Credits
+
+- [Meta Quest 1 Gamepads Low Poly](https://github.com/SignorPipo/wle_ppefault/blob/main/wle_ppefault/wle_ppefault/assets/models/meta_quest_1_gamepads_credits_Jezza3D.fbx) by [Jezza3D](https://sketchfab.com/Jezza3D)
 
 # Playgrounds
 
@@ -52,4 +60,3 @@ This is also true for every custom scripts, which can be found in the `playgroun
 You can download this template through the following links:
   * [`wle_pplayground`](https://github.com/SignorPipo/wle_pplaygrounds/releases/latest/download/wle_pplayground.zip)
   * [`wle_pplayground_unbundled`](https://github.com/SignorPipo/wle_pplaygrounds/releases/latest/download/wle_pplayground_unbundled.zip)
-
