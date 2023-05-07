@@ -7,11 +7,15 @@ export class SFXOnCollisionComponent extends Component {
 
     start() {
         this._myPhysX = this.object.pp_getComponent(PhysXComponent);
-        this._myCollisionsCollector = new PhysicsCollisionCollector(this._myPhysX);
+        if (this._myPhysX != null) {
+            this._myCollisionsCollector = new PhysicsCollisionCollector(this._myPhysX);
+        }
 
         this._myGrabbable = this.object.pp_getComponent(GrabbableComponent);
-        this._myLastLastGrabbed = this._myGrabbable.isGrabbed();
-        this._myLastGrabbed = this._myGrabbable.isGrabbed();
+        if (this._myGrabbable != null) {
+            this._myLastLastGrabbed = this._myGrabbable.isGrabbed();
+            this._myLastGrabbed = this._myGrabbable.isGrabbed();
+        }
 
         this._myStarted = false;
     }
@@ -39,6 +43,10 @@ export class SFXOnCollisionComponent extends Component {
         let clonedComponent = ComponentUtils.cloneDefault(this, targetObject);
 
         return clonedComponent;
+    }
+
+    pp_clonePostProcess(clonedComponent) {
+        clonedComponent.start();
     }
 
     onDestroy() {
