@@ -15,6 +15,7 @@ You are free to use this in your projects, just remember to credit it somewhere,
 # Credits
 
 - [Meta Quest 1 Gamepads Low Poly](https://github.com/SignorPipo/wle_ppefault/blob/main/wle_ppefault/wle_ppefault/assets/models/meta_quest_1_gamepads_credits_Jezza3D.fbx) by [Jezza3D](https://sketchfab.com/Jezza3D)
+- Made using [PP](https://github.com/SignorPipo/wle_pp)
 
 # Playgrounds
 
