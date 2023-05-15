@@ -1,20 +1,9 @@
 import { Component, Property } from "@wonderlandengine/api";
 import { PhysicsLayerFlags } from "../../../../../cauldron/physics/physics_layer_flags";
 import { InputUtils } from "../../../../../input/cauldron/input_utils";
-import { Globals } from "../../../../../pp/globals";
-import { CollisionCheck } from "../../../character_controller/collision/legacy/collision_check/collision_check";
+import { CollisionCheckBridge, getCollisionCheck } from "../../../character_controller/collision/collision_check_bridge";
 import { CleanedPlayerLocomotion } from "./cleaned/player_locomotion_cleaned";
 import { PlayerLocomotion, PlayerLocomotionParams } from "./player_locomotion";
-
-let _myCollisionChecks = new WeakMap();
-
-export function getCollisionCheck(engine = Globals.getMainEngine()) {
-    return _myCollisionChecks.get(engine);
-}
-
-export function setCollisionCheck(collisionCheck, engine = Globals.getMainEngine()) {
-    _myCollisionChecks.set(engine, collisionCheck);
-}
 
 export class PlayerLocomotionComponent extends Component {
     static TypeName = "pp-player-locomotion";
@@ -63,7 +52,7 @@ export class PlayerLocomotionComponent extends Component {
     };
 
     start() {
-        setCollisionCheck(new CollisionCheck(this.engine), this.engine);
+        CollisionCheckBridge.initBridge(this.engine);
 
         let params = new PlayerLocomotionParams(this.engine);
         params.myDefaultHeight = this._myDefaultHeight;

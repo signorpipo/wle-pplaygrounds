@@ -3,8 +3,8 @@ import { InputUtils } from "../../../../../../input/cauldron/input_utils";
 import { GamepadButtonID } from "../../../../../../input/gamepad/gamepad_buttons";
 import { quat2_create, quat_create, vec3_create } from "../../../../../../plugin/js/extensions/array_extension";
 import { Globals } from "../../../../../../pp/globals";
+import { getCollisionCheck } from "../../../../character_controller/collision/collision_check_bridge";
 import { CollisionRuntimeParams } from "../../../../character_controller/collision/legacy/collision_check/collision_params";
-import { getCollisionCheck } from "../player_locomotion_component";
 
 export class PlayerLocomotionTeleportState extends State {
 

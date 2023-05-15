@@ -2,9 +2,9 @@ import { PhysicsLayerFlags } from "../../../../../cauldron/physics/physics_layer
 import { XRUtils } from "../../../../../cauldron/utils/xr_utils";
 import { quat2_create, quat_create, vec3_create, vec4_create } from "../../../../../plugin/js/extensions/array_extension";
 import { Globals } from "../../../../../pp/globals";
+import { getCollisionCheck } from "../../../character_controller/collision/collision_check_bridge";
 import { CollisionCheckUtils } from "../../../character_controller/collision/legacy/collision_check/collision_check";
 import { CollisionCheckParams, CollisionRuntimeParams } from "../../../character_controller/collision/legacy/collision_check/collision_params";
-import { getCollisionCheck } from "./player_locomotion_component";
 
 export let PlayerTransformManagerSyncFlag = {
     BODY_COLLIDING: 0,

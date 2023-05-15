@@ -1954,7 +1954,7 @@ export let clone = function () {
 
                 let components = ObjectUtils.getComponentsSelf(objectToClone);
                 for (let component of components) {
-                    if (ComponentUtils.isCloneable(component.type, cloneParams.myUseDefaultComponentClone || cloneParams.myUseDefaultComponentCloneAsFallback)) {
+                    if (ComponentUtils.isCloneable(component.type, cloneParams.myUseDefaultComponentClone || cloneParams.myUseDefaultComponentCloneAsFallback, ObjectUtils.getEngine(object))) {
                         let cloneComponent = false;
                         if (cloneParams.myComponentsToInclude.length > 0) {
                             cloneComponent = cloneParams.myComponentsToInclude.indexOf(component.type) != -1;
@@ -1989,7 +1989,7 @@ export let clone = function () {
                 }
 
                 if (clonedComponent != null) {
-                    if (ComponentUtils.hasClonePostProcess(componentToClone.type)) {
+                    if (ComponentUtils.hasClonePostProcess(componentToClone.type, ObjectUtils.getEngine(object))) {
                         componentsToPostProcessData.push([componentToClone, clonedComponent]);
                     }
                 }
@@ -2036,7 +2036,7 @@ export function isCloneable(object, cloneParams = new CloneParams()) {
                 cloneComponent = !cloneParams.myIgnoreComponentCallback(component);
             }
 
-            if (cloneComponent && !ComponentUtils.isCloneable(component.type)) {
+            if (cloneComponent && !ComponentUtils.isCloneable(component.type, false, ObjectUtils.getEngine(object))) {
                 cloneable = false;
                 break;
             }

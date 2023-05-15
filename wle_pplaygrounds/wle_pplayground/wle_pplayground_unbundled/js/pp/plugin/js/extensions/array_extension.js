@@ -814,11 +814,11 @@ export function initArrayExtensionProtoype() {
     };
 
     vec4Extension.vec4_copy = function vec4_copy(vector) {
-        return Vec4Utils.set(vector, this);
+        return Vec4Utils.copy(vector, this);
     };
 
     vec4Extension.vec4_clone = function vec4_clone(out = Vec4Utils.create()) {
-        return Vec4Utils.set(this, ...arguments);
+        return Vec4Utils.clone(this, ...arguments);
     };
 
     // QUAT

@@ -269,7 +269,7 @@ export class BenchmarkMaxVisibleTrianglesComponent extends Component {
 
         let parent = this.object;
         if (this._myDisplayInFrontOfPlayer) {
-            parent = Globals.getPlayerObjects().myHead.pp_addObject();
+            parent = Globals.getPlayerObjects(this.engine).myHead.pp_addObject();
             parent.pp_rotateAxis(180, vec3_create(0, 1, 0));
             parent.pp_translateLocal(vec3_create(0, 0, this._myDisplayInFrontOfPlayerDistance));
         }

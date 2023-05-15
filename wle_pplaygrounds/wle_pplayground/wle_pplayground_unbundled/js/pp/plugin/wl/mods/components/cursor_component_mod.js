@@ -93,7 +93,7 @@ export function initCursorComponentModPrototype() {
 
         this.pp_setViewComponent(this.object.pp_getComponent(ViewComponent));
 
-        XRUtils.registerSessionStartEventListener(this, this.setupXREvents.bind(this), this.engine);
+        XRUtils.registerSessionStartEventListener(this, this.setupXREvents.bind(this), true, false, this.engine);
         this._onDestroyListeners.push(() => {
             XRUtils.unregisterSessionStartEventListener(this, this.engine);
         });

@@ -6,8 +6,8 @@ import { GamepadAxesID, GamepadButtonID } from "../../../../../input/gamepad/gam
 import { quat2_create, vec3_create } from "../../../../../plugin/js/extensions/array_extension";
 import { Globals } from "../../../../../pp/globals";
 import { Direction2DTo3DConverter, Direction2DTo3DConverterParams } from "../../../../cauldron/cauldron/direction_2D_to_3D_converter";
+import { getCollisionCheck } from "../../../character_controller/collision/collision_check_bridge";
 import { PlayerLocomotionDirectionReferenceType } from "./player_locomotion";
-import { getCollisionCheck } from "./player_locomotion_component";
 import { PlayerLocomotionMovement } from "./player_locomotion_movement";
 
 export class PlayerLocomotionSmoothParams {

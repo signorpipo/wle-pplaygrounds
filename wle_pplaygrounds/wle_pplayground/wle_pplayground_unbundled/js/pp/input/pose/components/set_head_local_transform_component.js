@@ -8,7 +8,7 @@ export class SetHeadLocalTransformComponent extends Component {
     static Properties = {};
 
     start() {
-        Globals.getHeadPose().registerPoseUpdatedEventListener(this, this.onPoseUpdated.bind(this));
+        Globals.getHeadPose(this.engine).registerPoseUpdatedEventListener(this, this.onPoseUpdated.bind(this));
     }
 
     update(dt) {
@@ -20,7 +20,7 @@ export class SetHeadLocalTransformComponent extends Component {
     }
 
     onDestroy() {
-        Globals.getHeadPose()?.unregisterPoseUpdatedEventListener(this);
+        Globals.getHeadPose(this.engine)?.unregisterPoseUpdatedEventListener(this);
     }
 }
 

@@ -12,7 +12,7 @@ export class SetHandLocalTransformComponent extends Component {
     start() {
         this._myHandednessType = InputUtils.getHandednessByIndex(this._myHandedness);
 
-        Globals.getHandPose(this._myHandednessType).registerPoseUpdatedEventListener(this, this.onPoseUpdated.bind(this));
+        Globals.getHandPose(this._myHandednessType, this.engine).registerPoseUpdatedEventListener(this, this.onPoseUpdated.bind(this));
     }
 
     onPoseUpdated() {
@@ -20,7 +20,7 @@ export class SetHandLocalTransformComponent extends Component {
     }
 
     onDestroy() {
-        Globals.getHandPose(this._myHandednessType)?.unregisterPoseUpdatedEventListener(this);
+        Globals.getHandPose(this._myHandednessType, this.engine)?.unregisterPoseUpdatedEventListener(this);
     }
 }
 

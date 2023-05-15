@@ -5,7 +5,7 @@ import { MouseButtonID } from "../../../../../../input/cauldron/mouse";
 import { GamepadAxesID } from "../../../../../../input/gamepad/gamepad_buttons";
 import { quat2_create, vec3_create } from "../../../../../../plugin/js/extensions/array_extension";
 import { Globals } from "../../../../../../pp/globals";
-import { getCollisionCheck } from "../player_locomotion_component";
+import { getCollisionCheck } from "../../../../character_controller/collision/collision_check_bridge";
 import { PlayerLocomotionMovement } from "../player_locomotion_movement";
 import { PlayerLocomotionTeleportDetectionParams, PlayerLocomotionTeleportDetectionState } from "./player_locomotion_teleport_detection_state";
 import { PlayerLocomotionTeleportDetectionVisualizerParams } from "./player_locomotion_teleport_detection_visualizer";

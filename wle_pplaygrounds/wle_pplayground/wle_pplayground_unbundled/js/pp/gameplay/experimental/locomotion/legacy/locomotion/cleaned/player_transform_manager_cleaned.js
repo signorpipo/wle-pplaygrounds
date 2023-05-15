@@ -1,9 +1,9 @@
 import { XRUtils } from "../../../../../../cauldron/utils/xr_utils";
 import { quat2_create, quat_create, vec3_create, vec4_create } from "../../../../../../plugin/js/extensions/array_extension";
 import { Globals } from "../../../../../../pp/globals";
+import { getCollisionCheck } from "../../../../character_controller/collision/collision_check_bridge";
 import { CollisionCheckUtils } from "../../../../character_controller/collision/legacy/collision_check/collision_check";
 import { CollisionCheckParams, CollisionRuntimeParams } from "../../../../character_controller/collision/legacy/collision_check/collision_params";
-import { getCollisionCheck } from "../player_locomotion_component";
 import { PlayerTransformManagerSyncFlag } from "../player_transform_manager";
 
 export class CleanedPlayerTransformManager {
