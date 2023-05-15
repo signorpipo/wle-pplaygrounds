@@ -1,12 +1,12 @@
 {
-    "name": "wle_pplayground",
+    "name": "wle-pplayground",
     "version": "0.2.1",
     "author": "Pipo",
     "description": "Playground template project for the Wonderland Engine",
-    "homepage": "https://github.com/SignorPipo/wle_pplaygrounds",
+    "homepage": "https://github.com/SignorPipo/wle-pplaygrounds",
     "repository": {
         "type": "git",
-        "url": "https://github.com/SignorPipo/wle_pplaygrounds"
+        "url": "https://github.com/SignorPipo/wle-pplaygrounds"
     },
     "license": "ISC",
     "files": [
@@ -25,6 +25,7 @@
         "wle",
         "webxr"
     ],
+    "type": "module",
     "dependencies": {
         "@wonderlandengine/api": "^1.0.0",
         "@wonderlandengine/components": "^1.0.3",
