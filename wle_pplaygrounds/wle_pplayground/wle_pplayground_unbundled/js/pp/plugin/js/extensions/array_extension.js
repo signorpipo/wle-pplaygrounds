@@ -89,7 +89,7 @@
             - vec3_projectOnPlane               / vec3_projectOnPlaneAlongAxis
             - vec3_convertPositionToWorld       / vec3_convertPositionToLocal 
             - vec3_convertDirectionToWorld      / vec3_convertDirectionToLocal   
-            - vec3_angle
+            - vec3_angle            / vec3_angleSigned
             - vec3_rotate           / vec3_rotateAxis           / vec3_rotateAround / vec3_rotateAroundAxis
             - vec3_rotationTo       / vec3_rotationToPivoted
             - vec3_toRadians        / vec3_toDegrees            / vec3_toQuat       / vec3_toMatrix
@@ -133,7 +133,7 @@
             - quat2_rotateAxis  
             - quat2_toMatrix
             ○ quat2_fromMatrix
-            - quat2_lerp        / quat2_interpolate
+            - quat2_lerp        / quat2_interpolate / quat2_slerp    / quat2_sinterpolate
 
         MATRIX 3:
             ○ mat3_set
@@ -499,15 +499,15 @@ export function initArrayExtensionProtoype() {
         return Vec3Utils.lengthSigned(this, ...arguments);
     };
 
-    vec3Extension.vec3_angleSigned = function vec3_angleSigned(vector, upAxis) {
+    vec3Extension.vec3_angleSigned = function vec3_angleSigned(vector, referenceAxis) {
         return Vec3Utils.angleSigned(this, ...arguments);
     };
 
-    vec3Extension.vec3_angleSignedDegrees = function vec3_angleSignedDegrees(vector, upAxis) {
+    vec3Extension.vec3_angleSignedDegrees = function vec3_angleSignedDegrees(vector, referenceAxis) {
         return Vec3Utils.angleSignedDegrees(this, ...arguments);
     };
 
-    vec3Extension.vec3_angleSignedRadians = function vec3_angleSignedRadians(vector, upAxis) {
+    vec3Extension.vec3_angleSignedRadians = function vec3_angleSignedRadians(vector, referenceAxis) {
         return Vec3Utils.angleSignedRadians(this, ...arguments);
     };
 
@@ -563,11 +563,11 @@ export function initArrayExtensionProtoype() {
         return Vec3Utils.isFartherAlongAxis(this, ...arguments);
     };
 
-    vec3Extension.vec3_isToTheRight = function vec3_isToTheRight(vector, upAxis) {
+    vec3Extension.vec3_isToTheRight = function vec3_isToTheRight(vector, referenceAxis) {
         return Vec3Utils.isToTheRight(this, ...arguments);
     };
 
-    vec3Extension.vec3_signTo = function vec3_signTo(vector, upAxis, zeroSign = 1) {
+    vec3Extension.vec3_signTo = function vec3_signTo(vector, referenceAxis, zeroSign = 1) {
         return Vec3Utils.signTo(this, ...arguments);
     };
 
@@ -791,11 +791,11 @@ export function initArrayExtensionProtoype() {
         return Vec3Utils.rotationToPivotedQuat(this, ...arguments);
     };
 
-    vec3Extension.vec3_lerp = function vec3_lerp(to, interpolationValue, out = Vec3Utils.create()) {
+    vec3Extension.vec3_lerp = function vec3_lerp(to, interpolationFactor, out = Vec3Utils.create()) {
         return Vec3Utils.lerp(this, ...arguments);
     };
 
-    vec3Extension.vec3_interpolate = function vec3_interpolate(to, interpolationValue, easingFunction = EasingFunction.linear, out = Vec3Utils.create()) {
+    vec3Extension.vec3_interpolate = function vec3_interpolate(to, interpolationFactor, easingFunction = EasingFunction.linear, out = Vec3Utils.create()) {
         return Vec3Utils.interpolate(this, ...arguments);
     };
 
@@ -1097,19 +1097,19 @@ export function initArrayExtensionProtoype() {
         return QuatUtils.rotateAxisRadians(this, ...arguments);
     };
 
-    quatExtension.quat_lerp = function quat_lerp(to, interpolationValue, out = QuatUtils.create()) {
+    quatExtension.quat_lerp = function quat_lerp(to, interpolationFactor, out = QuatUtils.create()) {
         return QuatUtils.lerp(this, ...arguments);
     };
 
-    quatExtension.quat_interpolate = function quat_interpolate(to, interpolationValue, easingFunction = EasingFunction.linear, out = QuatUtils.create()) {
+    quatExtension.quat_interpolate = function quat_interpolate(to, interpolationFactor, easingFunction = EasingFunction.linear, out = QuatUtils.create()) {
         return QuatUtils.interpolate(this, ...arguments);
     };
 
-    quatExtension.quat_slerp = function quat_slerp(to, interpolationValue, out = QuatUtils.create()) {
+    quatExtension.quat_slerp = function quat_slerp(to, interpolationFactor, out = QuatUtils.create()) {
         return QuatUtils.slerp(this, ...arguments);
     };
 
-    quatExtension.quat_sinterpolate = function quat_sinterpolate(to, interpolationValue, easingFunction = EasingFunction.linear, out = QuatUtils.create()) {
+    quatExtension.quat_sinterpolate = function quat_sinterpolate(to, interpolationFactor, easingFunction = EasingFunction.linear, out = QuatUtils.create()) {
         return QuatUtils.sinterpolate(this, ...arguments);
     };
 
@@ -1261,7 +1261,7 @@ export function initArrayExtensionProtoype() {
         return Quat2Utils.rotateAxisDegrees(this, ...arguments);
     };
 
-    quat2Extension.quat2_rotateAxisRadians = function quat2_rotateAxisRadians(angle, axis, out) {
+    quat2Extension.quat2_rotateAxisRadians = function quat2_rotateAxisRadians(angle, axis, out = Quat2Utils.create()) {
         return Quat2Utils.rotateAxisRadians(this, ...arguments);
     };
 
@@ -1273,12 +1273,20 @@ export function initArrayExtensionProtoype() {
         return Quat2Utils.fromMatrix(matrix, this);
     };
 
-    quat2Extension.quat2_lerp = function quat2_lerp(to, interpolationValue, out = Quat2Utils.create()) {
+    quat2Extension.quat2_lerp = function quat2_lerp(to, interpolationFactor, out = Quat2Utils.create()) {
         return Quat2Utils.lerp(this, ...arguments);
     };
 
-    quat2Extension.quat2_interpolate = function quat2_interpolate(to, interpolationValue, easingFunction = EasingFunction.linear, out = Quat2Utils.create()) {
+    quat2Extension.quat2_interpolate = function quat2_interpolate(to, interpolationFactor, easingFunction = EasingFunction.linear, out = Quat2Utils.create()) {
         return Quat2Utils.interpolate(this, ...arguments);
+    };
+
+    quat2Extension.quat2_slerp = function quat2_slerp(to, interpolationFactor, out = Quat2Utils.create()) {
+        return Quat2Utils.slerp(this, ...arguments);
+    };
+
+    quat2Extension.quat2_sinterpolate = function quat2_sinterpolate(to, interpolationFactor, easingFunction = EasingFunction.linear, out = Quat2Utils.create()) {
+        return Quat2Utils.sinterpolate(this, ...arguments);
     };
 
     // MATRIX 3

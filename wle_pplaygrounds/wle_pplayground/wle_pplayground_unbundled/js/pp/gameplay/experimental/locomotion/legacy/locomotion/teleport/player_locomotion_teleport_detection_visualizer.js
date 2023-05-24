@@ -413,11 +413,11 @@ PlayerLocomotionTeleportDetectionVisualizer.prototype._showTeleportParablePositi
             } else {
                 this._myVisualTeleportTransformPositionLerping = true;
 
-                let interpolationValue = this._myTeleportParams.myVisualizerParams.myVisualTeleportPositionLerpFactor * dt;
+                let interpolationFactor = this._myTeleportParams.myVisualizerParams.myVisualTeleportPositionLerpFactor * dt;
                 if (positionDistance < this._myTeleportParams.myVisualizerParams.myVisualTeleportPositionMinDistanceToCloseLerpFactor) {
-                    interpolationValue = this._myTeleportParams.myVisualizerParams.myVisualTeleportPositionCloseLerpFactor * dt;
+                    interpolationFactor = this._myTeleportParams.myVisualizerParams.myVisualTeleportPositionCloseLerpFactor * dt;
                 }
-                currentVisualTeleportPosition.vec3_lerp(visualPosition, interpolationValue, currentVisualTeleportPosition);
+                currentVisualTeleportPosition.vec3_lerp(visualPosition, interpolationFactor, currentVisualTeleportPosition);
             }
 
             if ((!this._myVisualTeleportTransformRotationLerping || rotationAngleDistance < this._myTeleportParams.myVisualizerParams.myVisualTeleportPositionMinAngleDistanceToResetLerp) &&
@@ -426,10 +426,10 @@ PlayerLocomotionTeleportDetectionVisualizer.prototype._showTeleportParablePositi
                 this._myVisualTeleportTransformRotationLerping = false;
                 currentVisualTeleportRotationQuat.quat_copy(visualRotationQuat);
             } else {
-                let interpolationValue = this._myTeleportParams.myVisualizerParams.myVisualTeleportPositionLerpFactor * dt;
+                let interpolationFactor = this._myTeleportParams.myVisualizerParams.myVisualTeleportPositionLerpFactor * dt;
 
                 this._myVisualTeleportTransformRotationLerping = true;
-                currentVisualTeleportRotationQuat.quat_slerp(visualRotationQuat, interpolationValue, currentVisualTeleportRotationQuat);
+                currentVisualTeleportRotationQuat.quat_slerp(visualRotationQuat, interpolationFactor, currentVisualTeleportRotationQuat);
             }
 
             currentVisualTeleportTransformQuat.quat2_setPositionRotationQuat(currentVisualTeleportPosition, currentVisualTeleportRotationQuat);

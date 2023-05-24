@@ -39,7 +39,7 @@ export class ConsoleVRWidgetMessage {
 
         let countString = (("(x").concat(this._myMessagesCount)).concat(") ");
 
-        let text = this._myOriginalText.slice(0);
+        let text = this._myOriginalText;
         text = countString.concat(text);
         this.myLines = text.split("\n");
     }
@@ -524,7 +524,7 @@ export class ConsoleVRWidget {
             cursorTarget.onDoubleClick.add(this._filterAllButOne.bind(this, ConsoleVRWidgetMessageType[key], textMaterial));
             cursorTarget.onTripleClick.add(this._resetFilters.bind(this, ConsoleVRWidgetMessageType[key]));
             cursorTarget.onHover.add(this._filterHover.bind(this, ConsoleVRWidgetMessageType[key], backgroundMaterial));
-            cursorTarget.onUnhover.add(this._filterUnHover.bind(this, ConsoleVRWidgetMessageType[key], backgroundMaterial));
+            cursorTarget.onUnhover.add(this._filterUnhover.bind(this, ConsoleVRWidgetMessageType[key], backgroundMaterial));
         }
 
         {
@@ -533,7 +533,7 @@ export class ConsoleVRWidget {
 
             cursorTarget.onClick.add(this._clearConsole.bind(this, false, null));
             cursorTarget.onHover.add(this._genericHover.bind(this, backgroundMaterial));
-            cursorTarget.onUnhover.add(this._genericUnHover.bind(this, backgroundMaterial));
+            cursorTarget.onUnhover.add(this._genericUnhover.bind(this, backgroundMaterial));
         }
 
         {
@@ -546,7 +546,7 @@ export class ConsoleVRWidget {
             cursorTarget.onUp.add(this._setScrollUp.bind(this, false));
             cursorTarget.onUnhover.add(this._setScrollUp.bind(this, false));
             cursorTarget.onHover.add(this._genericHover.bind(this, backgroundMaterial));
-            cursorTarget.onUnhover.add(this._genericUnHover.bind(this, backgroundMaterial));
+            cursorTarget.onUnhover.add(this._genericUnhover.bind(this, backgroundMaterial));
         }
 
         {
@@ -559,7 +559,7 @@ export class ConsoleVRWidget {
             cursorTarget.onUp.add(this._setScrollDown.bind(this, false));
             cursorTarget.onUnhover.add(this._setScrollDown.bind(this, false));
             cursorTarget.onHover.add(this._genericHover.bind(this, backgroundMaterial));
-            cursorTarget.onUnhover.add(this._genericUnHover.bind(this, backgroundMaterial));
+            cursorTarget.onUnhover.add(this._genericUnhover.bind(this, backgroundMaterial));
         }
 
         {
@@ -568,7 +568,7 @@ export class ConsoleVRWidget {
 
             cursorTarget.onClick.add(this._instantScrollDown.bind(this));
             cursorTarget.onHover.add(this._genericHover.bind(this, backgroundMaterial));
-            cursorTarget.onUnhover.add(this._notifyIconUnHover.bind(this));
+            cursorTarget.onUnhover.add(this._notifyIconUnhover.bind(this));
         }
 
         ui.myPointerCursorTargetComponent.onHover.add(this._setGamepadScrollEnabled.bind(this, true));
@@ -690,7 +690,7 @@ export class ConsoleVRWidget {
         this._myUI.myNotifyIconPanel.pp_setActive(active && this._myWidgetFrame.isVisible());
     }
 
-    _notifyIconUnHover() {
+    _notifyIconUnhover() {
         let material = this._myUI.myNotifyIconBackgroundComponent.material;
         material.color = this._myConfig.myNotifyIconColor;
     }
@@ -699,7 +699,7 @@ export class ConsoleVRWidget {
         this._genericHover(material);
     }
 
-    _filterUnHover(messageType, material) {
+    _filterUnhover(messageType, material) {
         if (this._myTypeFilters[messageType]) {
             material.color = this._myConfig.myFilterButtonDisabledBackgroundColor;
         } else {
@@ -711,7 +711,7 @@ export class ConsoleVRWidget {
         material.color = this._myConfig.myButtonHoverColor;
     }
 
-    _genericUnHover(material) {
+    _genericUnhover(material) {
         material.color = this._myConfig.myBackgroundColor;
     }
 

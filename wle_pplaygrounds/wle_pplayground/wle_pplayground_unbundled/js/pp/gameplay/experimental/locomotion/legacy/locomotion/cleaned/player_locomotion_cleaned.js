@@ -387,11 +387,11 @@ export class CleanedPlayerLocomotion {
 
         simplifiedParams.myCheckOnlyFeet = this._myParams.myColliderCheckOnlyFeet;
 
-        simplifiedParams.myAverageSpeed = this._myParams.myMaxSpeed;
+        simplifiedParams.myMaxSpeed = this._myParams.myMaxSpeed;
 
         simplifiedParams.myCanFly = this._myParams.myFlyEnabled;
 
-        simplifiedParams.myShouldSlideAgainstWall = this._myParams.myColliderSlideAgainstWall;
+        simplifiedParams.myShouldSlideAlongWall = this._myParams.myColliderSlideAlongWall;
 
         simplifiedParams.myCollectGroundInfo = true;
         simplifiedParams.myMaxWalkableGroundAngle = this._myParams.myColliderMaxWalkableGroundAngle;

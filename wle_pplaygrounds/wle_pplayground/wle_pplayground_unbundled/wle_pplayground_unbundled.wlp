@@ -2852,7 +2852,7 @@
             "version": [
                 1,
                 0,
-                0
+                1
             ]
         },
         "rendering": {
@@ -2881,7 +2881,7 @@
             "sourcePaths": [
                 "js",
                 "js/pp/index.js",
-                "js/playground"
+                "js/playground/components"
             ],
             "bundlingType": "esbuild",
             "libraryPaths": [

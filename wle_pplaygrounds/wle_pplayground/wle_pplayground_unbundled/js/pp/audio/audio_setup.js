@@ -1,7 +1,7 @@
 export class AudioSetup {
 
     constructor(audioFilePath = null) {
-        this.myAudioFilePath = (audioFilePath) ? audioFilePath.slice(0) : null;
+        this.myAudioFilePath = audioFilePath;
 
         this.myLoop = false;
         this.myAutoplay = false;
@@ -18,13 +18,13 @@ export class AudioSetup {
 
         this.myPosition = null;
         this.mySpatial = true;
-        this.myReferenceDistance = 1.0; // At this distance (and closer) the volume is not reduced
+        this.myReferenceDistance = Number.MAX_VALUE; // At this distance (and closer) the volume is not reduced
     }
 
     clone() {
         let audioSetup = new AudioSetup();
 
-        audioSetup.myAudioFilePath = this.myAudioFilePath.slice(0);
+        audioSetup.myAudioFilePath = this.myAudioFilePath;
 
         audioSetup.myLoop = this.myLoop;
         audioSetup.myAutoplay = this.myAutoplay;

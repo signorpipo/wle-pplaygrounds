@@ -5,7 +5,7 @@ import { MouseButtonID } from "../../../../../../input/cauldron/mouse";
 import { GamepadAxesID } from "../../../../../../input/gamepad/gamepad_buttons";
 import { quat2_create, vec3_create } from "../../../../../../plugin/js/extensions/array_extension";
 import { Globals } from "../../../../../../pp/globals";
-import { getCollisionCheck } from "../../../../character_controller/collision/collision_check_bridge";
+import { CollisionCheckBridge } from "../../../../character_controller/collision/collision_check_bridge";
 import { PlayerLocomotionMovement } from "../player_locomotion_movement";
 import { PlayerLocomotionTeleportDetectionParams, PlayerLocomotionTeleportDetectionState } from "./player_locomotion_teleport_detection_state";
 import { PlayerLocomotionTeleportDetectionVisualizerParams } from "./player_locomotion_teleport_detection_visualizer";
@@ -188,7 +188,7 @@ PlayerLocomotionTeleport.prototype._applyGravity = function () {
         }
 
         feetTransformQuat = this._myTeleportParams.myPlayerHeadManager.getTransformFeetQuat(feetTransformQuat);
-        getCollisionCheck(this._myTeleportParams.myEngine).move(gravityMovement, feetTransformQuat, this._myTeleportParams.myCollisionCheckParams, this._myLocomotionRuntimeParams.myCollisionRuntimeParams);
+        CollisionCheckBridge.getCollisionCheck(this._myTeleportParams.myEngine).move(gravityMovement, feetTransformQuat, this._myTeleportParams.myCollisionCheckParams, this._myLocomotionRuntimeParams.myCollisionRuntimeParams);
         if (!this._myLocomotionRuntimeParams.myCollisionRuntimeParams.myVerticalMovementCanceled) {
             this._myTeleportParams.myPlayerHeadManager.teleportPositionFeet(this._myLocomotionRuntimeParams.myCollisionRuntimeParams.myNewPosition);
         }

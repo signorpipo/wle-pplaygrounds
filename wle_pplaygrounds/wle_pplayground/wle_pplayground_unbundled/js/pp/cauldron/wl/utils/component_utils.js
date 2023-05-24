@@ -174,7 +174,7 @@ export function getClassFromType(type, engine = Globals.getMainEngine()) {
     return classToReturn;
 }
 
-export function isTypeRegistered(typeOrClass, engine = Globals.getMainEngine()) {
+export function isRegistered(typeOrClass, engine = Globals.getMainEngine()) {
     let type = ComponentUtils.getTypeFromTypeOrClass(typeOrClass);
     return ComponentUtils.getClassFromType(type, engine) != null;
 }
@@ -423,7 +423,7 @@ export let ComponentUtils = {
     getWLJavascriptComponentTypes,
     getTypeFromTypeOrClass,
     getClassFromType,
-    isTypeRegistered,
+    isRegistered,
 
     getJavascriptComponentInstances,
     getJavascriptComponentClass,

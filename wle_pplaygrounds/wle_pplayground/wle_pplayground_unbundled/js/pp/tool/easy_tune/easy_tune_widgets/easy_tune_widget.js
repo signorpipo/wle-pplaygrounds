@@ -17,10 +17,10 @@ export class EasyTuneWidgetParams extends WidgetParams {
 
         this.myShowOnStart = false;
         this.myShowVisibilityButton = false;
-        this.myAdditionalButtonsVisible = false;
+        this.myShowAdditionalButtons = false;
         this.myGamepadScrollVariableEnabled = false;
 
-        this.myVariablesImportExportButtonsVisible = false;
+        this.myShowVariablesImportExportButtons = false;
         this.myVariablesImportCallback = null;   // Signature: callback()
         this.myVariablesExportCallback = null;   // Signature: callback()
     }

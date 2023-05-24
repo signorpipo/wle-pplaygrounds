@@ -1,5 +1,5 @@
 import { Component, PhysXComponent } from "@wonderlandengine/api";
-import { ComponentUtils, Globals, GrabbableComponent, PhysicsCollisionCollector } from "../pp";
+import { ComponentUtils, Globals, GrabbableComponent, PhysicsCollisionCollector } from "../../pp";
 
 export class SFXOnCollisionComponent extends Component {
     static TypeName = "sfx-on-collision";

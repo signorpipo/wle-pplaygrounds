@@ -1,5 +1,5 @@
 import { Component } from "@wonderlandengine/api";
-import { Globals } from "../pp";
+import { Globals } from "../../pp";
 
 export class PlayMusicComponent extends Component {
     static TypeName = "play-music";

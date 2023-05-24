@@ -4,7 +4,7 @@ import { FSM } from "../../../../../../cauldron/fsm/fsm";
 import { TimerState } from "../../../../../../cauldron/fsm/states/timer_state";
 import { vec4_create } from "../../../../../../plugin/js/extensions/array_extension";
 import { Globals } from "../../../../../../pp/globals";
-import { NumberOverValue } from "../../../../../cauldron/cauldron/number_over_value";
+import { NumberOverFactor } from "../../../../../cauldron/cauldron/number_over_factor";
 import { PlayerLocomotionTeleportState } from "./player_locomotion_teleport_state";
 
 export class PlayerLocomotionTeleportTeleportBlinkState extends PlayerLocomotionTeleportState {
@@ -55,8 +55,8 @@ export class PlayerLocomotionTeleportTeleportBlinkState extends PlayerLocomotion
 
         this._myFadeInTimer = new Timer(this._myTeleportParams.myTeleportParams.myBlinkFadeInSeconds);
         this._myFadeOutTimer = new Timer(this._myTeleportParams.myTeleportParams.myBlinkFadeOutSeconds);
-        this._myFadeOutAlphaOverTime = new NumberOverValue(0, 1, 0, 1);
-        this._myFadeInAlphaOverTime = new NumberOverValue(1, 0, 0, 1);
+        this._myFadeOutAlphaOverTime = new NumberOverFactor(0, 1, 0, 1);
+        this._myFadeInAlphaOverTime = new NumberOverFactor(1, 0, 0, 1);
     }
 
     start(fsm) {

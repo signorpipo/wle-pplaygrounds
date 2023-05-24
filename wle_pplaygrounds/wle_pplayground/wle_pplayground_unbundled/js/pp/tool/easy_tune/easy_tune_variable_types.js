@@ -25,7 +25,7 @@ export let EasyTuneVariableType = {
 export class EasyTuneVariable {
 
     constructor(name, type, engine = Globals.getMainEngine()) {
-        this._myName = name.slice(0);
+        this._myName = name;
         this._myType = type;
 
         this._myValue = null;

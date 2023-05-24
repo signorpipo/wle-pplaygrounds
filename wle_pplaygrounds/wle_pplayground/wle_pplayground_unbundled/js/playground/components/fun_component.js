@@ -1,5 +1,5 @@
 import { Component } from "@wonderlandengine/api";
-import { GamepadButtonID, Globals } from "../pp";
+import { GamepadButtonID, Globals } from "../../pp";
 import { ParticlesSpawnerComponent } from "./particles_spawner_component";
 
 export class FunComponent extends Component {

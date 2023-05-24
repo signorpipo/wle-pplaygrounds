@@ -2,7 +2,7 @@ import { PhysicsLayerFlags } from "../../../../../cauldron/physics/physics_layer
 import { XRUtils } from "../../../../../cauldron/utils/xr_utils";
 import { quat2_create, quat_create, vec3_create, vec4_create } from "../../../../../plugin/js/extensions/array_extension";
 import { Globals } from "../../../../../pp/globals";
-import { getCollisionCheck } from "../../../character_controller/collision/collision_check_bridge";
+import { CollisionCheckBridge } from "../../../character_controller/collision/collision_check_bridge";
 import { CollisionCheckUtils } from "../../../character_controller/collision/legacy/collision_check/collision_check";
 import { CollisionCheckParams, CollisionRuntimeParams } from "../../../character_controller/collision/legacy/collision_check/collision_params";
 
@@ -665,7 +665,7 @@ PlayerTransformManager.prototype.update = function () {
             }
             let debugBackup = this._myParams.myMovementCollisionCheckParams.myDebugEnabled;
             this._myParams.myMovementCollisionCheckParams.myDebugEnabled = false;
-            getCollisionCheck(this._myParams.myEngine).positionCheck(true, transformQuat, this._myParams.myMovementCollisionCheckParams, collisionRuntimeParams);
+            CollisionCheckBridge.getCollisionCheck(this._myParams.myEngine).positionCheck(true, transformQuat, this._myParams.myMovementCollisionCheckParams, collisionRuntimeParams);
             this._myParams.myMovementCollisionCheckParams.myDebugEnabled = debugBackup;
             this._myIsPositionValid = collisionRuntimeParams.myIsPositionOk;
         }
@@ -726,7 +726,7 @@ PlayerTransformManager.prototype._updateReal = function () {
             transformQuat = this.getTransformQuat(transformQuat);
             newPosition.vec3_copy(this._myValidPosition);
             if (this._myParams.mySyncEnabledFlagMap.get(PlayerTransformManagerSyncFlag.BODY_COLLIDING)) {
-                getCollisionCheck(this._myParams.myEngine).move(movementToCheck, transformQuat, this._myRealMovementCollisionCheckParams, collisionRuntimeParams);
+                CollisionCheckBridge.getCollisionCheck(this._myParams.myEngine).move(movementToCheck, transformQuat, this._myRealMovementCollisionCheckParams, collisionRuntimeParams);
 
                 if (!collisionRuntimeParams.myHorizontalMovementCanceled && !collisionRuntimeParams.myVerticalMovementCanceled) {
                     if (Math.pp_clamp(this._myRealMovementCollisionCheckParams.myHeight, this._myParams.myIsBodyCollidingWhenHeightBelowValue,
@@ -756,7 +756,7 @@ PlayerTransformManager.prototype._updateReal = function () {
 
                 collisionRuntimeParams.copy(this._myCollisionRuntimeParams);
                 floatingTransformQuat.quat2_setPositionRotationQuat(this._myValidPosition, this._myValidRotationQuat);
-                getCollisionCheck(this._myParams.myEngine).updateSurfaceInfo(floatingTransformQuat, this._myRealMovementCollisionCheckParams, collisionRuntimeParams);
+                CollisionCheckBridge.getCollisionCheck(this._myParams.myEngine).updateSurfaceInfo(floatingTransformQuat, this._myRealMovementCollisionCheckParams, collisionRuntimeParams);
                 // #TODO Utilizzare on ground del body gia calcolato, ma ora non c'è quindi va bene così
 
                 if (collisionRuntimeParams.myIsOnGround) {
@@ -810,7 +810,7 @@ PlayerTransformManager.prototype._updateReal = function () {
                             newFeetPosition = newFeetPosition.vec3_add(currentMovementStep, newFeetPosition);
                             floatingTransformQuat.quat2_setPositionRotationQuat(newFeetPosition, this._myValidRotationQuat);
                             collisionRuntimeParams.copy(this._myCollisionRuntimeParams);
-                            getCollisionCheck(this._myParams.myEngine).updateSurfaceInfo(floatingTransformQuat, this._myRealMovementCollisionCheckParams, collisionRuntimeParams);
+                            CollisionCheckBridge.getCollisionCheck(this._myParams.myEngine).updateSurfaceInfo(floatingTransformQuat, this._myRealMovementCollisionCheckParams, collisionRuntimeParams);
                             movementChecked = movementChecked.vec3_add(currentMovementStep, movementChecked);
 
                             if (!collisionRuntimeParams.myIsOnGround) {
@@ -875,7 +875,7 @@ PlayerTransformManager.prototype._updateReal = function () {
             transformQuat = this.getTransformHeadQuat(transformQuat); // Get eyes transform
             newPositionHead.vec3_copy(this._myValidPositionHead);
             if (this._myParams.mySyncEnabledFlagMap.get(PlayerTransformManagerSyncFlag.HEAD_COLLIDING)) {
-                getCollisionCheck(this._myParams.myEngine).move(movementToCheck, transformQuat, this._myHeadCollisionCheckParams, collisionRuntimeParams);
+                CollisionCheckBridge.getCollisionCheck(this._myParams.myEngine).move(movementToCheck, transformQuat, this._myHeadCollisionCheckParams, collisionRuntimeParams);
 
                 if (!collisionRuntimeParams.myHorizontalMovementCanceled && !collisionRuntimeParams.myVerticalMovementCanceled) {
                     this._myIsHeadColliding = false;
@@ -930,7 +930,7 @@ PlayerTransformManager.prototype._updateReal = function () {
 
                 let debugBackup = this._myParams.myMovementCollisionCheckParams.myDebugEnabled;
                 this._myParams.myMovementCollisionCheckParams.myDebugEnabled = false;
-                getCollisionCheck(this._myParams.myEngine).positionCheck(true, transformQuat, this._myParams.myMovementCollisionCheckParams, this._myRealCollisionRuntimeParams);
+                CollisionCheckBridge.getCollisionCheck(this._myParams.myEngine).positionCheck(true, transformQuat, this._myParams.myMovementCollisionCheckParams, this._myRealCollisionRuntimeParams);
                 this._myIsRealPositionValid = this._myRealCollisionRuntimeParams.myIsPositionOk;
                 this._myParams.myMovementCollisionCheckParams.myDebugEnabled = debugBackup;
             }
@@ -944,7 +944,7 @@ PlayerTransformManager.prototype.move = function () {
     return function move(movement, outCollisionRuntimeParams = null, forceMove = false) {
         transformQuat = this.getTransformQuat(transformQuat);
 
-        getCollisionCheck(this._myParams.myEngine).move(movement, transformQuat, this._myParams.myMovementCollisionCheckParams, this._myCollisionRuntimeParams);
+        CollisionCheckBridge.getCollisionCheck(this._myParams.myEngine).move(movement, transformQuat, this._myParams.myMovementCollisionCheckParams, this._myCollisionRuntimeParams);
         if (outCollisionRuntimeParams != null) {
             outCollisionRuntimeParams.copy(this._myCollisionRuntimeParams);
         }
@@ -1005,7 +1005,7 @@ PlayerTransformManager.prototype.teleportTransformQuat = function () {
 
         rotatedTransformQuat.quat2_setPositionRotationQuat(currentPosition, teleportRotation);
 
-        getCollisionCheck(this._myParams.myEngine).teleport(teleportPositionVec, rotatedTransformQuat, this._myParams.myTeleportCollisionCheckParams, this._myCollisionRuntimeParams);
+        CollisionCheckBridge.getCollisionCheck(this._myParams.myEngine).teleport(teleportPositionVec, rotatedTransformQuat, this._myParams.myTeleportCollisionCheckParams, this._myCollisionRuntimeParams);
         if (outCollisionRuntimeParams != null) {
             outCollisionRuntimeParams.copy(this._myCollisionRuntimeParams);
         }
@@ -1074,7 +1074,7 @@ PlayerTransformManager.prototype.setHeight = function () {
 
         transformQuat = this.getTransformQuat(transformQuat);
 
-        getCollisionCheck(this._myParams.myEngine).positionCheck(true, transformQuat, this._myParams.myMovementCollisionCheckParams, this._myCollisionRuntimeParams);
+        CollisionCheckBridge.getCollisionCheck(this._myParams.myEngine).positionCheck(true, transformQuat, this._myParams.myMovementCollisionCheckParams, this._myCollisionRuntimeParams);
 
         if (this._myCollisionRuntimeParams.myIsPositionOk || forceSet) {
             this.getPlayerHeadManager().setHeight(this.getHeight(), true);

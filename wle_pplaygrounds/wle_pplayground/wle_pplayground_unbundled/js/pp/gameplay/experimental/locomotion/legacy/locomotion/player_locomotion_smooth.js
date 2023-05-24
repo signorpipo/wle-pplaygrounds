@@ -6,7 +6,7 @@ import { GamepadAxesID, GamepadButtonID } from "../../../../../input/gamepad/gam
 import { quat2_create, vec3_create } from "../../../../../plugin/js/extensions/array_extension";
 import { Globals } from "../../../../../pp/globals";
 import { Direction2DTo3DConverter, Direction2DTo3DConverterParams } from "../../../../cauldron/cauldron/direction_2D_to_3D_converter";
-import { getCollisionCheck } from "../../../character_controller/collision/collision_check_bridge";
+import { CollisionCheckBridge } from "../../../character_controller/collision/collision_check_bridge";
 import { PlayerLocomotionDirectionReferenceType } from "./player_locomotion";
 import { PlayerLocomotionMovement } from "./player_locomotion_movement";
 
@@ -181,7 +181,7 @@ PlayerLocomotionSmooth.prototype.update = function () {
 
                 feetTransformQuat = this._myParams.myPlayerHeadManager.getTransformFeetQuat(feetTransformQuat);
 
-                getCollisionCheck(this._myParams.myEngine).move(headMovement, feetTransformQuat, this._myParams.myCollisionCheckParams, this._myLocomotionRuntimeParams.myCollisionRuntimeParams);
+                CollisionCheckBridge.getCollisionCheck(this._myParams.myEngine).move(headMovement, feetTransformQuat, this._myParams.myCollisionCheckParams, this._myLocomotionRuntimeParams.myCollisionRuntimeParams);
                 headMovement.vec3_copy(this._myLocomotionRuntimeParams.myCollisionRuntimeParams.myFixedMovement);
             }
 

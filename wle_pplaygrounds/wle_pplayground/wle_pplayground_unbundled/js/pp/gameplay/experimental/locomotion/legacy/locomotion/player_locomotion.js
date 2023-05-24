@@ -61,7 +61,7 @@ export class PlayerLocomotionParams {
 
         this.myColliderAccuracy = null;
         this.myColliderCheckOnlyFeet = false;
-        this.myColliderSlideAgainstWall = false;
+        this.myColliderSlideAlongWall = false;
         this.myColliderMaxWalkableGroundAngle = 0;
         this.myColliderSnapOnGround = false;
         this.myColliderMaxDistanceToSnapOnGround = 0;

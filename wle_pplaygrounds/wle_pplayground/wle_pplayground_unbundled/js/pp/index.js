@@ -28,7 +28,6 @@ export * from "./plugin/wl/extensions/init_wl_extentions";
 export * from "./plugin/wl/extensions/object_extension";
 export * from "./plugin/wl/extensions/scene_extension";
 export * from "./plugin/wl/mods/init_wl_mods";
-export * from "./plugin/wl/mods/emitter_mod";
 export * from "./plugin/wl/mods/components/init_component_mods";
 export * from "./plugin/wl/mods/components/cursor_component_mod";
 export * from "./plugin/wl/mods/components/cursor_target_component_mod";
@@ -139,7 +138,7 @@ export * from "./debug/debug_functions_overwriter/debug_functions_performance_an
 
 //    CAULDRON
 export * from "./gameplay/cauldron/cauldron/direction_2D_to_3D_converter";
-export * from "./gameplay/cauldron/cauldron/number_over_value";
+export * from "./gameplay/cauldron/cauldron/number_over_factor";
 
 //    GRAB & THROW
 export * from "./gameplay/grab_throw/grabbable_component";
