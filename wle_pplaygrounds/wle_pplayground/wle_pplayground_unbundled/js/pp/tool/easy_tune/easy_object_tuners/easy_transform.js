@@ -15,7 +15,7 @@ export class EasyTransform extends EasyObjectTuner {
     }
 
     _createEasyTuneVariable(variableName) {
-        return new EasyTuneTransform(variableName, this._getDefaultValue(), this._myScaleAsOne);
+        return new EasyTuneTransform(variableName, this._getDefaultValue(), 3, this._myScaleAsOne);
     }
 
     _getObjectValue(object) {

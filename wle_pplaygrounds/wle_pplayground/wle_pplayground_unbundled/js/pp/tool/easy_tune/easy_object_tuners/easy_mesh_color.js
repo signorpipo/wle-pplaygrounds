@@ -28,7 +28,7 @@ export class EasyMeshColor extends EasyObjectTuner {
 
     _createEasyTuneVariable(variableName) {
         if (this._myColorType == 6) {
-            return new EasyTuneNumberArray(variableName, this._getDefaultValue(), 0.1, 3, 0, 1);
+            return new EasyTuneNumberArray(variableName, this._getDefaultValue(), 3, 0.1, 0, 1);
         }
         return new EasyTuneIntArray(variableName, this._getDefaultValue(), 100, 0, 255);
     }

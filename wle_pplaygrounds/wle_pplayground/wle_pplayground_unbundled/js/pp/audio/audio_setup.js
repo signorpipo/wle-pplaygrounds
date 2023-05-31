@@ -4,13 +4,13 @@ export class AudioSetup {
         this.myAudioFilePath = audioFilePath;
 
         this.myLoop = false;
-        this.myAutoplay = false;
+        this.myAutoPlay = false;
 
         this.myVolume = 1.0;
         this._myRate = 1.0; // From 0.5 to 4.0
 
         this.myPool = 5;
-        this.myPreload = true;
+        this.myPreLoad = true;
 
         this.myPreventPlayWhenAudioContextNotRunning = false;
 
@@ -27,14 +27,14 @@ export class AudioSetup {
         audioSetup.myAudioFilePath = this.myAudioFilePath;
 
         audioSetup.myLoop = this.myLoop;
-        audioSetup.myAutoplay = this.myAutoplay;
+        audioSetup.myAutoPlay = this.myAutoPlay;
 
         audioSetup.myVolume = this.myVolume;
         audioSetup.myPitch = this.myPitch;
         audioSetup.myRate = this.myRate;
 
         audioSetup.myPool = this.myPool;
-        audioSetup.myPreload = this.myPreload;
+        audioSetup.myPreLoad = this.myPreLoad;
 
         audioSetup.myPreventPlayWhenAudioContextNotRunning = this.myPreventPlayWhenAudioContextNotRunning;
 

@@ -2,6 +2,7 @@ import { Component, Property } from "@wonderlandengine/api";
 import { quat2_create } from "../../../plugin/js/extensions/array_extension";
 import { Globals } from "../../../pp/globals";
 import { InputUtils } from "../../cauldron/input_utils";
+import { XRUtils } from "../../../cauldron/utils/xr_utils";
 
 export class SetHandLocalTransformComponent extends Component {
     static TypeName = "pp-set-hand-local-transform";
@@ -31,8 +32,10 @@ export class SetHandLocalTransformComponent extends Component {
 SetHandLocalTransformComponent.prototype.onPoseUpdated = function () {
     let handPoseTransform = quat2_create()
     return function onPoseUpdated(pose) {
-        if (this.active) {
-            this.object.pp_setTransformLocalQuat(pose.getTransformQuat(handPoseTransform, null));
+        if (this.active && XRUtils.isSessionActive(this.engine)) {
+            if (pose.isValid()) {
+                this.object.pp_setTransformLocalQuat(pose.getTransformQuat(handPoseTransform, null));
+            }
         }
     };
 }();

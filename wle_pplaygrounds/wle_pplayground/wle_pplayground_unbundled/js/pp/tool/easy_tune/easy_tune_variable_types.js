@@ -1,13 +1,13 @@
 /*
 Easy Tune Variables Examples
 
-Number:         Globals.getEasyTuneVariables().add(new EasyTuneNumber("Float", 1.00, 0.1, 3));
-Number Array:   Globals.getEasyTuneVariables().add(new EasyTuneNumberArray("Float Array", [1.00, 2.00, 3.00], 0.1, 3));
+Number:         Globals.getEasyTuneVariables().add(new EasyTuneNumber("Float", 1.00, 3, 0.1));
+Number Array:   Globals.getEasyTuneVariables().add(new EasyTuneNumberArray("Float Array", [1.00, 2.00, 3.00], 3, 0.1));
 Int:            Globals.getEasyTuneVariables().add(new EasyTuneInt("Int", 1, 1));
 Int Array:      Globals.getEasyTuneVariables().add(new EasyTuneIntArray("Int Array", [1, 2, 3], 1));
 Bool:           Globals.getEasyTuneVariables().add(new EasyTuneBool("Bool", false));
 Bool Array:     Globals.getEasyTuneVariables().add(new EasyTuneBoolArray("Bool Array", [false, true, false]));
-Transform:      Globals.getEasyTuneVariables().add(new EasyTuneTransform("Transform", mat4_create(), true));
+Transform:      Globals.getEasyTuneVariables().add(new EasyTuneTransform("Transform", mat4_create(), 3, true));
 */
 
 import { Emitter } from "@wonderlandengine/api";
@@ -140,7 +140,7 @@ export class EasyTuneVariableArray extends EasyTuneVariable {
 
 export class EasyTuneNumberArray extends EasyTuneVariableArray {
 
-    constructor(name, value, stepPerSecond, decimalPlaces, min = null, max = null, editAllValuesTogether = false, engine) {
+    constructor(name, value, decimalPlaces, stepPerSecond, min = null, max = null, editAllValuesTogether = false, engine) {
         super(name, EasyTuneVariableType.NUMBER, value, engine);
 
         this._myDecimalPlaces = decimalPlaces;
@@ -183,8 +183,8 @@ export class EasyTuneNumberArray extends EasyTuneVariableArray {
 
 export class EasyTuneNumber extends EasyTuneNumberArray {
 
-    constructor(name, value, stepPerSecond, decimalPlaces, min, max, engine) {
-        super(name, [value], stepPerSecond, decimalPlaces, min, max, engine);
+    constructor(name, value, decimalPlaces, stepPerSecond, min, max, engine) {
+        super(name, [value], decimalPlaces, stepPerSecond, min, max, engine);
 
         this._myTempValue = [0];
         this._myTempDefaultValue = [0];
@@ -212,20 +212,20 @@ export class EasyTuneNumber extends EasyTuneNumberArray {
 export class EasyTuneInt extends EasyTuneNumber {
 
     constructor(name, value, stepPerSecond, min, max, engine) {
-        super(name, value, stepPerSecond, 0, min, max, engine);
+        super(name, value, 0, stepPerSecond, min, max, engine);
     }
 }
 
 export class EasyTuneIntArray extends EasyTuneNumberArray {
 
     constructor(name, value, stepPerSecond, min, max, editAllValuesTogether, engine) {
-        let tempValue = value.pp_clone();
+        let roundedValue = value.pp_clone();
 
         for (let i = 0; i < value.length; i++) {
-            tempValue[i] = Math.round(tempValue[i]);
+            roundedValue[i] = Math.round(roundedValue[i]);
         }
 
-        super(name, tempValue, stepPerSecond, 0, min != null ? Math.round(min) : null, max != null ? Math.round(max) : max, editAllValuesTogether, engine);
+        super(name, roundedValue, 0, stepPerSecond, min != null ? Math.round(min) : null, max != null ? Math.round(max) : max, editAllValuesTogether, engine);
     }
 }
 
@@ -270,10 +270,10 @@ export class EasyTuneBool extends EasyTuneBoolArray {
 
 export class EasyTuneTransform extends EasyTuneVariable {
 
-    constructor(name, value, scaleAsOne = true, positionStepPerSecond = 1, rotationStepPerSecond = 50, scaleStepPerSecond = 1, engine) {
+    constructor(name, value, decimalPlaces = 3, scaleAsOne = true, positionStepPerSecond = 1, rotationStepPerSecond = 50, scaleStepPerSecond = 1, engine) {
         super(name, EasyTuneVariableType.TRANSFORM, engine);
 
-        this._myDecimalPlaces = 3;
+        this._myDecimalPlaces = decimalPlaces;
 
         this._myPosition = value.mat4_getPosition();
         this._myRotation = value.mat4_getRotationDegrees();

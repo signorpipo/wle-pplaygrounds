@@ -50,7 +50,9 @@ SetHeadLocalTransformComponent.prototype.onPoseUpdated = function () {
     let headPoseTransform = quat2_create();
     return function onPoseUpdated(pose) {
         if (this.active && XRUtils.isSessionActive(this.engine)) {
-            this.object.pp_setTransformLocalQuat(pose.getTransformQuat(headPoseTransform, null));
+            if (pose.isValid()) {
+                this.object.pp_setTransformLocalQuat(pose.getTransformQuat(headPoseTransform, null));
+            }
         }
     }
 }();
