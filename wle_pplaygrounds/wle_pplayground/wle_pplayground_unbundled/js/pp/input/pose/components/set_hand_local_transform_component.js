@@ -1,8 +1,8 @@
 import { Component, Property } from "@wonderlandengine/api";
+import { XRUtils } from "../../../cauldron/utils/xr_utils";
 import { quat2_create } from "../../../plugin/js/extensions/array_extension";
 import { Globals } from "../../../pp/globals";
 import { InputUtils } from "../../cauldron/input_utils";
-import { XRUtils } from "../../../cauldron/utils/xr_utils";
 
 export class SetHandLocalTransformComponent extends Component {
     static TypeName = "pp-set-hand-local-transform";

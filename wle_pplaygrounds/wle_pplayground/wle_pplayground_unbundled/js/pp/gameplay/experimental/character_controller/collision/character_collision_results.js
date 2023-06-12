@@ -167,9 +167,9 @@ export class CharacterCollisionSurfaceResults {
     constructor() {
         this.myHasSnappedOnSurface = false;
         this.myHasPoppedOutSurface = false;
-        this.myHasHorizontalMovementAdjustedVerticalMovementBasedOnSurfacePerceivedAngleDownhill = false;
-        this.myHasHorizontalMovementAdjustedVerticalMovementBasedOnSurfacePerceivedAngleUphill = false;
-        this.myHasVerticalMovementAdjustedHorizontalMovementBasedOnSurfaceAngleDownhill = false;
+        this.myHasHorizontalMovementAdjustedVerticalMovementOverSurfacePerceivedAngleDownhill = false;
+        this.myHasHorizontalMovementAdjustedVerticalMovementOverSurfacePerceivedAngleUphill = false;
+        this.myHasVerticalMovementAdjustedHorizontalMovementOverSurfaceAngleDownhill = false;
     }
 
     reset() {
@@ -395,17 +395,17 @@ CharacterCollisionCheckTransformResults.prototype.copy = function copy(other) {
 CharacterCollisionSurfaceResults.prototype.reset = function reset() {
     this.myHasSnappedOnSurface = false;
     this.myHasPoppedOutSurface = false;
-    this.myHasHorizontalMovementAdjustedVerticalMovementBasedOnSurfacePerceivedAngleDownhill = false;
-    this.myHasHorizontalMovementAdjustedVerticalMovementBasedOnSurfacePerceivedAngleUphill = false;
-    this.myHasVerticalMovementAdjustedHorizontalMovementBasedOnSurfaceAngleDownhill = false;
+    this.myHasHorizontalMovementAdjustedVerticalMovementOverSurfacePerceivedAngleDownhill = false;
+    this.myHasHorizontalMovementAdjustedVerticalMovementOverSurfacePerceivedAngleUphill = false;
+    this.myHasVerticalMovementAdjustedHorizontalMovementOverSurfaceAngleDownhill = false;
 };
 
 CharacterCollisionSurfaceResults.prototype.copy = function copy(other) {
     this.myHasSnappedOnSurface = other.myHasSnappedOnSurface;
     this.myHasPoppedOutSurface = other.myHasPoppedOutSurface;
-    this.myHasHorizontalMovementAdjustedVerticalMovementBasedOnSurfacePerceivedAngleDownhill = other.myHasHorizontalMovementAdjustedVerticalMovementBasedOnSurfacePerceivedAngleDownhill;
-    this.myHasHorizontalMovementAdjustedVerticalMovementBasedOnSurfacePerceivedAngleUphill = other.myHasHorizontalMovementAdjustedVerticalMovementBasedOnSurfacePerceivedAngleUphill;
-    this.myHasVerticalMovementAdjustedHorizontalMovementBasedOnSurfaceAngleDownhill = other.myHasVerticalMovementAdjustedHorizontalMovementBasedOnSurfaceAngleDownhill;
+    this.myHasHorizontalMovementAdjustedVerticalMovementOverSurfacePerceivedAngleDownhill = other.myHasHorizontalMovementAdjustedVerticalMovementOverSurfacePerceivedAngleDownhill;
+    this.myHasHorizontalMovementAdjustedVerticalMovementOverSurfacePerceivedAngleUphill = other.myHasHorizontalMovementAdjustedVerticalMovementOverSurfacePerceivedAngleUphill;
+    this.myHasVerticalMovementAdjustedHorizontalMovementOverSurfaceAngleDownhill = other.myHasVerticalMovementAdjustedHorizontalMovementOverSurfaceAngleDownhill;
 };
 
 CharacterCollisionSplitMovementResults.prototype.reset = function reset() {

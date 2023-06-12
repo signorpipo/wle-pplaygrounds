@@ -50,8 +50,6 @@ export * from "./audio/components/spatial_audio_listener_component";
 export * from "./cauldron/benchmarks/benchmark_max_physx_component";
 export * from "./cauldron/benchmarks/benchmark_max_visible_triangles_component";
 
-export * from "./cauldron/cauldron/object_pool";
-export * from "./cauldron/cauldron/object_pools_manager";
 export * from "./cauldron/cauldron/save_manager";
 export * from "./cauldron/cauldron/timer";
 export * from "./cauldron/cauldron/window_globals";
@@ -77,6 +75,11 @@ export * from "./cauldron/js/utils/quat_utils";
 export * from "./cauldron/js/utils/quat2_utils";
 export * from "./cauldron/js/utils/mat3_utils";
 export * from "./cauldron/js/utils/mat4_utils";
+
+export * from "./cauldron/object_pool/object_pool";
+export * from "./cauldron/object_pool/object_pool_globals";
+export * from "./cauldron/object_pool/object_pool_manager";
+export * from "./cauldron/object_pool/components/object_pool_manager_component";
 
 export * from "./cauldron/utils/color_utils";
 export * from "./cauldron/utils/material_utils";
@@ -151,12 +154,6 @@ export * from "./gameplay/integrations/construct_arcade/ca_display_leaderboard_c
 
 //    EXPERIMENTAL
 
-//          CAULDRON
-export * from "./gameplay/experimental/cauldron/player/player_head_controller";
-export * from "./gameplay/experimental/cauldron/player/player_view_occlusion";
-export * from "./gameplay/experimental/cauldron/player/components/player_head_controller_component";
-export * from "./gameplay/experimental/cauldron/player/components/player_view_occlusion_component";
-
 //          CHARACTER CONTROLLER
 export * from "./gameplay/experimental/character_controller/collision/legacy/collision_check/collision_params";
 export * from "./gameplay/experimental/character_controller/collision/legacy/collision_check/collision_check";
@@ -178,35 +175,7 @@ export * from "./gameplay/experimental/character_controller/collision/character_
 export * from "./gameplay/experimental/character_controller/collision/character_collision_system_globals";
 export * from "./gameplay/experimental/character_controller/collision/components/character_collision_system_component";
 
-export * from "./gameplay/experimental/character_controller/character_controller";
-export * from "./gameplay/experimental/character_controller/synced_character_controller";
-export * from "./gameplay/experimental/character_controller/character_controller_utils";
-
-export * from "./gameplay/experimental/character_controller/components/character_controller_component";
-
-export * from "./gameplay/experimental/character_controller/player/player_character_controller";
-export * from "./gameplay/experimental/character_controller/player/player_head_character_controller";
-export * from "./gameplay/experimental/character_controller/player/player_hand_character_controller";
-
-export * from "./gameplay/experimental/character_controller/player/components/player_character_controller_component";
-export * from "./gameplay/experimental/character_controller/player/components/player_head_character_controller_component";
-export * from "./gameplay/experimental/character_controller/player/components/player_hand_character_controller_component";
-
 //          LOCOMOTION
-export * from "./gameplay/experimental/locomotion/cauldron/global_gravity_globals";
-export * from "./gameplay/experimental/locomotion/cauldron/components/global_gravity_component";
-
-export * from "./gameplay/experimental/locomotion/player/player_locomotion_smooth";
-export * from "./gameplay/experimental/locomotion/player/player_locomotion_rotate";
-export * from "./gameplay/experimental/locomotion/player/player_locomotion_gravity";
-
-export * from "./gameplay/experimental/locomotion/player/teleport/player_locomotion_teleport";
-
-export * from "./gameplay/experimental/locomotion/player/components/player_locomotion_teleport_component";
-export * from "./gameplay/experimental/locomotion/player/components/player_locomotion_smooth_component";
-export * from "./gameplay/experimental/locomotion/player/components/player_locomotion_rotate_component";
-export * from "./gameplay/experimental/locomotion/player/components/player_locomotion_gravity_component";
-
 export * from "./gameplay/experimental/locomotion/legacy/locomotion/player_head_manager";
 export * from "./gameplay/experimental/locomotion/legacy/locomotion/player_transform_manager";
 export * from "./gameplay/experimental/locomotion/legacy/locomotion/player_locomotion_rotate";
@@ -225,10 +194,6 @@ export * from "./gameplay/experimental/locomotion/legacy/locomotion/teleport/pla
 export * from "./gameplay/experimental/locomotion/legacy/locomotion/teleport/player_locomotion_teleport_teleport_blink_state";
 export * from "./gameplay/experimental/locomotion/legacy/locomotion/teleport/player_locomotion_teleport_teleport_shift_state";
 export * from "./gameplay/experimental/locomotion/legacy/locomotion/teleport/player_locomotion_teleport";
-
-export * from "./gameplay/experimental/locomotion/legacy/locomotion/cleaned/player_locomotion_cleaned";
-export * from "./gameplay/experimental/locomotion/legacy/locomotion/cleaned/player_locomotion_smooth_cleaned";
-export * from "./gameplay/experimental/locomotion/legacy/locomotion/cleaned/player_transform_manager_cleaned";
 
 //	INPUT
 export * from "./input/cauldron/input_types";
@@ -278,7 +243,7 @@ export * from "./input/pose/components/set_tracked_hand_joint_local_transform_co
 export * from "./input/pose/components/copy_hand_transform_component";
 export * from "./input/pose/components/copy_head_transform_component";
 export * from "./input/pose/components/copy_player_transform_component";
-export * from "./input/pose/components/copy_player_pivot_transform_component";
+export * from "./input/pose/components/copy_reference_space_transform_component";
 
 //	TOOL
 export * from "./tool/cauldron/tool_types";

@@ -4,8 +4,8 @@ import { EasyObjectTuner } from "./easy_object_tuner";
 
 export class EasyLightAttenuation extends EasyObjectTuner {
 
-    constructor(object, variableName, setAsDefault, useTuneTarget) {
-        super(object, variableName, setAsDefault, useTuneTarget);
+    constructor(object, variableName, setAsWidgetCurrentVariable, useTuneTarget) {
+        super(object, variableName, setAsWidgetCurrentVariable, useTuneTarget);
     }
 
     _getVariableNamePrefix() {

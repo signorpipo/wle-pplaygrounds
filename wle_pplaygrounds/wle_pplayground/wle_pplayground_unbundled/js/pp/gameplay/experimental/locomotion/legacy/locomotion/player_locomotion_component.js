@@ -2,7 +2,6 @@ import { Component, Property } from "@wonderlandengine/api";
 import { PhysicsLayerFlags } from "../../../../../cauldron/physics/physics_layer_flags";
 import { InputUtils } from "../../../../../input/cauldron/input_utils";
 import { CollisionCheckBridge } from "../../../character_controller/collision/collision_check_bridge";
-import { CleanedPlayerLocomotion } from "./cleaned/player_locomotion_cleaned";
 import { PlayerLocomotion, PlayerLocomotionParams } from "./player_locomotion";
 
 export class PlayerLocomotionComponent extends Component {
@@ -13,6 +12,9 @@ export class PlayerLocomotionComponent extends Component {
         _myCharacterRadius: Property.float(0.3),
         _myMaxSpeed: Property.float(2),
         _myMaxRotationSpeed: Property.float(100),
+        _myGravityAcceleration: Property.float(-20),
+        _myMaxGravitySpeed: Property.float(-1),
+        _mySpeedSlowDownPercentageOnWallSlid: Property.float(1),
         _myIsSnapTurn: Property.bool(true),
         _mySnapTurnOnlyVR: Property.bool(true),
         _mySnapTurnAngle: Property.float(30),
@@ -24,14 +26,25 @@ export class PlayerLocomotionComponent extends Component {
         _myMinAngleToFlyUpVR: Property.float(60),
         _myMinAngleToFlyDownVR: Property.float(1),
         _myMinAngleToFlyRight: Property.float(60),
+
         _myMainHand: Property.enum(["Left", "Right"], "Left"),
-        _myVRDirectionReferenceType: Property.enum(["Head", "Hand", "Custom Object"], "Hand"),
+        _myDirectionInvertForwardWhenUpsideDown: Property.bool(true),
+        _myVRDirectionReferenceType: Property.enum(["Head", "Hand", "Custom Object"], "Head"),
         _myVRDirectionReferenceObject: Property.object(),
 
-        _myTeleportParableStartReferenceObject: Property.object(),
-        _myTeleportPositionObject: Property.object(),
+        _myTeleportType: Property.enum(["Instant", "Blink", "Shift"], "Shift"),
         _myTeleportMaxDistance: Property.float(3),
         _myTeleportMaxHeightDifference: Property.float(3),
+        _myTeleportRotationOnUpEnabled: Property.bool(false),
+        _myTeleportValidMaterial: Property.material(),
+        _myTeleportInvalidMaterial: Property.material(),
+        _myTeleportPositionObject: Property.object(),
+        _myTeleportPositionObjectRotateWithHead: Property.bool(true),
+        _myTeleportParableStartReferenceObject: Property.object(),
+
+        // these 2 flags works 100% properly only if both true or false
+        _mySyncWithRealWorldPositionOnlyIfValid: Property.bool(true),   // valid means the real player has not moved inside walls
+        _myViewOcclusionInsideWallsEnabled: Property.bool(true),
 
         _myColliderAccuracy: Property.enum(["Very Low", "Low", "Medium", "High", "Very High"], "High"),
         _myColliderCheckOnlyFeet: Property.bool(false),
@@ -41,8 +54,6 @@ export class PlayerLocomotionComponent extends Component {
         _myColliderMaxDistanceToSnapOnGround: Property.float(0.1),
         _myColliderMaxWalkableGroundStepHeight: Property.float(0.1),
         _myColliderPreventFallingFromEdges: Property.bool(false),
-
-        _myUseCleanedVersion: Property.bool(true),
 
         _myDebugHorizontalEnabled: Property.bool(false),
         _myDebugVerticalEnabled: Property.bool(false),
@@ -60,7 +71,12 @@ export class PlayerLocomotionComponent extends Component {
         params.myMaxSpeed = this._myMaxSpeed;
         params.myMaxRotationSpeed = this._myMaxRotationSpeed;
 
+        params.myGravityAcceleration = this._myGravityAcceleration;
+        params.myMaxGravitySpeed = this._myMaxGravitySpeed;
+
         params.myCharacterRadius = this._myCharacterRadius;
+
+        params.mySpeedSlowDownPercentageOnWallSlid = this._mySpeedSlowDownPercentageOnWallSlid;
 
         params.myIsSnapTurn = this._myIsSnapTurn;
         params.mySnapTurnOnlyVR = this._mySnapTurnOnlyVR;
@@ -77,16 +93,24 @@ export class PlayerLocomotionComponent extends Component {
 
         params.myMainHand = InputUtils.getHandednessByIndex(this._myMainHand);
 
+        params.myDirectionInvertForwardWhenUpsideDown = this._myDirectionInvertForwardWhenUpsideDown;
         params.myVRDirectionReferenceType = this._myVRDirectionReferenceType;
         params.myVRDirectionReferenceObject = this._myVRDirectionReferenceObject;
 
-        params.myTeleportParableStartReferenceObject = this._myTeleportParableStartReferenceObject;
-
         params.myForeheadExtraHeight = 0.1;
 
-        params.myTeleportPositionObject = this._myTeleportPositionObject;
+        params.myTeleportType = this._myTeleportType;
         params.myTeleportMaxDistance = this._myTeleportMaxDistance;
         params.myTeleportMaxHeightDifference = this._myTeleportMaxHeightDifference;
+        params.myTeleportRotationOnUpEnabled = this._myTeleportRotationOnUpEnabled;
+        params.myTeleportValidMaterial = this._myTeleportValidMaterial;
+        params.myTeleportInvalidMaterial = this._myTeleportInvalidMaterial;
+        params.myTeleportPositionObject = this._myTeleportPositionObject;
+        params.myTeleportPositionObjectRotateWithHead = this._myTeleportPositionObjectRotateWithHead;
+        params.myTeleportParableStartReferenceObject = this._myTeleportParableStartReferenceObject;
+
+        params.mySyncWithRealWorldPositionOnlyIfValid = this._mySyncWithRealWorldPositionOnlyIfValid;
+        params.myViewOcclusionInsideWallsEnabled = this._myViewOcclusionInsideWallsEnabled;
 
         params.myColliderAccuracy = this._myColliderAccuracy;
         params.myColliderCheckOnlyFeet = this._myColliderCheckOnlyFeet;
@@ -106,11 +130,7 @@ export class PlayerLocomotionComponent extends Component {
 
         params.myPhysicsBlockLayerFlags.copy(this._getPhysicsBlockLayersFlags());
 
-        if (this._myUseCleanedVersion) {
-            this._myPlayerLocomotion = new CleanedPlayerLocomotion(params);
-        } else {
-            this._myPlayerLocomotion = new PlayerLocomotion(params);
-        }
+        this._myPlayerLocomotion = new PlayerLocomotion(params);
 
         this._myStartCounter = 1;
     }
@@ -121,11 +141,11 @@ export class PlayerLocomotionComponent extends Component {
             if (this._myStartCounter == 0) {
                 this._myPlayerLocomotion.start();
 
-                this._myPlayerLocomotion._myPlayerTransformManager.resetReal(true, false, false, true);
-                this._myPlayerLocomotion._myPlayerTransformManager.resetHeadToReal();
+                this._myPlayerLocomotion.getPlayerTransformManager().resetReal(true, false, false, true);
+                this._myPlayerLocomotion.getPlayerTransformManager().resetHeadToReal();
             }
 
-            this._myPlayerLocomotion._myPlayerHeadManager.update(dt);
+            this._myPlayerLocomotion.getPlayerHeadManager().update(dt);
         } else {
             CollisionCheckBridge.getCollisionCheck(this.engine)._myTotalRaycasts = 0; // #TODO Debug stuff, remove later
 
@@ -135,6 +155,10 @@ export class PlayerLocomotionComponent extends Component {
         //CollisionCheckBridge.getCollisionCheck(this.engine)._myTotalRaycastsMax = Math.max(CollisionCheckBridge.getCollisionCheck(this.engine)._myTotalRaycasts, CollisionCheckBridge.getCollisionCheck(this.engine)._myTotalRaycastsMax);
         //console.error(CollisionCheckBridge.getCollisionCheck(this.engine)._myTotalRaycastsMax);
         //console.error(CollisionCheckBridge.getCollisionCheck(this.engine)._myTotalRaycasts);
+    }
+
+    getPlayerLocomotion() {
+        return this._myPlayerLocomotion;
     }
 
     onActivate() {

@@ -39,6 +39,7 @@ export class PlayerLocomotionTeleportParams {
 
         this.myAdjustPositionEveryFrame = false;
         this.myGravityAcceleration = 0;
+        this.myMaxGravitySpeed = 0;
 
         this.myEngine = engine;
 
@@ -66,7 +67,6 @@ export class PlayerLocomotionTeleport extends PlayerLocomotionMovement {
         this._myTeleportRuntimeParams = new PlayerLocomotionTeleportRuntimeParams();
 
         this._myStickIdleCharge = true;
-        this._myGravitySpeed = 0;
 
         this._myDetectionState = new PlayerLocomotionTeleportDetectionState(this._myTeleportParams, this._myTeleportRuntimeParams, this._myLocomotionRuntimeParams);
         this._myTeleportState = new PlayerLocomotionTeleportTeleportState(this._myTeleportParams, this._myTeleportRuntimeParams, this._myLocomotionRuntimeParams);
@@ -97,7 +97,6 @@ export class PlayerLocomotionTeleport extends PlayerLocomotionMovement {
     }
 
     start() {
-        this._myGravitySpeed = 0;
     }
 
     stop() {
@@ -108,13 +107,20 @@ export class PlayerLocomotionTeleport extends PlayerLocomotionMovement {
         return this._myFSM.isInState("idle");
     }
 
+    getParams() {
+        return this._myTeleportParams;
+    }
+
+    getTeleportRuntimeParams() {
+        return this._myTeleportRuntimeParams;
+    }
+
     update(dt) {
         this._myLocomotionRuntimeParams.myTeleportJustPerformed = false;
 
         this._myFSM.update(dt);
 
-        // No gravity if teleporting
-        if (this._myTeleportParams.myAdjustPositionEveryFrame || this._myTeleportParams.myGravityAcceleration != 0) {
+        if (!this._myLocomotionRuntimeParams.myIsTeleporting && (this._myTeleportParams.myAdjustPositionEveryFrame || this._myTeleportParams.myGravityAcceleration != 0)) {
             this._applyGravity(dt);
         }
 
@@ -180,11 +186,17 @@ PlayerLocomotionTeleport.prototype._applyGravity = function () {
 
         playerUp = this._myTeleportParams.myPlayerHeadManager.getPlayer().pp_getUp(playerUp);
 
-        this._myGravitySpeed += this._myTeleportParams.myGravityAcceleration * dt;
-        gravityMovement = playerUp.vec3_scale(this._myGravitySpeed * dt, gravityMovement);
+        gravityMovement.vec3_zero();
+        if (!this._myLocomotionRuntimeParams.myIsFlying && !this._myLocomotionRuntimeParams.myIsTeleporting) {
+            this._myLocomotionRuntimeParams.myGravitySpeed += this._myTeleportParams.myGravityAcceleration * dt;
 
-        if (this._myLocomotionRuntimeParams.myIsFlying) {
-            gravityMovement.vec3_zero();
+            if (Math.abs(this._myLocomotionRuntimeParams.myGravitySpeed) > Math.abs(this._myTeleportParams.myMaxGravitySpeed)) {
+                this._myLocomotionRuntimeParams.myGravitySpeed = Math.pp_sign(this._myTeleportParams.myGravityAcceleration) * Math.abs(this._myTeleportParams.myMaxGravitySpeed);
+            }
+
+            gravityMovement = playerUp.vec3_scale(this._myLocomotionRuntimeParams.myGravitySpeed * dt, gravityMovement);
+        } else {
+            this._myLocomotionRuntimeParams.myGravitySpeed = 0;
         }
 
         feetTransformQuat = this._myTeleportParams.myPlayerHeadManager.getTransformFeetQuat(feetTransformQuat);
@@ -193,9 +205,9 @@ PlayerLocomotionTeleport.prototype._applyGravity = function () {
             this._myTeleportParams.myPlayerHeadManager.teleportPositionFeet(this._myLocomotionRuntimeParams.myCollisionRuntimeParams.myNewPosition);
         }
 
-        if (this._myGravitySpeed > 0 && this._myLocomotionRuntimeParams.myCollisionRuntimeParams.myIsOnCeiling ||
-            this._myGravitySpeed < 0 && this._myLocomotionRuntimeParams.myCollisionRuntimeParams.myIsOnGround) {
-            this._myGravitySpeed = 0;
+        if (this._myLocomotionRuntimeParams.myGravitySpeed > 0 && this._myLocomotionRuntimeParams.myCollisionRuntimeParams.myIsOnCeiling ||
+            this._myLocomotionRuntimeParams.myGravitySpeed < 0 && this._myLocomotionRuntimeParams.myCollisionRuntimeParams.myIsOnGround) {
+            this._myLocomotionRuntimeParams.myGravitySpeed = 0;
         }
     };
 }();

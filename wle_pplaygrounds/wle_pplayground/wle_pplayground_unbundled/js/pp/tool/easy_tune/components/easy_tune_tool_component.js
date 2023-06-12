@@ -26,8 +26,8 @@ export class EasyTuneToolComponent extends Component {
 
         this._myWidget = new EasyTuneWidget(this.engine);
 
-        EasyTuneUtils.addSetWidgetActiveVariableCallback(this, function (variableName) {
-            this._myWidget.setActiveVariable(variableName);
+        EasyTuneUtils.addSetWidgetCurrentVariableCallback(this, function (variableName) {
+            this._myWidget.setCurrentVariable(variableName);
         }.bind(this), this.engine);
 
         EasyTuneUtils.addRefreshWidgetCallback(this, function () {
@@ -108,7 +108,7 @@ export class EasyTuneToolComponent extends Component {
     onDestroy() {
         this._myWidget.destroy();
 
-        EasyTuneUtils.removeSetWidgetActiveVariableCallback(this, this.engine);
+        EasyTuneUtils.removeSetWidgetCurrentVariableCallback(this, this.engine);
         EasyTuneUtils.removeRefreshWidgetCallback(this, this.engine);
     }
 }

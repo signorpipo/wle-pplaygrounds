@@ -100,6 +100,10 @@ export function randomPick(...args) {
     return random;
 }
 
+export function randomUUID() {
+    return crypto.randomUUID();
+}
+
 export function lerp(from, to, interpolationFactor) {
     if (interpolationFactor <= 0) {
         return from;
@@ -228,6 +232,7 @@ export let MathUtils = {
     randomBool,
     randomSign,
     randomPick,
+    randomUUID,
     lerp,
     interpolate,
     angleDistance,

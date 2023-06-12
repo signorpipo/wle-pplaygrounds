@@ -1825,16 +1825,12 @@ export function getComponentsChildren(object, typeOrClass) {
 
 // Active
 
-export function setActive(object, active, applyToHierarchy = true) {
-    if (applyToHierarchy) {
-        ObjectUtils.setActiveHierarchy(object, active);
-    } else {
-        object.active = active;
-    }
+export function setActive(object, active) {
+    ObjectUtils.setActiveHierarchy(object, active);
 }
 
 export function setActiveSelf(object, active) {
-    ObjectUtils.setActive(object, active, false);
+    object.active = active;
 }
 
 export function setActiveHierarchy(object, active) {

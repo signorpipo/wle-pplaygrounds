@@ -3,8 +3,8 @@ import { EasyObjectTuner } from "./easy_object_tuner";
 
 export class EasyMeshAmbientFactor extends EasyObjectTuner {
 
-    constructor(object, variableName, setAsDefault, useTuneTarget, engine) {
-        super(object, variableName, setAsDefault, useTuneTarget, engine);
+    constructor(object, variableName, setAsWidgetCurrentVariable, useTuneTarget, engine) {
+        super(object, variableName, setAsWidgetCurrentVariable, useTuneTarget, engine);
     }
 
     _getVariableNamePrefix() {

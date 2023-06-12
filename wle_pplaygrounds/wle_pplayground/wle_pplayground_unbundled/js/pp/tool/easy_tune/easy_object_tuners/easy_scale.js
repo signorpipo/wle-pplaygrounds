@@ -4,8 +4,8 @@ import { EasyObjectTuner } from "./easy_object_tuner";
 
 export class EasyScale extends EasyObjectTuner {
 
-    constructor(local, scaleAsOne, object, variableName, setAsDefault, useTuneTarget, engine) {
-        super(object, variableName, setAsDefault, useTuneTarget, engine);
+    constructor(local, scaleAsOne, object, variableName, setAsWidgetCurrentVariable, useTuneTarget, engine) {
+        super(object, variableName, setAsWidgetCurrentVariable, useTuneTarget, engine);
         this._myLocal = local;
         this._myScaleAsOne = scaleAsOne;
     }
