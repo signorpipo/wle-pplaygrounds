@@ -1,5 +1,5 @@
 import { Component, MeshComponent, Property } from "@wonderlandengine/api";
-import { CloneParams, Globals, ObjectPoolParams, ObjectPoolsManager } from "wle-pp";
+import { CloneParams, Globals, ObjectPool, ObjectPoolParams } from "wle-pp";
 import { ParticleComponent } from "./particle_component";
 
 export class ParticlesSpawnerComponent extends Component {
@@ -12,7 +12,9 @@ export class ParticlesSpawnerComponent extends Component {
     start() {
         this._myParticles = this._myParticlesContainer.pp_getChildren();
 
-        this._myObjectPoolsManager = new ObjectPoolsManager();
+        this._myObjectPoolManagerPrefix = "particles_spawner_" + Math.pp_randomUUID() + "_particle_";
+        this._myParticlePoolIDs = new Map();
+
         let poolParams = new ObjectPoolParams();
 
         poolParams.myInitialPoolSize = 10;
@@ -30,7 +32,7 @@ export class ParticlesSpawnerComponent extends Component {
             particle.pp_setActive(false);
             particle.pp_setParent(Globals.getSceneObjects(this.engine).myParticles);
 
-            this._myObjectPoolsManager.addPool(i, particle, poolParams);
+            Globals.getObjectPoolManager(this.engine).addPool(this._getParticlePoolID(i), new ObjectPool(particle, poolParams));
         }
     }
 
@@ -38,8 +40,8 @@ export class ParticlesSpawnerComponent extends Component {
         let amount = Math.pp_randomInt(15, 30);
 
         for (let i = 0; i < amount; i++) {
-            let particle = this._myObjectPoolsManager.get(Math.pp_randomInt(0, this._myParticles.length - 1));
-            particle.pp_getComponent(ParticleComponent).onDone(this.onParticleDone.bind(this, particle));
+            let particle = Globals.getObjectPoolManager(this.engine).get(this._getParticlePoolID(Math.pp_randomInt(0, this._myParticles.length - 1)));
+            particle.pp_getComponent(ParticleComponent).onDone(this._onParticleDone.bind(this, particle));
 
             particle.pp_setPosition(position.vec3_add(particle.pp_getComponent(ParticleComponent)._myHorizontalSpeed.vec3_normalize().vec3_scale(Math.pp_random(0, this._myRadius))));
 
@@ -47,7 +49,18 @@ export class ParticlesSpawnerComponent extends Component {
         }
     }
 
-    onParticleDone(particle) {
-        this._myObjectPoolsManager.release(particle);
+    _onParticleDone(particle) {
+        Globals.getObjectPoolManager(this.engine).release(particle);
+    }
+
+    _getParticlePoolID(particleIndex) {
+        let poolID = this._myParticlePoolIDs.get(particleIndex);
+
+        if (poolID == null) {
+            poolID = this._myObjectPoolManagerPrefix + particleIndex;
+            this._myParticlePoolIDs.set(particleIndex, poolID);
+        }
+
+        return poolID;
     }
 }
