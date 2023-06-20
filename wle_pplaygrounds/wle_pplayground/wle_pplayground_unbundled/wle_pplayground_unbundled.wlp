@@ -2847,7 +2847,7 @@
     },
     "settings": {
         "project": {
-            "name": "wle_pplayground_unbundled",
+            "name": "wle-pplayground-unbundled",
             "version": [
                 1,
                 0,

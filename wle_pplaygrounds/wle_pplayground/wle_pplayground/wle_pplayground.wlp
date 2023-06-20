@@ -2847,7 +2847,7 @@
     },
     "settings": {
         "project": {
-            "name": "wle_pplayground",
+            "name": "wle-pplayground",
             "version": [
                 1,
                 0,
