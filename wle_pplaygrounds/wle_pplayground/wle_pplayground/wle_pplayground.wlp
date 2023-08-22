@@ -2851,7 +2851,7 @@
             "version": [
                 1,
                 0,
-                3
+                4
             ]
         },
         "rendering": {
@@ -3034,8 +3034,14 @@
     "textures": {},
     "images": {},
     "files": [
-        "assets/models/pp/meta_quest_1_gamepads_credits_Jezza3D.fbx",
-        "assets/models/pp/wondermelon.fbx"
+        {
+            "fileName": "assets/models/pp/meta_quest_1_gamepads_credits_Jezza3D.fbx",
+            "importerName": "AssimpImporter"
+        },
+        {
+            "fileName": "assets/models/pp/wondermelon.fbx",
+            "importerName": "AssimpImporter"
+        }
     ],
     "fonts": {
         "147": {

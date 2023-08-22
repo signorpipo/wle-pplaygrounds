@@ -63,4 +63,10 @@ export class ParticlesSpawnerComponent extends Component {
 
         return poolID;
     }
+
+    onDestroy() {
+        for (let poolID of this._myParticlePoolIDs.values()) {
+            Globals.getObjectPoolManager(this.engine)?.removePool(poolID);
+        }
+    }
 }

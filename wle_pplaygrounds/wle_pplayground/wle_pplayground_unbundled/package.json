@@ -1,6 +1,6 @@
 {
     "name": "wle-pplayground-unbundled",
-    "version": "0.2.3",
+    "version": "0.2.4",
     "author": "Pipo",
     "description": "Playground template project for the Wonderland Engine - Unbundled Version",
     "homepage": "https://github.com/SignorPipo/wle-pplaygrounds",
@@ -27,8 +27,8 @@
     ],
     "type": "module",
     "dependencies": {
-        "@wonderlandengine/api": "^1.0.0",
-        "@wonderlandengine/components": "^1.0.3",
+        "@wonderlandengine/api": "^1.0.1",
+        "@wonderlandengine/components": "^1.0.5",
         "gl-matrix": "^3.4.3",
         "howler": "^2.2.3"
     }
