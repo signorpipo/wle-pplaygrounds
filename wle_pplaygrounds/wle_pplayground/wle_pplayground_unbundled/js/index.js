@@ -126,7 +126,11 @@ engine.registerComponent(VirtualGamepadComponent);
 /* wle:auto-register:end */
 
 let loadDelaySeconds = 0;
-setTimeout(() => engine.scene.load(`${Constants.ProjectName}.bin`), loadDelaySeconds * 1000);
+if (loadDelaySeconds > 0) {
+    setTimeout(() => engine.scene.load(`${Constants.ProjectName}.bin`), loadDelaySeconds * 1000);
+} else {
+    engine.scene.load(`${Constants.ProjectName}.bin`);
+}
 
 /* wle:auto-benchmark:start */
 /* wle:auto-benchmark:end */

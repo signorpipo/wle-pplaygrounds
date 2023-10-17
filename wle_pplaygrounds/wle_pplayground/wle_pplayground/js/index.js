@@ -125,7 +125,12 @@ engine.registerComponent(TargetHitCheckComponent);
 engine.registerComponent(WaveMovementComponent);
 /* wle:auto-register:end */
 
-engine.scene.load(`${Constants.ProjectName}.bin`);
+let loadDelaySeconds = 0;
+if (loadDelaySeconds > 0) {
+    setTimeout(() => engine.scene.load(`${Constants.ProjectName}.bin`), loadDelaySeconds * 1000);
+} else {
+    engine.scene.load(`${Constants.ProjectName}.bin`);
+}
 
 /* wle:auto-benchmark:start */
 /* wle:auto-benchmark:end */
