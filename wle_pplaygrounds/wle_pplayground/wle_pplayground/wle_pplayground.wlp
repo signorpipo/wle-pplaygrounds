@@ -49,37 +49,16 @@
                 0.0,
                 0.0,
                 -8.0
-            ],
-            "rotation": [
-                0.0,
-                0.0,
-                0.0,
-                1.0
-            ],
-            "scaling": [
-                1.0,
-                1.0,
-                1.0
             ]
         },
         "20": {
             "name": "Reference Space",
             "parent": "19",
-            "translation": [
-                0.0,
-                0.0,
-                0.0
-            ],
             "rotation": [
                 0.0,
                 1.0,
                 0.0,
-                -4.3711388286737935e-8
-            ],
-            "scaling": [
-                1.0,
-                1.0,
-                1.0
+                0.0
             ]
         },
         "21": {
@@ -176,20 +155,15 @@
                 }
             ],
             "translation": [
-                -7.152557373046875e-7,
+                0.0,
                 20.0000514,
-                -9.5367431640625e-7
+                0.0
             ],
             "rotation": [
                 -0.2156182,
                 0.0850898,
                 0.0188639,
                 0.9725804
-            ],
-            "scaling": [
-                0.9999992,
-                0.999998,
-                0.9999992
             ]
         },
         "30": {
@@ -209,20 +183,15 @@
                 }
             ],
             "translation": [
-                -0.0000011,
+                0.0,
                 20.0000514,
-                -0.0000021
+                0.0
             ],
             "rotation": [
                 0.0999406,
                 0.8659851,
                 -0.1919842,
                 0.4508033
-            ],
-            "scaling": [
-                0.9999998,
-                0.9999994,
-                0.9999997
             ]
         },
         "72": {
@@ -281,17 +250,6 @@
                 -0.1,
                 0.0,
                 0.0
-            ],
-            "rotation": [
-                0.0,
-                0.0,
-                0.0,
-                1.0
-            ],
-            "scaling": [
-                1.0,
-                1.0,
-                1.0
             ]
         },
         "104": {
@@ -355,17 +313,6 @@
                 0.1,
                 0.0,
                 0.0
-            ],
-            "rotation": [
-                0.0,
-                0.0,
-                0.0,
-                1.0
-            ],
-            "scaling": [
-                1.0,
-                1.0,
-                1.0
             ]
         },
         "107": {
@@ -519,8 +466,8 @@
             ],
             "rotation": [
                 0.2649303,
-                3.5521475183486473e-7,
-                2.279547572925367e-7,
+                0.0,
+                0.0,
                 0.9642675
             ],
             "components": [
@@ -549,8 +496,8 @@
             ],
             "rotation": [
                 0.2649303,
-                3.5521475183486473e-7,
-                2.279547572925367e-7,
+                0.0,
+                0.0,
                 0.9642675
             ],
             "components": [
@@ -687,8 +634,8 @@
             ],
             "rotation": [
                 0.2649301,
-                1.818885664306436e-7,
-                3.209071337550995e-7,
+                0.0,
+                0.0,
                 0.9642676
             ],
             "components": [
@@ -811,12 +758,6 @@
                 5.0,
                 -13.0
             ],
-            "rotation": [
-                0.0,
-                0.0,
-                0.0,
-                1.0
-            ],
             "scaling": [
                 7.5,
                 5.0,
@@ -936,13 +877,7 @@
         },
         "159": {
             "name": "Throw Platform",
-            "parent": "150",
-            "rotation": [
-                0.0,
-                0.0,
-                0.0,
-                1.0
-            ]
+            "parent": "150"
         },
         "160": {
             "name": "Ramp",
@@ -987,7 +922,7 @@
             "scaling": [
                 0.5,
                 0.1,
-                1.0000001
+                1.0
             ]
         },
         "162": {
@@ -1019,12 +954,6 @@
                     }
                 }
             ],
-            "rotation": [
-                0.0,
-                0.0,
-                0.0,
-                1.0
-            ],
             "translation": [
                 0.0,
                 0.75,
@@ -1038,23 +967,7 @@
         },
         "163": {
             "name": "Fence",
-            "parent": "227",
-            "translation": [
-                0.0,
-                0.0,
-                0.0
-            ],
-            "rotation": [
-                0.0,
-                0.0,
-                0.0,
-                1.0
-            ],
-            "scaling": [
-                1.0,
-                1.0,
-                1.0
-            ]
+            "parent": "227"
         },
         "164": {
             "name": "Piece",
@@ -1089,12 +1002,6 @@
                 -0.8999999,
                 1.35,
                 0.0
-            ],
-            "rotation": [
-                0.0,
-                0.0,
-                0.0,
-                1.0
             ],
             "scaling": [
                 0.1,
@@ -1135,12 +1042,6 @@
                 0.8999999,
                 1.35,
                 0.0
-            ],
-            "rotation": [
-                0.0,
-                0.0,
-                0.0,
-                1.0
             ],
             "scaling": [
                 0.1,
@@ -1202,12 +1103,6 @@
                 1.8999998,
                 0.4499999
             ],
-            "rotation": [
-                0.0,
-                0.0,
-                0.0,
-                1.0
-            ],
             "scaling": [
                 0.1,
                 0.1,
@@ -1221,17 +1116,6 @@
                 1.25,
                 2.0999999,
                 -1.0
-            ],
-            "rotation": [
-                0.0,
-                0.0,
-                0.0,
-                1.0
-            ],
-            "scaling": [
-                1.0,
-                1.0,
-                1.0
             ]
         },
         "186": {
@@ -1241,12 +1125,6 @@
                 0.0,
                 3.5,
                 5.0
-            ],
-            "rotation": [
-                0.0,
-                0.0,
-                0.0,
-                1.0
             ],
             "components": [
                 {
@@ -1259,11 +1137,6 @@
                     "type": "fun",
                     "active": false
                 }
-            ],
-            "scaling": [
-                1.0,
-                1.0,
-                1.0
             ]
         },
         "187": {
@@ -1295,7 +1168,6 @@
                         "groups": 2,
                         "block": 5,
                         "gravity": false,
-                        "static": false,
                         "kinematic": true
                     }
                 }
@@ -1304,12 +1176,6 @@
                 0.0,
                 -0.5749999,
                 0.0
-            ],
-            "rotation": [
-                0.0,
-                0.0,
-                0.0,
-                1.0
             ],
             "scaling": [
                 0.6499999,
@@ -1342,7 +1208,6 @@
                         "groups": 2,
                         "block": 5,
                         "gravity": false,
-                        "static": false,
                         "kinematic": true
                     }
                 }
@@ -1355,7 +1220,7 @@
             ],
             "translation": [
                 -0.5749999,
-                -2.9802322387695313e-8,
+                0.0,
                 0.0
             ],
             "scaling": [
@@ -1389,7 +1254,6 @@
                         "groups": 2,
                         "block": 5,
                         "gravity": false,
-                        "static": false,
                         "kinematic": true
                     }
                 }
@@ -1430,7 +1294,6 @@
                         "groups": 2,
                         "block": 5,
                         "gravity": false,
-                        "static": false,
                         "kinematic": true
                     }
                 }
@@ -1443,7 +1306,7 @@
             ],
             "translation": [
                 0.5749999,
-                2.9802322387695313e-8,
+                0.0,
                 0.0
             ],
             "scaling": [
@@ -1480,17 +1343,6 @@
                 0.0,
                 0.0,
                 0.25
-            ],
-            "rotation": [
-                0.0,
-                0.0,
-                0.0,
-                1.0
-            ],
-            "scaling": [
-                1.0,
-                1.0,
-                1.0
             ]
         },
         "194": {
@@ -1505,17 +1357,6 @@
                     }
                 }
             ],
-            "translation": [
-                0.0,
-                0.0,
-                0.0
-            ],
-            "rotation": [
-                0.0,
-                0.0,
-                0.0,
-                1.0
-            ],
             "scaling": [
                 0.05,
                 0.05,
@@ -1526,29 +1367,17 @@
             "name": "Spawn Position",
             "parent": "167",
             "translation": [
-                -0.0000066,
+                0.0,
                 2.0000019,
-                4.76837158203125e-7
-            ],
-            "rotation": [
-                0.0,
-                0.0,
-                0.0,
-                1.0
+                0.0
             ],
             "components": [
                 {
                     "type": "grabbable-spawner",
                     "grabbable-spawner": {
-                        "_mPrototypesContainer": "185",
                         "_myPrototypesContainer": "185"
                     }
                 }
-            ],
-            "scaling": [
-                1.0,
-                1.0,
-                1.0
             ]
         },
         "196": {
@@ -1561,8 +1390,8 @@
             ],
             "rotation": [
                 0.2649303,
-                3.5521853192221897e-7,
-                2.279618911416037e-7,
+                0.0,
+                0.0,
                 0.9642675
             ],
             "components": [
@@ -1583,15 +1412,9 @@
                 {
                     "type": "pp-grabber-hand",
                     "pp-grabber-hand": {
-                        "_myMaxNumberOfObjects": 9999,
-                        "_myThrowVelocitySource": "Hand"
+                        "_myMaxNumberOfObjects": 9999
                     }
                 }
-            ],
-            "scaling": [
-                0.9999923,
-                0.9999998,
-                0.9999997
             ]
         },
         "197": {
@@ -1604,8 +1427,8 @@
             ],
             "rotation": [
                 0.2649303,
-                3.552185887656379e-7,
-                2.2796190535245842e-7,
+                0.0,
+                0.0,
                 0.9642675
             ],
             "components": [
@@ -1627,15 +1450,9 @@
                     "type": "pp-grabber-hand",
                     "pp-grabber-hand": {
                         "_myMaxNumberOfObjects": 9999,
-                        "_myHandedness": "Right",
-                        "_myThrowVelocitySource": "Hand"
+                        "_myHandedness": "Right"
                     }
                 }
-            ],
-            "scaling": [
-                0.9999923,
-                0.9999998,
-                0.9999997
             ]
         },
         "198": {
@@ -1649,17 +1466,6 @@
                         "material": "149"
                     }
                 }
-            ],
-            "translation": [
-                0.0,
-                0.0,
-                0.0
-            ],
-            "rotation": [
-                0.0,
-                0.0,
-                0.0,
-                1.0
             ],
             "scaling": [
                 0.05,
@@ -1679,17 +1485,6 @@
                     }
                 }
             ],
-            "translation": [
-                0.0,
-                0.0,
-                0.0
-            ],
-            "rotation": [
-                0.0,
-                0.0,
-                0.0,
-                1.0
-            ],
             "scaling": [
                 0.05,
                 0.05,
@@ -1708,17 +1503,6 @@
                     }
                 }
             ],
-            "translation": [
-                0.0,
-                0.0,
-                0.0
-            ],
-            "rotation": [
-                0.0,
-                0.0,
-                0.0,
-                1.0
-            ],
             "scaling": [
                 0.05,
                 0.05,
@@ -1736,17 +1520,6 @@
                         "material": "148"
                     }
                 }
-            ],
-            "translation": [
-                0.0,
-                0.0,
-                0.0
-            ],
-            "rotation": [
-                0.0,
-                0.0,
-                0.0,
-                1.0
             ],
             "scaling": [
                 0.05,
@@ -1776,16 +1549,13 @@
                         },
                         "groups": 4,
                         "block": 7,
-                        "gravity": true,
-                        "static": false,
                         "kinematic": true
                     }
                 },
                 {
                     "type": "pp-grabbable",
                     "pp-grabbable": {
-                        "_myParentOnRelease": "Scene",
-                        "_myThrowLinearVelocityMultiplier": 1.0
+                        "_myParentOnRelease": "Scene"
                     }
                 },
                 {
@@ -1797,17 +1567,6 @@
                 {
                     "type": "sfx-on-collision"
                 }
-            ],
-            "rotation": [
-                0.0,
-                0.0,
-                0.0,
-                1.0
-            ],
-            "scaling": [
-                1.0,
-                1.0,
-                1.0
             ]
         },
         "204": {
@@ -1827,16 +1586,13 @@
                         },
                         "groups": 4,
                         "block": 7,
-                        "gravity": true,
-                        "static": false,
                         "kinematic": true
                     }
                 },
                 {
                     "type": "pp-grabbable",
                     "pp-grabbable": {
-                        "_myParentOnRelease": "Scene",
-                        "_myThrowLinearVelocityMultiplier": 1.0
+                        "_myParentOnRelease": "Scene"
                     }
                 },
                 {
@@ -1853,17 +1609,6 @@
                 -2.5,
                 0.0,
                 1.1499999
-            ],
-            "rotation": [
-                0.0,
-                0.0,
-                0.0,
-                1.0
-            ],
-            "scaling": [
-                1.0,
-                1.0,
-                1.0
             ]
         },
         "205": {
@@ -1878,7 +1623,6 @@
                 {
                     "type": "physx",
                     "physx": {
-                        "shape": "sphere",
                         "box": {
                             "extents": [
                                 0.05,
@@ -1888,8 +1632,6 @@
                         },
                         "groups": 4,
                         "block": 7,
-                        "gravity": true,
-                        "static": false,
                         "kinematic": true,
                         "sphere": {
                             "radius": 0.05
@@ -1899,8 +1641,7 @@
                 {
                     "type": "pp-grabbable",
                     "pp-grabbable": {
-                        "_myParentOnRelease": "Scene",
-                        "_myThrowLinearVelocityMultiplier": 1.0
+                        "_myParentOnRelease": "Scene"
                     }
                 },
                 {
@@ -1912,17 +1653,6 @@
                 {
                     "type": "sfx-on-collision"
                 }
-            ],
-            "rotation": [
-                0.0,
-                0.0,
-                0.0,
-                1.0
-            ],
-            "scaling": [
-                1.0,
-                1.0,
-                1.0
             ]
         },
         "206": {
@@ -1937,7 +1667,6 @@
                 {
                     "type": "physx",
                     "physx": {
-                        "shape": "sphere",
                         "box": {
                             "extents": [
                                 0.05,
@@ -1947,8 +1676,6 @@
                         },
                         "groups": 4,
                         "block": 7,
-                        "gravity": true,
-                        "static": false,
                         "kinematic": true,
                         "sphere": {
                             "radius": 0.05
@@ -1958,8 +1685,7 @@
                 {
                     "type": "pp-grabbable",
                     "pp-grabbable": {
-                        "_myParentOnRelease": "Scene",
-                        "_myThrowLinearVelocityMultiplier": 1.0
+                        "_myParentOnRelease": "Scene"
                     }
                 },
                 {
@@ -1971,17 +1697,6 @@
                 {
                     "type": "sfx-on-collision"
                 }
-            ],
-            "rotation": [
-                0.0,
-                0.0,
-                0.0,
-                1.0
-            ],
-            "scaling": [
-                1.0,
-                1.0,
-                1.0
             ]
         },
         "208": {
@@ -2006,8 +1721,6 @@
                         },
                         "groups": 4,
                         "block": 7,
-                        "gravity": true,
-                        "static": false,
                         "kinematic": true,
                         "sphere": {
                             "radius": 0.05
@@ -2025,8 +1738,7 @@
                 {
                     "type": "pp-grabbable",
                     "pp-grabbable": {
-                        "_myParentOnRelease": "Scene",
-                        "_myThrowLinearVelocityMultiplier": 1.0
+                        "_myParentOnRelease": "Scene"
                     }
                 },
                 {
@@ -2038,17 +1750,6 @@
                 {
                     "type": "sfx-on-collision"
                 }
-            ],
-            "rotation": [
-                0.0,
-                0.0,
-                0.0,
-                1.0
-            ],
-            "scaling": [
-                1.0,
-                1.0,
-                1.0
             ]
         },
         "209": {
@@ -2073,8 +1774,6 @@
                         },
                         "groups": 4,
                         "block": 7,
-                        "gravity": true,
-                        "static": false,
                         "kinematic": true,
                         "sphere": {
                             "radius": 0.05
@@ -2092,8 +1791,7 @@
                 {
                     "type": "pp-grabbable",
                     "pp-grabbable": {
-                        "_myParentOnRelease": "Scene",
-                        "_myThrowLinearVelocityMultiplier": 1.0
+                        "_myParentOnRelease": "Scene"
                     }
                 },
                 {
@@ -2105,17 +1803,6 @@
                 {
                     "type": "sfx-on-collision"
                 }
-            ],
-            "rotation": [
-                0.0,
-                0.0,
-                0.0,
-                1.0
-            ],
-            "scaling": [
-                1.0,
-                1.0,
-                1.0
             ]
         },
         "210": {
@@ -2129,17 +1816,6 @@
                         "material": "149"
                     }
                 }
-            ],
-            "translation": [
-                0.0,
-                0.0,
-                0.0
-            ],
-            "rotation": [
-                0.0,
-                0.0,
-                0.0,
-                1.0
             ],
             "scaling": [
                 0.05,
@@ -2160,7 +1836,7 @@
             ],
             "rotation": [
                 0.0,
-                -4.3711388286737935e-8,
+                0.0,
                 0.0,
                 1.0
             ],
@@ -2207,12 +1883,6 @@
                 0.0,
                 1.45
             ],
-            "rotation": [
-                0.0,
-                4.3711391839451614e-8,
-                0.0,
-                1.0
-            ],
             "components": [
                 {
                     "type": "physx",
@@ -2227,8 +1897,6 @@
                         },
                         "groups": 4,
                         "block": 7,
-                        "gravity": true,
-                        "static": false,
                         "kinematic": true,
                         "sphere": {
                             "radius": 0.05
@@ -2246,8 +1914,7 @@
                 {
                     "type": "pp-grabbable",
                     "pp-grabbable": {
-                        "_myParentOnRelease": "Scene",
-                        "_myThrowLinearVelocityMultiplier": 1.0
+                        "_myParentOnRelease": "Scene"
                     }
                 },
                 {
@@ -2259,11 +1926,6 @@
                 {
                     "type": "sfx-on-collision"
                 }
-            ],
-            "scaling": [
-                1.0,
-                1.0,
-                1.0
             ]
         },
         "227": {
@@ -2273,7 +1935,7 @@
                 0.0,
                 1.0,
                 0.0,
-                -4.3711388286737935e-8
+                0.0
             ]
         },
         "228": {
@@ -2317,7 +1979,7 @@
                 0.0,
                 0.0,
                 1.0,
-                -4.3711388286737935e-8
+                0.0
             ]
         }
     },
