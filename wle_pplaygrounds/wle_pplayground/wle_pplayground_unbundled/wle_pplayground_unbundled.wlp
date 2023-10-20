@@ -2777,9 +2777,6 @@
                 "file": "default"
             },
             "name": "Flat Transparent No Depth",
-            "features": {
-                "ALPHA_MASKED": true
-            },
             "depthTest": false,
             "depthFunction": "always",
             "blending": true,
