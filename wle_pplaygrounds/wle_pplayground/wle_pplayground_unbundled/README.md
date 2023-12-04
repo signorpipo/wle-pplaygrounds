@@ -10,11 +10,13 @@ A collection of assets that can be useful while working with the Wonderland Engi
 
 # License
 
-You are free to use this in your projects, just remember to credit it somewhere, if possible!
+Copyright (c) 2021-2024 [Elia "Pipo" Ducceschi](https://signor-pipo.itch.io/).
+
+Released under the [ISC License](https://github.com/SignorPipo/pplaygrounds/blob/main/LICENSE.md).
   
 # Credits
 
-- [Meta Quest 1 Gamepads Low Poly](https://github.com/SignorPipo/wle-ppefault/blob/main/wle_ppefault/wle_ppefault/assets/models/pp/meta_quest_1_gamepads_credits_Jezza3D.fbx) by [Jezza3D](https://sketchfab.com/Jezza3D)
+- [Meta Quest 1 Gamepads Low Poly](https://github.com/SignorPipo/wle-pplaygrounds/tree/main/wle_pplaygrounds/wle_pplayground/wle_pplayground/assets/models/pp/meta_quest_1_gamepads_credits_Jezza3D.fbx) by [Jezza3D](https://sketchfab.com/Jezza3D)
 - Made using [PP](https://github.com/SignorPipo/wle-pp)
 
 # Playgrounds
