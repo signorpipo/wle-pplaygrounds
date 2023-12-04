@@ -10,7 +10,7 @@ A collection of assets that can be useful while working with the Wonderland Engi
 
 # License
 
-Copyright (c) 2021-2024 [Elia "Pipo" Ducceschi](https://signor-pipo.itch.io/).
+Copyright (c) 2022-2024 [Elia "Pipo" Ducceschi](https://signor-pipo.itch.io/).
 
 Released under the [ISC License](https://github.com/SignorPipo/wle-pplaygrounds/blob/main/LICENSE.md).
   
