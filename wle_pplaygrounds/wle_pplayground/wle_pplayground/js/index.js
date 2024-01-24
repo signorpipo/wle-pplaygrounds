@@ -45,17 +45,22 @@ import {WaveMovementComponent} from './playground/components/wave_movement_compo
 import { loadRuntime } from '@wonderlandengine/api';
 
 /* wle:auto-constants:start */
-const RuntimeOptions = {
-    physx: true,
-    loader: false,
-    xrFramebufferScaleFactor: 1,
-    canvas: 'canvas',
-};
 const Constants = {
     ProjectName: 'wle-pplayground',
     RuntimeBaseName: 'WonderlandRuntime',
     WebXRRequiredFeatures: ['local',],
     WebXROptionalFeatures: ['local','local-floor','hand-tracking','hit-test',],
+};
+const RuntimeOptions = {
+    physx: true,
+    loader: false,
+    xrFramebufferScaleFactor: 1,
+    xrOfferSession: {
+        mode: 'auto',
+        features: Constants.WebXRRequiredFeatures,
+        optionalFeatures: Constants.WebXROptionalFeatures,
+    },
+    canvas: 'canvas',
 };
 /* wle:auto-constants:end */
 

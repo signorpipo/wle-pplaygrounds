@@ -45,17 +45,22 @@ import {VirtualGamepadComponent} from './pp/index.js';
 import { loadRuntime } from '@wonderlandengine/api';
 
 /* wle:auto-constants:start */
-const RuntimeOptions = {
-    physx: true,
-    loader: false,
-    xrFramebufferScaleFactor: 1,
-    canvas: 'canvas',
-};
 const Constants = {
     ProjectName: 'wle-pplayground-unbundled',
     RuntimeBaseName: 'WonderlandRuntime',
     WebXRRequiredFeatures: ['local',],
     WebXROptionalFeatures: ['local','local-floor','hand-tracking','hit-test',],
+};
+const RuntimeOptions = {
+    physx: true,
+    loader: false,
+    xrFramebufferScaleFactor: 1,
+    xrOfferSession: {
+        mode: 'auto',
+        features: Constants.WebXRRequiredFeatures,
+        optionalFeatures: Constants.WebXROptionalFeatures,
+    },
+    canvas: 'canvas',
 };
 /* wle:auto-constants:end */
 
