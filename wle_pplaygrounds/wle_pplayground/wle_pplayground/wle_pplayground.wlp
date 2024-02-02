@@ -2032,7 +2032,7 @@
                 {
                     "type": "text",
                     "text": {
-                        "text": "Grab the items on your right with the squeeze button and release it to throw\nTry to hit the target!\n\nYou can switch to teleport locomotion by pressing the left thumbstick twice\n\nPress the left and right thumbsticks together to open the console widget\nPress the right top and bottom buttons together to open the easy tune widget",
+                        "text": "Grab the item on your right with the squeeze button and release it to throw\nTry to hit the target!\n\nYou can switch to teleport locomotion by pressing the left thumbstick twice\n\nPress the left and right thumbsticks together to open the console vr widget\nPress the right top and bottom buttons together to open the easy tune widget",
                         "material": "269",
                         "effect": "outline"
                     }
@@ -2286,7 +2286,7 @@
                 {
                     "type": "text",
                     "text": {
-                        "text": "Grab the items on your right with the squeeze button and release it to throw\nTry to hit the target!\n\nYou can switch to teleport locomotion by pressing the left thumbstick twice\n\nPress the left and right thumbsticks together to open the console widget\nPress the right top and bottom buttons together to open the easy tune widget",
+                        "text": "Grab the item on your right with the squeeze button and release it to throw\nTry to hit the target!\n\nYou can switch to teleport locomotion by pressing the left thumbstick twice\n\nPress the left and right thumbsticks together to open the console vr widget\nPress the right top and bottom buttons together to open the easy tune widget",
                         "material": "110"
                     }
                 }
