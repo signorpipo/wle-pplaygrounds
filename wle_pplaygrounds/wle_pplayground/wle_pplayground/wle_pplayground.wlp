@@ -2348,7 +2348,88 @@
         },
         "274": {
             "name": "Outline Text",
+            "parent": "276",
+            "rotation": [
+                0.0,
+                1.0,
+                0.0,
+                0.0
+            ],
+            "scaling": [
+                0.8999997,
+                0.8999999,
+                0.8999998
+            ],
+            "components": [
+                {
+                    "type": "text",
+                    "text": {
+                        "text": "The grab & throw feature is available only in VR\n\nPress the left and right dot buttons together to open the console widget\nPress the right circle and ring buttons together to open the easy tune widget",
+                        "material": "269",
+                        "effect": "outline"
+                    }
+                }
+            ],
+            "translation": [
+                0.0,
+                0.0,
+                -0.0049987
+            ]
+        },
+        "275": {
+            "name": "Text",
+            "parent": "276",
+            "rotation": [
+                0.0,
+                1.0,
+                0.0,
+                0.0
+            ],
+            "scaling": [
+                0.8999997,
+                0.8999999,
+                0.8999998
+            ],
+            "components": [
+                {
+                    "type": "text",
+                    "text": {
+                        "text": "The grab & throw feature is available only in VR\n\nPress the left and right dot buttons together to open the console widget\nPress the right circle and ring buttons together to open the easy tune widget",
+                        "material": "110"
+                    }
+                }
+            ],
+            "translation": [
+                0.0,
+                0.0,
+                -0.0099988
+            ]
+        },
+        "276": {
+            "name": "Mobile Text",
             "parent": "273",
+            "components": [
+                {
+                    "type": "set-active-on-mobile",
+                    "set-active-on-mobile": {
+                        "_myActiveOnMobile": true
+                    }
+                }
+            ]
+        },
+        "278": {
+            "name": "Desktop Text",
+            "parent": "273",
+            "components": [
+                {
+                    "type": "set-active-on-mobile",
+                    "set-active-on-mobile": {}
+                }
+            ]
+        },
+        "279": {
+            "name": "Outline Text",
+            "parent": "278",
             "rotation": [
                 0.0,
                 1.0,
@@ -2373,12 +2454,12 @@
             "translation": [
                 0.0,
                 0.0,
-                -0.0049996
+                -0.0049987
             ]
         },
-        "275": {
+        "280": {
             "name": "Text",
-            "parent": "273",
+            "parent": "278",
             "rotation": [
                 0.0,
                 1.0,
@@ -2402,7 +2483,7 @@
             "translation": [
                 0.0,
                 0.0,
-                -0.0099997
+                -0.0099988
             ]
         }
     },
