@@ -1993,6 +1993,417 @@
                 1.0,
                 0.0
             ]
+        },
+        "252": {
+            "name": "How To",
+            "parent": "227",
+            "rotation": [
+                0.0,
+                0.9659258,
+                -0.2588191,
+                0.0
+            ],
+            "scaling": [
+                0.2000113,
+                0.2,
+                0.2000002
+            ],
+            "translation": [
+                0.0,
+                1.9953995,
+                -1.2839498
+            ]
+        },
+        "253": {
+            "name": "Outline Text",
+            "parent": "272",
+            "rotation": [
+                0.0,
+                1.0,
+                0.0,
+                0.0
+            ],
+            "scaling": [
+                0.8999997,
+                0.8999999,
+                0.8999998
+            ],
+            "components": [
+                {
+                    "type": "text",
+                    "text": {
+                        "text": "Grab the items on your right with the squeeze button and release it to throw\nTry to hit the target!\n\nYou can switch to teleport locomotion by pressing the left thumbstick twice\n\nPress the left and right thumbsticks together to open the console widget\nPress the right top and bottom buttons together to open the easy tune widget",
+                        "material": "269",
+                        "effect": "outline"
+                    }
+                }
+            ],
+            "translation": [
+                0.0,
+                0.0,
+                -0.0049996
+            ]
+        },
+        "254": {
+            "name": "Frame",
+            "parent": "252"
+        },
+        "255": {
+            "name": "Edge",
+            "parent": "254",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "p1",
+                        "material": "148"
+                    }
+                }
+            ],
+            "translation": [
+                0.0,
+                0.55,
+                0.0
+            ],
+            "scaling": [
+                1.875,
+                0.025,
+                0.025
+            ]
+        },
+        "257": {
+            "name": "Edge",
+            "parent": "254",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "p1",
+                        "material": "148"
+                    }
+                }
+            ],
+            "translation": [
+                0.0,
+                -0.55,
+                0.0
+            ],
+            "scaling": [
+                1.875,
+                0.025,
+                0.025
+            ]
+        },
+        "259": {
+            "name": "Edge",
+            "parent": "254",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "p1",
+                        "material": "148"
+                    }
+                }
+            ],
+            "translation": [
+                2.0,
+                0.0,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.7071068,
+                0.7071067
+            ],
+            "scaling": [
+                0.425,
+                0.0249993,
+                0.025
+            ]
+        },
+        "260": {
+            "name": "Corner",
+            "parent": "254",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "p1",
+                        "material": "149"
+                    }
+                }
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.3826834,
+                0.9238795
+            ],
+            "scaling": [
+                0.05,
+                0.05,
+                0.05
+            ],
+            "translation": [
+                1.9999986,
+                0.55,
+                0.0
+            ]
+        },
+        "263": {
+            "name": "Corner",
+            "parent": "254",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "p1",
+                        "material": "149"
+                    }
+                }
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.3826834,
+                0.9238795
+            ],
+            "scaling": [
+                0.05,
+                0.05,
+                0.05
+            ],
+            "translation": [
+                -2.0,
+                0.55,
+                0.0
+            ]
+        },
+        "264": {
+            "name": "Corner",
+            "parent": "254",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "p1",
+                        "material": "149"
+                    }
+                }
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.3826834,
+                0.9238795
+            ],
+            "scaling": [
+                0.05,
+                0.05,
+                0.05
+            ],
+            "translation": [
+                -1.9999998,
+                -0.55,
+                0.0
+            ]
+        },
+        "265": {
+            "name": "Corner",
+            "parent": "254",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "p1",
+                        "material": "149"
+                    }
+                }
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.3826834,
+                0.9238795
+            ],
+            "scaling": [
+                0.05,
+                0.05,
+                0.05
+            ],
+            "translation": [
+                2.0,
+                -0.5499999,
+                0.0
+            ]
+        },
+        "266": {
+            "name": "Edge",
+            "parent": "254",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "p1",
+                        "material": "148"
+                    }
+                }
+            ],
+            "translation": [
+                -2.0,
+                0.0,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.7071068,
+                0.7071067
+            ],
+            "scaling": [
+                0.425,
+                0.0249993,
+                0.025
+            ]
+        },
+        "270": {
+            "name": "Text",
+            "parent": "272",
+            "rotation": [
+                0.0,
+                1.0,
+                0.0,
+                0.0
+            ],
+            "scaling": [
+                0.8999997,
+                0.8999999,
+                0.8999998
+            ],
+            "components": [
+                {
+                    "type": "text",
+                    "text": {
+                        "text": "Grab the items on your right with the squeeze button and release it to throw\nTry to hit the target!\n\nYou can switch to teleport locomotion by pressing the left thumbstick twice\n\nPress the left and right thumbsticks together to open the console widget\nPress the right top and bottom buttons together to open the easy tune widget",
+                        "material": "110"
+                    }
+                }
+            ],
+            "translation": [
+                0.0,
+                0.0,
+                -0.0099997
+            ]
+        },
+        "272": {
+            "name": "XR Text",
+            "parent": "252",
+            "components": [
+                {
+                    "type": "pp-set-active",
+                    "pp-set-active": {
+                        "_mySetActiveWhen": "Enter XR",
+                        "_mySetActiveOn": "Descendants"
+                    }
+                },
+                {
+                    "type": "pp-set-active",
+                    "pp-set-active": {
+                        "_myActive": false,
+                        "_mySetActiveWhen": "Exit XR",
+                        "_mySetActiveOn": "Descendants"
+                    }
+                },
+                {
+                    "type": "pp-set-active",
+                    "pp-set-active": {
+                        "_myActive": false,
+                        "_mySetActiveOn": "Descendants"
+                    }
+                }
+            ]
+        },
+        "273": {
+            "name": "Non XR Text",
+            "parent": "252",
+            "components": [
+                {
+                    "type": "pp-set-active",
+                    "pp-set-active": {
+                        "_mySetActiveWhen": "Enter XR",
+                        "_myActive": false,
+                        "_mySetActiveOn": "Descendants"
+                    }
+                },
+                {
+                    "type": "pp-set-active",
+                    "pp-set-active": {
+                        "_mySetActiveWhen": "Exit XR",
+                        "_mySetActiveOn": "Descendants"
+                    }
+                }
+            ]
+        },
+        "274": {
+            "name": "Outline Text",
+            "parent": "273",
+            "rotation": [
+                0.0,
+                1.0,
+                0.0,
+                0.0
+            ],
+            "scaling": [
+                0.8999997,
+                0.8999999,
+                0.8999998
+            ],
+            "components": [
+                {
+                    "type": "text",
+                    "text": {
+                        "text": "The grab & throw feature is available only in VR\n\nPress R and Y together to open the console widget\nPress H and N together to open the easy tune widget",
+                        "material": "269",
+                        "effect": "outline"
+                    }
+                }
+            ],
+            "translation": [
+                0.0,
+                0.0,
+                -0.0049996
+            ]
+        },
+        "275": {
+            "name": "Text",
+            "parent": "273",
+            "rotation": [
+                0.0,
+                1.0,
+                0.0,
+                0.0
+            ],
+            "scaling": [
+                0.8999997,
+                0.8999999,
+                0.8999998
+            ],
+            "components": [
+                {
+                    "type": "text",
+                    "text": {
+                        "text": "The grab & throw feature is available only in VR\n\nPress R and Y together to open the console widget\nPress H and N together to open the easy tune widget",
+                        "material": "110"
+                    }
+                }
+            ],
+            "translation": [
+                0.0,
+                0.0,
+                -0.0099997
+            ]
         }
     },
     "meshes": {
@@ -2417,8 +2828,27 @@
             }
         },
         "231": {
-            "name": "material",
+            "name": "Sky",
             "pipeline": "85"
+        },
+        "269": {
+            "name": "Outline Text",
+            "pipeline": "82",
+            "Text": {
+                "font": "268",
+                "color": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    0.0
+                ],
+                "effectColor": [
+                    1.0,
+                    0.5882353,
+                    0.1843137,
+                    1.0
+                ]
+            }
         }
     },
     "shaders": {
@@ -2815,6 +3245,15 @@
                 "name": "DejaVuSans.ttf",
                 "file": "default"
             }
+        },
+        "268": {
+            "link": {
+                "name": "DejaVuSans.ttf",
+                "file": "default"
+            },
+            "name": "OutlineDejaVuSans.ttf",
+            "outline": true,
+            "outlineSize": 0.075
         }
     },
     "languages": {}
