@@ -3,10 +3,10 @@
     "version": "0.2.5",
     "author": "Pipo",
     "description": "Playground template project for the Wonderland Engine - Unbundled Version",
-    "homepage": "https://github.com/SignorPipo/wle-pplaygrounds",
+    "homepage": "https://github.com/signorpipo/wle-pplaygrounds",
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/SignorPipo/wle-pplaygrounds.git"
+        "url": "git+https://github.com/signorpipo/wle-pplaygrounds.git"
     },
     "license": "ISC",
     "files": [
