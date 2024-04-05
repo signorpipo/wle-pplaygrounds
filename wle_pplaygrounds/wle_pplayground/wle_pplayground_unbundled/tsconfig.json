@@ -26,6 +26,9 @@
         "paths": {
             "wle-pp": [
                 "src/pp/index.ts"
+            ],
+            "wle-pp/*": [
+                "src/pp/*"
             ]
         }
     },
