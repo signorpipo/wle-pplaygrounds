@@ -12,7 +12,7 @@
     "files": [
         "assets",
         "static",
-        "js",
+        "src",
         "wle_pplayground.wlp"
     ],
     "keywords": [
@@ -32,5 +32,20 @@
         "gl-matrix": "^3.4.3",
         "howler": "^2.2.4",
         "wle-pp": "^0.5.2"
+    },
+    "devDependencies": {
+        "@typescript-eslint/eslint-plugin": "^7.0.2",
+        "@typescript-eslint/parser": "^7.0.2",
+        "eslint": "^8.57.0",
+        "eslint-plugin-deprecation": "^2.0.0",
+        "eslint-plugin-import": "^2.29.1",
+        "typescript": "^5.3.3"
+    },
+    "optionalDependencies": {
+        "@playkostudios/wle-cleaner": "^0.7.1"
+    },
+    "scripts": {
+        "build": "tsc --build --clean && tsc",
+        "clean-projects": "wle-cleaner \"./*.wlp\" -r -e dev/wle-cleaner/editor-bundle-extras.js --no-legacy-preamble"
     }
 }

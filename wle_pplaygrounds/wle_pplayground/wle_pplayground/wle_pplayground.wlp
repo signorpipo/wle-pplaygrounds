@@ -3127,7 +3127,8 @@
                 1,
                 1,
                 6
-            ]
+            ],
+            "customIndexHtml": true
         },
         "rendering": {
             "clearColor": [
@@ -3153,13 +3154,14 @@
         },
         "scripting": {
             "sourcePaths": [
-                "js",
-                "js/playground/components"
+                "src",
+                "src/playground/components"
             ],
             "bundlingType": "esbuild",
             "libraryPaths": [
                 "/js/lib/"
-            ]
+            ],
+            "entryPoint": "src/index.js"
         },
         "vr": {
             "leftEyeObject": "26",
