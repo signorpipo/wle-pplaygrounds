@@ -27,12 +27,15 @@ Released under the [ISC License](https://github.com/signorpipo/wle-pplaygrounds/
 
 ## Playgrounds Versions
 
-Every playground template usually comes in two versions:
+Every playground template usually comes in three versions:
 - standard
-  * the PP library is included as an `npm` package
+  - the PP library is included as an `npm` package
 - unbundled
-  * the PP library is not included as an `npm` package, but as files in the project
-  * can be useful if u plan to edit the PP library to adjust them to your need
+  - the PP library is not included as an `npm` package, but as files in the project
+  - can be useful if u plan to edit the PP library to adjust them to your need
+- pipo
+  - a specific version made for myself
+  - it is based on the unbundled version plus some extras like the PWA support
 
 ## PPlayground
 
@@ -58,8 +61,17 @@ Some of the custom features u will find in this playground are:
 Every custom component or object that is not strictly needed has been added under the `Playground` object inside the scene, so you can safely remove it.  
 This is also true for every custom scripts, which can be found in the `playground` folder.
 
+### Things To Know
+
+When using this template, there are certain things to take into consideration:
+  - if u change the structure of the `Player` object, some features might not work properly anymore
+  - inside the `index.js` file of the `wle-pplayground` template, the following line is added to make type extensions available to typescript
+    - `import "wle-pp/add_type_extensions_to_typescript";`
+    - if u delete the `index.js` file and auto generate it again, type extensions might cause type errors until you add this line back manually
+
 ### Downloads
 
 You can download this template through the following links:
-  * [`wle_pplayground`](https://github.com/signorpipo/wle-pplaygrounds/releases/latest/download/wle_pplayground.zip)
-  * [`wle_pplayground_unbundled`](https://github.com/signorpipo/wle-pplaygrounds/releases/latest/download/wle_pplayground_unbundled.zip)
+  - [`wle_pplayground`](https://github.com/signorpipo/wle-pplaygrounds/releases/latest/download/wle_pplayground.zip)
+  - [`wle_pplayground_unbundled`](https://github.com/signorpipo/wle-pplaygrounds/releases/latest/download/wle_pplayground_unbundled.zip)
+  - [`wle_pplayground_pipo`](https://github.com/signorpipo/wle-pplaygrounds/releases/latest/download/wle_pplayground_pipo.zip)
