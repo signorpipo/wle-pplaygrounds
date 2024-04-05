@@ -1838,7 +1838,7 @@
         "220": {
             "link": {
                 "name": "Wondermelon",
-                "file": "assets\\models\\pp\\wondermelon.fbx"
+                "file": "assets\\models\\playground\\wondermelon.fbx"
             },
             "parent": "226",
             "translation": [
@@ -1862,28 +1862,28 @@
         "221": {
             "link": {
                 "name": "Wondermelon Peel<Wondermelon",
-                "file": "assets\\models\\pp\\wondermelon.fbx"
+                "file": "assets\\models\\playground\\wondermelon.fbx"
             },
             "parent": "220"
         },
         "222": {
             "link": {
                 "name": "Wondermelon Rind<Wondermelon",
-                "file": "assets\\models\\pp\\wondermelon.fbx"
+                "file": "assets\\models\\playground\\wondermelon.fbx"
             },
             "parent": "220"
         },
         "223": {
             "link": {
                 "name": "Wondermelon Pulp<Wondermelon",
-                "file": "assets\\models\\pp\\wondermelon.fbx"
+                "file": "assets\\models\\playground\\wondermelon.fbx"
             },
             "parent": "220"
         },
         "224": {
             "link": {
                 "name": "Wondermelon Seed<Wondermelon",
-                "file": "assets\\models\\pp\\wondermelon.fbx"
+                "file": "assets\\models\\playground\\wondermelon.fbx"
             },
             "parent": "220"
         },
@@ -2611,37 +2611,37 @@
         "215": {
             "link": {
                 "name": "Wondermelon Peel",
-                "file": "assets\\models\\pp\\wondermelon.fbx"
+                "file": "assets\\models\\playground\\wondermelon.fbx"
             }
         },
         "216": {
             "link": {
                 "name": "Wondermelon Rind",
-                "file": "assets\\models\\pp\\wondermelon.fbx"
+                "file": "assets\\models\\playground\\wondermelon.fbx"
             }
         },
         "217": {
             "link": {
                 "name": "Wondermelon Pulp",
-                "file": "assets\\models\\pp\\wondermelon.fbx"
+                "file": "assets\\models\\playground\\wondermelon.fbx"
             }
         },
         "218": {
             "link": {
                 "name": "Wondermelon Seed",
-                "file": "assets\\models\\pp\\wondermelon.fbx"
+                "file": "assets\\models\\playground\\wondermelon.fbx"
             }
         },
         "229": {
             "link": {
                 "name": "Wondermelon Convex Mesh Loose",
-                "file": "assets\\models\\pp\\wondermelon.fbx"
+                "file": "assets\\models\\playground\\wondermelon.fbx"
             }
         },
         "230": {
             "link": {
                 "name": "Wondermelon Convex Mesh Fit",
-                "file": "assets\\models\\pp\\wondermelon.fbx"
+                "file": "assets\\models\\playground\\wondermelon.fbx"
             }
         }
     },
@@ -2803,7 +2803,7 @@
         "211": {
             "link": {
                 "name": "Wondermelon Peel",
-                "file": "assets\\models\\pp\\wondermelon.fbx"
+                "file": "assets\\models\\playground\\wondermelon.fbx"
             },
             "Phong": {
                 "diffuseColor": [
@@ -2830,7 +2830,7 @@
         "212": {
             "link": {
                 "name": "Wondermelon Rind",
-                "file": "assets\\models\\pp\\wondermelon.fbx"
+                "file": "assets\\models\\playground\\wondermelon.fbx"
             },
             "Phong": {
                 "diffuseColor": [
@@ -2857,7 +2857,7 @@
         "213": {
             "link": {
                 "name": "Wondermelon Pulp",
-                "file": "assets\\models\\pp\\wondermelon.fbx"
+                "file": "assets\\models\\playground\\wondermelon.fbx"
             },
             "Phong": {
                 "diffuseColor": [
@@ -2884,7 +2884,7 @@
         "214": {
             "link": {
                 "name": "Wondermelon Seed",
-                "file": "assets\\models\\pp\\wondermelon.fbx"
+                "file": "assets\\models\\playground\\wondermelon.fbx"
             },
             "Phong": {
                 "diffuseColor": [
@@ -3342,7 +3342,7 @@
             "importerName": "AssimpImporter"
         },
         "249": {
-            "fileName": "assets/models/pp/wondermelon.fbx",
+            "fileName": "assets/models/playground/wondermelon.fbx",
             "importerName": "AssimpImporter"
         },
         "283": {
