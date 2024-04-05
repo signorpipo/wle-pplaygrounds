@@ -1,5 +1,5 @@
 import { Component, Property } from "@wonderlandengine/api";
-import { Timer, vec3_create } from "../../pp/index.js";
+import { Timer, vec3_create } from "wle-pp";
 
 export class GrabbableSpawnerComponent extends Component {
     static TypeName = "grabbable-spawner";

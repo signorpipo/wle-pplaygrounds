@@ -21,7 +21,13 @@
         "lib": [
             "DOM",
             "ES2022"
-        ]
+        ],
+        "baseUrl": ".",
+        "paths": {
+            "wle-pp": [
+                "src/pp/index.ts"
+            ]
+        }
     },
     "include": [
         "src"

@@ -1,5 +1,5 @@
 import { Component, Property } from "@wonderlandengine/api";
-import { ComponentUtils, EasingFunction, Timer, vec3_create } from "../../pp/index.js";
+import { ComponentUtils, EasingFunction, Timer, vec3_create } from "wle-pp";
 
 export class ScaleOnSpawnComponent extends Component {
     static TypeName = "scale-on-spawn";

@@ -1,5 +1,5 @@
 import { Component } from "@wonderlandengine/api";
-import { ComponentUtils, EasingFunction, Timer, vec3_create } from "../../pp/index.js";
+import { ComponentUtils, EasingFunction, Timer, vec3_create } from "wle-pp";
 
 export class ParticleComponent extends Component {
     static TypeName = "particle";

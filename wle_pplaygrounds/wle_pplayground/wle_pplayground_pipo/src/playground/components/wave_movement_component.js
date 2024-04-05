@@ -1,5 +1,5 @@
 import { Component } from "@wonderlandengine/api";
-import { EasyTuneNumber, Globals, Timer } from "../../pp/index.js";
+import { EasyTuneNumber, Globals, Timer } from "wle-pp";
 
 export class WaveMovementComponent extends Component {
     static TypeName = "wave-movement";

@@ -4,6 +4,7 @@ import { HandPose } from "../../input/pose/hand_pose.js";
 import { HeadPose } from "../../input/pose/head_pose.js";
 import { TrackedHandPose } from "../../input/pose/tracked_hand_pose.js";
 import { Globals } from "../../pp/globals.js";
+import { BaseGamepad } from "../gamepad/base_gamepad.js";
 import { InputManager } from "./input_manager.js";
 import { Handedness } from "./input_types.js";
 import { Keyboard } from "./keyboard.js";
@@ -67,7 +68,7 @@ export function getGamepadsManager(engine: Readonly<WonderlandEngine> | null = G
     return null;
 }
 
-export function getGamepad(handedness: Handedness, engine: Readonly<WonderlandEngine> | null = Globals.getMainEngine()): Gamepad | null {
+export function getGamepad(handedness: Handedness, engine: Readonly<WonderlandEngine> | null = Globals.getMainEngine()): BaseGamepad | null {
     const inputManager = getInputManager(engine);
 
     if (inputManager != null) {
@@ -77,7 +78,7 @@ export function getGamepad(handedness: Handedness, engine: Readonly<WonderlandEn
     return null;
 }
 
-export function getGamepads(engine: Readonly<WonderlandEngine> | null = Globals.getMainEngine()): Gamepad[] | null {
+export function getGamepads(engine: Readonly<WonderlandEngine> | null = Globals.getMainEngine()): BaseGamepad[] | null {
     const inputManager = getInputManager(engine);
 
     if (inputManager != null) {
@@ -87,7 +88,7 @@ export function getGamepads(engine: Readonly<WonderlandEngine> | null = Globals.
     return null;
 }
 
-export function getLeftGamepad(engine: Readonly<WonderlandEngine> | null = Globals.getMainEngine()): Gamepad | null {
+export function getLeftGamepad(engine: Readonly<WonderlandEngine> | null = Globals.getMainEngine()): BaseGamepad | null {
     const inputManager = getInputManager(engine);
 
     if (inputManager != null) {
@@ -97,7 +98,7 @@ export function getLeftGamepad(engine: Readonly<WonderlandEngine> | null = Globa
     return null;
 }
 
-export function getRightGamepad(engine: Readonly<WonderlandEngine> | null = Globals.getMainEngine()): Gamepad | null {
+export function getRightGamepad(engine: Readonly<WonderlandEngine> | null = Globals.getMainEngine()): BaseGamepad | null {
     const inputManager = getInputManager(engine);
 
     if (inputManager != null) {
