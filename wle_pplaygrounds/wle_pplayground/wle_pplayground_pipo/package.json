@@ -1,0 +1,50 @@
+{
+    "name": "wle-pplayground-pipo",
+    "version": "0.2.5",
+    "author": "Pipo",
+    "description": "Playground template project for the Wonderland Engine - Pipo Version",
+    "homepage": "https://github.com/signorpipo/wle-pplaygrounds",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/signorpipo/wle-pplaygrounds.git"
+    },
+    "license": "ISC",
+    "files": [
+        "assets",
+        "static",
+        "src",
+        "wle_pplayground_pipo.wlp"
+    ],
+    "keywords": [
+        "pp",
+        "pipo",
+        "wonderland",
+        "wonderlandengine",
+        "wonderland-engine",
+        "wonderland engine",
+        "wle",
+        "webxr"
+    ],
+    "type": "module",
+    "dependencies": {
+        "@wonderlandengine/api": "^1.1.3",
+        "@wonderlandengine/components": "^1.0.6",
+        "gl-matrix": "^3.4.3",
+        "howler": "^2.2.4"
+    },
+    "devDependencies": {
+        "@typescript-eslint/eslint-plugin": "^7.0.2",
+        "@typescript-eslint/parser": "^7.0.2",
+        "eslint": "^8.57.0",
+        "eslint-plugin-deprecation": "^2.0.0",
+        "eslint-plugin-import": "^2.29.1",
+        "typescript": "^5.3.3"
+    },
+    "optionalDependencies": {
+        "@playkostudios/wle-cleaner": "^0.7.1"
+    },
+    "scripts": {
+        "build": "tsc --build --clean && tsc",
+        "clean-projects": "wle-cleaner \"./*.wlp\" -r -e dev/wle-cleaner/editor-bundle-extras.js --no-legacy-preamble"
+    }
+}
