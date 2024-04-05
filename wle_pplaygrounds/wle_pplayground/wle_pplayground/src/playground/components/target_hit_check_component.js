@@ -1,6 +1,6 @@
 import { Component, PhysXComponent } from "@wonderlandengine/api";
 import { Globals, GrabbableComponent, PhysicsCollisionCollector } from "wle-pp";
-import { ParticlesSpawnerComponent } from "./particles_spawner_component";
+import { ParticlesSpawnerComponent } from "./particles_spawner_component.js";
 
 export class TargetHitCheckComponent extends Component {
     static TypeName = "target-hit-check";

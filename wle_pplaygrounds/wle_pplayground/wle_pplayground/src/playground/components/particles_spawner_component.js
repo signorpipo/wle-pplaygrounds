@@ -1,6 +1,6 @@
 import { Component, MeshComponent, Property } from "@wonderlandengine/api";
 import { CloneParams, Globals, ObjectPool, ObjectPoolParams } from "wle-pp";
-import { ParticleComponent } from "./particle_component";
+import { ParticleComponent } from "./particle_component.js";
 
 export class ParticlesSpawnerComponent extends Component {
     static TypeName = "particles-spawner";
@@ -62,5 +62,11 @@ export class ParticlesSpawnerComponent extends Component {
         }
 
         return poolID;
+    }
+
+    onDestroy() {
+        for (let poolID of this._myParticlePoolIDs.values()) {
+            Globals.getObjectPoolManager(this.engine)?.removePool(poolID);
+        }
     }
 }

@@ -13,6 +13,10 @@ export class GrabbableSpawnerComponent extends Component {
 
         this._myFirstUpdate = true;
         this._myStartTimer = new Timer(0);
+
+        // Support Variables
+        this._myObjectPosition = vec3_create();
+        this._myCurrentGrabbablePosition = vec3_create();
     }
 
     update(dt) {
@@ -30,7 +34,7 @@ export class GrabbableSpawnerComponent extends Component {
                 }
             } else {
                 if (this._myCurrentGrabbable != null) {
-                    if (this.object.pp_getPosition().vec3_distance(this._myCurrentGrabbable.pp_getPosition()) > 0.2) {
+                    if (this.object.pp_getPosition(this._myObjectPosition).vec3_distance(this._myCurrentGrabbable.pp_getPosition(this._myCurrentGrabbablePosition)) > 0.2) {
                         this._spawn();
                     }
                 }
