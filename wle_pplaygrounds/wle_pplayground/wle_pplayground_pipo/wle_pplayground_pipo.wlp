@@ -29,6 +29,9 @@
                 },
                 {
                     "type": "pp-virtual-gamepad"
+                },
+                {
+                    "type": "pp-show-xr-buttons"
                 }
             ]
         },

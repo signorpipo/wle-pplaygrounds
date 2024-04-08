@@ -71,7 +71,7 @@
             bottom: 0px;
             margin-bottom: 30px;
 
-            display: flex;
+            display: none;
             justify-content: center;
             gap: 15px;
 
@@ -82,7 +82,7 @@
             width: 100px;
             height: 60px;
 
-            display: block;
+            display: none;
 
             cursor: pointer;
             pointer-events: none;
@@ -119,22 +119,6 @@
         .xr-button-svg-frame {
             stroke: {{ settings.runtime.xrButtonColor }};
         }
-
-        /* This is a value set at runtime when the vr/ar supported state is known */
-        [data-supported] {
-            transform: scale(1);
-        }
-
-        /* If supported, the button is shown */
-        [data-supported="true"] {
-            opacity: 1;
-            pointer-events: all;
-        }
-
-        /* If not supported, the buttons is shown but disabled */
-        [data-supported="false"] {
-            opacity: 0.5;
-        }
     </style>
 </head>
 
@@ -158,10 +142,10 @@
         <a id="ar-button" class="xr-button">
             <div class="xr-button-svg-container">
                 <svg class="xr-button-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 109.41 65">
+                    <rect class="xr-button-svg-frame" x="3.5" y="3.5" width="102.41" height="58" rx="16.68" style="fill:none;stroke-linejoin:round;stroke-width:7px" />
                     <path class="xr-button-svg-label" d="M42.89,15.62a2,2,0,0,1,1.78,1.15L55.75,47A1.84,1.84,0,0,1,54,48.84H48.52a1.81,1.81,0,0,1-1.67-1.2l-1.49-4.19H33.77l-1.49,4.19a1.8,1.8,0,0,1-1.66,1.2H25.17A1.83,1.83,0,0,1,23.39,47L34.46,16.77a2,2,0,0,1,1.78-1.15Zm-6.31,20h6l-3-8.38Z" />
                     <path class="xr-button-svg-label" d="M70.61,40H68V47a1.84,1.84,0,0,1-1.78,1.83H61.31A1.83,1.83,0,0,1,59.54,47V17.46a1.83,1.83,0,0,1,1.77-1.84H73s13,.12,13,12.22c0,6-3.21,9-6.42,10.5L86.38,47a1.76,1.76,0,0,1-1.77,1.83h-5.8a1.91,1.91,0,0,1-1.43-.69ZM68,32.09h5c2.24,0,4.08-1.15,4.08-4.25s-1.84-4.36-4.08-4.36H68Z" />
-                    <rect class="xr-button-svg-frame" x="3.5" y="3.5" width="102.41" height="58" rx="16.68" style="fill:none;stroke-linejoin:round;stroke-width:7px" />
-                </svg>
+                    </svg>
             </div>
         </a>
         {{ end }}

@@ -37,13 +37,13 @@ export * from "./cauldron/cauldron/save_manager.js";
 export * from "./cauldron/cauldron/analytics_manager.js";
 export * from "./cauldron/cauldron/timer.js";
 
-export * from "./cauldron/cauldron/components/save_manager_component.js";
+export * from "./cauldron/cauldron/components/adjust_hierarchy_physx_scale_component.js";
 export * from "./cauldron/cauldron/components/analytics_manager_component.js";
-
-export * from "./cauldron/components/clear_console_on_xr_session_start_component.js";
-export * from "./cauldron/components/set_active_component.js";
-export * from "./cauldron/components/adjust_hierarchy_physx_scale_component.js";
-export * from "./cauldron/components/show_fps_component.js";
+export * from "./cauldron/cauldron/components/clear_console_on_xr_session_start_component.js";
+export * from "./cauldron/cauldron/components/save_manager_component.js";
+export * from "./cauldron/cauldron/components/set_active_component.js";
+export * from "./cauldron/cauldron/components/show_fps_component.js";
+export * from "./cauldron/cauldron/components/show_xr_buttons_component.js";
 
 export * from "./cauldron/fsm/fsm.js";
 export * from "./cauldron/fsm/state.js";
