@@ -474,28 +474,12 @@
                 "file": "assets\\models\\pp\\meta_quest_1_gamepads_credits_Jezza3D.fbx"
             },
             "parent": "cdac6dc4-9811-44ff-af5d-b1048e3055c0",
-            "translation": [
-                0.0179095,
-                -0.0037004,
-                0.039634
-            ],
-            "rotation": [
-                0.2649303,
-                0.0,
-                0.0,
-                0.9642675
-            ],
             "components": [
                 {
                     "mesh": {
                         "material": "90348bdc-8768-4244-9398-b89361708289"
                     }
                 }
-            ],
-            "scaling": [
-                1.0,
-                1.0,
-                1.0
             ]
         },
         "2c631628-a33e-44fc-ad0b-cfee9a9024e1": {
@@ -504,28 +488,12 @@
                 "file": "assets\\models\\pp\\meta_quest_1_gamepads_credits_Jezza3D.fbx"
             },
             "parent": "cdac6dc4-9811-44ff-af5d-b1048e3055c0",
-            "translation": [
-                -0.0025218,
-                -0.0069525,
-                0.0371638
-            ],
-            "rotation": [
-                0.2649303,
-                0.0,
-                0.0,
-                0.9642675
-            ],
             "components": [
                 {
                     "mesh": {
                         "material": "90348bdc-8768-4244-9398-b89361708289"
                     }
                 }
-            ],
-            "scaling": [
-                1.0,
-                1.0,
-                1.0
             ]
         },
         "2ee7091e-c470-4e12-a1c2-bedcaf7d6083": {
@@ -642,28 +610,12 @@
                 "file": "assets\\models\\pp\\meta_quest_1_gamepads_credits_Jezza3D.fbx"
             },
             "parent": "2ee7091e-c470-4e12-a1c2-bedcaf7d6083",
-            "translation": [
-                0.0025218,
-                -0.0069525,
-                0.0371638
-            ],
-            "rotation": [
-                0.2649301,
-                0.0,
-                0.0,
-                0.9642676
-            ],
             "components": [
                 {
                     "mesh": {
                         "material": "90348bdc-8768-4244-9398-b89361708289"
                     }
                 }
-            ],
-            "scaling": [
-                1.0,
-                1.0,
-                1.0
             ]
         },
         "526adb29-57d2-4b09-ac41-5efed44996a2": {
@@ -2649,7 +2601,7 @@
         }
     },
     "materials": {
-        "DefaultFontMaterial": {
+        "236dfcfa-7c7d-4748-9f90-d79487bfd67f": {
             "link": {
                 "name": "DefaultFontMaterial",
                 "file": "default"
@@ -2703,6 +2655,12 @@
                     0.5,
                     0.5,
                     1.0
+                ],
+                "diffuseColor": [
+                    0.0784313,
+                    0.0784313,
+                    0.0784313,
+                    1.0
                 ]
             }
         },
@@ -2723,6 +2681,12 @@
                     0.5,
                     0.5,
                     0.5,
+                    1.0
+                ],
+                "diffuseColor": [
+                    0.9411764,
+                    0.9411764,
+                    0.9411764,
                     1.0
                 ]
             }
@@ -2996,12 +2960,6 @@
                 "file": "default"
             }
         },
-        "14f8cf86-152b-4862-9e9b-9563ccb27854": {
-            "link": {
-                "name": "FullScreenTriangle.vert",
-                "file": "default"
-            }
-        },
         "1cc81c3b-8371-4ab9-99d5-f17a28c49b72": {
             "link": {
                 "name": "Text.frag",
@@ -3147,10 +3105,6 @@
                 "optionalFeatures": {
                     "hand-tracking": true,
                     "local-floor": true
-                },
-                "requiredFeatures": {
-                    "local-floor": false,
-                    "hand-tracking": false
                 },
                 "offerSession": false
             },
