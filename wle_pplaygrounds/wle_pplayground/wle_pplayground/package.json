@@ -9,22 +9,6 @@
         "url": "git+https://github.com/signorpipo/wle-pplaygrounds.git"
     },
     "license": "ISC",
-    "files": [
-        "assets",
-        "static",
-        "src",
-        "wle_pplayground.wlp"
-    ],
-    "keywords": [
-        "pp",
-        "pipo",
-        "wonderland",
-        "wonderlandengine",
-        "wonderland-engine",
-        "wonderland engine",
-        "wle",
-        "webxr"
-    ],
     "type": "module",
     "dependencies": {
         "@wonderlandengine/api": "^1.1.3",
