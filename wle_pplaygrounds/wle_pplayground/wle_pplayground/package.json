@@ -22,14 +22,12 @@
         "@typescript-eslint/parser": "^7.0.2",
         "eslint": "^8.57.0",
         "eslint-plugin-deprecation": "^2.0.0",
-        "eslint-plugin-import": "^2.29.1",
-        "typescript": "^5.3.3"
+        "eslint-plugin-import": "^2.29.1"
     },
     "optionalDependencies": {
         "@playkostudios/wle-cleaner": "^0.7.1"
     },
     "scripts": {
-        "build": "tsc --build --clean && tsc",
         "clean-projects": "wle-cleaner \"./*.wlp\" -r -e dev/wle-cleaner/editor-bundle-extras.js --no-legacy-preamble"
     }
 }
