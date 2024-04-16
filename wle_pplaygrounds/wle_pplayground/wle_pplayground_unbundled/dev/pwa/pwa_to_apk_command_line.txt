@@ -1,0 +1,12 @@
+C:\<path>\<to>\<oculus_cli>\Oculus_CLI\ovr-platform-util.exe create-pwa -o %USERPROFILE%\Desktop\<app>\<app>.apk --android-sdk %USERPROFILE%\AppData\Local\Android\Sdk --package-name com.<author>.<app> --manifest-content-file %USERPROFILE%\Desktop\<app>\manifest.json
+
+To use this command you have to:
+  - change <app> to the app name
+  - change <author> to the author name
+  - change <path>\<to>\<oculus_ci> to the path of the Oculus CLI
+  - if needed, change the Android SDK path
+  - copy the deploy folder of your app on your desktop and rename it as the app name
+  - run the command
+ 
+Adjsuted command:
+C:\Calderone\Programmi\Oculus_CLI\ovr-platform-util.exe create-pwa -o %USERPROFILE%\Desktop\wle_pplayground_unbundled\wle_pplayground_unbundled.apk --android-sdk %USERPROFILE%\AppData\Local\Android\Sdk --package-name com.signorpipo.wle_pplayground_unbundled --manifest-content-file %USERPROFILE%\Desktop\wle_pplayground_unbundled\manifest.json
