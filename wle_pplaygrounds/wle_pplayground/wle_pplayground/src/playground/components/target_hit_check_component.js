@@ -8,7 +8,7 @@ export class TargetHitCheckComponent extends Component {
 
     start() {
         this._myTrigger = this.object.pp_getComponent(PhysXComponent);
-        this._myParticlesSpawner = Globals.getScene(this.engine).pp_getComponent(ParticlesSpawnerComponent);
+        this._myParticlesSpawner = Globals.getRootObject(this.engine).pp_getComponent(ParticlesSpawnerComponent);
         this._myCollisionsCollector = new PhysicsCollisionCollector(this._myTrigger, true);
 
         this._myStarted = false;

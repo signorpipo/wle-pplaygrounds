@@ -1,5 +1,7 @@
-import { ArrayExtensionUtils, Mat3Utils, Matrix3, Quaternion, Vector3 } from "../../../../index.js";
+import { Matrix3, Quaternion, Vector3 } from "../../../../cauldron/type_definitions/array_type_definitions.js";
+import { Mat3Utils } from "../../../../cauldron/utils/array/mat3_utils.js";
 import { PluginUtils } from "../../../utils/plugin_utils.js";
+import { ArrayExtensionUtils } from "./array_extension_utils.js";
 
 import "./mat3_type_extension.js";
 

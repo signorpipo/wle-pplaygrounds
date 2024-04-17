@@ -45,7 +45,7 @@ import {WaveMovementComponent} from './playground/components/wave_movement_compo
 /* wle:auto-imports:end */
 
 import { loadRuntime } from '@wonderlandengine/api';
-import 'wle-pp/add_type_extensions_to_typescript';
+import 'wle-pp/add_type_extensions_to_typescript.js';
 
 /* wle:auto-constants:start */
 const Constants = {

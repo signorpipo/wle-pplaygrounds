@@ -5,6 +5,8 @@ import { SaveManagerComponent } from "../../cauldron/cauldron/components/save_ma
 import { ObjectPoolManagerComponent } from "../../cauldron/object_pool/components/object_pool_manager_component.js";
 import { VisualManagerComponent } from "../../cauldron/visual/components/visual_manager_component.js";
 import { AddWLToWindowComponent } from "../../cauldron/wl/components/add_wl_to_window_component.js";
+import { GetDefaultResourcesComponent } from "../../cauldron/wl/getters/components/get_default_resources_component.js";
+import { GetSceneObjectsComponent } from "../../cauldron/wl/getters/components/get_scene_objects_component.js";
 import { DebugManagerComponent } from "../../debug/components/debug_manager_component.js";
 import { EnableDebugComponent } from "../../debug/components/enable_debug_component.js";
 import { CharacterCollisionSystemComponent } from "../../gameplay/experimental/character_controller/collision/components/character_collision_system_component.js";
@@ -14,8 +16,6 @@ import { InitConsoleVRComponent } from "../../tool/console_vr/components/init_co
 import { InitEasyTuneVariablesComponent } from "../../tool/easy_tune/components/init_easy_tune_variables_component.js";
 import { initPP } from "../init_pp.js";
 import { AddPPToWindowComponent } from "./add_pp_to_window_component.js";
-import { GetDefaultResourcesComponent } from "./get_default_resources_component.js";
-import { GetSceneObjectsComponent } from "./get_scene_objects_component.js";
 
 // #TODO enable this again as soon as it is possible for the wonderland engine to find components not specified in the index.js,
 //since that would make the extension be included just by using the library, and not only when this component is used

@@ -1,6 +1,5 @@
 import { initCauldronExtensions } from "./cauldron_extensions.js";
 import { initObjectExtension } from "./object_extension.js";
-import { initSceneExtension } from "./scene_extension.js";
 
 /**
  *  TS import preserver
@@ -9,10 +8,8 @@ import { initSceneExtension } from "./scene_extension.js";
  */
 import "./cauldron_extensions.js";
 import "./object_extension.js";
-import "./scene_extension.js";
 
 export function initWLExtensions(): void {
     initObjectExtension();
-    initSceneExtension();
     initCauldronExtensions();
 }

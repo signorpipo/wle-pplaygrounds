@@ -1,7 +1,7 @@
 import { ArrayLike } from "../../type_definitions/array_type_definitions.js";
 
 export function copy<ArrayType extends ArrayLike<T>, T>(from: Readonly<ArrayLike<T>>, to: ArrayType, copyCallback?: (fromElement: T, toElement: T) => T): ArrayType {
-    const _to = to as any;
+    const _to = to as (ArrayType & { pop: () => T | undefined });
     if (_to.pop != null) {
         while (to.length > from.length) {
             _to.pop();

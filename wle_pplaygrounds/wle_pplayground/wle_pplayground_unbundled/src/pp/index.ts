@@ -3,12 +3,8 @@
 //  PP
 export * from "./pp/register_pp_components.js";
 export { Globals } from "./pp/globals.js";
-export * from "./pp/scene_objects.js";
-export * from "./pp/default_resources.js";
 
 export * from "./pp/components/pp_gateway_component.js";
-export * from "./pp/components/get_scene_objects_component.js";
-export * from "./pp/components/get_default_resources_component.js";
 export * from "./pp/components/add_pp_to_window_component.js";
 
 //	PLUGIN
@@ -37,13 +33,13 @@ export * from "./cauldron/cauldron/save_manager.js";
 export * from "./cauldron/cauldron/analytics_manager.js";
 export * from "./cauldron/cauldron/timer.js";
 
-export * from "./cauldron/cauldron/components/save_manager_component.js";
+export * from "./cauldron/cauldron/components/adjust_hierarchy_physx_scale_component.js";
 export * from "./cauldron/cauldron/components/analytics_manager_component.js";
-
-export * from "./cauldron/components/clear_console_on_xr_session_start_component.js";
-export * from "./cauldron/components/set_active_component.js";
-export * from "./cauldron/components/adjust_hierarchy_physx_scale_component.js";
-export * from "./cauldron/components/show_fps_component.js";
+export * from "./cauldron/cauldron/components/clear_console_on_xr_session_start_component.js";
+export * from "./cauldron/cauldron/components/save_manager_component.js";
+export * from "./cauldron/cauldron/components/set_active_component.js";
+export * from "./cauldron/cauldron/components/show_fps_component.js";
+export * from "./cauldron/cauldron/components/show_xr_buttons_component.js";
 
 export * from "./cauldron/fsm/fsm.js";
 export * from "./cauldron/fsm/state.js";
@@ -97,13 +93,16 @@ export * from "./cauldron/visual/components/visual_manager_component.js";
 
 export * from "./cauldron/wl/register_wl_components.js";
 export * from "./cauldron/wl/components/add_wl_to_window_component.js";
-export { SceneUtils } from "./cauldron/wl/utils/scene_utils.js";
 export { ObjectUtils, CloneParams } from "./cauldron/wl/utils/object_utils.js";
 export { ComponentUtils, DeepCloneParams, CustomCloneParams } from "./cauldron/wl/utils/component_utils.js";
 export { DefaultWLComponentCloneCallbacks } from "./cauldron/wl/utils/default_wl_component_clone_callbacks.js";
 export { MaterialUtils } from "./cauldron/wl/utils/material_utils.js";
 export { MeshUtils, MeshCreationVertexParams, MeshCreationTriangleParams, MeshCreationParams } from "./cauldron/wl/utils/mesh_utils.js";
 export { TextUtils } from "./cauldron/wl/utils/text_utils.js";
+export * from "./cauldron/wl/getters/scene_objects.js";
+export * from "./cauldron/wl/getters/default_resources.js";
+export * from "./cauldron/wl/getters/components/get_scene_objects_component.js";
+export * from "./cauldron/wl/getters/components/get_default_resources_component.js";
 
 //	DEBUG
 export * from "./debug/debug_manager.js";

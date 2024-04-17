@@ -8,7 +8,6 @@ import { QuatUtils } from "../../utils/array/quat_utils.js";
 import { Vec3Utils } from "../../utils/array/vec3_utils.js";
 import { MathUtils } from "../../utils/math_utils.js";
 import { ComponentUtils, CustomCloneParams, DeepCloneParams } from "./component_utils.js";
-import { SceneUtils } from "./scene_utils.js";
 
 export class CloneParams {
 
@@ -2009,7 +2008,7 @@ export const clone = function () {
                 const parent = cloneData![0];
                 const objectToClone = cloneData![1];
 
-                const currentClonedObject = (parent != null) ? ObjectUtils.addObject(parent) : SceneUtils.addObject(Globals.getScene(ObjectUtils.getEngine(object)));
+                const currentClonedObject = (parent != null) ? ObjectUtils.addObject(parent) : ObjectUtils.addObject(Globals.getRootObject(ObjectUtils.getEngine(object))!);
                 ObjectUtils.setName(currentClonedObject, ObjectUtils.getName(objectToClone));
 
                 ObjectUtils.setScaleLocal(currentClonedObject, ObjectUtils.getScaleLocal(objectToClone, scale));

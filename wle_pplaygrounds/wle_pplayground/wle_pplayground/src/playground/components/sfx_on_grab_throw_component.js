@@ -6,7 +6,7 @@ export class SFXOnGrabThrowComponent extends Component {
     static Properties = {};
 
     start() {
-        this._myGrabbers = Globals.getScene(this.engine).pp_getComponents(GrabberHandComponent);
+        this._myGrabbers = Globals.getRootObject(this.engine).pp_getComponents(GrabberHandComponent);
 
         for (let grabber of this._myGrabbers) {
             grabber.registerGrabEventListener(this, this._onGrab.bind(this));

@@ -29,6 +29,9 @@
             ],
             "wle-pp/*": [
                 "src/pp/*"
+            ],
+            "wle-pp/add_type_extensions_to_typescript.js": [
+                "src/pp/plugin/add_type_extensions_to_typescript.ts"
             ]
         }
     },
