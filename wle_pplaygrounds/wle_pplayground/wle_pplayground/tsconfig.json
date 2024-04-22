@@ -14,7 +14,6 @@
         "noImplicitReturns": true,
         "noImplicitThis": true,
         "noImplicitAny": true,
-        "noImplicitOverride": true,
         "sourceMap": true,
         "inlineSources": true,
         "declaration": true,

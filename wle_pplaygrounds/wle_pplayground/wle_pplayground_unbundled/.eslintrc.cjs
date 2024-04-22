@@ -41,13 +41,5 @@ module.exports = {
         "/languages",
         "/.editor",
         "/.eslintrc.cjs"
-    ],
-    overrides: [
-        {
-            "files": ["*.ts"],
-            "rules": {
-                "@typescript-eslint/explicit-function-return-type": ["error", { "allowExpressions": true }]
-            }
-        }
     ]
 };
