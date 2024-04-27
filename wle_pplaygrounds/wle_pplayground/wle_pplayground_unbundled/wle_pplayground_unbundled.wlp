@@ -3116,7 +3116,7 @@
         "scripting": {
             "sourcePaths": [
                 "src",
-                "src/pp/index.js",
+                "src/pp/index.ts",
                 "src/playground/components"
             ],
             "bundlingType": "esbuild",
