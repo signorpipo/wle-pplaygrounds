@@ -2599,7 +2599,7 @@
         }
     },
     "materials": {
-        "236dfcfa-7c7d-4748-9f90-d79487bfd67f": {
+        "DefaultFontMaterial": {
             "link": {
                 "name": "DefaultFontMaterial",
                 "file": "default"
