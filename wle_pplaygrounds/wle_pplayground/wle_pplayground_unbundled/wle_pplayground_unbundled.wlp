@@ -290,6 +290,9 @@
                         "_myJointMesh": "p1",
                         "_myJointMaterial": "6c7363ad-f7ee-465b-9031-541e40292fff"
                     }
+                },
+                {
+                    "type": "pp-reset-local-transform"
                 }
             ]
         },
@@ -351,6 +354,9 @@
                         "_myJointMaterial": "6c7363ad-f7ee-465b-9031-541e40292fff",
                         "_myHandedness": "Right"
                     }
+                },
+                {
+                    "type": "pp-reset-local-transform"
                 }
             ]
         },
