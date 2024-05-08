@@ -4,7 +4,6 @@ import { ParticlesSpawnerComponent } from "./particles_spawner_component.js";
 
 export class FunComponent extends Component {
     public static override TypeName = "fun";
-    public static override Properties = {};
 
     private _myParticlesSpawner!: ParticlesSpawnerComponent;
 

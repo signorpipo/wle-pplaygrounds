@@ -6,7 +6,6 @@ import { ParticleComponent } from "./components/particle_component.js";
 import { ParticlesSpawnerComponent } from "./components/particles_spawner_component.js";
 import { PlayMusicComponent } from "./components/play_music_component.js";
 import { PlaygroundGatewayComponent } from "./components/playground_gateway_component.js";
-import { ScaleOnSpawnComponent } from "./components/scale_on_spawn_component.js";
 import { SFXOnCollisionComponent } from "./components/sfx_on_collision_component.js";
 import { SFXOnGrabThrowComponent } from "./components/sfx_on_grab_throw_component.js";
 import { TargetHitCheckComponent } from "./components/target_hit_check_component.js";
@@ -24,7 +23,6 @@ export function registerPlaygroundComponents(engine) {
     engine.registerComponent(PlaygroundGatewayComponent);
     engine.registerComponent(ParticlesSpawnerComponent);
     engine.registerComponent(PlayMusicComponent);
-    engine.registerComponent(ScaleOnSpawnComponent);
     engine.registerComponent(SFXOnCollisionComponent);
     engine.registerComponent(SFXOnGrabThrowComponent);
     engine.registerComponent(TargetHitCheckComponent);

@@ -74,6 +74,18 @@
                 },
                 {
                     "type": "mouse-look"
+                },
+                {
+                    "type": "cursor",
+                    "cursor": {
+                        "collisionGroup": 3,
+                        "cursorRayObject": null,
+                        "cursorRayScalingAxis": "none",
+                        "handedness": "none",
+                        "cursorObject": null,
+                        "rayCastMode": "physx",
+                        "maxDistance": 1.5
+                    }
                 }
             ]
         },
@@ -229,6 +241,17 @@
                 {
                     "type": "pp-set-hand-local-transform"
                 }
+            ],
+            "translation": [
+                -0.1,
+                0.0,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                1.0,
+                0.0,
+                0.0
             ]
         },
         "21e6e4ba-b097-4abb-97b4-a7d82fb86986": {
@@ -281,6 +304,17 @@
                         "_myHandedness": "Left"
                     }
                 }
+            ],
+            "translation": [
+                -0.1,
+                0.0,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                1.0,
+                0.0,
+                0.0
             ]
         },
         "00bc279b-2a05-400e-8c6f-738f7627c931": {
@@ -297,6 +331,17 @@
                 {
                     "type": "pp-reset-local-transform"
                 }
+            ],
+            "translation": [
+                -0.1,
+                0.0,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                1.0,
+                0.0,
+                0.0
             ]
         },
         "ead4fe79-25ef-49b0-8feb-c0487bc6378f": {
@@ -344,6 +389,17 @@
                         "_myHandedness": "Right"
                     }
                 }
+            ],
+            "translation": [
+                0.1,
+                0.0,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                1.0,
+                0.0,
+                0.0
             ]
         },
         "836077c0-3e6f-447e-ba52-d9e52b9cd182": {
@@ -361,6 +417,17 @@
                 {
                     "type": "pp-reset-local-transform"
                 }
+            ],
+            "translation": [
+                0.1,
+                0.0,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                1.0,
+                0.0,
+                0.0
             ]
         },
         "16decf90-6c33-450d-bd58-e1ba25943627": {
@@ -379,6 +446,17 @@
                         "_myHandedness": "Right"
                     }
                 }
+            ],
+            "translation": [
+                0.1,
+                0.0,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                1.0,
+                0.0,
+                0.0
             ]
         },
         "cdac6dc4-9811-44ff-af5d-b1048e3055c0": {
@@ -1114,11 +1192,11 @@
             ]
         },
         "7a353774-4e77-47ad-981b-d9d0dc0c3007": {
-            "name": "Visual",
+            "name": "Frame",
             "parent": "9db243ba-5a45-47c7-b45a-84fbfff5a9b9"
         },
         "403ece94-4b75-4f64-a799-c45351cb2659": {
-            "name": "Piece",
+            "name": "Edge",
             "parent": "7a353774-4e77-47ad-981b-d9d0dc0c3007",
             "components": [
                 {
@@ -1158,7 +1236,7 @@
             ]
         },
         "3c141d1a-c767-4887-97bf-b096caf47be5": {
-            "name": "Piece",
+            "name": "Edge",
             "parent": "7a353774-4e77-47ad-981b-d9d0dc0c3007",
             "components": [
                 {
@@ -1204,7 +1282,7 @@
             ]
         },
         "6e497e37-efbc-485f-b51c-a960ba56daee": {
-            "name": "Piece",
+            "name": "Edge",
             "parent": "7a353774-4e77-47ad-981b-d9d0dc0c3007",
             "components": [
                 {
@@ -1244,7 +1322,7 @@
             ]
         },
         "f92f411b-0eef-4a96-9949-fb7d21e452bb": {
-            "name": "Piece",
+            "name": "Edge",
             "parent": "7a353774-4e77-47ad-981b-d9d0dc0c3007",
             "components": [
                 {
@@ -1357,16 +1435,11 @@
         "d299a8fa-0a3b-424f-9932-0bb22d4a1b8c": {
             "name": "Grabber",
             "parent": "f0cbb5f3-92cc-4f20-941c-2e7a438f166c",
-            "translation": [
-                0.0,
-                -0.0367964,
-                0.0715703
-            ],
             "rotation": [
-                0.2649303,
+                0.258819,
                 0.0,
                 0.0,
-                0.9642675
+                0.9659258
             ],
             "components": [
                 {
@@ -1389,21 +1462,21 @@
                         "_myMaxNumberOfObjects": 9999
                     }
                 }
+            ],
+            "translation": [
+                0.009961,
+                -0.0367996,
+                0.0715687
             ]
         },
         "afe97702-6055-4861-b4ce-9a75e0bac39a": {
             "name": "Grabber",
             "parent": "f51fe37d-3aea-4317-af6b-e76b64a41b54",
-            "translation": [
-                0.0,
-                -0.0367964,
-                0.0715704
-            ],
             "rotation": [
-                0.2649303,
+                0.258819,
                 0.0,
                 0.0,
-                0.9642675
+                0.9659258
             ],
             "components": [
                 {
@@ -1427,6 +1500,11 @@
                         "_myHandedness": "Right"
                     }
                 }
+            ],
+            "translation": [
+                -0.009961,
+                -0.0365258,
+                0.0717282
             ]
         },
         "77886081-ef34-42db-a661-373faee1eef3": {
@@ -1533,8 +1611,8 @@
                     }
                 },
                 {
-                    "type": "scale-on-spawn",
-                    "scale-on-spawn": {
+                    "type": "pp-scale-on-spawn",
+                    "pp-scale-on-spawn": {
                         "_myScaleDuration": 0.5
                     }
                 },
@@ -1570,8 +1648,8 @@
                     }
                 },
                 {
-                    "type": "scale-on-spawn",
-                    "scale-on-spawn": {
+                    "type": "pp-scale-on-spawn",
+                    "pp-scale-on-spawn": {
                         "_myScaleDuration": 0.5
                     }
                 },
@@ -1619,8 +1697,8 @@
                     }
                 },
                 {
-                    "type": "scale-on-spawn",
-                    "scale-on-spawn": {
+                    "type": "pp-scale-on-spawn",
+                    "pp-scale-on-spawn": {
                         "_myScaleDuration": 0.5
                     }
                 },
@@ -1663,8 +1741,8 @@
                     }
                 },
                 {
-                    "type": "scale-on-spawn",
-                    "scale-on-spawn": {
+                    "type": "pp-scale-on-spawn",
+                    "pp-scale-on-spawn": {
                         "_myScaleDuration": 0.5
                     }
                 },
@@ -1716,8 +1794,8 @@
                     }
                 },
                 {
-                    "type": "scale-on-spawn",
-                    "scale-on-spawn": {
+                    "type": "pp-scale-on-spawn",
+                    "pp-scale-on-spawn": {
                         "_myScaleDuration": 0.5
                     }
                 },
@@ -1769,8 +1847,8 @@
                     }
                 },
                 {
-                    "type": "scale-on-spawn",
-                    "scale-on-spawn": {
+                    "type": "pp-scale-on-spawn",
+                    "pp-scale-on-spawn": {
                         "_myScaleDuration": 0.5
                     }
                 },
@@ -1892,8 +1970,8 @@
                     }
                 },
                 {
-                    "type": "scale-on-spawn",
-                    "scale-on-spawn": {
+                    "type": "pp-scale-on-spawn",
+                    "pp-scale-on-spawn": {
                         "_myScaleDuration": 0.5
                     }
                 },
@@ -1966,25 +2044,19 @@
                 0.0
             ],
             "scaling": [
-                0.2000113,
                 0.2,
-                0.2000002
+                0.2,
+                0.2
             ],
             "translation": [
                 0.0,
-                1.9953995,
-                -1.2839498
+                1.8500008,
+                -1.2000211
             ]
         },
         "ce22ba68-4363-40db-b062-5da3ea2c537b": {
             "name": "Outline Text",
             "parent": "ecaac23c-a887-4bfd-babb-9606a9278f9f",
-            "rotation": [
-                0.0,
-                1.0,
-                0.0,
-                0.0
-            ],
             "scaling": [
                 0.8999997,
                 0.8999999,
@@ -2003,12 +2075,12 @@
             "translation": [
                 0.0,
                 0.0,
-                -0.0049996
+                0.0049999
             ]
         },
         "882f2dc6-2419-47d3-97d8-346de093c714": {
             "name": "Frame",
-            "parent": "f68ba5d1-6bb3-4f72-b630-a0f3254198ac"
+            "parent": "dedccf60-b6af-4d9c-b0ca-e0800988138a"
         },
         "3054df35-c5c5-4915-9958-0affa5b63089": {
             "name": "Edge",
@@ -2028,9 +2100,9 @@
                 0.0
             ],
             "scaling": [
-                1.875,
-                0.025,
-                0.025
+                2.0499999,
+                0.05,
+                0.05
             ]
         },
         "992bbca1-fcbb-42d8-b385-3af9ec2ada12": {
@@ -2051,9 +2123,9 @@
                 0.0
             ],
             "scaling": [
-                1.875,
-                0.025,
-                0.025
+                2.0499999,
+                0.05,
+                0.05
             ]
         },
         "0dfe00e6-7f73-4c3e-9d1d-a7926bffb319": {
@@ -2080,125 +2152,9 @@
                 0.7071067
             ],
             "scaling": [
-                0.425,
-                0.0249993,
-                0.025
-            ]
-        },
-        "b6c79dcf-8929-4a44-b9db-0fd52ee95c0a": {
-            "name": "Corner",
-            "parent": "882f2dc6-2419-47d3-97d8-346de093c714",
-            "components": [
-                {
-                    "type": "mesh",
-                    "mesh": {
-                        "mesh": "p1",
-                        "material": "90348bdc-8768-4244-9398-b89361708289"
-                    }
-                }
-            ],
-            "rotation": [
-                0.0,
-                0.0,
-                0.3826834,
-                0.9238795
-            ],
-            "scaling": [
-                0.05,
+                0.6,
                 0.05,
                 0.05
-            ],
-            "translation": [
-                1.9999986,
-                0.55,
-                0.0
-            ]
-        },
-        "ae88188d-0e19-414a-ac26-74205f916569": {
-            "name": "Corner",
-            "parent": "882f2dc6-2419-47d3-97d8-346de093c714",
-            "components": [
-                {
-                    "type": "mesh",
-                    "mesh": {
-                        "mesh": "p1",
-                        "material": "90348bdc-8768-4244-9398-b89361708289"
-                    }
-                }
-            ],
-            "rotation": [
-                0.0,
-                0.0,
-                0.3826834,
-                0.9238795
-            ],
-            "scaling": [
-                0.05,
-                0.05,
-                0.05
-            ],
-            "translation": [
-                -2.0,
-                0.55,
-                0.0
-            ]
-        },
-        "5d55f193-0514-4570-b446-b8df5d86f9b7": {
-            "name": "Corner",
-            "parent": "882f2dc6-2419-47d3-97d8-346de093c714",
-            "components": [
-                {
-                    "type": "mesh",
-                    "mesh": {
-                        "mesh": "p1",
-                        "material": "90348bdc-8768-4244-9398-b89361708289"
-                    }
-                }
-            ],
-            "rotation": [
-                0.0,
-                0.0,
-                0.3826834,
-                0.9238795
-            ],
-            "scaling": [
-                0.05,
-                0.05,
-                0.05
-            ],
-            "translation": [
-                -1.9999998,
-                -0.55,
-                0.0
-            ]
-        },
-        "fedfd7e4-2266-4cd2-8ab4-346e7c06f77e": {
-            "name": "Corner",
-            "parent": "882f2dc6-2419-47d3-97d8-346de093c714",
-            "components": [
-                {
-                    "type": "mesh",
-                    "mesh": {
-                        "mesh": "p1",
-                        "material": "90348bdc-8768-4244-9398-b89361708289"
-                    }
-                }
-            ],
-            "rotation": [
-                0.0,
-                0.0,
-                0.3826834,
-                0.9238795
-            ],
-            "scaling": [
-                0.05,
-                0.05,
-                0.05
-            ],
-            "translation": [
-                2.0,
-                -0.5499999,
-                0.0
             ]
         },
         "f40a09e7-a1fe-4b60-90c6-dd076c24b482": {
@@ -2225,20 +2181,14 @@
                 0.7071067
             ],
             "scaling": [
-                0.425,
-                0.0249993,
-                0.025
+                0.6,
+                0.05,
+                0.05
             ]
         },
         "61ecc7d3-ed4b-4b3d-88ed-5850d72c010d": {
             "name": "Text",
             "parent": "ecaac23c-a887-4bfd-babb-9606a9278f9f",
-            "rotation": [
-                0.0,
-                1.0,
-                0.0,
-                0.0
-            ],
             "scaling": [
                 0.8999997,
                 0.8999999,
@@ -2256,12 +2206,12 @@
             "translation": [
                 0.0,
                 0.0,
-                -0.0099997
+                0.0099999
             ]
         },
         "ecaac23c-a887-4bfd-babb-9606a9278f9f": {
             "name": "XR Text",
-            "parent": "f68ba5d1-6bb3-4f72-b630-a0f3254198ac",
+            "parent": "dedccf60-b6af-4d9c-b0ca-e0800988138a",
             "components": [
                 {
                     "type": "pp-set-active",
@@ -2285,11 +2235,17 @@
                         "_mySetActiveOn": "Descendants"
                     }
                 }
+            ],
+            "rotation": [
+                0.0,
+                1.0,
+                0.0,
+                0.0
             ]
         },
         "95e88729-6b95-43bc-ac9a-7a5ab8b0fdaf": {
             "name": "Non XR Text",
-            "parent": "f68ba5d1-6bb3-4f72-b630-a0f3254198ac",
+            "parent": "dedccf60-b6af-4d9c-b0ca-e0800988138a",
             "components": [
                 {
                     "type": "pp-set-active",
@@ -2311,12 +2267,6 @@
         "f3790af0-2cdd-4443-8319-febb407b9929": {
             "name": "Outline Text",
             "parent": "53b1ad10-0596-4db2-8921-09d06c9dd626",
-            "rotation": [
-                0.0,
-                1.0,
-                0.0,
-                0.0
-            ],
             "scaling": [
                 0.8999997,
                 0.8999999,
@@ -2335,18 +2285,12 @@
             "translation": [
                 0.0,
                 0.0,
-                -0.0049987
+                0.0049999
             ]
         },
         "c9c3d52c-55a3-4caf-8451-76566f4006cd": {
             "name": "Text",
             "parent": "53b1ad10-0596-4db2-8921-09d06c9dd626",
-            "rotation": [
-                0.0,
-                1.0,
-                0.0,
-                0.0
-            ],
             "scaling": [
                 0.8999997,
                 0.8999999,
@@ -2364,7 +2308,7 @@
             "translation": [
                 0.0,
                 0.0,
-                -0.0099988
+                0.0099999
             ]
         },
         "53b1ad10-0596-4db2-8921-09d06c9dd626": {
@@ -2377,6 +2321,12 @@
                         "_myActiveOnMobile": true
                     }
                 }
+            ],
+            "rotation": [
+                0.0,
+                1.0,
+                0.0,
+                0.0
             ]
         },
         "6e519be4-383e-45c5-bff3-66e8ffe51a2b": {
@@ -2387,17 +2337,17 @@
                     "type": "set-active-on-mobile",
                     "set-active-on-mobile": {}
                 }
-            ]
-        },
-        "e90fa8e0-0926-485b-876d-bcb4f6042a97": {
-            "name": "Outline Text",
-            "parent": "6e519be4-383e-45c5-bff3-66e8ffe51a2b",
+            ],
             "rotation": [
                 0.0,
                 1.0,
                 0.0,
                 0.0
-            ],
+            ]
+        },
+        "e90fa8e0-0926-485b-876d-bcb4f6042a97": {
+            "name": "Outline Text",
+            "parent": "6e519be4-383e-45c5-bff3-66e8ffe51a2b",
             "scaling": [
                 0.8999997,
                 0.8999999,
@@ -2416,18 +2366,12 @@
             "translation": [
                 0.0,
                 0.0,
-                -0.0049987
+                0.0049999
             ]
         },
         "1f16821f-660b-40d0-b674-cd3ddb4bcb9f": {
             "name": "Text",
             "parent": "6e519be4-383e-45c5-bff3-66e8ffe51a2b",
-            "rotation": [
-                0.0,
-                1.0,
-                0.0,
-                0.0
-            ],
             "scaling": [
                 0.8999997,
                 0.8999999,
@@ -2445,8 +2389,419 @@
             "translation": [
                 0.0,
                 0.0,
-                -0.0099988
+                0.0099999
             ]
+        },
+        "dedccf60-b6af-4d9c-b0ca-e0800988138a": {
+            "name": "Text",
+            "parent": "f68ba5d1-6bb3-4f72-b630-a0f3254198ac",
+            "translation": [
+                0.0,
+                1.3999999,
+                0.0
+            ],
+            "components": [
+                {
+                    "type": "physx",
+                    "physx": {
+                        "groups": 8,
+                        "block": 8,
+                        "kinematic": true,
+                        "gravity": false,
+                        "shape": "box",
+                        "box": {
+                            "extents": [
+                                2.0,
+                                0.55,
+                                0.0099999
+                            ]
+                        }
+                    }
+                },
+                {
+                    "type": "pp-adjust-hierarchy-physx-scale"
+                }
+            ]
+        },
+        "9393f21e-a533-43af-a1e1-3082d450d663": {
+            "name": "Button",
+            "parent": "f68ba5d1-6bb3-4f72-b630-a0f3254198ac",
+            "components": [
+                {
+                    "type": "pp-cursor-button",
+                    "pp-cursor-button": {
+                        "_mySFXOnUp": "assets\\audio\\sfx\\playground\\grab.mp3",
+                        "_mySFXOnDown": "assets\\audio\\sfx\\playground\\throw.mp3",
+                        "_myColorBrigthnessOffsetOnHover": 0.0,
+                        "_myButtonActionsHandlerNames": "toggle-how-to-text, switch-button-text",
+                        "_myColorBrigthnessOffsetOnUp": 0.0
+                    }
+                },
+                {
+                    "type": "physx",
+                    "physx": {
+                        "groups": 8,
+                        "block": 8,
+                        "kinematic": true,
+                        "gravity": false,
+                        "shape": "box",
+                        "box": {
+                            "extents": [
+                                0.5,
+                                0.2,
+                                0.0099999
+                            ]
+                        }
+                    }
+                },
+                {
+                    "type": "pp-adjust-hierarchy-physx-scale"
+                },
+                {
+                    "type": "cursor-target"
+                },
+                {
+                    "type": "toggle-how-to-text",
+                    "toggle-how-to-text": {
+                        "_myTextObject": "dedccf60-b6af-4d9c-b0ca-e0800988138a"
+                    }
+                }
+            ],
+            "translation": [
+                0.0,
+                0.4250001,
+                0.0
+            ]
+        },
+        "cf67092e-ed8b-4cac-9311-feec1395b8e6": {
+            "name": "Text",
+            "parent": "9393f21e-a533-43af-a1e1-3082d450d663",
+            "rotation": [
+                0.0,
+                1.0,
+                0.0,
+                0.0
+            ]
+        },
+        "7c3dea61-5a6b-4c27-a1bb-e6026705b779": {
+            "name": "Outline Text",
+            "parent": "cf67092e-ed8b-4cac-9311-feec1395b8e6",
+            "scaling": [
+                0.8999997,
+                0.8999999,
+                0.8999998
+            ],
+            "components": [
+                {
+                    "type": "text",
+                    "text": {
+                        "text": "Hide",
+                        "material": "eb68d1ad-89df-45b0-a7ff-d270e70a6ffe",
+                        "effect": "outline"
+                    }
+                }
+            ],
+            "translation": [
+                0.0,
+                0.0,
+                0.0049999
+            ]
+        },
+        "664be3bf-0a53-4420-947c-0fac801fcc21": {
+            "name": "Text",
+            "parent": "cf67092e-ed8b-4cac-9311-feec1395b8e6",
+            "scaling": [
+                0.8999997,
+                0.8999999,
+                0.8999998
+            ],
+            "components": [
+                {
+                    "type": "text",
+                    "text": {
+                        "text": "Hide",
+                        "material": "04b7f97e-2921-4f88-91f3-20e62ec5c355"
+                    }
+                }
+            ],
+            "translation": [
+                0.0,
+                0.0,
+                0.0099999
+            ]
+        },
+        "95c71715-5fe9-4e50-8d10-17a1cbcb6fd2": {
+            "name": "Frame",
+            "parent": "9393f21e-a533-43af-a1e1-3082d450d663"
+        },
+        "55f0c443-784d-4345-8e97-0d87fa8077a0": {
+            "name": "Edge",
+            "parent": "95c71715-5fe9-4e50-8d10-17a1cbcb6fd2",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "p1",
+                        "material": "6c7363ad-f7ee-465b-9031-541e40292fff"
+                    }
+                }
+            ],
+            "translation": [
+                0.0,
+                0.2,
+                0.0
+            ],
+            "scaling": [
+                0.5249999,
+                0.025,
+                0.025
+            ]
+        },
+        "bd50d786-a01e-43eb-ba6d-bebb41b55d1b": {
+            "name": "Edge",
+            "parent": "95c71715-5fe9-4e50-8d10-17a1cbcb6fd2",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "p1",
+                        "material": "6c7363ad-f7ee-465b-9031-541e40292fff"
+                    }
+                }
+            ],
+            "translation": [
+                0.0,
+                -0.2,
+                0.0
+            ],
+            "scaling": [
+                0.5249999,
+                0.025,
+                0.025
+            ]
+        },
+        "83f99b06-8862-43d0-8ec7-90238081a7cc": {
+            "name": "Edge",
+            "parent": "95c71715-5fe9-4e50-8d10-17a1cbcb6fd2",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "p1",
+                        "material": "6c7363ad-f7ee-465b-9031-541e40292fff"
+                    }
+                }
+            ],
+            "translation": [
+                0.5,
+                0.0,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.7071068,
+                0.7071067
+            ],
+            "scaling": [
+                0.2249999,
+                0.0249993,
+                0.025
+            ]
+        },
+        "279611c5-c61f-49f7-81b0-d6344530b634": {
+            "name": "Edge",
+            "parent": "95c71715-5fe9-4e50-8d10-17a1cbcb6fd2",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "p1",
+                        "material": "6c7363ad-f7ee-465b-9031-541e40292fff"
+                    }
+                }
+            ],
+            "translation": [
+                -0.5,
+                0.0,
+                0.0
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.7071068,
+                0.7071067
+            ],
+            "scaling": [
+                0.2249999,
+                0.0249993,
+                0.025
+            ]
+        },
+        "0ec54f31-8d6e-466c-ad61-6b5d8fe48472": {
+            "name": "Default Cursor",
+            "parent": "4470cf2d-650d-4c38-be1b-2434a74c4ff1",
+            "rotation": [
+                0.258819,
+                0.0,
+                0.0,
+                0.9659258
+            ],
+            "translation": [
+                0.009961,
+                -0.0240263,
+                0.050078
+            ]
+        },
+        "8f116677-15c2-4d71-a7dc-90239c83ece8": {
+            "name": "Pivot",
+            "parent": "0ec54f31-8d6e-466c-ad61-6b5d8fe48472",
+            "translation": [
+                0.0,
+                0.0,
+                0.025
+            ]
+        },
+        "a996a68e-edfd-4e57-9c6e-0be385176804": {
+            "name": "Cursor Component",
+            "parent": "8f116677-15c2-4d71-a7dc-90239c83ece8",
+            "components": [
+                {
+                    "type": "cursor",
+                    "cursor": {
+                        "collisionGroup": 3,
+                        "cursorRayObject": null,
+                        "cursorRayScalingAxis": "none",
+                        "handedness": "left",
+                        "cursorObject": "97387186-889f-4768-81e0-fe144b612a2d",
+                        "styleCursor": false,
+                        "rayCastMode": "physx",
+                        "maxDistance": 1.0
+                    }
+                }
+            ]
+        },
+        "97387186-889f-4768-81e0-fe144b612a2d": {
+            "name": "Cursor Pointer",
+            "parent": "8f116677-15c2-4d71-a7dc-90239c83ece8"
+        },
+        "64e23a69-8155-4b95-abd9-0cc9d7b1b753": {
+            "name": "Mesh",
+            "parent": "97387186-889f-4768-81e0-fe144b612a2d",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "p2",
+                        "material": "90348bdc-8768-4244-9398-b89361708289"
+                    }
+                }
+            ],
+            "scaling": [
+                0.0074999,
+                0.007,
+                0.007
+            ]
+        },
+        "b99ae9d4-2bdb-45ff-8ec9-bd933e26ef99": {
+            "name": "Default Cursor",
+            "parent": "58ca914f-fc95-4265-8c31-4b3ca58859f4",
+            "translation": [
+                -0.009961,
+                -0.0240255,
+                0.0500775
+            ],
+            "rotation": [
+                0.258819,
+                0.0,
+                0.0,
+                0.9659258
+            ]
+        },
+        "fb19b61a-e8c6-4c8c-b084-55caf6d216b7": {
+            "name": "Pivot",
+            "parent": "b99ae9d4-2bdb-45ff-8ec9-bd933e26ef99",
+            "translation": [
+                0.0,
+                0.0,
+                0.025
+            ]
+        },
+        "ed5bfd91-1d04-46e4-b3f9-d148282993c4": {
+            "name": "Cursor Pointer",
+            "parent": "fb19b61a-e8c6-4c8c-b084-55caf6d216b7"
+        },
+        "001b6842-6e26-4180-9942-a286b38aaea1": {
+            "name": "Mesh",
+            "parent": "ed5bfd91-1d04-46e4-b3f9-d148282993c4",
+            "components": [
+                {
+                    "type": "mesh",
+                    "mesh": {
+                        "mesh": "p2",
+                        "material": "90348bdc-8768-4244-9398-b89361708289"
+                    }
+                }
+            ],
+            "scaling": [
+                0.0074999,
+                0.007,
+                0.007
+            ]
+        },
+        "b46bf737-7c47-4c50-8070-2b1ce50e7a39": {
+            "name": "Cursor Component",
+            "parent": "fb19b61a-e8c6-4c8c-b084-55caf6d216b7",
+            "components": [
+                {
+                    "type": "cursor",
+                    "cursor": {
+                        "collisionGroup": 3,
+                        "cursorRayObject": null,
+                        "cursorRayScalingAxis": "none",
+                        "handedness": "right",
+                        "cursorObject": "ed5bfd91-1d04-46e4-b3f9-d148282993c4",
+                        "styleCursor": false,
+                        "rayCastMode": "physx",
+                        "maxDistance": 1.0
+                    }
+                }
+            ]
+        },
+        "af1d4177-40e8-454c-a24a-93da1f68a80b": {
+            "name": "Finger Cursor",
+            "parent": "58ca914f-fc95-4265-8c31-4b3ca58859f4",
+            "components": [
+                {
+                    "type": "pp-finger-cursor",
+                    "pp-finger-cursor": {
+                        "_myHandedness": "Right",
+                        "_myDefaultCursorObject": "b99ae9d4-2bdb-45ff-8ec9-bd933e26ef99",
+                        "_myCollisionFlags": "0, 0, 0, 1, 0, 0, 0, 0"
+                    }
+                }
+            ]
+        },
+        "58ca914f-fc95-4265-8c31-4b3ca58859f4": {
+            "name": "Cursors",
+            "parent": "f51fe37d-3aea-4317-af6b-e76b64a41b54"
+        },
+        "833e4681-737c-43da-bf86-c01c56017931": {
+            "name": "Finger Cursor",
+            "parent": "4470cf2d-650d-4c38-be1b-2434a74c4ff1",
+            "components": [
+                {
+                    "type": "pp-finger-cursor",
+                    "pp-finger-cursor": {
+                        "_myDefaultCursorObject": "0ec54f31-8d6e-466c-ad61-6b5d8fe48472",
+                        "_myCollisionFlags": "0, 0, 0, 1, 0, 0, 0, 0"
+                    }
+                }
+            ]
+        },
+        "4470cf2d-650d-4c38-be1b-2434a74c4ff1": {
+            "name": "Cursors",
+            "parent": "f0cbb5f3-92cc-4f20-941c-2e7a438f166c"
         }
     },
     "meshes": {
@@ -2898,9 +3253,9 @@
                     0.0
                 ],
                 "effectColor": [
-                    1.0,
-                    0.5882353,
-                    0.1843137,
+                    0.8999999,
+                    0.5294117,
+                    0.1658823,
                     1.0
                 ]
             }
@@ -3152,7 +3507,7 @@
                 "0": "Player",
                 "1": "Solid",
                 "2": "Interactable",
-                "3": "Group 3",
+                "3": "UI",
                 "4": "Group 4",
                 "5": "Group 5",
                 "6": "Group 6",

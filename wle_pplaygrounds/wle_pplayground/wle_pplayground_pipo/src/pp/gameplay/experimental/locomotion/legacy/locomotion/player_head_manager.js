@@ -39,8 +39,10 @@ export class PlayerHeadManagerParams {
         this.myDefaultHeightVRWithoutFloor = 0;
         this.myDefaultHeightVRWithFloor = null; // null means just keep the detected one
         this.myForeheadExtraHeight = 0;
-        // Can be used to always add a bit of height, for example to compensate the fact 
+        // Can be used to always add a bit of height, for example to compensate the fact
         // that the default height is actually the eye height and you may want to also add a forehead offset
+
+        this.myFeetRotationKeepUp = true;
 
         this.myEngine = engine;
 
@@ -154,8 +156,8 @@ export class PlayerHeadManager {
         return this.getHead().pp_getRotationQuat(outRotationHeadQuat);
     }
 
-    isSynced() {
-        return this._myIsSyncedDelayCounter == 0 && this._myDelaySessionChangeResyncCounter == 0 && this._myDelayNextEnterSessionSetHeightVRCounter == 0 && this._myDelayBlurEndResyncCounter == 0 && !this._myDelayBlurEndResyncTimer.isRunning() && !this._mySessionBlurred;
+    isSynced(ignoreSessionBlurredState = false) {
+        return this._myIsSyncedDelayCounter == 0 && this._myDelaySessionChangeResyncCounter == 0 && this._myDelayNextEnterSessionSetHeightVRCounter == 0 && this._myDelayBlurEndResyncCounter == 0 && !this._myDelayBlurEndResyncTimer.isRunning() && (ignoreSessionBlurredState || !this._mySessionBlurred);
     }
 
     setHeightHead(height, setOnlyForActiveOne = true) {

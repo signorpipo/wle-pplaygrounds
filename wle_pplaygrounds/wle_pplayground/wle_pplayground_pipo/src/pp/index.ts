@@ -24,9 +24,12 @@ export * from "./audio/components/mute_everything_component.js";
 export * from "./audio/components/spatial_audio_listener_component.js";
 
 //	CAULDRON
+
+//    BENCHMARKS
 export * from "./cauldron/benchmarks/benchmark_max_physx_component.js";
 export * from "./cauldron/benchmarks/benchmark_max_visible_triangles_component.js";
 
+//    CAULDRON
 export * from "./cauldron/cauldron/save_manager.js";
 export * from "./cauldron/cauldron/analytics_manager.js";
 export * from "./cauldron/cauldron/timer.js";
@@ -34,22 +37,27 @@ export * from "./cauldron/cauldron/timer.js";
 export * from "./cauldron/cauldron/components/adjust_hierarchy_physx_scale_component.js";
 export * from "./cauldron/cauldron/components/analytics_manager_component.js";
 export * from "./cauldron/cauldron/components/clear_console_on_xr_session_start_component.js";
+export * from "./cauldron/cauldron/components/reset_local_transform_component.js";
 export * from "./cauldron/cauldron/components/save_manager_component.js";
 export * from "./cauldron/cauldron/components/set_active_component.js";
 export * from "./cauldron/cauldron/components/show_fps_component.js";
 export * from "./cauldron/cauldron/components/show_xr_buttons_component.js";
 
+//    FSM
 export * from "./cauldron/fsm/fsm.js";
 export * from "./cauldron/fsm/state.js";
 export * from "./cauldron/fsm/transition.js";
 export * from "./cauldron/fsm/states/timer_state.js";
 
+//    OBJECT POOL
 export * from "./cauldron/object_pool/object_pool.js";
 export * from "./cauldron/object_pool/object_pool_manager.js";
 export * from "./cauldron/object_pool/components/object_pool_manager_component.js";
 
+//    TYPE DEFINITIONS
 export * from "./cauldron/type_definitions/array_type_definitions.js";
 
+//    UTILS
 export { ColorUtils } from "./cauldron/utils/color_utils.js";
 export { SaveUtils } from "./cauldron/utils/save_utils.js";
 export { XRUtils } from "./cauldron/utils/xr_utils.js";
@@ -69,11 +77,13 @@ export { Mat4Utils } from "./cauldron/utils/array/mat4_utils.js";
 export { JSUtils } from "./cauldron/utils/js_utils.js";
 export { MathUtils, EasingFunction, EasingSupportFunction } from "./cauldron/utils/math_utils.js";
 
+//    PHYSICS
 export { PhysicsUtils } from "./cauldron/physics/physics_utils.js";
 export * from "./cauldron/physics/physics_raycast_params.js";
 export * from "./cauldron/physics/physics_layer_flags.js";
 export * from "./cauldron/physics/physics_collision_collector.js";
 
+//    VISUAL
 export * from "./cauldron/visual/visual_manager.js";
 export * from "./cauldron/visual/visual_resources.js";
 
@@ -89,6 +99,7 @@ export * from "./cauldron/visual/elements/visual_torus.js";
 
 export * from "./cauldron/visual/components/visual_manager_component.js";
 
+//    WL
 export * from "./cauldron/wl/register_wl_components.js";
 export * from "./cauldron/wl/components/add_wl_to_window_component.js";
 export { ObjectUtils, CloneParams } from "./cauldron/wl/utils/object_utils.js";
@@ -101,6 +112,7 @@ export * from "./cauldron/wl/getters/scene_objects.js";
 export * from "./cauldron/wl/getters/default_resources.js";
 export * from "./cauldron/wl/getters/components/get_scene_objects_component.js";
 export * from "./cauldron/wl/getters/components/get_default_resources_component.js";
+export * from "./cauldron/wl/type_definitions/material_type_definitions.js";
 
 //	DEBUG
 export * from "./debug/debug_manager.js";
@@ -124,7 +136,13 @@ export * from "./debug/debug_functions_overwriter/debug_functions_performance_an
 
 //    CAULDRON
 export * from "./gameplay/cauldron/cauldron/direction_2D_to_3D_converter.js";
-export * from "./gameplay/cauldron/cauldron/number_over_factor.js";
+export { NumberOverFactor, IntOverFactor, NumberRangeOverFactor, IntRangeOverFactor } from "./gameplay/cauldron/cauldron/number_over_factor.js";
+export * from "./gameplay/cauldron/cauldron/animated_number.js";
+
+export * from "./gameplay/cauldron/cauldron/components/cursor_button_component.js";
+
+//          ROUGH
+export * from "./gameplay/cauldron/rough/components/scale_on_spawn_component.js";
 
 //    GRAB & THROW
 export * from "./gameplay/grab_throw/grabbable_component.js";
@@ -158,7 +176,7 @@ export * from "./gameplay/experimental/locomotion/legacy/locomotion/player_locom
 export * from "./gameplay/experimental/locomotion/legacy/locomotion/player_locomotion_smooth.js";
 export * from "./gameplay/experimental/locomotion/legacy/locomotion/player_obscure_manager.js";
 export * from "./gameplay/experimental/locomotion/legacy/locomotion/player_locomotion.js";
-export * from "./gameplay/experimental/locomotion/legacy/locomotion/player_locomotion_component.js";
+export * from "./gameplay/experimental/locomotion/legacy/locomotion/components/player_locomotion_component.js";
 
 export * from "./gameplay/experimental/locomotion/legacy/locomotion/teleport/player_locomotion_teleport_parable.js";
 export * from "./gameplay/experimental/locomotion/legacy/locomotion/teleport/player_locomotion_teleport_state.js";
@@ -184,7 +202,7 @@ export * from "./input/cauldron/components/tracked_hand_draw_all_joints_componen
 export * from "./input/cauldron/components/tracked_hand_draw_skin_component.js";
 
 export * from "./input/gamepad/gamepad_buttons.js";
-export * from "./input/gamepad/base_gamepad.js";
+export * from "./input/gamepad/gamepad.js";
 export * from "./input/gamepad/universal_gamepad.js";
 export * from "./input/gamepad/cauldron/gamepad_mesh_animator_component.js";
 export * from "./input/gamepad/cauldron/gamepads_manager.js";

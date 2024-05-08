@@ -29,7 +29,7 @@ export class SFXOnCollisionComponent extends Component {
 
         this._myCollisionsCollector.update(dt);
 
-        if (this._myCollisionsCollector.getCollisionsStart().length > 0 && this._myLastLastGrabbed == this._myGrabbable.isGrabbed()) {
+        if (this._myCollisionsCollector.getCollisionsStarted().length > 0 && this._myLastLastGrabbed == this._myGrabbable.isGrabbed()) {
             this._mySFX.setPosition(this.object.pp_getPosition());
             this._mySFX.setPitch(Math.pp_random(1.25 - 0.15, 1.25 + 0.05));
             this._mySFX.play();
