@@ -18,6 +18,8 @@ let _myResourceURLsToPrecache = [
     "icon168.png",
     "icon192.png",
     "icon512.png",
+    "pwa/screenshots/pp/desktop_screenshot.png",
+    "pwa/screenshots/pp/mobile_screenshot.png",
     _myAppName + "-bundle.js",
     "WonderlandRuntime-LoadingScreen.bin",
     //"WonderlandRuntime-physx.wasm",
@@ -31,7 +33,13 @@ let _myResourceURLsToPrecache = [
     //"WonderlandRuntime-physx-simd-threads.js",
     //"WonderlandRuntime-physx-simd-threads.worker.js",
     _myAppName + ".bin",
-    _myAppName + "-textures.bin"
+    _myAppName + "-textures.bin",
+    "d1550dc2-2b9c-4c80-a575-22f58d3850d8.png",
+    "assets/audio/sfx/playground/collision.mp3",
+    "assets/audio/sfx/playground/grab.mp3",
+    "assets/audio/sfx/playground/strike.mp3",
+    "assets/audio/sfx/playground/throw.mp3",
+    "assets/audio/music/playground/playground_ambient.mp3"
 ];
 
 

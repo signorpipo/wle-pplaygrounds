@@ -1,6 +1,7 @@
 {
     "name": "wle-pplayground-unbundled",
     "short_name": "wle-pplayground-unbundled",
+    "version": "0.3.3",
     "author": "Pipo",
     "description": "Playground template project for the Wonderland Engine - Unbundled Version",
     "homepage_url": "https://github.com/signorpipo/wle-pplayground",
@@ -55,6 +56,22 @@
             "sizes": "48x48",
             "type": "image/png",
             "purpose": "maskable"
+        }
+    ],
+    "screenshots": [
+        {
+            "src": "pwa/screenshots/pp/desktop_screenshot.png",
+            "sizes": "1920x1080",
+            "type": "image/png",
+            "form_factor": "wide",
+            "label": "Playground template project for the Wonderland Engine - Unbundled Version"
+        },
+        {
+            "src": "pwa/screenshots/pp/mobile_screenshot.png",
+            "sizes": "1080x1920",
+            "type": "image/png",
+            "form_factor": "narrow",
+            "label": "Playground template project for the Wonderland Engine - Unbundled Version"
         }
     ]
 }
