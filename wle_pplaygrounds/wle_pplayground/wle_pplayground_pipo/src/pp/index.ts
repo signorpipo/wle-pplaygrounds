@@ -47,7 +47,10 @@ export * from "./cauldron/cauldron/components/show_xr_buttons_component.js";
 export * from "./cauldron/fsm/fsm.js";
 export * from "./cauldron/fsm/state.js";
 export * from "./cauldron/fsm/transition.js";
-export * from "./cauldron/fsm/states/timer_state.js";
+export * from "./cauldron/fsm/states/condition_states/base_condition_state.js";
+export * from "./cauldron/fsm/states/condition_states/condition_state.js";
+export * from "./cauldron/fsm/states/condition_states/timer_state.js";
+export * from "./cauldron/fsm/states/cauldron/branch_state.js";
 
 //    OBJECT POOL
 export * from "./cauldron/object_pool/object_pool.js";
@@ -58,7 +61,7 @@ export * from "./cauldron/object_pool/components/object_pool_manager_component.j
 export * from "./cauldron/type_definitions/array_type_definitions.js";
 
 //    UTILS
-export { ColorUtils } from "./cauldron/utils/color_utils.js";
+export { ColorUtils, ColorModel } from "./cauldron/utils/color_utils.js";
 export { SaveUtils } from "./cauldron/utils/save_utils.js";
 export { XRUtils } from "./cauldron/utils/xr_utils.js";
 export { BrowserUtils } from "./cauldron/utils/browser_utils.js";
@@ -75,7 +78,7 @@ export { Mat3Utils } from "./cauldron/utils/array/mat3_utils.js";
 export { Mat4Utils } from "./cauldron/utils/array/mat4_utils.js";
 
 export { JSUtils } from "./cauldron/utils/js_utils.js";
-export { MathUtils, EasingFunction, EasingSupportFunction } from "./cauldron/utils/math_utils.js";
+export { MathUtils, EasingFunction, EasingFunctionName, WaveFunction } from "./cauldron/utils/math_utils.js";
 
 //    PHYSICS
 export { PhysicsUtils } from "./cauldron/physics/physics_utils.js";
@@ -102,9 +105,9 @@ export * from "./cauldron/visual/components/visual_manager_component.js";
 //    WL
 export * from "./cauldron/wl/register_wl_components.js";
 export * from "./cauldron/wl/components/add_wl_to_window_component.js";
-export { ObjectUtils, CloneParams } from "./cauldron/wl/utils/object_utils.js";
-export { ComponentUtils, DeepCloneParams, CustomCloneParams } from "./cauldron/wl/utils/component_utils.js";
-export { DefaultWLComponentCloneCallbacks } from "./cauldron/wl/utils/default_wl_component_clone_callbacks.js";
+export { ObjectUtils, ObjectCloneParams } from "./cauldron/wl/utils/object_utils.js";
+export { ComponentUtils, ComponentDeepCloneParams, ComponentCustomCloneParams } from "./cauldron/wl/utils/component_utils.js";
+export { WLComponentDefaultCloneCallbacks } from "./cauldron/wl/utils/wl_component_default_clone_callbacks.js";
 export { MaterialUtils } from "./cauldron/wl/utils/material_utils.js";
 export { MeshUtils, MeshCreationVertexParams, MeshCreationTriangleParams, MeshCreationParams } from "./cauldron/wl/utils/mesh_utils.js";
 export { TextUtils } from "./cauldron/wl/utils/text_utils.js";
@@ -136,7 +139,7 @@ export * from "./debug/debug_functions_overwriter/debug_functions_performance_an
 
 //    CAULDRON
 export * from "./gameplay/cauldron/cauldron/direction_2D_to_3D_converter.js";
-export { NumberOverFactor, IntOverFactor, NumberRangeOverFactor, IntRangeOverFactor } from "./gameplay/cauldron/cauldron/number_over_factor.js";
+export * from "./gameplay/cauldron/cauldron/number_over_factor.js";
 export * from "./gameplay/cauldron/cauldron/animated_number.js";
 
 export * from "./gameplay/cauldron/cauldron/components/cursor_button_component.js";
@@ -194,6 +197,7 @@ export * from "./input/cauldron/keyboard.js";
 export * from "./input/cauldron/mouse.js";
 export * from "./input/cauldron/input_manager.js";
 
+export * from "./input/cauldron/components/overlap_cursor_component.js";
 export * from "./input/cauldron/components/finger_cursor_component.js";
 export * from "./input/cauldron/components/input_manager_component.js";
 export * from "./input/cauldron/components/switch_hand_object_component.js";
@@ -202,7 +206,7 @@ export * from "./input/cauldron/components/tracked_hand_draw_all_joints_componen
 export * from "./input/cauldron/components/tracked_hand_draw_skin_component.js";
 
 export * from "./input/gamepad/gamepad_buttons.js";
-export * from "./input/gamepad/gamepad.js";
+export { Gamepad } from "./input/gamepad/gamepad.js";
 export * from "./input/gamepad/universal_gamepad.js";
 export * from "./input/gamepad/cauldron/gamepad_mesh_animator_component.js";
 export * from "./input/gamepad/cauldron/gamepads_manager.js";
@@ -265,11 +269,9 @@ export * from "./tool/easy_tune/easy_object_tuners/easy_light_color.js";
 export * from "./tool/easy_tune/easy_object_tuners/easy_mesh_color.js";
 export * from "./tool/easy_tune/easy_object_tuners/easy_scale.js";
 export * from "./tool/easy_tune/easy_object_tuners/easy_transform.js";
-export * from "./tool/easy_tune/easy_object_tuners/easy_mesh_ambient_factor.js";
 export * from "./tool/easy_tune/easy_object_tuners/easy_text_color.js";
 export * from "./tool/easy_tune/easy_object_tuners/components/easy_light_attenuation_component.js";
 export * from "./tool/easy_tune/easy_object_tuners/components/easy_light_color_component.js";
-export * from "./tool/easy_tune/easy_object_tuners/components/easy_mesh_ambient_factor_component.js";
 export * from "./tool/easy_tune/easy_object_tuners/components/easy_mesh_color_component.js";
 export * from "./tool/easy_tune/easy_object_tuners/components/easy_scale_component.js";
 export * from "./tool/easy_tune/easy_object_tuners/components/easy_set_tune_target_child_number_component.js";

@@ -1,7 +1,9 @@
 import { Vector } from "../../../../cauldron/type_definitions/array_type_definitions.js";
 import { VecUtils } from "../../../../cauldron/utils/array/vec_utils.js";
+import { EasingFunction } from "../../../../cauldron/utils/math_utils.js";
 import { PluginUtils } from "../../../utils/plugin_utils.js";
 import { ArrayExtensionUtils } from "./array_extension_utils.js";
+import { VectorExtension } from "./vec_type_extension.js";
 
 import "./vec_type_extension.js";
 
@@ -11,65 +13,78 @@ export function initVecExtension(): void {
 
 function _initVecExtensionProtoype(): void {
 
-    const vecExtension: Record<string, any> = {};
+    const vecExtension: VectorExtension<Vector> = {
 
-    vecExtension.vec2_set = function vec2_set<T extends Vector>(this: T, firstValue: number, ...remainingValues: number[]): T {
-        return VecUtils.set(this, firstValue, ...remainingValues);
-    };
+        vec_set<T extends Vector>(this: T, firstValue: number, ...remainingValues: number[]): T {
+            return VecUtils.set(this, firstValue, ...remainingValues);
+        },
 
-    vecExtension.vec_clone = function vec_clone<T extends Vector>(this: Readonly<T>): T {
-        return VecUtils.clone<T>(this);
-    };
+        vec_copy<T extends Vector>(this: T, vector: Readonly<Vector>): T {
+            return VecUtils.copy(vector, this);
+        },
 
-    vecExtension.vec_equals = function vec_equals(this: Readonly<Vector>, vector: Readonly<Vector>, epsilon?: number): boolean {
-        return VecUtils.equals(this, vector, epsilon);
-    };
+        vec_clone<T extends Vector>(this: Readonly<T>): T {
+            return VecUtils.clone(this);
+        },
 
-    vecExtension.vec_zero = function vec_zero<T extends Vector>(this: T): T {
-        return VecUtils.zero(this);
-    };
+        vec_equals(this: Readonly<Vector>, vector: Readonly<Vector>, epsilon?: number): boolean {
+            return VecUtils.equals(this, vector, epsilon);
+        },
 
-    vecExtension.vec_isZero = function vec_isZero(this: Readonly<Vector>, epsilon?: number): boolean {
-        return VecUtils.isZero(this, epsilon);
-    };
+        vec_zero<T extends Vector>(this: T): T {
+            return VecUtils.zero(this);
+        },
 
-    vecExtension.vec_scale = function vec_scale<T extends Vector, S extends Vector>(this: Readonly<T>, value: number, out?: S): S {
-        return VecUtils.scale(this, value, out!);
-    };
+        vec_isZero(this: Readonly<Vector>, epsilon?: number): boolean {
+            return VecUtils.isZero(this, epsilon);
+        },
 
-    vecExtension.vec_round = function vec_round<T extends Vector, S extends Vector>(this: Readonly<T>, out?: S): S {
-        return VecUtils.round(this, out!);
-    };
+        vec_scale<T extends Vector, U extends Vector>(this: Readonly<T>, value: number, out?: U): U {
+            return VecUtils.scale(this, value, out!);
+        },
 
-    vecExtension.vec_floor = function vec_floor<T extends Vector, S extends Vector>(this: Readonly<T>, out?: S): S {
-        return VecUtils.floor(this, out!);
-    };
+        vec_round<T extends Vector, U extends Vector>(this: Readonly<T>, out?: U): U {
+            return VecUtils.round(this, out!);
+        },
 
-    vecExtension.vec_ceil = function vec_ceil<T extends Vector, S extends Vector>(this: Readonly<T>, out?: S): S {
-        return VecUtils.ceil(this, out!);
-    };
+        vec_floor<T extends Vector, U extends Vector>(this: Readonly<T>, out?: U): U {
+            return VecUtils.floor(this, out!);
+        },
 
-    vecExtension.vec_clamp = function vec_clamp<T extends Vector, S extends Vector>(this: Readonly<T>, start: number, end: number, out?: S): S {
-        return VecUtils.clamp(this, start, end, out!);
-    };
+        vec_ceil<T extends Vector, U extends Vector>(this: Readonly<T>, out?: U): U {
+            return VecUtils.ceil(this, out!);
+        },
 
-    vecExtension.vec_toString = function vec_toString(this: Readonly<Vector>, decimalPlaces?: number): string {
-        return VecUtils.toString(this, decimalPlaces);
-    };
+        vec_clamp<T extends Vector, U extends Vector>(this: Readonly<T>, start?: number, end?: number, out?: U): U {
+            return VecUtils.clamp(this, start!, end!, out!);
+        },
 
-    vecExtension.vec_log = function vec_log(this: Readonly<Vector>, decimalPlaces?: number): Vector {
-        return VecUtils.log(this, decimalPlaces);
-    };
+        vec_lerp<T extends Vector, U extends Vector>(this: Readonly<T>, to: Readonly<Vector>, interpolationFactor: number, out?: T | U): T | U {
+            return VecUtils.lerp(this, to, interpolationFactor, out!);
+        },
 
-    vecExtension.vec_error = function vec_error(this: Readonly<Vector>, decimalPlaces?: number): Vector {
-        return VecUtils.error(this, decimalPlaces);
-    };
+        vec_interpolate<T extends Vector, U extends Vector>(this: Readonly<T>, to: Readonly<Vector>, interpolationFactor: number, easingFunction?: EasingFunction, out?: T | U): T | U {
+            return VecUtils.interpolate(this, to, interpolationFactor, easingFunction!, out!);
+        },
 
-    vecExtension.vec_warn = function vec_warn(this: Readonly<Vector>, decimalPlaces?: number): Vector {
-        return VecUtils.warn(this, decimalPlaces);
+        vec_toString(this: Readonly<Vector>, decimalPlaces?: number): string {
+            return VecUtils.toString(this, decimalPlaces);
+        },
+
+        vec_log(this: Readonly<Vector>, decimalPlaces?: number): Vector {
+            return VecUtils.log(this, decimalPlaces);
+        },
+
+        vec_error(this: Readonly<Vector>, decimalPlaces?: number): Vector {
+            return VecUtils.error(this, decimalPlaces);
+        },
+
+        vec_warn(this: Readonly<Vector>, decimalPlaces?: number): Vector {
+            return VecUtils.warn(this, decimalPlaces);
+        }
     };
 
     for (const arrayLikeClassToExtend of ArrayExtensionUtils.ARRAY_LIKE_CLASSES) {
-        PluginUtils.injectProperties(vecExtension, arrayLikeClassToExtend.prototype, false, true, true);
+        PluginUtils.injectOwnProperties(vecExtension, arrayLikeClassToExtend.prototype, false, true, true);
     }
 }

@@ -1,10 +1,9 @@
+import { ArrayLike, DynamicArrayLike } from "../../../../cauldron/type_definitions/array_type_definitions.js";
+
 /**
  * #WARN this type extension is actually added at runtime only if you call `initArrayExtension`  
  * The `initPP` function, which is automatically called by the `pp-gateway` component, does this for you
  */
-
-import { ArrayLike } from "../../../../cauldron/type_definitions/array_type_definitions.js";
-
 export interface ArrayLikeExtension<ArrayType extends ArrayLike<ArrayElementType>, ArrayElementType> {
     pp_copy<T extends ArrayType>(this: T, array: Readonly<ArrayLike<ArrayElementType>>, copyCallback?: (arrayElement: ArrayElementType, thisElement: ArrayElementType) => ArrayElementType): this;
     pp_clone<T extends ArrayType>(this: Readonly<T>, cloneCallback?: (elementToClone: ArrayElementType) => ArrayElementType): T;
@@ -28,7 +27,7 @@ export interface ArrayLikeExtension<ArrayType extends ArrayLike<ArrayElementType
     pp_findAllIndexesEqual<T extends ArrayType>(this: Readonly<T>, elementToFind: ArrayElementType, elementsEqualCallback?: (elementToCheck: ArrayElementType, elementToFind: ArrayElementType) => boolean): number[];
 }
 
-export interface ArrayExtension<ArrayType extends Array<ArrayElementType>, ArrayElementType> extends ArrayLikeExtension<ArrayType, ArrayElementType> {
+export interface DynamicArrayLikeOwnExtension<ArrayType extends DynamicArrayLike<ArrayElementType>, ArrayElementType> {
     pp_remove<T extends ArrayType>(this: T, callback: (elementToCheck: ArrayElementType, elementIndex: number) => boolean): ArrayElementType | undefined;
     pp_removeIndex<T extends ArrayType>(this: T, index: number): ArrayElementType | undefined;
     pp_removeAll<T extends ArrayType>(this: T, callback: (elementToCheck: ArrayElementType, elementIndex: number) => boolean): ArrayElementType[];
@@ -43,8 +42,10 @@ export interface ArrayExtension<ArrayType extends Array<ArrayElementType>, Array
     pp_unshiftUnique<T extends ArrayType>(this: T, elementToAdd: ArrayElementType, elementsEqualCallback?: (elementToCheck: ArrayElementType, elementToAdd: ArrayElementType) => boolean): number;
 }
 
+export interface DynamicArrayLikeExtension<ArrayType extends DynamicArrayLike<ArrayElementType>, ArrayElementType> extends ArrayLikeExtension<ArrayType, ArrayElementType>, DynamicArrayLikeOwnExtension<ArrayType, ArrayElementType> { }
+
 declare global {
-    interface Array<T> extends ArrayExtension<Array<T>, T> { }
+    interface Array<T> extends DynamicArrayLikeExtension<Array<T>, T> { }
 }
 
 declare global {
@@ -85,6 +86,8 @@ declare global {
 
 declare module "../../../../cauldron/type_definitions/array_type_definitions.js" {
     interface ArrayLike<T> extends ArrayLikeExtension<ArrayLike<T>, T> { }
+
+    interface DynamicArrayLike<T> extends DynamicArrayLikeExtension<DynamicArrayLike<T>, T> { }
 
     interface Vector extends ArrayLikeExtension<Vector, number> { }
 

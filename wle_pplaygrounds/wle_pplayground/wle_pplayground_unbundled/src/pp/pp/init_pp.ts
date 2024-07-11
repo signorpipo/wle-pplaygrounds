@@ -7,9 +7,9 @@ import { PP_VERSION } from "./pp_version.js";
 import { registerPPComponents } from "./register_pp_components.js";
 
 /**
- *  TS import preserver
+ * TS import preserver
  * 
- *  This is only needed to make it so the import is not removed, since it makes the type extensions available to the Typescript 
+ * This is only needed to make it so the import is not removed, since it makes the type extensions available to the Typescript 
  */
 import "../plugin/init_plugins.js";
 
@@ -18,7 +18,7 @@ export function initPP(engine: WonderlandEngine): void {
 
     Globals.setMainEngine(engine);
 
-    ComponentUtils.setDefaultWLComponentCloneCallbacks(engine);
+    ComponentUtils.setWLComponentDefaultCloneCallbacks(engine);
 
     registerWLComponents(engine);
     registerPPComponents(engine);

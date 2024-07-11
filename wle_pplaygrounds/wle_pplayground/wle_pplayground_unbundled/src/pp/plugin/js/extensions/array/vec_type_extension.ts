@@ -1,14 +1,15 @@
+import { Vector } from "../../../../cauldron/type_definitions/array_type_definitions.js";
+import { EasingFunction } from "../../../../cauldron/utils/math_utils.js";
+
 /**
  * #WARN this type extension is actually added at runtime only if you call `initVecExtension`  
  * The `initPP` function, which is automatically called by the `pp-gateway` component, does this for you
  */
-
-import { Vector } from "../../../../cauldron/type_definitions/array_type_definitions.js";
-
 export interface VectorExtension<VectorType extends Vector> {
     vec_set<T extends VectorType>(this: T, uniformValue: number): this;
     vec_set<T extends VectorType>(this: T, firstValue: number, ...remainingValues: number[]): this;
 
+    vec_copy<T extends VectorType>(this: T, vector: Readonly<Vector>): this;
     vec_clone<T extends VectorType>(this: Readonly<T>): T;
 
     vec_equals<T extends VectorType>(this: Readonly<T>, vector: Readonly<Vector>, epsilon?: number): boolean;
@@ -17,20 +18,29 @@ export interface VectorExtension<VectorType extends Vector> {
     vec_isZero<T extends VectorType>(this: Readonly<T>, epsilon?: number): boolean;
 
     vec_scale<T extends VectorType>(this: Readonly<T>, value: number): T;
-    vec_scale<T extends VectorType, S extends Vector>(this: Readonly<T>, value: number, out: S): S;
+    vec_scale<T extends VectorType, U extends Vector>(this: Readonly<T>, value: number, out: U): U;
+
 
 
     vec_round<T extends VectorType>(this: Readonly<T>): T;
-    vec_round<T extends VectorType, S extends Vector>(this: Readonly<T>, out: S): S;
+    vec_round<T extends VectorType, U extends Vector>(this: Readonly<T>, out: U): U;
 
     vec_floor<T extends VectorType>(this: Readonly<T>): T;
-    vec_floor<T extends VectorType, S extends Vector>(this: Readonly<T>, out: S): S;
+    vec_floor<T extends VectorType, U extends Vector>(this: Readonly<T>, out: U): U;
 
     vec_ceil<T extends VectorType>(this: Readonly<T>): T;
-    vec_ceil<T extends VectorType, S extends Vector>(this: Readonly<T>, out: S): S;
+    vec_ceil<T extends VectorType, U extends Vector>(this: Readonly<T>, out: U): U;
 
-    vec_clamp<T extends VectorType>(this: Readonly<T>, start: number, end: number): T;
-    vec_clamp<T extends VectorType, S extends Vector>(this: Readonly<T>, start: number, end: number, out: S): S;
+    vec_clamp<T extends VectorType>(this: Readonly<T>, start?: number, end?: number): T;
+    vec_clamp<T extends VectorType, U extends Vector>(this: Readonly<T>, start: number, end: number, out: U): U;
+
+
+    vec_lerp<T extends VectorType>(this: Readonly<T>, to: Readonly<Vector>, interpolationFactor: number): T;
+    vec_lerp<T extends VectorType, U extends Vector>(this: Readonly<T>, to: Readonly<Vector>, interpolationFactor: number, out: U): U;
+
+    vec_interpolate<T extends VectorType>(this: Readonly<T>, to: Readonly<Vector>, interpolationFactor: number, easingFunction?: EasingFunction): T;
+    vec_interpolate<T extends VectorType, U extends Vector>(this: Readonly<T>, to: Readonly<Vector>, interpolationFactor: number, easingFunction: EasingFunction, out: U): U;
+
 
 
     vec_toString<T extends VectorType>(this: Readonly<T>, decimalPlaces?: number): string;
@@ -84,6 +94,9 @@ declare global {
 declare module "../../../../cauldron/type_definitions/array_type_definitions.js" {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     interface ArrayLike<T> extends VectorExtension<ArrayLike<number>> { }
+
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    interface DynamicArrayLike<T> extends VectorExtension<DynamicArrayLike<number>> { }
 
     interface Vector extends VectorExtension<Vector> { }
 

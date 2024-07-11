@@ -1,5 +1,5 @@
 import { Component, MeshComponent, Property } from "@wonderlandengine/api";
-import { CloneParams, Globals, ObjectPool, ObjectPoolParams } from "wle-pp";
+import { Globals, ObjectCloneParams, ObjectPool, ObjectPoolParams } from "wle-pp";
 import { ParticleComponent } from "./particle_component.js";
 
 export class ParticlesSpawnerComponent extends Component {
@@ -21,9 +21,7 @@ export class ParticlesSpawnerComponent extends Component {
         poolParams.myAmountToAddWhenEmpty = 1;
         poolParams.myPercentageToAddWhenEmpty = 1;
 
-        poolParams.myOptimizeObjectsAllocation = true;    // If true it will pre-allocate the memory before adding new objects to the pool
-
-        let cloneParams = new CloneParams();
+        let cloneParams = new ObjectCloneParams();
         cloneParams.myComponentsToInclude.push(MeshComponent.TypeName);
 
         for (let i = 0; i < this._myParticles.length; i++) {

@@ -7,7 +7,7 @@ export class ToggleHowToTextComponent extends Component implements CursorButtonA
     public static override TypeName = "toggle-how-to-text";
 
     @property.object()
-    private _myTextObject!: Object3D;
+    private readonly _myTextObject!: Object3D;
 
     private readonly _myAnimatedScale!: AnimatedNumber;
 
@@ -23,7 +23,9 @@ export class ToggleHowToTextComponent extends Component implements CursorButtonA
         const textComponents = this.object.pp_getComponents(TextComponent);
         let visible = true;
         const switchButtonTextHandler = {
-            onUp: function (): boolean {
+            onUp(cursorButtonComponent: CursorButtonComponent, cursorComponent: Cursor, isSecondaryCursor: boolean): boolean {
+                if (isSecondaryCursor) return false;
+
                 let textToSet = "Show";
                 if (visible) {
                     visible = false;
@@ -66,7 +68,9 @@ export class ToggleHowToTextComponent extends Component implements CursorButtonA
         }
     }
 
-    public onUp(cursorButtonComponent: CursorButtonComponent, cursorComponent: Cursor): boolean {
+    public onUp(cursorButtonComponent: CursorButtonComponent, cursorComponent: Cursor, isSecondaryCursor: boolean): boolean {
+        if (isSecondaryCursor) return false;
+
         if (!this._myTextVisible) {
             this._myAnimatedScale.updateTargetValue(1);
         } else {

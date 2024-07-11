@@ -1,10 +1,10 @@
+import { Vector2 } from "../../../../cauldron/type_definitions/array_type_definitions.js";
+import { EasingFunction } from "../../../../cauldron/utils/math_utils.js";
+
 /**
  * #WARN this type extension is actually added at runtime only if you call `initVec2Extension`  
  * The `initPP` function, which is automatically called by the `pp-gateway` component, does this for you
  */
-
-import { Vector2 } from "../../../../cauldron/type_definitions/array_type_definitions.js";
-
 export interface Vector2Extension<VectorType extends Vector2> {
     vec2_set<T extends VectorType>(this: T, x: number, y: number): this;
     vec2_set<T extends VectorType>(this: T, uniformValue: number): this;
@@ -15,10 +15,16 @@ export interface Vector2Extension<VectorType extends Vector2> {
     vec2_length<T extends VectorType>(this: Readonly<T>): number;
 
     vec2_normalize<T extends VectorType>(this: Readonly<T>): T;
-    vec2_normalize<T extends VectorType, S extends Vector2>(this: Readonly<T>, out: S): S;
+    vec2_normalize<T extends VectorType, U extends Vector2>(this: Readonly<T>, out: U): U;
 
     vec2_zero<T extends VectorType>(this: T): this;
     vec2_isZero<T extends VectorType>(this: Readonly<T>, epsilon?: number): boolean;
+
+    vec2_lerp<T extends VectorType>(this: Readonly<T>, to: Readonly<Vector2>, interpolationFactor: number): T;
+    vec2_lerp<T extends VectorType, U extends Vector2>(this: Readonly<T>, to: Readonly<Vector2>, interpolationFactor: number, out: U): U;
+
+    vec2_interpolate<T extends VectorType>(this: Readonly<T>, to: Readonly<Vector2>, interpolationFactor: number, easingFunction?: EasingFunction): T;
+    vec2_interpolate<T extends VectorType, U extends Vector2>(this: Readonly<T>, to: Readonly<Vector2>, interpolationFactor: number, easingFunction: EasingFunction, out: U): U;
 }
 
 declare global {
@@ -65,6 +71,9 @@ declare global {
 declare module "../../../../cauldron/type_definitions/array_type_definitions.js" {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     interface ArrayLike<T> extends Vector2Extension<ArrayLike<number>> { }
+
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    interface DynamicArrayLike<T> extends Vector2Extension<DynamicArrayLike<number>> { }
 
     interface Vector extends Vector2Extension<Vector> { }
 

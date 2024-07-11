@@ -1,6 +1,6 @@
 import { glMatrix } from "gl-matrix";
 import { Vector } from "../../type_definitions/array_type_definitions.js";
-import { MathUtils } from "../math_utils.js";
+import { EasingFunction, MathUtils } from "../math_utils.js";
 
 export function create(length: number): Vector;
 export function create(firstValue: number, ...remainingValues: number[]): Vector;
@@ -41,8 +41,16 @@ export function set<T extends Vector>(vector: T, firstValue: number, ...remainin
     return vector;
 }
 
+export function copy<T extends Vector>(from: Readonly<Vector>, to: T): T {
+    const minLength = Math.min(from.length, to.length);
+    for (let i = 0; i < minLength; i++) {
+        to[i] = from[i];
+    }
+    return to;
+}
+
 /** The overload where `T extends Vector` does also get `array` as `Readonly<T>`, but is not marked as such due to 
- *  Typescript having issues with inferring the proper type of `T` when `Readonly` is used */
+    Typescript having issues with inferring the proper type of `T` when `Readonly` is used */
 export function clone<T extends Vector>(vector: Readonly<T>): T;
 export function clone(vector: Readonly<number[]>): number[];
 export function clone<T extends Vector>(vector: T): T;
@@ -68,7 +76,7 @@ export function zero<T extends Vector>(vector: T): T {
     return vector;
 }
 
-export function isZero(vector: Readonly<Vector>, epsilon = 0): boolean {
+export function isZero(vector: Readonly<Vector>, epsilon: number = 0): boolean {
     let zero = true;
 
     for (let i = 0; i < vector.length && zero; i++) {
@@ -79,8 +87,8 @@ export function isZero(vector: Readonly<Vector>, epsilon = 0): boolean {
 }
 
 export function scale<T extends Vector>(vector: Readonly<T>, value: number): T;
-export function scale<T extends Vector, S extends Vector>(vector: Readonly<T>, value: number, out: S): S;
-export function scale<T extends Vector, S extends Vector>(vector: Readonly<T>, value: number, out: T | S = VecUtils.clone<T>(vector)): T | S {
+export function scale<T extends Vector>(vector: Readonly<Vector>, value: number, out: T): T;
+export function scale<T extends Vector, U extends Vector>(vector: Readonly<T>, value: number, out: T | U = VecUtils.clone(vector)): T | U {
     for (let i = 0; i < vector.length; i++) {
         out[i] = vector[i] * value;
     }
@@ -89,8 +97,8 @@ export function scale<T extends Vector, S extends Vector>(vector: Readonly<T>, v
 }
 
 export function round<T extends Vector>(vector: Readonly<T>): T;
-export function round<T extends Vector, S extends Vector>(vector: Readonly<T>, out: S): S;
-export function round<T extends Vector, S extends Vector>(vector: Readonly<T>, out: T | S = VecUtils.clone<T>(vector)): T | S {
+export function round<T extends Vector>(vector: Readonly<Vector>, out: T): T;
+export function round<T extends Vector, U extends Vector>(vector: Readonly<T>, out: T | U = VecUtils.clone(vector)): T | U {
     for (let i = 0; i < vector.length; i++) {
         out[i] = Math.round(vector[i]);
     }
@@ -99,8 +107,8 @@ export function round<T extends Vector, S extends Vector>(vector: Readonly<T>, o
 }
 
 export function floor<T extends Vector>(vector: Readonly<T>): T;
-export function floor<T extends Vector, S extends Vector>(vector: Readonly<T>, out: S): S;
-export function floor<T extends Vector, S extends Vector>(vector: Readonly<T>, out: T | S = VecUtils.clone<T>(vector)): T | S {
+export function floor<T extends Vector>(vector: Readonly<Vector>, out: T): T;
+export function floor<T extends Vector, U extends Vector>(vector: Readonly<T>, out: T | U = VecUtils.clone(vector)): T | U {
     for (let i = 0; i < vector.length; i++) {
         out[i] = Math.floor(vector[i]);
     }
@@ -109,8 +117,8 @@ export function floor<T extends Vector, S extends Vector>(vector: Readonly<T>, o
 }
 
 export function ceil<T extends Vector>(vector: Readonly<T>): T;
-export function ceil<T extends Vector, S extends Vector>(vector: Readonly<T>, out: S): S;
-export function ceil<T extends Vector, S extends Vector>(vector: Readonly<T>, out: T | S = VecUtils.clone<T>(vector)): T | S {
+export function ceil<T extends Vector>(vector: Readonly<Vector>, out: T): T;
+export function ceil<T extends Vector, U extends Vector>(vector: Readonly<T>, out: T | U = VecUtils.clone(vector)): T | U {
     for (let i = 0; i < vector.length; i++) {
         out[i] = Math.ceil(vector[i]);
     }
@@ -118,19 +126,46 @@ export function ceil<T extends Vector, S extends Vector>(vector: Readonly<T>, ou
     return out;
 }
 
-export function clamp<T extends Vector>(vector: Readonly<T>, start: number, end: number): T;
-export function clamp<T extends Vector, S extends Vector>(vector: Readonly<T>, start: number, end: number, out: S): S;
-export function clamp<T extends Vector, S extends Vector>(vector: Readonly<T>, start: number, end: number, out: T | S = VecUtils.clone<T>(vector)): T | S {
-    const fixedStart = (start != null) ? start : -Number.MAX_VALUE;
-    const fixedEnd = (end != null) ? end : Number.MAX_VALUE;
-    const min = Math.min(fixedStart, fixedEnd);
-    const max = Math.max(fixedStart, fixedEnd);
+export function clamp<T extends Vector>(vector: Readonly<T>, start?: number, end?: number): T;
+export function clamp<T extends Vector>(vector: Readonly<Vector>, start: number, end: number, out: T): T;
+export function clamp<T extends Vector, U extends Vector>(vector: Readonly<T>, start: number = -Number.MAX_VALUE, end: number = Number.MAX_VALUE, out: T | U = VecUtils.clone(vector)): T | U {
+    const min = Math.min(start, end);
+    const max = Math.max(start, end);
 
     for (let i = 0; i < vector.length; i++) {
         out[i] = MathUtils.clamp(vector[i], min, max);
     }
 
     return out;
+}
+
+export function lerp<T extends Vector>(from: Readonly<T>, to: Readonly<Vector>, interpolationFactor: number): T;
+export function lerp<T extends Vector>(from: Readonly<Vector>, to: Readonly<Vector>, interpolationFactor: number, out: T): T;
+export function lerp<T extends Vector, U extends Vector>(from: Readonly<T>, to: Readonly<Vector>, interpolationFactor: number, out: T | U = VecUtils.clone(from)): T | U {
+    if (interpolationFactor <= 0) {
+        VecUtils.copy(from, out);
+        return out;
+    } else if (interpolationFactor >= 1) {
+        VecUtils.copy(to, out);
+        return out;
+    }
+
+    const minLength = Math.min(from.length, to.length, out.length);
+    for (let i = 0; i < minLength; i++) {
+        const fromCurrentValue = from[i];
+        const toCurrentValue = to[i];
+
+        out[i] = fromCurrentValue + interpolationFactor * (toCurrentValue - fromCurrentValue);
+    }
+
+    return out;
+}
+
+export function interpolate<T extends Vector>(from: Readonly<T>, to: Readonly<Vector>, interpolationFactor: number, easingFunction?: EasingFunction): T;
+export function interpolate<T extends Vector>(from: Readonly<Vector>, to: Readonly<Vector>, interpolationFactor: number, easingFunction: EasingFunction, out: T): T;
+export function interpolate<T extends Vector, U extends Vector>(from: Readonly<T>, to: Readonly<Vector>, interpolationFactor: number, easingFunction: EasingFunction = EasingFunction.linear, out: T | U = VecUtils.clone(from)): T | U {
+    const lerpFactor = easingFunction(interpolationFactor);
+    return VecUtils.lerp(from, to, lerpFactor, out);
 }
 
 export function toString(vector: Readonly<Vector>, decimalPlaces: number = 4): string {
@@ -162,6 +197,7 @@ export function warn(vector: Readonly<Vector>, decimalPlaces: number = 4): Vecto
 export const VecUtils = {
     create,
     set,
+    copy,
     clone,
     equals,
     zero,
@@ -171,6 +207,8 @@ export const VecUtils = {
     floor,
     ceil,
     clamp,
+    lerp,
+    interpolate,
     toString,
     log,
     error,
