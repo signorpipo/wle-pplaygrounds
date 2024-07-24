@@ -25,7 +25,8 @@
                         "_myPhongOpaque": "e972069e-66ee-4d9c-959d-8a78d9ddb9f9",
                         "_myText": "04b7f97e-2921-4f88-91f3-20e62ec5c355",
                         "_myScene": "ea2d149d-d18c-4968-afde-0b9c1f7ecd3f",
-                        "_myRoot": "ea2d149d-d18c-4968-afde-0b9c1f7ecd3f"
+                        "_myRoot": "ea2d149d-d18c-4968-afde-0b9c1f7ecd3f",
+                        "_myClearConsoleOnInit": true
                     }
                 },
                 {

@@ -7,7 +7,11 @@ export class VirtualGamepadVirtualThumbstick {
     constructor(thumbstickElementParent, virtualGamepadParams, virtualThumbstickHandedness, gamepadThumbstickHandedness, gamepadAxesID) {
         this._myThumbstickElement = null;
         this._myThumbstickIcon = null;
+
         this._myThumbstickBackground = null;
+        this._myThumbstickBackgroundResizeObserver = null;
+        this._myThumbstickBackgroundWidth = 0;
+
         this._myThumbstickDetectionElement = null;
 
         this._myActive = true;
@@ -138,8 +142,7 @@ export class VirtualGamepadVirtualThumbstick {
         let mouseX = event.clientX;
         let mouseY = event.clientY;
 
-        let backgroundRect = this._myThumbstickBackground.getBoundingClientRect();
-        let maxDistanceFromCenter = (backgroundRect.width / 2) * this._myParams.myMaxDistanceFromCenterMultiplier;
+        let maxDistanceFromCenter = (this._myThumbstickBackgroundWidth / 2) * this._myParams.myMaxDistanceFromCenterMultiplier;
 
         let xDiff = mouseX - this._myThumbstickDragStartPosition[0];
         let yDiff = mouseY - this._myThumbstickDragStartPosition[1];
@@ -246,6 +249,12 @@ export class VirtualGamepadVirtualThumbstick {
 
             this._myThumbstickDetectionElement = thumbstickDetectionElement;
         }
+
+        this._myThumbstickBackgroundResizeObserver = new ResizeObserver(() => {
+            let backgroundRect = this._myThumbstickBackground.getBoundingClientRect();
+            this._myThumbstickBackgroundWidth = backgroundRect.width;
+        });
+        this._myThumbstickBackgroundResizeObserver.observe(this._myThumbstickBackground);
     }
 
     _createSizeValue(value, minSizeMultiplier) {
@@ -263,6 +272,8 @@ export class VirtualGamepadVirtualThumbstick {
 
         this._myThumbstickDetectionElement.removeEventListener("mouseenter", this._myMouseEnterEventListener);
         this._myThumbstickDetectionElement.removeEventListener("mouseleave", this._myPointerUpEventLis_myMouseLeaveEventListenertener);
+
+        this._myThumbstickBackgroundResizeObserver.disconnect();
 
         this._myThumbstickIcon.destroy();
 

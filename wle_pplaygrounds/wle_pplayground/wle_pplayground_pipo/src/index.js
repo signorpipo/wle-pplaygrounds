@@ -52,7 +52,7 @@ import {TrackedHandDrawAllJointsComponent} from './pp/index.js';
 import {VirtualGamepadComponent} from './pp/index.js';
 /* wle:auto-imports:end */
 
-import { loadRuntime } from '@wonderlandengine/api';
+import { loadRuntime, LogLevel } from '@wonderlandengine/api';
 
 /* wle:auto-constants:start */
 const Constants = {
@@ -68,6 +68,11 @@ const RuntimeOptions = {
     canvas: 'canvas',
 };
 /* wle:auto-constants:end */
+
+const disableEngineLogs = true;
+if (disableEngineLogs) {
+    RuntimeOptions.logs = [LogLevel.Error];
+}
 
 const engine = await loadRuntime(Constants.RuntimeBaseName, RuntimeOptions);
 
@@ -145,9 +150,9 @@ engine.registerComponent(TrackedHandDrawAllJointsComponent);
 engine.registerComponent(VirtualGamepadComponent);
 /* wle:auto-register:end */
 
-let loadDelaySeconds = 0;
-if (loadDelaySeconds > 0) {
-    setTimeout(() => engine.scene.load(`${Constants.ProjectName}.bin`), loadDelaySeconds * 1000);
+const sceneLoadDelaySeconds = 0;
+if (sceneLoadDelaySeconds > 0) {
+    setTimeout(() => engine.scene.load(`${Constants.ProjectName}.bin`), sceneLoadDelaySeconds * 1000);
 } else {
     engine.scene.load(`${Constants.ProjectName}.bin`);
 }
