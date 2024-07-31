@@ -23,9 +23,11 @@ export enum GamepadButtonID {
     /** Circle button on a playstation gamepad */
     RIGHT_BUTTON = 6,
 
-    TOUCHPAD = 7,
+    MENU = 7,
 
-    THUMB_REST = 8
+    TOUCHPAD = 8,
+
+    THUMB_REST = 9
 }
 
 export enum GamepadButtonEvent {

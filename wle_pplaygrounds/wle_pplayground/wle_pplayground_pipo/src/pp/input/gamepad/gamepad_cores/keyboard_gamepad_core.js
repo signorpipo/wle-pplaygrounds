@@ -49,11 +49,14 @@ export class KeyboardGamepadCore extends GamepadCore {
                     case GamepadButtonID.RIGHT_BUTTON:
                         this._myButtonData.myPressed = keyboard.isKeyPressed(KeyID.KeyV);
                         break;
-                    case GamepadButtonID.TOUCHPAD:
+                    case GamepadButtonID.MENU:
                         this._myButtonData.myPressed = keyboard.isKeyPressed(KeyID.Digit3);
                         break;
-                    case GamepadButtonID.THUMB_REST:
+                    case GamepadButtonID.TOUCHPAD:
                         this._myButtonData.myPressed = keyboard.isKeyPressed(KeyID.Digit2);
+                        break;
+                    case GamepadButtonID.THUMB_REST:
+                        this._myButtonData.myPressed = keyboard.isKeyPressed(KeyID.Digit1);
                         break;
                 }
             } else {
@@ -79,11 +82,14 @@ export class KeyboardGamepadCore extends GamepadCore {
                     case GamepadButtonID.RIGHT_BUTTON:
                         this._myButtonData.myPressed = keyboard.isKeyPressed(KeyID.KeyM);
                         break;
-                    case GamepadButtonID.TOUCHPAD:
+                    case GamepadButtonID.MENU:
                         this._myButtonData.myPressed = keyboard.isKeyPressed(KeyID.Digit8);
                         break;
-                    case GamepadButtonID.THUMB_REST:
+                    case GamepadButtonID.TOUCHPAD:
                         this._myButtonData.myPressed = keyboard.isKeyPressed(KeyID.Digit9);
+                        break;
+                    case GamepadButtonID.THUMB_REST:
+                        this._myButtonData.myPressed = keyboard.isKeyPressed(KeyID.Digit0);
                         break;
                 }
             }

@@ -86,6 +86,9 @@ export class XRGamepadCore extends GamepadCore {
                 case GamepadButtonID.RIGHT_BUTTON:
                     button = null;
                     break;
+                case GamepadButtonID.MENU:
+                    button = this._myGamepad.buttons[7];
+                    break;
                 case GamepadButtonID.TOUCHPAD:
                     button = this._myGamepad.buttons[2];
                     break;

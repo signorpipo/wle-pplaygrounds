@@ -1,7 +1,7 @@
 import { Component, Property, WonderlandEngine, type ComponentProperty } from "@wonderlandengine/api";
-import { ClearConsoleComponent } from "wle-pp/cauldron/cauldron/components/clear_console_component.js";
 import { AudioManagerComponent } from "../../audio/components/audio_manager_component.js";
 import { AnalyticsManagerComponent } from "../../cauldron/cauldron/components/analytics_manager_component.js";
+import { ClearConsoleComponent } from "../../cauldron/cauldron/components/clear_console_component.js";
 import { SaveManagerComponent } from "../../cauldron/cauldron/components/save_manager_component.js";
 import { ObjectPoolManagerComponent } from "../../cauldron/object_pool/components/object_pool_manager_component.js";
 import { VisualManagerComponent } from "../../cauldron/visual/components/visual_manager_component.js";

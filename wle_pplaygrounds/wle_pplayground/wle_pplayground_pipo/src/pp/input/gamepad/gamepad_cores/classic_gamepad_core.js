@@ -56,6 +56,9 @@ export class ClassicGamepadCore extends GamepadCore {
                     case GamepadButtonID.RIGHT_BUTTON:
                         button = classicGamepad.buttons[15];
                         break;
+                    case GamepadButtonID.MENU:
+                        button = classicGamepad.buttons[8];
+                        break;
                     case GamepadButtonID.TOUCHPAD:
                         button = null;
                         break;
@@ -85,6 +88,9 @@ export class ClassicGamepadCore extends GamepadCore {
                         break;
                     case GamepadButtonID.RIGHT_BUTTON:
                         button = classicGamepad.buttons[1];
+                        break;
+                    case GamepadButtonID.MENU:
+                        button = classicGamepad.buttons[9];
                         break;
                     case GamepadButtonID.TOUCHPAD:
                         button = null;

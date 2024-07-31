@@ -4,7 +4,7 @@ import { VirtualGamepadIcon } from "./virtual_gamepad_icon.js";
 
 export class VirtualGamepadVirtualThumbstick {
 
-    constructor(thumbstickElementParent, virtualGamepadParams, virtualThumbstickHandedness, gamepadThumbstickHandedness, gamepadAxesID) {
+    constructor(thumbstickElementParent, virtualGamepadParams, virtualThumbstickHandedness, virtualGamepadAxesID) {
         this._myThumbstickElement = null;
         this._myThumbstickIcon = null;
 
@@ -25,7 +25,7 @@ export class VirtualGamepadVirtualThumbstick {
         this._myPressed = false;
 
         this._myVirtualGamepadParams = virtualGamepadParams;
-        this._myParams = this._myVirtualGamepadParams.myThumbstickParams[gamepadThumbstickHandedness][gamepadAxesID];
+        this._myParams = this._myVirtualGamepadParams.myThumbstickParams[virtualThumbstickHandedness][virtualGamepadAxesID];
 
         this._build(thumbstickElementParent, virtualThumbstickHandedness);
 

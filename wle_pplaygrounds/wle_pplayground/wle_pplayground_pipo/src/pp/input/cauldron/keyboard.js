@@ -123,7 +123,7 @@ export let KeyID = {
     LEFT: "ArrowLeft",
     RIGHT: "ArrowRight",
 
-    SPACE: " ",
+    SPACE: "Space",
     ENTER: "Enter",
     BACKSPACE: "Backspace",
     ESC: "Escape",
@@ -197,7 +197,6 @@ export class Keyboard {
 
     update(dt) {
         if (!document.hasFocus()) {
-
             for (let i = 0; i < this._myKeyInfosIDs.length; i++) {
                 let id = this._myKeyInfosIDs[i];
                 let keyInfo = this._myKeyInfos[id];
