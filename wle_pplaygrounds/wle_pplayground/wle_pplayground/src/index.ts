@@ -51,7 +51,7 @@ import {ToggleHowToTextComponent} from './playground/components/toggle_how_to_te
 import {WaveMovementComponent} from './playground/components/wave_movement_component.js';
 /* wle:auto-imports:end */
 
-import { loadRuntime, LogLevel } from '@wonderlandengine/api';
+import { loadRuntime, LoadRuntimeOptions, LogLevel } from '@wonderlandengine/api';
 import 'wle-pp/add_type_extensions_to_typescript.js';
 
 /* wle:auto-constants:start */
@@ -76,7 +76,7 @@ const RuntimeOptions = {
 
 const disableEngineLogs = false;
 if (disableEngineLogs) {
-    RuntimeOptions.logs = [LogLevel.Error];
+    (RuntimeOptions as LoadRuntimeOptions).logs = [LogLevel.Error];
 }
 
 const engine = await loadRuntime(Constants.RuntimeBaseName, RuntimeOptions);
@@ -87,22 +87,22 @@ engine.onLoadingScreenEnd.once(() => {
 
 /* WebXR setup. */
 
-function requestSession(mode) {
+function requestSession(mode: XRSessionMode): void {
     engine
         .requestXRSession(mode, Constants.WebXRRequiredFeatures, Constants.WebXROptionalFeatures)
         .catch((e) => console.error(e));
 }
 
-function setupButtonsXR() {
+function setupButtonsXR(): void {
     /* Setup AR / VR buttons */
     const arButton = document.getElementById('ar-button');
     if (arButton) {
-        arButton.dataset.supported = engine.arSupported;
+        arButton.dataset.supported = engine.arSupported as unknown as string;
         arButton.addEventListener('click', () => requestSession('immersive-ar'));
     }
     const vrButton = document.getElementById('vr-button');
     if (vrButton) {
-        vrButton.dataset.supported = engine.vrSupported;
+        vrButton.dataset.supported = engine.vrSupported as unknown as string;
         vrButton.addEventListener('click', () => requestSession('immersive-vr'));
     }
 }
