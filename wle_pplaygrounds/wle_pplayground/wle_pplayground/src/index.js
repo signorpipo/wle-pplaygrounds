@@ -80,8 +80,7 @@ if (disableEngineLogs) {
 }
 
 const engine = await loadRuntime(Constants.RuntimeBaseName, RuntimeOptions);
-
-engine.onSceneLoaded.once(() => {
+engine.onLoadingScreenEnd.once(() => {
     const el = document.getElementById('version');
     if (el) setTimeout(() => el.remove(), 2000);
 });
@@ -156,9 +155,14 @@ engine.registerComponent(WaveMovementComponent);
 
 const sceneLoadDelaySeconds = 0;
 if (sceneLoadDelaySeconds > 0) {
-    setTimeout(() => engine.scene.load(`${Constants.ProjectName}.bin`), sceneLoadDelaySeconds * 1000);
-} else {
-    engine.scene.load(`${Constants.ProjectName}.bin`);
+    await new Promise((resolve) => setTimeout(resolve, sceneLoadDelaySeconds * 1000));
+}
+
+try {
+    await engine.loadMainScene(`${Constants.ProjectName}.bin`);
+} catch (error) {
+    console.error(error);
+    window.alert(`Failed to load ${Constants.ProjectName}.bin: ` + error);
 }
 
 /* wle:auto-benchmark:start */
