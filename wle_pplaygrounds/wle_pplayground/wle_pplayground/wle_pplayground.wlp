@@ -3504,7 +3504,7 @@
             "libraryPaths": [
                 "/js/lib/"
             ],
-            "entryPoint": "src/index.js"
+            "entryPoint": "src/index.ts"
         },
         "vr": {
             "leftEyeObject": "bfeccf36-046b-49b5-b355-da4ede4daf21",
