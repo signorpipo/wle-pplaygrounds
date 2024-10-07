@@ -313,7 +313,7 @@ let _myCheckResourcesAlreadyInCacheDuringPrecacheIgnoringVaryHeaderResourceURLsT
 // u would expect (but I don't think this will actually ever happen)
 //
 // The resources URLs can also be a regex
-let _myFetchFromNetworkIgnoringBrowserCacheResourceURLsToInclude = _EVERY_RESOURCE_FROM_CURRENT_LOCATION;
+let _myFetchFromNetworkIgnoringBrowserCacheResourceURLsToInclude = _NO_RESOURCE;
 let _myFetchFromNetworkIgnoringBrowserCacheResourceURLsToExclude = _NO_RESOURCE;
 
 

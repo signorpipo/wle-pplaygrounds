@@ -63,7 +63,7 @@ let _myUpdateCacheInBackground = false;
 let _myFetchFromCacheIgnoringURLParamsForResourcesFromCurrentLocationAsFallback = true;
 
 // Ignore browser cache when fetching from the network
-let _myFetchFromNetworkIgnoringBrowserCacheForResourcesFromCurrentLocation = true;
+let _myFetchFromNetworkIgnoringBrowserCacheForResourcesFromCurrentLocation = false;
 
 // If u are not using @_myTryFetchFromCacheFirst, when the network fails for the current location it will take a lot to fetch the requests from the cache,
 // since every request needs to fail first
