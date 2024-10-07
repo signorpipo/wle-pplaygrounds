@@ -2805,6 +2805,34 @@
         "4470cf2d-650d-4c38-be1b-2434a74c4ff1": {
             "name": "Cursors",
             "parent": "f0cbb5f3-92cc-4f20-941c-2e7a438f166c"
+        },
+        "fc705769-0aef-4b0b-9fe0-88197eceff56": {
+            "name": "Tracked Hands Teleport Target",
+            "parent": "62bb96e5-dca3-4608-8f0c-c546219e5bdc",
+            "components": [
+                {
+                    "type": "teleport-on-tracked-hands",
+                    "teleport-on-tracked-hands": {
+                        "_myTeleportTargetObject": "fc705769-0aef-4b0b-9fe0-88197eceff56"
+                    }
+                }
+            ],
+            "translation": [
+                0.0,
+                0.85,
+                0.2
+            ],
+            "rotation": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "scaling": [
+                1.0,
+                1.0,
+                1.0
+            ]
         }
     },
     "meshes": {
@@ -3445,13 +3473,13 @@
                 "file": "default"
             }
         },
-        "ed836074-8c0a-4f9a-9f4e-6fd4ccb9caf8": {
+        "9ded86d1-5b9c-44ad-8458-fbc625d841a4": {
             "link": {
                 "name": "lib\\MorphTargets.glsl",
                 "file": "default"
             }
         },
-        "8c7164e0-ef23-4595-b02c-eb48275a4f66": {
+        "6ece0074-6003-4107-8484-30cd6eed4181": {
             "link": {
                 "name": "lib\\PhysicalBSDF.glsl",
                 "file": "default"
