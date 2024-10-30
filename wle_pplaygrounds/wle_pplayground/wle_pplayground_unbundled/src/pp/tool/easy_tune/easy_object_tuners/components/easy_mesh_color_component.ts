@@ -53,6 +53,18 @@ export class EasyMeshColorComponent extends Component {
         }
     }
 
+    public override onActivate(): void {
+        if (this._myEasyObjectTuner != null) {
+            this._myEasyObjectTuner.setActive(true);
+        }
+    }
+
+    public override onDeactivate(): void {
+        if (this._myEasyObjectTuner != null) {
+            this._myEasyObjectTuner.setActive(false);
+        }
+    }
+
     public getEasyObjectTuner(): EasyMeshColor | null {
         return this._myEasyObjectTuner;
     }

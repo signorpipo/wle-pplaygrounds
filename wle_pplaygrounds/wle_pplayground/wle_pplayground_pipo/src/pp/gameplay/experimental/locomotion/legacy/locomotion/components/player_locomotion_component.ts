@@ -30,6 +30,9 @@ export class PlayerLocomotionComponent extends Component {
     @property.float(1.70)
     private readonly _myDefaultHeight!: number;
 
+    @property.float(0.50)
+    private readonly _myMinHeight!: number;
+
     @property.float(0.3)
     private readonly _myCharacterRadius!: number;
 
@@ -83,16 +86,16 @@ export class PlayerLocomotionComponent extends Component {
     @property.float(30)
     private readonly _myMinAngleToFlyUpNonVR!: number;
 
-    @property.float(50)
+    @property.float(40)
     private readonly _myMinAngleToFlyDownNonVR!: number;
 
-    @property.float(60)
+    @property.float(30)
     private readonly _myMinAngleToFlyUpVR!: number;
 
-    @property.float(1)
+    @property.float(40)
     private readonly _myMinAngleToFlyDownVR!: number;
 
-    @property.float(60)
+    @property.float(90)
     private readonly _myMinAngleToFlyRight!: number;
 
 
@@ -124,7 +127,7 @@ export class PlayerLocomotionComponent extends Component {
     @property.string("")
     private readonly _myTeleportFloorLayerFlags!: string;
 
-    @property.bool(false)
+    @property.bool(true)
     private readonly _myTeleportRotationOnUpEnabled!: boolean;
 
     @property.material()
@@ -170,20 +173,48 @@ export class PlayerLocomotionComponent extends Component {
     @property.float(0.25)
     private readonly _myResetHeadToRealMinDistance!: number;
 
+    @property.int(-1)
+    private readonly _myMaxHeadToRealHeadSteps!: number;
 
 
-    /** Valid means, for example, that the real player has not moved inside a wall by moving in the real space.
-        Works 100% properly only if it has the same value as `_myViewOcclusionInsideWallsEnabled` (both true or false)  */
+
+    /** Valid means, for example, that the real player has not moved inside a wall by moving in the real space */
     @property.bool(true)
     private readonly _mySyncWithRealWorldPositionOnlyIfValid!: boolean;
 
-    /** Works 100% properly only if it has the same value as `_mySyncWithRealWorldPositionOnlyIfValid` (both true or false)  */
+    /** Valid means, for example, that the real player has not moved inside a wall by moving in the real space */
+    @property.bool(true)
+    private readonly _mySyncWithRealHeightOnlyIfValid!: boolean;
+
+    @property.bool(false)
+    private readonly _mySnapRealPositionToGround!: boolean;
+
+    @property.bool(false)
+    private readonly _myPreventRealFromColliding!: boolean;
+
     @property.bool(true)
     private readonly _myViewOcclusionInsideWallsEnabled!: boolean;
 
     /** If empty use {@link _myPhysicsBlockLayerFlags} */
     @property.string("")
     private readonly _myViewOcclusionLayerFlags!: string;
+
+    /**
+     * To avoid occlusion issues when moving when touching a tilted ceiling (which is not commong anyway),  
+     * this would be better to be less or equal than the feet radius of the character (usually half of {@link _myCharacterRadius})
+     * 
+     * If you have a high camera near value, you might need to increase this value, even though the view occlusion might become more aggressive
+     * 
+     * Increasing {@link _myColliderExtraSafetyHeight} can help reducing the view occlusion
+     */
+    @property.float(0.15)
+    private readonly _myViewOcclusionHeadRadius!: number;
+
+    @property.float(0.15)
+    private readonly _myViewOcclusionHeadHeight!: number;
+
+    @property.float(0.025)
+    private readonly _myViewOcclusionMaxRealHeadDistance!: number;
 
 
 
@@ -212,6 +243,23 @@ export class PlayerLocomotionComponent extends Component {
     @property.float(30)
     private readonly _myColliderMaxWalkableGroundAngle!: number;
 
+    /** 
+     * This is useful if you want the locomotion teleport feature to be able to go downhill
+     * on surfaces steeper than {@link _myColliderMaxWalkableGroundAngle}
+     * 
+     * By default the locomotion teleport can't go up on surfaces steeper than {@link _myColliderMaxWalkableGroundAngle} anyway,
+     * no matter, the value of {@link _myColliderMaxTeleportableGroundAngle}
+     * 
+     * If you set this to a value bigger than {@link _myColliderMaxWalkableGroundAngle} you will be able to teleport in any case on steeper surfaces,
+     * so be careful if you want that, even though usually it's safe, since teleport positions, aside from the locomotion teleport ones, are predefined and
+     * safe positions
+     * 
+     * The idea is that with the locomotion smooth you can always go downhill but might no be able to climb back up due to the surface beeing steep,
+     * this sort of replicates that for the locomotion, letting you teleport down on steep surfaces but not up
+     */
+    @property.float(-1)
+    private readonly _myColliderMaxTeleportableGroundAngle!: number;
+
     @property.bool(true)
     private readonly _myColliderSnapOnGround!: boolean;
 
@@ -223,6 +271,17 @@ export class PlayerLocomotionComponent extends Component {
 
     @property.bool(false)
     private readonly _myColliderPreventFallingFromEdges!: boolean;
+
+    @property.int(3)
+    private readonly _myColliderMaxMovementSteps!: number;
+
+    /**
+     * Helps staying a little further from the ceiling
+     * 
+     * If you need to increase {@link _myViewOcclusionHeadRadius}, also increasing this can help preventing view occlusion happening when shouldn't
+     */
+    @property.float(0.025)
+    private readonly _myColliderExtraSafetyHeight!: number;
 
 
 
@@ -273,17 +332,13 @@ export class PlayerLocomotionComponent extends Component {
 
     private readonly _myPlayerLocomotion!: PlayerLocomotion;
 
-    private _myLocomotionStarted: boolean = false;
+    private _myActivateOnNextUpdate: boolean = false;
 
     private readonly _myDebugPerformanceLogTimer: Timer = new Timer(0.5);
     private _myDebugPerformanceLogTotalTime: number = 0;
     private _myDebugPerformanceLogFrameCount: number = 0;
 
 
-
-    public override init(): void {
-        Globals.setPlayerLocomotionComponent(this, this.engine);
-    }
 
     public override start(): void {
         const params = new PlayerLocomotionParams(this.engine);
@@ -293,6 +348,7 @@ export class PlayerLocomotionComponent extends Component {
         params.mySwitchLocomotionTypeShortcutEnabled = this._mySwitchLocomotionTypeShortcutEnabled;
 
         params.myDefaultHeight = this._myDefaultHeight;
+        params.myMinHeight = this._myMinHeight;
 
         params.myMaxSpeed = this._myMaxSpeed;
         params.myMaxRotationSpeed = this._myMaxRotationSpeed;
@@ -340,9 +396,16 @@ export class PlayerLocomotionComponent extends Component {
         params.myResetRealOnStartFramesAmount = this._myResetRealOnStartFramesAmount;
         params.myResetHeadToFeetInsteadOfReal = this._myResetHeadToFeetInsteadOfReal;
         params.myResetHeadToRealMinDistance = this._myResetHeadToRealMinDistance;
+        params.myMaxHeadToRealHeadSteps = this._myMaxHeadToRealHeadSteps > 0 ? this._myMaxHeadToRealHeadSteps : null;
 
         params.mySyncWithRealWorldPositionOnlyIfValid = this._mySyncWithRealWorldPositionOnlyIfValid;
+        params.mySyncWithRealHeightOnlyIfValid = this._mySyncWithRealHeightOnlyIfValid;
+        params.mySnapRealPositionToGround = this._mySnapRealPositionToGround;
+        params.myPreventRealFromColliding = this._myPreventRealFromColliding;
         params.myViewOcclusionInsideWallsEnabled = this._myViewOcclusionInsideWallsEnabled;
+        params.myViewOcclusionHeadRadius = this._myViewOcclusionHeadRadius;
+        params.myViewOcclusionHeadHeight = this._myViewOcclusionHeadHeight;
+        params.myViewOcclusionMaxRealHeadDistance = this._myViewOcclusionMaxRealHeadDistance;
 
         params.mySyncNonVRHeightWithVROnExitSession = this._mySyncNonVRHeightWithVROnExitSession;
         params.mySyncNonVRVerticalAngleWithVROnExitSession = this._mySyncNonVRVerticalAngleWithVROnExitSession;
@@ -353,10 +416,13 @@ export class PlayerLocomotionComponent extends Component {
         params.myColliderCheckOnlyFeet = this._myColliderCheckOnlyFeet;
         params.myColliderSlideAlongWall = this._myColliderSlideAlongWall;
         params.myColliderMaxWalkableGroundAngle = this._myColliderMaxWalkableGroundAngle;
+        params.myColliderMaxTeleportableGroundAngle = this._myColliderMaxTeleportableGroundAngle < 0 ? null : this._myColliderMaxTeleportableGroundAngle;
         params.myColliderSnapOnGround = this._myColliderSnapOnGround;
         params.myColliderMaxDistanceToSnapOnGround = this._myColliderMaxDistanceToSnapOnGround;
         params.myColliderMaxWalkableGroundStepHeight = this._myColliderMaxWalkableGroundStepHeight;
         params.myColliderPreventFallingFromEdges = this._myColliderPreventFallingFromEdges;
+        params.myColliderMaxMovementSteps = this._myColliderMaxMovementSteps > 0 ? this._myColliderMaxMovementSteps : null;
+        params.myColliderExtraSafetyHeight = this._myColliderExtraSafetyHeight;
 
         params.myDebugFlyShortcutEnabled = this._myDebugFlyShortcutEnabled;
         params.myDebugFlyMaxSpeedMultiplier = this._myDebugFlyMaxSpeedMultiplier;
@@ -376,7 +442,22 @@ export class PlayerLocomotionComponent extends Component {
         (this._myPlayerLocomotion as PlayerLocomotion) = new PlayerLocomotion(params);
     }
 
+    public override update(dt: number): void {
+        if (this._myActivateOnNextUpdate) {
+            this._onActivate();
+
+            this._myActivateOnNextUpdate = false;
+        }
+    }
+
     public onPostPoseUpdatedEvent(dt: number, pose: Readonly<BasePose>, manualUpdate: boolean): void {
+        if (!this.active) {
+            Globals.getHeadPose(this.engine)?.unregisterPostPoseUpdatedEventEventListener(this);
+            return;
+        }
+
+        if (Globals.getPlayerLocomotion(this.engine) != this._myPlayerLocomotion) return;
+
         if (manualUpdate) return;
 
         let startTime = 0;
@@ -394,8 +475,7 @@ export class PlayerLocomotionComponent extends Component {
             PhysicsUtils.resetRaycastCount(this.engine.physics!);
         }
 
-        if (!this._myLocomotionStarted) {
-            this._myLocomotionStarted = true;
+        if (!this._myPlayerLocomotion.isStarted()) {
             this._myPlayerLocomotion.start();
         }
 
@@ -434,18 +514,27 @@ export class PlayerLocomotionComponent extends Component {
     }
 
     public override onActivate(): void {
-        if (this._myPlayerLocomotion != null) {
-            this._myPlayerLocomotion.setActive(true);
-
-            Globals.getHeadPose(this.engine)!.registerPostPoseUpdatedEventEventListener(this, this.onPostPoseUpdatedEvent.bind(this));
-        }
+        this._myActivateOnNextUpdate = true;
     }
 
     public override onDeactivate(): void {
         if (this._myPlayerLocomotion != null) {
             this._myPlayerLocomotion.setActive(false);
 
-            Globals.getHeadPose(this.engine)!.unregisterPostPoseUpdatedEventEventListener(this);
+            Globals.getHeadPose(this.engine)?.unregisterPostPoseUpdatedEventEventListener(this);
+
+            if (Globals.getPlayerLocomotion(this.engine) == this._myPlayerLocomotion) {
+                Globals.removePlayerLocomotion(this.engine);
+            }
+        }
+    }
+
+    private _onActivate(): void {
+        if (this._myPlayerLocomotion != null && !Globals.hasPlayerLocomotion(this.engine)) {
+            this._myPlayerLocomotion.setActive(true);
+            Globals.setPlayerLocomotion(this._myPlayerLocomotion, this.engine);
+
+            Globals.getHeadPose(this.engine)!.registerPostPoseUpdatedEventEventListener(this, this.onPostPoseUpdatedEvent.bind(this));
         }
     }
 
@@ -481,10 +570,8 @@ export class PlayerLocomotionComponent extends Component {
     }
 
     public override onDestroy(): void {
-        this._myPlayerLocomotion?.destroy();
-
-        if (Globals.getPlayerLocomotionComponent(this.engine) == this) {
-            Globals.removePlayerLocomotionComponent(this.engine);
+        if (this._myPlayerLocomotion != null) {
+            this._myPlayerLocomotion.destroy();
         }
     }
 }

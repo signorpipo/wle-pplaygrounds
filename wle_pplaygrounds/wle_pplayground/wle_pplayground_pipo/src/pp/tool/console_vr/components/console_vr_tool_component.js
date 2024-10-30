@@ -1,7 +1,6 @@
 import { Component, Property } from "@wonderlandengine/api";
 import { Globals } from "../../../pp/globals.js";
 import { ConsoleVRWidget, ConsoleVRWidgetParams } from "../console_vr_widget.js";
-import { InitConsoleVRComponent } from "./init_console_vr_component.js";
 
 export class ConsoleVRToolComponent extends Component {
     static TypeName = "pp-console-vr-tool";
@@ -17,8 +16,6 @@ export class ConsoleVRToolComponent extends Component {
         this._myStarted = false;
 
         if (Globals.isToolEnabled(this.engine)) {
-            this.object.pp_addComponent(InitConsoleVRComponent);
-
             this._myWidget = new ConsoleVRWidget(this.engine);
 
             let params = new ConsoleVRWidgetParams(this.engine);
@@ -32,8 +29,6 @@ export class ConsoleVRToolComponent extends Component {
 
             this._myWidget.start(this.object, params);
 
-            this._myWidgetVisibleBackup = null;
-
             this._myStarted = true;
         }
     }
@@ -41,35 +36,17 @@ export class ConsoleVRToolComponent extends Component {
     update(dt) {
         if (Globals.isToolEnabled(this.engine)) {
             if (this._myStarted) {
-                if (this._myWidgetVisibleBackup != null) {
-                    this._myWidget.setVisible(false);
-                    this._myWidget.setVisible(this._myWidgetVisibleBackup);
-
-                    this._myWidgetVisibleBackup = null;
-                }
-
+                this._myWidget.setActive(true);
                 this._myWidget.update(dt);
             }
         } else if (this._myStarted) {
-            if (this._myWidgetVisibleBackup == null) {
-                this._myWidgetVisibleBackup = this._myWidget.isVisible();
-            }
-
-            if (this._myWidget.isVisible()) {
-                this._myWidget.setVisible(false);
-            }
+            this._myWidget.setActive(false);
         }
     }
 
     onDeactivate() {
         if (this._myStarted) {
-            if (this._myWidgetVisibleBackup == null) {
-                this._myWidgetVisibleBackup = this._myWidget.isVisible();
-            }
-
-            if (this._myWidget.isVisible()) {
-                this._myWidget.setVisible(false);
-            }
+            this._myWidget.setActive(false);
         }
     }
 

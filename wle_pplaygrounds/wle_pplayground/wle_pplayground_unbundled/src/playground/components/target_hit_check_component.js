@@ -4,7 +4,6 @@ import { ParticlesSpawnerComponent } from "./particles_spawner_component.js";
 
 export class TargetHitCheckComponent extends Component {
     static TypeName = "target-hit-check";
-    static Properties = {};
 
     start() {
         this._myTrigger = this.object.pp_getComponent(PhysXComponent);
@@ -37,6 +36,14 @@ export class TargetHitCheckComponent extends Component {
         this._mySFX.play();
 
         this._myParticlesSpawner.spawn(strikeSource.pp_getPosition());
+    }
+
+    onActivate() {
+        this._myCollisionsCollector.setActive(true);
+    }
+
+    onDeactivate() {
+        this._myCollisionsCollector.setActive(false);
     }
 
     onDestroy() {

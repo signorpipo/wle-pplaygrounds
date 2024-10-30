@@ -42,7 +42,7 @@ export class ToggleHowToTextComponent extends Component implements CursorButtonA
             }
         };
 
-        CursorButtonComponent.addButtonActionHandler("switch-button-text", switchButtonTextHandler);
+        CursorButtonComponent.addButtonActionHandler("switch-button-text", switchButtonTextHandler, this.engine);
     }
 
     public override start(): void {
@@ -72,9 +72,9 @@ export class ToggleHowToTextComponent extends Component implements CursorButtonA
         if (isSecondaryCursor) return false;
 
         if (!this._myTextVisible) {
-            this._myAnimatedScale.updateTargetValue(1);
+            this._myAnimatedScale.setTargetValue(1);
         } else {
-            this._myAnimatedScale.updateTargetValue(0);
+            this._myAnimatedScale.setTargetValue(0);
         }
 
         this._myTextObject.pp_setPositionLocal(this._myTextObjectInitialPositionLocal);

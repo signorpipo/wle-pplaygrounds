@@ -4,7 +4,6 @@ import { GamepadButtonID } from "../../../input/gamepad/gamepad_buttons.js";
 import { Globals } from "../../../pp/globals.js";
 import { EasyTuneUtils } from "../easy_tune_utils.js";
 import { EasyTuneWidget, EasyTuneWidgetParams } from "../easy_tune_widgets/easy_tune_widget.js";
-import { InitEasyTuneVariablesComponent } from "./init_easy_tune_variables_component.js";
 
 export class EasyTuneToolComponent extends Component {
     public static override TypeName = "pp-easy-tune-tool";
@@ -59,20 +58,13 @@ export class EasyTuneToolComponent extends Component {
 
     private _myStarted: boolean = false;
     private _myFirstUpdate: boolean = true;
-    private _myWidgetVisibleBackup: boolean | null = null;
 
     public override init(): void {
         // #TODO this should check for tool enabled but it might not have been initialized yet, not way to specify component order
         // It can't be moved to start either, because other components might call setWidgetCurrentVariable or refreshWidget during start, 
         // so it needs to be initialized before that
 
-        this.object.pp_addComponent(InitEasyTuneVariablesComponent);
-
         (this._myWidget as EasyTuneWidget) = new EasyTuneWidget(this.engine);
-
-        EasyTuneUtils.addSetWidgetCurrentVariableCallback(this, (variableName: string) => { this._myWidget.setCurrentVariable(variableName); }, this.engine);
-
-        EasyTuneUtils.addRefreshWidgetCallback(this, () => { this._myWidget.refresh(); }, this.engine);
     }
 
     public override start(): void {
@@ -91,9 +83,11 @@ export class EasyTuneToolComponent extends Component {
                 EasyTuneUtils.importVariables(this._myVariablesImportURL, this._myResetVariablesDefaultValueOnImport, false, true, onSuccessCallback, onFailureCallback, this.engine);
             }.bind(this);
             params.myVariablesExportCallback = function (this: EasyTuneToolComponent, onSuccessCallback?: () => void, onFailureCallback?: () => void) {
-                if (Globals.getLeftGamepad()!.getButtonInfo(GamepadButtonID.SQUEEZE).isPressed() &&
+                if (Globals.getLeftGamepad()!.getButtonInfo(GamepadButtonID.SELECT).isPressed() &&
+                    Globals.getLeftGamepad()!.getButtonInfo(GamepadButtonID.SQUEEZE).isPressed() &&
                     Globals.getLeftGamepad()!.getButtonInfo(GamepadButtonID.TOP_BUTTON).isPressed() &&
-                    Globals.getLeftGamepad()!.getButtonInfo(GamepadButtonID.BOTTOM_BUTTON).isPressed()) {
+                    Globals.getLeftGamepad()!.getButtonInfo(GamepadButtonID.BOTTOM_BUTTON).isPressed() &&
+                    Globals.getLeftGamepad()!.getButtonInfo(GamepadButtonID.THUMBSTICK).isPressed()) {
 
                     EasyTuneUtils.clearExportedVariables(this._myVariablesExportURL, onSuccessCallback, onFailureCallback, this.engine);
                 } else if (this._myKeepImportVariablesOnExport) {
@@ -116,8 +110,6 @@ export class EasyTuneToolComponent extends Component {
 
             this._myWidget.start(this.object, params, Globals.getEasyTuneVariables(this.engine));
 
-            this._myWidgetVisibleBackup = null;
-
             this._myStarted = true;
             this._myFirstUpdate = true;
         }
@@ -133,42 +125,29 @@ export class EasyTuneToolComponent extends Component {
                     }
                 }
 
-                if (this._myWidgetVisibleBackup != null) {
-                    this._myWidget.setVisible(false);
-                    this._myWidget.setVisible(this._myWidgetVisibleBackup);
-
-                    this._myWidgetVisibleBackup = null;
-                }
-
+                this._myWidget.setActive(true);
                 this._myWidget.update(dt);
             }
         } else if (this._myStarted) {
-            if (this._myWidgetVisibleBackup == null) {
-                this._myWidgetVisibleBackup = this._myWidget.isVisible();
-            }
-
-            if (this._myWidget.isVisible()) {
-                this._myWidget.setVisible(false);
-            }
+            this._myWidget.setActive(false);
         }
     }
 
-    public overrideonDeactivate(): void {
-        if (this._myStarted) {
-            if (this._myWidgetVisibleBackup == null) {
-                this._myWidgetVisibleBackup = this._myWidget.isVisible();
-            }
+    public override onActivate(): void {
+        EasyTuneUtils.addSetWidgetCurrentVariableCallback(this, (variableName: string) => { this._myWidget.setCurrentVariable(variableName); }, this.engine);
+        EasyTuneUtils.addRefreshWidgetCallback(this, () => { this._myWidget.refresh(); }, this.engine);
+    }
 
-            if (this._myWidget.isVisible()) {
-                this._myWidget.setVisible(false);
-            }
+    public override onDeactivate(): void {
+        if (this._myStarted) {
+            this._myWidget.setActive(false);
         }
+
+        EasyTuneUtils.removeSetWidgetCurrentVariableCallback(this, this.engine);
+        EasyTuneUtils.removeRefreshWidgetCallback(this, this.engine);
     }
 
     public override onDestroy(): void {
         this._myWidget.destroy();
-
-        EasyTuneUtils.removeSetWidgetCurrentVariableCallback(this, this.engine);
-        EasyTuneUtils.removeRefreshWidgetCallback(this, this.engine);
     }
 }

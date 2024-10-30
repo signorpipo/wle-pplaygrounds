@@ -25,14 +25,6 @@ export class ResetLocalTransformComponent extends Component {
         if (this._myResetLocalTransformWhen == 1) {
             this._resetLocalTransform();
         }
-
-        if (this._myResetLocalTransformWhen == 3 || this._myResetLocalTransformWhen == 5) {
-            XRUtils.registerSessionStartEventListener(this, this._onXRSessionStart.bind(this), true, true, this.engine);
-        }
-
-        if (this._myResetLocalTransformWhen == 4 || this._myResetLocalTransformWhen == 6) {
-            XRUtils.registerSessionEndEventListener(this, this._onXRSessionEnd.bind(this), this.engine);
-        }
     }
 
     public override update(dt: number): void {
@@ -76,7 +68,17 @@ export class ResetLocalTransformComponent extends Component {
         }
     }
 
-    public override onDestroy(): void {
+    public override onActivate(): void {
+        if (this._myResetLocalTransformWhen == 3 || this._myResetLocalTransformWhen == 5) {
+            XRUtils.registerSessionStartEventListener(this, this._onXRSessionStart.bind(this), true, true, this.engine);
+        }
+
+        if (this._myResetLocalTransformWhen == 4 || this._myResetLocalTransformWhen == 6) {
+            XRUtils.registerSessionEndEventListener(this, this._onXRSessionEnd.bind(this), this.engine);
+        }
+    }
+
+    public override onDeactivate(): void {
         XRUtils.unregisterSessionStartEndEventListeners(this, this.engine);
     }
 }

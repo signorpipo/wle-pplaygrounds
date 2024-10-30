@@ -3,7 +3,6 @@ import { ComponentUtils, Globals, GrabbableComponent, PhysicsCollisionCollector 
 
 export class SFXOnCollisionComponent extends Component {
     static TypeName = "sfx-on-collision";
-    static Properties = {};
 
     start() {
         this._myPhysX = this.object.pp_getComponent(PhysXComponent);
@@ -47,6 +46,14 @@ export class SFXOnCollisionComponent extends Component {
 
     pp_clonePostProcess(clonedComponent) {
         clonedComponent.start();
+    }
+
+    onActivate() {
+        this._myCollisionsCollector.setActive(true);
+    }
+
+    onDeactivate() {
+        this._myCollisionsCollector.setActive(false);
     }
 
     onDestroy() {

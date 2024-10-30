@@ -3,7 +3,7 @@ import { property } from "@wonderlandengine/api/decorators.js";
 import { Cursor } from "@wonderlandengine/components";
 import { PhysicsLayerFlags } from "../../../cauldron/physics/physics_layer_flags.js";
 import { XRUtils } from "../../../cauldron/utils/xr_utils.js";
-import { vec3_create } from "../../../plugin/js/extensions/array/vec_create_extension.js";
+import { quat2_create, vec3_create } from "../../../plugin/js/extensions/array/vec_create_extension.js";
 import { Globals } from "../../../pp/globals.js";
 import { Handedness, InputSourceType, TrackedHandJointID } from "../input_types.js";
 import { InputUtils } from "../input_utils.js";
@@ -11,7 +11,7 @@ import { OverlapCursorComponent } from "./overlap_cursor_component.js";
 
 /** #WARN This class is actually adding an `OverlapCursorComponent` so use that if you want to interact with the cursor */
 export class FingerCursorComponent extends Component {
-    static override TypeName = "pp-finger-cursor";
+    public static override TypeName = "pp-finger-cursor";
 
     @property.enum(["Left", "Right"], "Left")
     private readonly _myHandedness!: number;
@@ -76,10 +76,10 @@ export class FingerCursorComponent extends Component {
     }
 
     public override start(): void {
-        (this._myCursorParentObject as Object3D) = this.object.pp_addObject();
+        (this._myCursorParentObject as Object3D) = this.object.pp_addChild();
 
         if (this._myCursorPointerObject == null) {
-            (this._myActualCursorParentObject as Object3D) = this._myCursorParentObject.pp_addObject();
+            (this._myActualCursorParentObject as Object3D) = this._myCursorParentObject.pp_addChild();
         } else {
             (this._myActualCursorParentObject as Object3D) = this._myCursorPointerObject;
         }
@@ -124,8 +124,13 @@ export class FingerCursorComponent extends Component {
         this._myCursorParentObject.pp_setActive(false);
     }
 
+    private static readonly _updateSV =
+        {
+            transformQuat: quat2_create()
+        };
     public override update(dt: number): void {
-        this._myCursorParentObject.pp_setTransformQuat(Globals.getPlayerObjects(this.engine)!.myReferenceSpace!.pp_getTransformQuat());
+        const transformQuat = FingerCursorComponent._updateSV.transformQuat;
+        this._myCursorParentObject.pp_setTransformQuat(Globals.getPlayerObjects(this.engine)!.myReferenceSpace!.pp_getTransformQuat(transformQuat));
         this._updateHand();
     }
 

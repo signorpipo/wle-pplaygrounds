@@ -43,10 +43,6 @@ export class ShowXRButtonsComponent extends Component {
         this._myARButton = document.getElementById("ar-button");
     }
 
-    public override start(): void {
-        XRUtils.registerSessionStartEndEventListeners(this, this._onXRSessionStart.bind(this), this._onXRSessionEnd.bind(this), true);
-    }
-
     public override update(dt: number): void {
         if (!this._myFirstUpdate) {
             this._myFirstUpdate = true;
@@ -89,7 +85,7 @@ export class ShowXRButtonsComponent extends Component {
                     }
 
                     if (!this._myVRButtonUsabilityUpdated) {
-                        if (XRUtils.isVRSupported()) {
+                        if (XRUtils.isVRSupported(this.engine)) {
                             this._myVRButton.style.setProperty("opacity", "1");
                             this._myVRButton.style.setProperty("pointer-events", "all");
 
@@ -126,7 +122,7 @@ export class ShowXRButtonsComponent extends Component {
                     }
 
                     if (!this._myARButtonUsabilityUpdated) {
-                        if (XRUtils.isARSupported()) {
+                        if (XRUtils.isARSupported(this.engine)) {
                             this._myARButton.style.setProperty("opacity", "1");
                             this._myARButton.style.setProperty("pointer-events", "all");
 
@@ -153,6 +149,14 @@ export class ShowXRButtonsComponent extends Component {
                 }
             }
         }
+    }
+
+    public override onActivate(): void {
+        XRUtils.registerSessionStartEndEventListeners(this, this._onXRSessionStart.bind(this), this._onXRSessionEnd.bind(this), true, false, this.engine);
+    }
+
+    public override onDeactivate(): void {
+        XRUtils.unregisterSessionStartEndEventListeners(this, this.engine);
     }
 
     private _onXRSessionStart(): void {

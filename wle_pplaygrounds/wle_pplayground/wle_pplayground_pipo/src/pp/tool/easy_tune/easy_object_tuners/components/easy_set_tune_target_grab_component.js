@@ -4,7 +4,6 @@ import { Globals } from "../../../../pp/globals.js";
 
 export class EasySetTuneTargeetGrabComponent extends Component {
     static TypeName = "pp-easy-set-tune-target-grab";
-    static Properties = {};
 
     start() {
         this._myGrabber = null;

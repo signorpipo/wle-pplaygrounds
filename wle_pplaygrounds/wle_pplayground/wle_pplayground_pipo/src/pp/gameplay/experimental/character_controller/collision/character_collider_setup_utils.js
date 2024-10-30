@@ -21,8 +21,7 @@ export class CharacterColliderSetupSimplifiedCreationParams {
 
         this.myCheckOnlyFeet = false;
 
-        this.myMaxSpeed = 0;
-        this.myAverageFPS = 72;
+        this.myMaxMovementSteps = null;
 
         this.myCanFly = false;
 
@@ -133,6 +132,7 @@ export function createSimplified(simplifiedCreationParams, outCharacterColliderS
         outCharacterColliderSetup.myDebugParams.myVisualDebugEnabled = true;
         outCharacterColliderSetup.myDebugParams.myVisualDebugHorizontalMovementCheckEnabled = true;
         outCharacterColliderSetup.myDebugParams.myVisualDebugHorizontalPositionCheckEnabled = true;
+        outCharacterColliderSetup.myDebugParams.myVisualDebugSlideEnabled = true;
     }
 
     if (simplifiedCreationParams.myVerticalCheckDebugEnabled) {
@@ -226,6 +226,15 @@ export function createSimplified(simplifiedCreationParams, outCharacterColliderS
             outCharacterColliderSetup.myWallSlideParams.myWallSlideFlickerPreventionCheckOnlyIfAlreadySliding = true;
             outCharacterColliderSetup.myWallSlideParams.myWallSlideFlickerPreventionForceCheckCounter = 4;
         }
+
+
+
+        outCharacterColliderSetup.mySplitMovementParams.mySplitMovementEnabled = true;
+        outCharacterColliderSetup.mySplitMovementParams.mySplitMovementMaxSteps = simplifiedCreationParams.myMaxMovementSteps;
+
+        let safeRadius = simplifiedCreationParams.myRadius * 0.75;
+        outCharacterColliderSetup.mySplitMovementParams.mySplitMovementMaxStepLength = safeRadius;
+        outCharacterColliderSetup.mySplitMovementParams.mySplitMovementMinStepLength = safeRadius;
     }
 
     if (simplifiedCreationParams.myAccuracyLevel >= CharacterColliderSetupSimplifiedCreationAccuracyLevel.HIGH) {
@@ -262,17 +271,6 @@ export function createSimplified(simplifiedCreationParams, outCharacterColliderS
 
         outCharacterColliderSetup.myGroundParams.myBaseInsideCollisionCheckEnabled = true;
         outCharacterColliderSetup.myCeilingParams.myBaseInsideCollisionCheckEnabled = true;
-
-
-
-        let safeRadius = simplifiedCreationParams.myRadius * 0.75;
-        if (simplifiedCreationParams.myMaxSpeed / simplifiedCreationParams.myAverageFPS > safeRadius) {
-            outCharacterColliderSetup.mySplitMovementParams.mySplitMovementEnabled = true;
-
-            outCharacterColliderSetup.mySplitMovementParams.mySplitMovementMaxSteps = Math.ceil((simplifiedCreationParams.myMaxSpeed / simplifiedCreationParams.myAverageFPS) / safeRadius);
-            outCharacterColliderSetup.mySplitMovementParams.mySplitMovementMaxStepLength = safeRadius;
-            outCharacterColliderSetup.mySplitMovementParams.mySplitMovementMinStepLength = safeRadius;
-        }
     }
 
     if (simplifiedCreationParams.myAccuracyLevel >= CharacterColliderSetupSimplifiedCreationAccuracyLevel.VERY_HIGH) {
