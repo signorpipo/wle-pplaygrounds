@@ -2053,17 +2053,17 @@
         },
         "ce22ba68-4363-40db-b062-5da3ea2c537b": {
             "name": "Outline Text",
-            "parent": "ecaac23c-a887-4bfd-babb-9606a9278f9f",
+            "parent": "46bd6bea-d4f2-4c49-b62a-ca8098d89c81",
             "scaling": [
-                0.8999997,
-                0.8999999,
-                0.8999998
+                0.8999995,
+                0.8999998,
+                0.8999997
             ],
             "components": [
                 {
                     "type": "text",
                     "text": {
-                        "text": "Grab the item on your right with the squeeze button and release it to throw\nTry to hit the target!\n\nYou can switch to teleport locomotion by pressing the left thumbstick twice\n\nPress the left and right thumbsticks together to open the console vr widget\nPress the right top and bottom buttons together to open the easy tune widget",
+                        "text": "Grab the item on your right with the squeeze button, and release it to throw\nTry to hit the target!\n\nYou can switch to teleport locomotion by pressing the left thumbstick twice\n\nPress the left and right thumbsticks together to open the console vr widget\nPress the right top and bottom buttons together to open the easy tune widget",
                         "material": "eb68d1ad-89df-45b0-a7ff-d270e70a6ffe",
                         "effect": "outline"
                     }
@@ -2191,17 +2191,17 @@
         },
         "61ecc7d3-ed4b-4b3d-88ed-5850d72c010d": {
             "name": "Text",
-            "parent": "ecaac23c-a887-4bfd-babb-9606a9278f9f",
+            "parent": "46bd6bea-d4f2-4c49-b62a-ca8098d89c81",
             "scaling": [
-                0.8999997,
-                0.8999999,
-                0.8999998
+                0.8999995,
+                0.8999998,
+                0.8999997
             ],
             "components": [
                 {
                     "type": "text",
                     "text": {
-                        "text": "Grab the item on your right with the squeeze button and release it to throw\nTry to hit the target!\n\nYou can switch to teleport locomotion by pressing the left thumbstick twice\n\nPress the left and right thumbsticks together to open the console vr widget\nPress the right top and bottom buttons together to open the easy tune widget",
+                        "text": "Grab the item on your right with the squeeze button, and release it to throw\nTry to hit the target!\n\nYou can switch to teleport locomotion by pressing the left thumbstick twice\n\nPress the left and right thumbsticks together to open the console vr widget\nPress the right top and bottom buttons together to open the easy tune widget",
                         "material": "04b7f97e-2921-4f88-91f3-20e62ec5c355"
                     }
                 }
@@ -2209,7 +2209,7 @@
             "translation": [
                 0.0,
                 0.0,
-                0.0099999
+                0.0099995
             ]
         },
         "ecaac23c-a887-4bfd-babb-9606a9278f9f": {
@@ -2235,7 +2235,8 @@
                     "type": "pp-set-active",
                     "pp-set-active": {
                         "_myActive": false,
-                        "_mySetActiveOn": "Descendants"
+                        "_mySetActiveOn": "Descendants",
+                        "_mySetActiveWhen": "First Update"
                     }
                 }
             ]
@@ -2821,17 +2822,74 @@
                 0.0,
                 0.85,
                 0.2
-            ],
-            "rotation": [
-                0.0,
-                0.0,
-                0.0,
-                1.0
-            ],
+            ]
+        },
+        "46bd6bea-d4f2-4c49-b62a-ca8098d89c81": {
+            "name": "Gamepad Text",
+            "parent": "ecaac23c-a887-4bfd-babb-9606a9278f9f",
+            "components": [
+                {
+                    "type": "set-active-on-tracked-hands"
+                }
+            ]
+        },
+        "53b00032-fde3-4b7e-a1c1-c9865f6cbd34": {
+            "name": "Tracked Hand Text",
+            "parent": "ecaac23c-a887-4bfd-babb-9606a9278f9f",
+            "components": [
+                {
+                    "type": "set-active-on-tracked-hands",
+                    "set-active-on-tracked-hands": {
+                        "_myActiveOnTrackedHands": true
+                    }
+                }
+            ]
+        },
+        "9d8a9208-a999-4ce2-82a8-e4151733810d": {
+            "name": "Outline Text",
+            "parent": "53b00032-fde3-4b7e-a1c1-c9865f6cbd34",
             "scaling": [
-                1.0,
-                1.0,
-                1.0
+                0.8999995,
+                0.8999998,
+                0.8999997
+            ],
+            "components": [
+                {
+                    "type": "text",
+                    "text": {
+                        "text": "Grab the item on your right by pinching your fingers, and release them to throw\nTry to hit the target!\n\nMany features are currently not available with hand tracking,\nsuch as free movement and debug tools like the console vr widget\n\nTo use these features, you need to switch to gamepads",
+                        "material": "eb68d1ad-89df-45b0-a7ff-d270e70a6ffe",
+                        "effect": "outline"
+                    }
+                }
+            ],
+            "translation": [
+                0.0,
+                0.0,
+                0.0049999
+            ]
+        },
+        "14c75133-db8b-4f61-b18a-0b8a8b140fa0": {
+            "name": "Text",
+            "parent": "53b00032-fde3-4b7e-a1c1-c9865f6cbd34",
+            "scaling": [
+                0.8999995,
+                0.8999998,
+                0.8999997
+            ],
+            "components": [
+                {
+                    "type": "text",
+                    "text": {
+                        "text": "Grab the item on your right by pinching your fingers, and release them to throw\nTry to hit the target!\n\nMany features are currently not available with hand tracking,\nsuch as free movement and debug tools like the console vr widget\n\nTo use these features, you need to switch to gamepads",
+                        "material": "04b7f97e-2921-4f88-91f3-20e62ec5c355"
+                    }
+                }
+            ],
+            "translation": [
+                0.0,
+                0.0,
+                0.0099995
             ]
         }
     },
@@ -3492,9 +3550,10 @@
             "version": [
                 1,
                 2,
-                3
+                4
             ],
-            "customIndexHtml": true
+            "customIndexHtml": true,
+            "type": "game"
         },
         "rendering": {
             "clearColor": [
