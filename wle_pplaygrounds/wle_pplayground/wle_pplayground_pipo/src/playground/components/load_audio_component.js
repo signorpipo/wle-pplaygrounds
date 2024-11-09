@@ -5,7 +5,14 @@ export class LoadAudioComponent extends Component {
     static TypeName = "load-audio";
 
     start() {
-        this._loadAudio();
+        this._myFirstUpdate = true;
+    }
+
+    update(dt) {
+        if (this._myFirstUpdate) {
+            this._loadAudio();
+            this._myFirstUpdate = false;
+        }
     }
 
     _loadAudio() {

@@ -5,13 +5,15 @@ export class SFXOnGrabThrowComponent extends Component {
     static TypeName = "sfx-on-grab-throw";
 
     start() {
-        this._myGrabbers = Globals.getRootObject(this.engine).pp_getComponents(GrabberHandComponent);
-
+        this._myGrabbers = null;
         this._myStarted = false;
     }
 
     update(dt) {
         if (!this._myStarted) {
+            this._myGrabbers = Globals.getRootObject(this.engine).pp_getComponents(GrabberHandComponent);
+            this.onActivate();
+
             let audioManager = Globals.getAudioManager(this.engine);
 
             this._myGrabSFX = audioManager.createAudioPlayer("grab");
@@ -46,9 +48,11 @@ export class SFXOnGrabThrowComponent extends Component {
     }
 
     onActivate() {
-        for (let grabber of this._myGrabbers) {
-            grabber.registerGrabEventListener(this, this._onGrab.bind(this));
-            grabber.registerThrowEventListener(this, this._onThrow.bind(this));
+        if (this._myGrabbers != null) {
+            for (let grabber of this._myGrabbers) {
+                grabber.registerGrabEventListener(this, this._onGrab.bind(this));
+                grabber.registerThrowEventListener(this, this._onThrow.bind(this));
+            }
         }
     }
 

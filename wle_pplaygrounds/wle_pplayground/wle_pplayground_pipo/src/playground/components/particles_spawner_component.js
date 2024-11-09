@@ -10,6 +10,10 @@ export class ParticlesSpawnerComponent extends Component {
     };
 
     start() {
+        this._myFirstUpdate = true;
+    }
+
+    _start() {
         this._myParticles = this._myParticlesContainer.pp_getChildren();
 
         this._myObjectPoolManagerPrefix = "particles_spawner_" + Math.pp_randomUUID() + "_particle_";
@@ -31,6 +35,13 @@ export class ParticlesSpawnerComponent extends Component {
             particle.pp_setParent(Globals.getSceneObjects(this.engine).myParticles);
 
             Globals.getObjectPoolManager(this.engine).addPool(this._getParticlePoolID(i), new ObjectPool(particle, poolParams));
+        }
+    }
+
+    update(dt) {
+        if (this._myFirstUpdate) {
+            this._start();
+            this._myFirstUpdate = false;
         }
     }
 

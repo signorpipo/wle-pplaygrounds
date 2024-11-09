@@ -6,18 +6,23 @@ export class TargetHitCheckComponent extends Component {
     static TypeName = "target-hit-check";
 
     start() {
+        this._myCollisionsCollector = null;
+        this._myStarted = false;
+    }
+
+    _start() {
         this._myTrigger = this.object.pp_getComponent(PhysXComponent);
         this._myParticlesSpawner = Globals.getRootObject(this.engine).pp_getComponent(ParticlesSpawnerComponent);
         this._myCollisionsCollector = new PhysicsCollisionCollector(this._myTrigger);
+        this._myCollisionsCollector.setActive(true);
+        this._mySFX = Globals.getAudioManager(this.engine).createAudioPlayer("strike");
 
-        this._myStarted = false;
+        this._myStarted = true;
     }
 
     update(dt) {
         if (!this._myStarted) {
-            this._mySFX = Globals.getAudioManager(this.engine).createAudioPlayer("strike");
-
-            this._myStarted = true;
+            this._start();
         }
 
         this._myCollisionsCollector.update(dt);
@@ -39,14 +44,20 @@ export class TargetHitCheckComponent extends Component {
     }
 
     onActivate() {
-        this._myCollisionsCollector.setActive(true);
+        if (this._myCollisionsCollector != null) {
+            this._myCollisionsCollector.setActive(true);
+        }
     }
 
     onDeactivate() {
-        this._myCollisionsCollector.setActive(false);
+        if (this._myCollisionsCollector != null) {
+            this._myCollisionsCollector.setActive(false);
+        }
     }
 
     onDestroy() {
-        this._myCollisionsCollector.destroy();
+        if (this._myCollisionsCollector != null) {
+            this._myCollisionsCollector.destroy();
+        }
     }
 }

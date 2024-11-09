@@ -10,6 +10,11 @@ export class FadeViewComponent extends Component {
     };
 
     start() {
+        this._myFadeVisual = null;
+        this._myFirstUpdate = true;
+    }
+
+    _start() {
         this._myStartTimer = new Timer(this._myStartDelay);
         this._myFadeInTimer = new Timer(this._myTimeToFadeIn, false);
 
@@ -31,12 +36,18 @@ export class FadeViewComponent extends Component {
         fadeVisualParams.myLocal = true;
         fadeVisualParams.myTransform.mat4_setScale(vec3_create(0.1, 0.1, 0.1));
         this._myFadeVisual = new VisualMesh(fadeVisualParams);
+        this._myFadeVisual.setVisible(true);
 
         this._myFadeParentObject.pp_setParent(Globals.getPlayerObjects(this.engine).myHead, false);
         this._myFadeParentObject.pp_resetTransformLocal();
     }
 
     update(dt) {
+        if (this._myFirstUpdate) {
+            this._start();
+            this._myFirstUpdate = false;
+        }
+
         if (this._myStartTimer.isRunning()) {
             this._myStartTimer.update(dt);
             if (this._myStartTimer.isDone()) {
@@ -54,14 +65,20 @@ export class FadeViewComponent extends Component {
     }
 
     onActivate() {
-        this._myFadeVisual.setVisible(true);
+        if (this._myFadeVisual != null) {
+            this._myFadeVisual.setVisible(true);
+        }
     }
 
     onDeactivate() {
-        this._myFadeVisual.setVisible(false);
+        if (this._myFadeVisual != null) {
+            this._myFadeVisual.setVisible(false);
+        }
     }
 
     onDestroy() {
-        this._myFadeVisual.destroy();
+        if (this._myFadeVisual != null) {
+            this._myFadeVisual.destroy();
+        }
     }
 }

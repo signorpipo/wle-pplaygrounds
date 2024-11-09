@@ -11,9 +11,11 @@ export class PlayMusicComponent extends Component {
     update(dt) {
         if (!this._myStarted) {
             this._myMusic = Globals.getAudioManager(this.engine).createAudioPlayer("playground_ambient");
-            this._myMusic.play();
+            if (this._myMusic != null) {
+                this._myMusic.play();
 
-            this._myStarted = true;
+                this._myStarted = true;
+            }
         }
     }
 }
