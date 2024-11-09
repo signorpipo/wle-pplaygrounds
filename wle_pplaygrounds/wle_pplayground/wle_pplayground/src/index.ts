@@ -54,9 +54,11 @@ import {ParticlesSpawnerComponent} from './playground/components/particles_spawn
 import {PlayMusicComponent} from './playground/components/play_music_component.js';
 import {PlaygroundGatewayComponent} from './playground/components/playground_gateway_component.js';
 import {SetActiveOnMobileComponent} from './playground/components/set_active_on_mobile_component.js';
+import {SetActiveOnMobileComponent as SetActiveOnMobileComponent1} from './playground/components/set_active_on_tracked_hands_component.js';
 import {SFXOnCollisionComponent} from './playground/components/sfx_on_collision_component.js';
 import {SFXOnGrabThrowComponent} from './playground/components/sfx_on_grab_throw_component.js';
 import {TargetHitCheckComponent} from './playground/components/target_hit_check_component.js';
+import {TeleportOnTrackedHandsComponent} from './playground/components/teleport_on_tracked_hands_component.js';
 import {ToggleHowToTextComponent} from './playground/components/toggle_how_to_text_component.js';
 import {WaveMovementComponent} from './playground/components/wave_movement_component.js';
 /* wle:auto-imports:end */
@@ -156,9 +158,11 @@ engine.registerComponent(ParticlesSpawnerComponent);
 engine.registerComponent(PlayMusicComponent);
 engine.registerComponent(PlaygroundGatewayComponent);
 engine.registerComponent(SetActiveOnMobileComponent);
+engine.registerComponent(SetActiveOnMobileComponent1);
 engine.registerComponent(SFXOnCollisionComponent);
 engine.registerComponent(SFXOnGrabThrowComponent);
 engine.registerComponent(TargetHitCheckComponent);
+engine.registerComponent(TeleportOnTrackedHandsComponent);
 engine.registerComponent(ToggleHowToTextComponent);
 engine.registerComponent(WaveMovementComponent);
 /* wle:auto-register:end */
