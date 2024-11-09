@@ -25,7 +25,7 @@ export class SetHeadLocalTransformComponent extends Component {
             headPoseTransform: quat2_create()
         };
     private _onPoseUpdated(dt: number, pose: Readonly<BasePose>): void {
-        if (!this.active) {
+        if (!this.active || this._myActivateOnNextUpdate) {
             this.onDeactivate();
             return;
         }

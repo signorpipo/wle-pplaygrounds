@@ -32,7 +32,7 @@ export class VisualPointParams extends AbstractVisualElementParams {
     }
 
     _new() {
-        return new VisualPointParams();
+        return new VisualPointParams(this.myParent.pp_getEngine());
     }
 
     _equalsHook(other) {

@@ -1,5 +1,4 @@
-import { Component, Object3D } from "@wonderlandengine/api";
-import { property } from "@wonderlandengine/api/decorators.js";
+import { Component, Object3D, property } from "@wonderlandengine/api";
 import { Globals, InputSourceType, XRUtils } from "wle-pp";
 
 export class TeleportOnTrackedHandsComponent extends Component {
@@ -16,15 +15,15 @@ export class TeleportOnTrackedHandsComponent extends Component {
             this._myDelayFrameCountdown--;
         }
 
-        if (XRUtils.isSessionActive() && Globals.getPlayerLocomotion()!.getPlayerHeadManager().isSynced() && this._myDelayFrameCountdown == 0) {
-            if (Globals.getLeftHandPose()!.getInputSourceType() != null && Globals.getRightHandPose()!.getInputSourceType() != null) {
-                if (Globals.getLeftHandPose()!.getInputSourceType() == InputSourceType.TRACKED_HAND && Globals.getRightHandPose()!.getInputSourceType() == InputSourceType.TRACKED_HAND) {
+        if (XRUtils.isSessionActive(this.engine) && Globals.getPlayerLocomotion(this.engine)!.getPlayerHeadManager().isSynced() && this._myDelayFrameCountdown == 0) {
+            if (Globals.getLeftHandPose(this.engine)!.getInputSourceType() != null && Globals.getRightHandPose(this.engine)!.getInputSourceType() != null) {
+                if (Globals.getLeftHandPose(this.engine)!.getInputSourceType() == InputSourceType.TRACKED_HAND && Globals.getRightHandPose(this.engine)!.getInputSourceType() == InputSourceType.TRACKED_HAND) {
                     if (!this._myUsingTrackedHands) {
                         this._myUsingTrackedHands = true;
 
-                        Globals.getPlayerLocomotion()!.getPlayerTransformManager().forceTeleportAndReset(this._myTeleportTargetObject.pp_getPosition(), this._myTeleportTargetObject.pp_getRotationQuat());
+                        Globals.getPlayerLocomotion(this.engine)!.getPlayerTransformManager().forceTeleportAndReset(this._myTeleportTargetObject.pp_getPosition(), this._myTeleportTargetObject.pp_getRotationQuat());
                     }
-                } else if (Globals.getLeftHandPose()!.getInputSourceType() != InputSourceType.TRACKED_HAND && Globals.getRightHandPose()!.getInputSourceType() != InputSourceType.TRACKED_HAND) {
+                } else if (Globals.getLeftHandPose(this.engine)!.getInputSourceType() != InputSourceType.TRACKED_HAND && Globals.getRightHandPose(this.engine)!.getInputSourceType() != InputSourceType.TRACKED_HAND) {
                     this._myUsingTrackedHands = false;
                 }
             }

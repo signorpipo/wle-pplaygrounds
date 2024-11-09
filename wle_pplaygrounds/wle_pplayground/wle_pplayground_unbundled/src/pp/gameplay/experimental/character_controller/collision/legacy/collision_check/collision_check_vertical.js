@@ -66,6 +66,10 @@ CollisionCheckVertical.prototype._verticalCheck = function () {
         if (!collisionRuntimeParams.myIsCollidingVertically && collisionCheckParams.myVerticalPositionCheckEnabled) {
             newFeetPosition = feetPosition.vec3_add(outFixedMovement, newFeetPosition);
             let canStay = this._verticalPositionCheck(newFeetPosition, isMovementDownward, height, up, forward, collisionCheckParams, collisionRuntimeParams);
+            if (canStay && collisionCheckParams.myCheckVerticalPositionBothDirection) {
+                canStay = this._verticalPositionCheck(newFeetPosition, !isMovementDownward, height, up, forward, collisionCheckParams, collisionRuntimeParams);
+            }
+
             if (!canStay) {
                 outFixedMovement.vec3_zero();
 
@@ -360,7 +364,7 @@ CollisionCheckVertical.prototype._getVerticalCheckPositions = function () {
 
         let radiusStep = collisionCheckParams.myFeetRadius / collisionCheckParams.myGroundCircumferenceStepAmount;
         let sliceAngle = 360 / collisionCheckParams.myGroundCircumferenceSliceAmount;
-        let currentStepRotation = 0;
+        let currentStepRotation = -collisionCheckParams.myGroundCircumferenceRotationPerStep * (collisionCheckParams.myGroundCircumferenceStepAmount - 1);
         for (let i = 0; i < collisionCheckParams.myGroundCircumferenceStepAmount; i++) {
             let currentRadius = radiusStep * (i + 1);
 

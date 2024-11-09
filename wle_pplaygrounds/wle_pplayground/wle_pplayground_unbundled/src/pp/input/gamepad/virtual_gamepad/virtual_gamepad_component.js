@@ -460,9 +460,6 @@ export class VirtualGamepadComponent extends Component {
 
     _onActivate() {
         if (!this._myFirstUpdate && this._myAddToUniversalGamepad) {
-            Globals.getLeftGamepad(this.engine).removeGamepadCore("pp_left_virtual_gamepad");
-            Globals.getRightGamepad(this.engine).removeGamepadCore("pp_right_virtual_gamepad");
-
             Globals.getLeftGamepad(this.engine).addGamepadCore("pp_left_virtual_gamepad", this._myLeftVirtualGamepadGamepadCore);
             Globals.getRightGamepad(this.engine).addGamepadCore("pp_right_virtual_gamepad", this._myRightVirtualGamepadGamepadCore);
         }
@@ -472,6 +469,9 @@ export class VirtualGamepadComponent extends Component {
         this._myVirtualGamepad?.setVisible(false);
 
         if (!this._myFirstUpdate && this._myAddToUniversalGamepad) {
+            // Sadly here, if it can't manage to remove them due to global gamepads being null,
+            // then if the gamepad is activated again it will still have and use the virtual gamepad cores
+            // Usually not an issue since this is happens only when the whole scene is deactivated
             Globals.getLeftGamepad(this.engine)?.removeGamepadCore("pp_left_virtual_gamepad");
             Globals.getRightGamepad(this.engine)?.removeGamepadCore("pp_right_virtual_gamepad");
 

@@ -39,7 +39,7 @@ export class VisualMeshParams extends AbstractVisualElementParams<VisualMeshPara
     }
 
     protected _new(): VisualMeshParams {
-        return new VisualMeshParams();
+        return new VisualMeshParams(this.myParent.pp_getEngine());
     }
 
     protected _equalsHook(other: Readonly<VisualMeshParams>): boolean {

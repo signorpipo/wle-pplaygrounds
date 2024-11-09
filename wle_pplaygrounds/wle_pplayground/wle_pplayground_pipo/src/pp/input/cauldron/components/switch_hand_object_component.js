@@ -43,7 +43,7 @@ export class SwitchHandObjectComponent extends Component {
     }
 
     _onPoseUpdated(dt, pose) {
-        if (!this.active) {
+        if (!this.active || this._myActivateOnNextUpdate) {
             Globals.getHandPose(this._myHandednessType, this.engine)?.unregisterPoseUpdatedEventListener(this);
             return;
         }

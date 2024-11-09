@@ -47,6 +47,10 @@ export class PlayerLocomotionParams {
     public myDefaultHeight: number = 0;
     public myMinHeight: number = 0;
     public myCharacterRadius: number = 0;
+
+    /** Set this to `null` to auto compute the feet radius based on {@link myCharacterRadius} */
+    public myCharacterFeetRadius: number | null = null;
+
     public myForeheadExtraHeight: number = 0;
 
 
@@ -122,6 +126,7 @@ export class PlayerLocomotionParams {
     /** Valid means, for example, that the real player has not moved inside a wall by moving in the real space */
     public mySyncWithRealWorldPositionOnlyIfValid: boolean = true;
 
+    /** Valid means, for example, that the real player has not moved inside a wall by moving in the real space */
     public mySyncWithRealHeightOnlyIfValid: boolean = true;
 
     public mySnapRealPositionToGround: boolean = false;
@@ -133,14 +138,21 @@ export class PlayerLocomotionParams {
     /**
      * To avoid occlusion issues when moving when touching a tilted ceiling (which is not commong anyway),  
      * this would be better to be less or equal than the feet radius of the character (usually half of {@link myCharacterRadius})
+     * Increasing {@link myColliderExtraHeight} can help reducing the view occlusion
      * 
      * If you have a high camera near value, you might need to increase this value, even though the view occlusion might become more aggressive
-     * 
-     * Increasing {@link myColliderExtraSafetyHeight} can help reducing the view occlusion
      */
     public myViewOcclusionHeadRadius: number = 0;
+
+    /**
+     * Half of this value should be a bit lower than {@link myForeheadExtraHeight} plus {@link myColliderExtraHeight}, otherwise view occlusion might  
+     * trigger simply when moving under a low ceiling
+     * 
+     * If you have a high camera near value, you might need to increase this value, even though the view occlusion might become more aggressive
+     */
     public myViewOcclusionHeadHeight: number = 0;
 
+    public myViewOcclusionFadeOutSeconds: number = 0;
     public myViewOcclusionMaxRealHeadDistance: number = 0;
 
     public mySyncNonVRHeightWithVROnExitSession: boolean = false;
@@ -150,14 +162,53 @@ export class PlayerLocomotionParams {
     public mySyncHeadWithRealAfterLocomotionUpdateIfNeeded: boolean = false;
 
 
+
     public myColliderAccuracy: number = CharacterColliderSetupSimplifiedCreationAccuracyLevel.VERY_LOW;
+
+    /**
+     * If you enable this, you might also want to disable {@link myColliderCheckCeilings},  
+     * since it doesn't make much sense to check for ceilings when not checking the height
+     */
     public myColliderCheckOnlyFeet: boolean = false;
+
+    /**
+     * If you enable this, you might also want to disable {@link myColliderCheckOnlyFeet},  
+     * since it doesn't make much sense to check for ceilings without also checking the height
+     */
+    public myColliderCheckCeilings: boolean = false;
+
     public myColliderSlideAlongWall: boolean = false;
     public myColliderMaxWalkableGroundAngle: number = 0;
+
+    /**
+     * This is useful if you want the locomotion teleport feature to be able to go downhill
+     * on surfaces steeper than {@link myColliderMaxWalkableGroundAngle}
+     * 
+     * By default the locomotion teleport can't go up on surfaces steeper than {@link myColliderMaxWalkableGroundAngle} anyway,
+     * no matter, the value of {@link myColliderMaxTeleportableGroundAngle}
+     * 
+     * If you set this to a value bigger than {@link myColliderMaxWalkableGroundAngle} you will be able to teleport in any case on steeper surfaces,
+     * so be careful if you want that, even though usually it's safe, since teleport positions, aside from the locomotion teleport ones, are predefined and
+     * safe positions
+     * 
+     * The idea is that with the locomotion smooth you can always go downhill but might no be able to climb back up due to the surface beeing steep,
+     * this sort of replicates that for the locomotion, letting you teleport down on steep surfaces but not up
+     */
     public myColliderMaxTeleportableGroundAngle: number | null = null;
     public myColliderSnapOnGround: boolean = false;
     public myColliderMaxDistanceToSnapOnGround: number = 0;
     public myColliderMaxWalkableGroundStepHeight: number = 0;
+
+    /**
+     * Allowing walkable steps on ceiling might create issues with view occlusion for the player (especially with a high value)  
+     * since you can go more under some low ceiling making the occlusion head collide with it
+     * 
+     * Settings it to zero is safer, but means that the ceilings physx must be more flat, because it's easier that a small ceiling bump now blocks you
+     * 
+     * If you want this to be higher than 0, you might also want to increase {@link myColliderExtraHeight} by this value to avoid issue with view occlusion
+     * It will need you to be further from ceiling to be able to move under them tho (since it will be like wearing a hat as tall as {@link myColliderExtraHeight})
+     */
+    public myColliderMaxWalkableCeilingStepHeight: number = 0;
     public myColliderPreventFallingFromEdges: boolean = false;
     public myColliderMaxMovementSteps: number | null = null;
 
@@ -166,7 +217,7 @@ export class PlayerLocomotionParams {
      * 
      * If you need to increase {@link myViewOcclusionHeadRadius}, also increasing this can help preventing view occlusion happening when shouldn't
      */
-    public myColliderExtraSafetyHeight: number = 0;
+    public myColliderExtraHeight: number = 0;
 
 
 
@@ -202,6 +253,10 @@ export class PlayerLocomotionParams {
 // #TODO Add lerped snap on vertical over like half a second to avoid the "snap effect"
 // This could be done by detatching the actual vertical position of the player from the collision real one when a snap is detected above a certain threshold
 // with a timer, after which the vertical position is just copied, while during the detatching is lerped toward the collision vertical one
+/**
+ * Tips  
+ *   - Be sure that your colliders has faces on both sides of the mesh, this helps the collision check which otherise might be able to move through walls
+ */
 export class PlayerLocomotion {
 
     private readonly _myParams: PlayerLocomotionParams;
@@ -286,7 +341,7 @@ export class PlayerLocomotion {
             // This would be better to be less or equal than the feet radius of the character
             params.myHeadRadius = this._myParams.myViewOcclusionHeadRadius;
             params.myHeadHeight = this._myParams.myViewOcclusionHeadHeight;
-            params.myExtraSafetyHeight = this._myParams.myColliderExtraSafetyHeight;
+            params.myExtraHeight = this._myParams.myColliderExtraHeight;
 
             if (!this._myParams.mySyncWithRealWorldPositionOnlyIfValid) {
                 params.mySyncEnabledFlagMap.set(PlayerTransformManagerSyncFlag.BODY_COLLIDING, false);
@@ -508,7 +563,7 @@ export class PlayerLocomotion {
                 params.myObscureMaterial = null;
                 params.myObscureRadius = 0.5;
 
-                params.myObscureFadeOutSeconds = 0.1;
+                params.myObscureFadeOutSeconds = this._myParams.myViewOcclusionFadeOutSeconds;
                 params.myObscureFadeInSeconds = 0.25;
 
                 params.myObscureFadeEasingFunction = EasingFunction.linear;
@@ -587,6 +642,10 @@ export class PlayerLocomotion {
         this._myPlayerObscureManager.setActive(this._myActive);
         this._myPlayerLocomotionSmooth.setActive(this._myActive);
         this._myPlayerLocomotionTeleport.setActive(this._myActive);
+    }
+
+    public isActive(): boolean {
+        return this._myActive;
     }
 
     public isStarted(): boolean {
@@ -744,14 +803,14 @@ export class PlayerLocomotion {
 
         simplifiedParams.myHeight = this._myParams.myDefaultHeight;
         simplifiedParams.myRadius = this._myParams.myCharacterRadius;
+        simplifiedParams.myFeetRadius = this._myParams.myCharacterFeetRadius;
 
         simplifiedParams.myAccuracyLevel = this._myParams.myColliderAccuracy;
 
         simplifiedParams.myIsPlayer = true;
 
         simplifiedParams.myCheckOnlyFeet = this._myParams.myColliderCheckOnlyFeet;
-
-        simplifiedParams.myCanFly = this._myParams.myFlyEnabled;
+        simplifiedParams.myCheckCeilings = this._myParams.myColliderCheckCeilings;
 
         simplifiedParams.myShouldSlideAlongWall = this._myParams.myColliderSlideAlongWall;
 
@@ -760,6 +819,7 @@ export class PlayerLocomotion {
         simplifiedParams.myShouldSnapOnGround = this._myParams.myColliderSnapOnGround;
         simplifiedParams.myMaxDistanceToSnapOnGround = this._myParams.myColliderMaxDistanceToSnapOnGround;
         simplifiedParams.myMaxWalkableGroundStepHeight = this._myParams.myColliderMaxWalkableGroundStepHeight;
+        simplifiedParams.myMaxWalkableCeilingStepHeight = this._myParams.myColliderMaxWalkableCeilingStepHeight;
         simplifiedParams.myShouldNotFallFromEdges = this._myParams.myColliderPreventFallingFromEdges;
         simplifiedParams.myMaxMovementSteps = this._myParams.myColliderMaxMovementSteps;
 

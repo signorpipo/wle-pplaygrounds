@@ -198,11 +198,11 @@ export class BasePose {
         return this._myAngularVelocityEmulated;
     }
 
-    registerPrePoseUpdatedEventEventListener(id, listener) {
+    registerPrePoseUpdatedEventListener(id, listener) {
         this._myPrePoseUpdatedEventEmitter.add(listener, { id: id });
     }
 
-    unregisterPrePoseUpdatedEventEventListener(id) {
+    unregisterPrePoseUpdatedEventListener(id) {
         this._myPrePoseUpdatedEventEmitter.remove(id);
     }
 
@@ -214,11 +214,11 @@ export class BasePose {
         this._myPoseUpdatedEmitter.remove(id);
     }
 
-    registerPostPoseUpdatedEventEventListener(id, listener) {
+    registerPostPoseUpdatedEventListener(id, listener) {
         this._myPostPoseUpdatedEventEmitter.add(listener, { id: id });
     }
 
-    unregisterPostPoseUpdatedEventEventListener(id) {
+    unregisterPostPoseUpdatedEventListener(id) {
         this._myPostPoseUpdatedEventEmitter.remove(id);
     }
 

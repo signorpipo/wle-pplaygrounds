@@ -44,7 +44,7 @@ export class VisualLineParams extends AbstractVisualElementParams {
     }
 
     _new() {
-        return new VisualLineParams();
+        return new VisualLineParams(this.myParent.pp_getEngine());
     }
 
     _equalsHook(other) {

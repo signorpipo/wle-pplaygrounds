@@ -1,5 +1,4 @@
-import { Component, MeshComponent, Object3D, TextComponent, WonderlandEngine } from "@wonderlandengine/api";
-import { property } from "@wonderlandengine/api/decorators.js";
+import { Component, MeshComponent, Object3D, property, TextComponent, WonderlandEngine } from "@wonderlandengine/api";
 import { Cursor, CursorTarget } from "@wonderlandengine/components";
 import { AudioPlayer } from "../../../../audio/audio_player.js";
 import { AudioSetup } from "../../../../audio/audio_setup.js";

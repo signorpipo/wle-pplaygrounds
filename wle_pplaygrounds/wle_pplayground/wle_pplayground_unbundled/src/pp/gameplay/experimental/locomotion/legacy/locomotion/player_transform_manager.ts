@@ -86,7 +86,10 @@ export class PlayerTransformManagerParams {
     public myFloatingSplitCheckStepEqualLengthMinLength: number = 0;
 
 
-    public myExtraSafetyHeight: number = 0;
+    /**
+     * Can be useful if using the exact height is giving you issues like too close too ceilings, or view occluded too easily
+     */
+    public myExtraHeight: number = 0;
 
     public myMaxDistanceFromRealToSyncEnabled: boolean = false;
 
@@ -1059,10 +1062,10 @@ export class PlayerTransformManager {
 
         const highestHeight = Math.max(validHeight, realHeight);
 
-        this._myParams.myMovementCollisionCheckParams.myHeight = (useHighestHeight ? highestHeight : validHeight) + this._myParams.myExtraSafetyHeight;
+        this._myParams.myMovementCollisionCheckParams.myHeight = (useHighestHeight ? highestHeight : validHeight) + this._myParams.myExtraHeight;
         this._myParams.myTeleportCollisionCheckParams!.myHeight = this._myParams.myMovementCollisionCheckParams.myHeight;
 
-        this._myRealMovementCollisionCheckParams.myHeight = Math.max(realHeight, this._myParams.myMinHeight ?? -Number.MAX_VALUE) + this._myParams.myExtraSafetyHeight;
+        this._myRealMovementCollisionCheckParams.myHeight = Math.max(realHeight, this._myParams.myMinHeight ?? -Number.MAX_VALUE) + this._myParams.myExtraHeight;
     }
 
     private _setupHeadCollisionCheckParams(): void {
@@ -1124,6 +1127,8 @@ export class PlayerTransformManager {
 
         params.myVerticalMovementCheckEnabled = true;
         params.myVerticalPositionCheckEnabled = true;
+        params.myCheckVerticalBothDirection = true;
+        params.myCheckVerticalPositionBothDirection = true;
 
         params.myGroundCircumferenceAddCenter = true;
         params.myGroundCircumferenceSliceAmount = 6;
@@ -1624,7 +1629,7 @@ export class PlayerTransformManager {
             collisionRuntimeParams.copy(this._myCollisionRuntimeParams);
             const debugBackup = this._myParams.myMovementCollisionCheckParams.myDebugEnabled;
             const heightBackup = this._myParams.myMovementCollisionCheckParams.myHeight;
-            this._myParams.myMovementCollisionCheckParams.myHeight = newHeight + this._myParams.myExtraSafetyHeight;
+            this._myParams.myMovementCollisionCheckParams.myHeight = newHeight + this._myParams.myExtraHeight;
             this._myParams.myMovementCollisionCheckParams.myDebugEnabled = false;
             CollisionCheckBridge.getCollisionCheck(this._myParams.myEngine as any).positionCheck(true, transformQuat, this._myParams.myMovementCollisionCheckParams, collisionRuntimeParams);
             this._myParams.myMovementCollisionCheckParams.myDebugEnabled = debugBackup;

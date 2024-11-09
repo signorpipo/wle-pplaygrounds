@@ -22,7 +22,7 @@ export class FadeViewComponent extends Component {
         this._myFadeMaterial = Globals.getDefaultMaterials(this.engine).myFlatTransparentNoDepth.clone();
         this._myFadeMaterial.color = this._myColorVector;
 
-        this._myFadeParentObject = this.object.pp_addObject();
+        this._myFadeParentObject = this.object.pp_addChild();
 
         let fadeVisualParams = new VisualMeshParams(this.engine);
         fadeVisualParams.myMesh = Globals.getDefaultMeshes(this.engine).myInvertedSphere;
@@ -51,6 +51,14 @@ export class FadeViewComponent extends Component {
 
             this._myFadeMaterial.color = this._myColorVector;
         }
+    }
+
+    onActivate() {
+        this._myFadeVisual.setVisible(true);
+    }
+
+    onDeactivate() {
+        this._myFadeVisual.setVisible(false);
     }
 
     onDestroy() {

@@ -153,6 +153,7 @@ export class CharacterColliderVerticalCheckParams {
         this.myVerticalMovementCheckPerformCheckOnBothSides = false;
 
         this.myVerticalPositionCheckEnabled = false;
+        this.myVerticalPositionCheckPerformCheckOnBothSides = false;
 
         this.myVerticalCheckAllowHitsInsideCollisionIfOneValid = false;
         // If at least one vertical raycast is valid (no hit, outside collision) is it ok if the other checks are completely inside a collision
@@ -480,6 +481,7 @@ CharacterColliderVerticalCheckParams.prototype.copy = function copy(other) {
     this.myVerticalMovementCheckPerformCheckOnBothSides = other.myVerticalMovementCheckPerformCheckOnBothSides;
 
     this.myVerticalPositionCheckEnabled = other.myVerticalPositionCheckEnabled;
+    this.myVerticalPositionCheckPerformCheckOnBothSides = other.myVerticalPositionCheckPerformCheckOnBothSides;
 
     this.myVerticalCheckAllowHitsInsideCollisionIfOneValid = other.myVerticalCheckAllowHitsInsideCollisionIfOneValid;
 

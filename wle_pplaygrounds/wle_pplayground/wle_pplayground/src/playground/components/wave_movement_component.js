@@ -3,7 +3,6 @@ import { EasyTuneNumber, Globals, Timer } from "wle-pp";
 
 export class WaveMovementComponent extends Component {
     static TypeName = "wave-movement";
-    static Properties = {};
 
     start() {
         this._myStartTimer = new Timer(0);

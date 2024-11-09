@@ -3009,7 +3009,7 @@ export function getObjectsByIDObjects(objects: Object3D[], id: number): Object3D
 }
 
 export function wrapObject(id: number, engine: Readonly<WonderlandEngine> | null = Globals.getMainEngine()): Object3D | null {
-    return engine != null ? engine.wrapObject(id) : null;
+    return engine != null ? Globals.getScene(engine).wrap(id) : null;
 }
 
 /**

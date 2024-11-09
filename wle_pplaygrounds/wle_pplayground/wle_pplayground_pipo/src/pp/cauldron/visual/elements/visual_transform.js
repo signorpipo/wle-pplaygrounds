@@ -32,7 +32,7 @@ export class VisualTransformParams extends AbstractVisualElementParams {
     }
 
     _new() {
-        return new VisualTransformParams();
+        return new VisualTransformParams(this.myParent.pp_getEngine());
     }
 
     _equalsHook(other) {

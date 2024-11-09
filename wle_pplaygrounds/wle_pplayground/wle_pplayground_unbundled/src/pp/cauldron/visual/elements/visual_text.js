@@ -36,7 +36,7 @@ export class VisualTextParams extends AbstractVisualElementParams {
     }
 
     _new() {
-        return new VisualTextParams();
+        return new VisualTextParams(this.myParent.pp_getEngine());
     }
 
     _equalsHook(other) {

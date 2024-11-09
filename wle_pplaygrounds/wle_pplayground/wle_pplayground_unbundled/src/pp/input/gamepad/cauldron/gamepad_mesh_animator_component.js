@@ -156,7 +156,7 @@ export class GamepadMeshAnimatorComponent extends Component {
     }
 
     _thumbstickPressedEnd(buttonInfo, gamepad) {
-        if (!this.active) {
+        if (!this.active || this._myActivateOnNextUpdate) {
             this.onDeactivate();
             return;
         }
@@ -165,7 +165,7 @@ export class GamepadMeshAnimatorComponent extends Component {
     }
 
     _topButtonPressedStart(buttonInfo, gamepad) {
-        if (!this.active) {
+        if (!this.active || this._myActivateOnNextUpdate) {
             this.onDeactivate();
             return;
         }
@@ -175,7 +175,7 @@ export class GamepadMeshAnimatorComponent extends Component {
     }
 
     _topButtonPressedEnd(buttonInfo, gamepad) {
-        if (!this.active) {
+        if (!this.active || this._myActivateOnNextUpdate) {
             this.onDeactivate();
             return;
         }
@@ -184,7 +184,7 @@ export class GamepadMeshAnimatorComponent extends Component {
     }
 
     _bottomButtonPressedStart(buttonInfo, gamepad) {
-        if (!this.active) {
+        if (!this.active || this._myActivateOnNextUpdate) {
             this.onDeactivate();
             return;
         }
@@ -193,7 +193,7 @@ export class GamepadMeshAnimatorComponent extends Component {
     }
 
     _bottomButtonPressedEnd(buttonInfo, gamepad) {
-        if (!this.active) {
+        if (!this.active || this._myActivateOnNextUpdate) {
             this.onDeactivate();
             return;
         }
@@ -202,7 +202,7 @@ export class GamepadMeshAnimatorComponent extends Component {
     }
 
     _selectValueChanged(buttonInfo, gamepad) {
-        if (!this.active) {
+        if (!this.active || this._myActivateOnNextUpdate) {
             this.onDeactivate();
             return;
         }
@@ -215,7 +215,7 @@ export class GamepadMeshAnimatorComponent extends Component {
     }
 
     _squeezeValueChanged(buttonInfo, gamepad) {
-        if (!this.active) {
+        if (!this.active || this._myActivateOnNextUpdate) {
             this.onDeactivate();
             return;
         }
@@ -243,7 +243,7 @@ export class GamepadMeshAnimatorComponent extends Component {
     }
 
     _thumbstickValueChanged(axesInfo, gamepad) {
-        if (!this.active) {
+        if (!this.active || this._myActivateOnNextUpdate) {
             this.onDeactivate();
             return;
         }
@@ -270,7 +270,7 @@ export class GamepadMeshAnimatorComponent extends Component {
 GamepadMeshAnimatorComponent.prototype._thumbstickPressedStart = function () {
     let upTranslation = vec3_create();
     return function _thumbstickPressedStart(buttonInfo, gamepad) {
-        if (!this.active) {
+        if (!this.active || this._myActivateOnNextUpdate) {
             this.onDeactivate();
             return;
         }

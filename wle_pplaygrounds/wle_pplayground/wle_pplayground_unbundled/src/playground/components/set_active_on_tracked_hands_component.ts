@@ -8,8 +8,8 @@ export class SetActiveOnMobileComponent extends Component {
     private _myActiveOnTrackedHands!: boolean;
 
     public override update(dt: number): void {
-        if (Globals.getLeftHandPose()!.getInputSourceType() != null && Globals.getRightHandPose()!.getInputSourceType() != null) {
-            if (Globals.getLeftHandPose()!.getInputSourceType() == InputSourceType.TRACKED_HAND && Globals.getRightHandPose()!.getInputSourceType() == InputSourceType.TRACKED_HAND) {
+        if (Globals.getLeftHandPose(this.engine)!.getInputSourceType() != null && Globals.getRightHandPose(this.engine)!.getInputSourceType() != null) {
+            if (Globals.getLeftHandPose(this.engine)!.getInputSourceType() == InputSourceType.TRACKED_HAND && Globals.getRightHandPose(this.engine)!.getInputSourceType() == InputSourceType.TRACKED_HAND) {
                 this.object.pp_setActiveDescendants(this._myActiveOnTrackedHands);
             } else {
                 this.object.pp_setActiveDescendants(!this._myActiveOnTrackedHands);

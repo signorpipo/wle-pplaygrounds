@@ -60,7 +60,7 @@ export class SetTrackedHandJointLocalTransformComponent extends Component {
 SetTrackedHandJointLocalTransformComponent.prototype._onPoseUpdated = function () {
     let jointPoseTransform = quat2_create();
     return function _onPoseUpdated(dt, pose) {
-        if (!this.active) {
+        if (!this.active || this._myActivateOnNextUpdate) {
             this.onDeactivate();
             return;
         }

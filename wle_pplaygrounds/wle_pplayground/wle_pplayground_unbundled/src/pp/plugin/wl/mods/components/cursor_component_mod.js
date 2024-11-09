@@ -138,7 +138,7 @@ function _initCursorComponentModPrototype() {
         // If in XR, set the cursor ray based on object transform
         // View Component not null is currently used as a way to specify this is cursor should only work for Non XR
         if (XRUtils.isSessionActive(this.engine) && this._viewComponent == null) {
-            if (Globals.getHandPose(this.handedness).getInputSourceType() != null) {
+            if (Globals.getHandPose(this.handedness, this.engine).getInputSourceType() != null) {
                 // Since Google Cardboard tap is registered as arTouchDown without a gamepad, we need to check for gamepad presence 
                 if (this.arTouchDown && this._pp_isAR()) {
                     let axes = XRUtils.getSession(this.engine).inputSources[0].gamepad.axes;

@@ -1,5 +1,4 @@
-import { Component } from "@wonderlandengine/api";
-import { property } from "@wonderlandengine/api/decorators.js";
+import { Component, property } from "@wonderlandengine/api";
 import { XRUtils } from "../../utils/xr_utils.js";
 
 enum _ButtonBehaviorWhenNotAvailable {

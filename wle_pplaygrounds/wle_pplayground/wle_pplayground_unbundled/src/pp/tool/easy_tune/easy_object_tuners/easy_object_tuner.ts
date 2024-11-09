@@ -17,6 +17,7 @@ export abstract class EasyObjectTuner<ValueType, EasyTuneVariableType extends Ea
     private _myManualVariableUpdate: boolean = false;
 
     private _myActive: boolean = true;
+    private _mySetupDone: boolean = false;
 
     protected readonly _myEngine: Readonly<WonderlandEngine>;
 
@@ -53,10 +54,6 @@ export abstract class EasyObjectTuner<ValueType, EasyTuneVariableType extends Ea
     public start(): void {
         this._myEasyTuneVariable = this._createEasyTuneVariable(this._myInitialEasyTuneVariableName);
         Globals.getEasyTuneVariables(this._myEngine)!.add(this._myEasyTuneVariable);
-
-        if (this._mySetAsWidgetCurrentVariable) {
-            EasyTuneUtils.setWidgetCurrentVariable(this._myInitialEasyTuneVariableName, this._myEngine);
-        }
 
         let easyObject: Object3D | null = this._myObject;
         if (this._myUseTuneTarget) {
@@ -103,6 +100,16 @@ export abstract class EasyObjectTuner<ValueType, EasyTuneVariableType extends Ea
     }
 
     public update(dt: number): void {
+        if (!this._mySetupDone) {
+            if (Globals.hasEasyTuneWidget()) {
+                if (this._mySetAsWidgetCurrentVariable) {
+                    EasyTuneUtils.setWidgetCurrentVariable(this._myInitialEasyTuneVariableName, this._myEngine);
+                }
+
+                this._mySetupDone = true;
+            }
+        }
+
         if (this._myEasyTuneVariable == null || !this._myActive || !this.canUpdate()) return;
 
         let easyObject: Object3D | null = this._myObject;

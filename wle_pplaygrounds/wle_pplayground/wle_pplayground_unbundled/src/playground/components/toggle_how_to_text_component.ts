@@ -1,7 +1,6 @@
-import { Component, Object3D, PhysXComponent, TextComponent } from "@wonderlandengine/api";
-import { property } from "@wonderlandengine/api/decorators.js";
+import { Component, Object3D, PhysXComponent, property, TextComponent } from "@wonderlandengine/api";
 import { Cursor } from "@wonderlandengine/components";
-import { AnimatedNumber, AnimatedNumberParams, CursorButtonActionsHandler, CursorButtonComponent, Vector3, vec3_create } from "wle-pp";
+import { AnimatedNumber, AnimatedNumberParams, CursorButtonActionsHandler, CursorButtonComponent, vec3_create, Vector3 } from "wle-pp";
 
 export class ToggleHowToTextComponent extends Component implements CursorButtonActionsHandler {
     public static override TypeName = "toggle-how-to-text";

@@ -3,7 +3,6 @@ import { ComponentUtils, EasingFunction, Timer, vec3_create } from "wle-pp";
 
 export class ParticleComponent extends Component {
     static TypeName = "particle";
-    static Properties = {};
 
     init() {
         this._myOnDoneCallback = null;

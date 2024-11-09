@@ -24,7 +24,7 @@ export class UniversalGamepad extends Gamepad {
     public addGamepadCore(id: string, gamepadCore: GamepadCore): void {
         if (gamepadCore.getHandedness() == this.getHandedness()) {
             this._myGamepadCores[id] = gamepadCore;
-            this._myGamepadCoresIDs.push(id);
+            this._myGamepadCoresIDs.pp_pushUnique(id);
 
             if (this._myStarted) {
                 gamepadCore.start();

@@ -102,6 +102,7 @@ export class CollisionCheckParams {
         this.myCheckVerticalFixedForwardEnabled = false;
         this.myCheckVerticalFixedForward = vec3_create();
         this.myCheckVerticalBothDirection = false;
+        this.myCheckVerticalPositionBothDirection = false;
 
         this.mySnapOnGroundEnabled = false;
         this.mySnapOnGroundExtraDistance = 0;
@@ -357,6 +358,7 @@ export class CollisionCheckParams {
         this.myCheckVerticalFixedForwardEnabled = other.myCheckVerticalFixedForwardEnabled;
         this.myCheckVerticalFixedForward.vec3_copy(other.myCheckVerticalFixedForward);
         this.myCheckVerticalBothDirection = other.myCheckVerticalBothDirection;
+        this.myCheckVerticalPositionBothDirection = other.myCheckVerticalPositionBothDirection;
 
         this.mySnapOnGroundEnabled = other.mySnapOnGroundEnabled;
         this.mySnapOnGroundExtraDistance = other.mySnapOnGroundExtraDistance;

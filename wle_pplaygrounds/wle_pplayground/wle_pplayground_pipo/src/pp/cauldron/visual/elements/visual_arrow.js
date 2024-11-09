@@ -51,7 +51,7 @@ export class VisualArrowParams extends AbstractVisualElementParams {
     }
 
     _new() {
-        return new VisualArrowParams();
+        return new VisualArrowParams(this.myParent.pp_getEngine());
     }
 
     _equalsHook(other) {

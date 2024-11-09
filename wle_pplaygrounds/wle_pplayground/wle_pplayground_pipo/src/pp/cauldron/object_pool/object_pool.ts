@@ -258,8 +258,6 @@ export class ObjectPool<PoolObjectType, PoolObjectCloneParamsType = unknown> imp
         for (const object of this._myBusyObjects) {
             this._destroyObject(object);
         }
-
-        this._destroyObject(this._myObjectPrototype);
     }
 
     public isDestroyed(): boolean {

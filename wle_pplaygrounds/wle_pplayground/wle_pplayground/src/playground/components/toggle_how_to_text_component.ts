@@ -1,7 +1,6 @@
-import { Component, Object3D, PhysXComponent, TextComponent } from "@wonderlandengine/api";
-import { property } from "@wonderlandengine/api/decorators.js";
+import { Component, Object3D, PhysXComponent, property, TextComponent } from "@wonderlandengine/api";
 import { Cursor } from "@wonderlandengine/components";
-import { AnimatedNumber, AnimatedNumberParams, CursorButtonActionsHandler, CursorButtonComponent, Vector3, vec3_create } from "wle-pp";
+import { AnimatedNumber, AnimatedNumberParams, CursorButtonActionsHandler, CursorButtonComponent, vec3_create, Vector3 } from "wle-pp";
 
 export class ToggleHowToTextComponent extends Component implements CursorButtonActionsHandler {
     public static override TypeName = "toggle-how-to-text";
@@ -42,7 +41,7 @@ export class ToggleHowToTextComponent extends Component implements CursorButtonA
             }
         };
 
-        CursorButtonComponent.addButtonActionHandler("switch-button-text", switchButtonTextHandler);
+        CursorButtonComponent.addButtonActionHandler("switch-button-text", switchButtonTextHandler, this.engine);
     }
 
     public override start(): void {
@@ -72,9 +71,9 @@ export class ToggleHowToTextComponent extends Component implements CursorButtonA
         if (isSecondaryCursor) return false;
 
         if (!this._myTextVisible) {
-            this._myAnimatedScale.updateTargetValue(1);
+            this._myAnimatedScale.setTargetValue(1);
         } else {
-            this._myAnimatedScale.updateTargetValue(0);
+            this._myAnimatedScale.setTargetValue(0);
         }
 
         this._myTextObject.pp_setPositionLocal(this._myTextObjectInitialPositionLocal);

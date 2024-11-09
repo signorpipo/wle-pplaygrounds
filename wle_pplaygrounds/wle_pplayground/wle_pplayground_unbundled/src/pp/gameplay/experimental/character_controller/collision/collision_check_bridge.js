@@ -408,6 +408,7 @@ export let convertCharacterColliderSetupToCollisionCheckParams = function () {
         outCollisionCheckParams.myCheckVerticalFixedForwardEnabled = characterColliderSetup.myVerticalCheckParams.myVerticalCheckFixedForwardEnabled;
         outCollisionCheckParams.myCheckVerticalFixedForward.vec3_copy(characterColliderSetup.myVerticalCheckParams.myVerticalCheckFixedForward);
         outCollisionCheckParams.myCheckVerticalBothDirection = characterColliderSetup.myVerticalCheckParams.myVerticalMovementCheckPerformCheckOnBothSides;
+        outCollisionCheckParams.myCheckVerticalPositionBothDirection = characterColliderSetup.myVerticalCheckParams.myVerticalPositionCheckPerformCheckOnBothSides;
 
         outCollisionCheckParams.myVerticalMovementReduceEnabled = characterColliderSetup.myVerticalCheckParams.myVerticalMovementCheckReductionEnabled;
 

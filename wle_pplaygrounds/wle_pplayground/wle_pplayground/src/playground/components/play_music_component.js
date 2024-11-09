@@ -3,7 +3,6 @@ import { Globals } from "wle-pp";
 
 export class PlayMusicComponent extends Component {
     static TypeName = "play-music";
-    static Properties = {};
 
     start() {
         this._myStarted = false;

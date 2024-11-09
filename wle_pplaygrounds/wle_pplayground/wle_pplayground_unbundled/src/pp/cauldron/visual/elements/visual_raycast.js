@@ -42,7 +42,7 @@ export class VisualRaycastParams extends AbstractVisualElementParams {
     }
 
     _new() {
-        return new VisualRaycastParams();
+        return new VisualRaycastParams(this.myParent.pp_getEngine());
     }
 
     _equalsHook(other) {

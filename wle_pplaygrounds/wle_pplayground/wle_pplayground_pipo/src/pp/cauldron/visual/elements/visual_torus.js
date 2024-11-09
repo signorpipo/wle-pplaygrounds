@@ -35,7 +35,7 @@ export class VisualTorusParams extends AbstractVisualElementParams {
     }
 
     _new() {
-        return new VisualTorusParams();
+        return new VisualTorusParams(this.myParent.pp_getEngine());
     }
 
     _equalsHook(other) {

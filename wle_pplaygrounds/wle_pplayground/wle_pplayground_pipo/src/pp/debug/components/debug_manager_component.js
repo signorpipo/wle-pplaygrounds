@@ -22,15 +22,15 @@ export class DebugManagerComponent extends Component {
     }
 
     start() {
-        if (!this._myInitDone && Globals.isDebugEnabled(this._myEngine)) {
+        if (!this._myInitDone && Globals.isDebugEnabled(this.engine)) {
             this._init();
         }
     }
 
     update(dt) {
         if (this._myDebugManager != null && Globals.getDebugManager(this.engine) == this._myDebugManager) {
-            if (this._myCurrentActive != Globals.isDebugEnabled(this._myEngine)) {
-                this._myCurrentActive = Globals.isDebugEnabled(this._myEngine);
+            if (this._myCurrentActive != Globals.isDebugEnabled(this.engine)) {
+                this._myCurrentActive = Globals.isDebugEnabled(this.engine);
 
                 this._myDebugManager.setActive(this._myCurrentActive);
 
@@ -46,7 +46,7 @@ export class DebugManagerComponent extends Component {
             }
 
             this._myDebugManager.update(dt);
-        } else if (!this._myInitDone && Globals.isDebugEnabled(this._myEngine)) {
+        } else if (!this._myInitDone && Globals.isDebugEnabled(this.engine)) {
             this._init();
         }
     }

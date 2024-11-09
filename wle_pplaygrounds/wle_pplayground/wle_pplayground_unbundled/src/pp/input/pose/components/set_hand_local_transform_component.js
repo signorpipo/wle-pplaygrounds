@@ -48,7 +48,7 @@ export class SetHandLocalTransformComponent extends Component {
 SetHandLocalTransformComponent.prototype._onPoseUpdated = function () {
     let handPoseTransform = quat2_create();
     return function _onPoseUpdated(dt, pose) {
-        if (!this.active) {
+        if (!this.active || this._myActivateOnNextUpdate) {
             this.onDeactivate();
             return;
         }

@@ -1,5 +1,4 @@
-import { Collider, CollisionComponent, Component, Object3D, PhysXComponent, Shape } from "@wonderlandengine/api";
-import { property } from "@wonderlandengine/api/decorators.js";
+import { Collider, CollisionComponent, Component, Object3D, PhysXComponent, property, Shape } from "@wonderlandengine/api";
 import { Cursor } from "@wonderlandengine/components";
 import { PhysicsLayerFlags } from "../../../cauldron/physics/physics_layer_flags.js";
 import { XRUtils } from "../../../cauldron/utils/xr_utils.js";
