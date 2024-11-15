@@ -15,7 +15,7 @@
         "@wonderlandengine/components": "~1.1.5",
         "gl-matrix": "^3.4.3",
         "howler": "^2.2.4",
-        "wle-pp": "0.7.1"
+        "wle-pp": "0.7.2"
     },
     "devDependencies": {
         "eslint": "^9.13.0",
