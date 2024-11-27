@@ -135,6 +135,20 @@ export class PlayerLocomotionParams {
     public mySnapRealPositionToGround: boolean = false;
     public myPreventRealFromColliding: boolean = false;
 
+
+    /**
+     * This make it so if you move your head inside the ceiling and try to move with the stick, the player will not move as it was stuck with you.  
+     * It can be useful to avoid being able to move while the view is occluded and find yourself in random places afterwards.
+     * 
+     * If this is set to `false` instead, the player can still move and, for example, exit the zone with the lower ceiling.
+     * When this is set to false, you very likely want also {@link myResetHeadToRealMinDistance} set to `0`, otherwise the view occlusion  
+     * feature can fade to total black when moving in those situation (even if the move is now allowed and works).
+     * Setting {@link myResetHeadToRealMinDistance} to `0` is more expensive performance wise, so you might have to compromise.
+     */
+    public myUseHighestColliderHeightWhenManuallyMovingHorizontally: boolean = false;
+
+
+
     public myViewOcclusionInsideWallsEnabled: boolean = false;
     public myViewOcclusionLayerFlags: Readonly<PhysicsLayerFlags> = new PhysicsLayerFlags();
 
@@ -523,6 +537,11 @@ export class PlayerLocomotion {
                 params.myDirectionInvertForwardWhenUpsideDown = this._myParams.myDirectionInvertForwardWhenUpsideDown;
                 params.myVRDirectionReferenceType = this._myParams.myVRDirectionReferenceType;
                 params.myVRDirectionReferenceObject = this._myParams.myVRDirectionReferenceObject;
+
+                params.myUseHighestColliderHeightWhenManuallyMovingHorizontally = this._myParams.myUseHighestColliderHeightWhenManuallyMovingHorizontally;
+                params.myUseHighestColliderHeightWhenManuallyMovingVertically = false;
+
+                params.myAttemptMoveAgainWhenFailedDueToCeilingPopOut = true;
 
                 params.myDebugFlyMaxSpeedMultiplier = this._myParams.myDebugFlyMaxSpeedMultiplier;
                 params.myMoveThroughCollisionShortcutEnabled = this._myParams.myMoveThroughCollisionShortcutEnabled;

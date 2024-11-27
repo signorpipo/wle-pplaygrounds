@@ -9,7 +9,7 @@ export class AudioManagerComponent extends Component {
         _myCleanUpAudioSourcesOnActivate: Property.bool(false)
     };
 
-    init() {
+    start() {
         this._myAudioManager = new AudioManager(this._myPreloadAudio, this.engine);
     }
 
@@ -24,7 +24,7 @@ export class AudioManagerComponent extends Component {
     }
 
     onDeactivate() {
-        if (Globals.getAudioManager(this.engine) == this._myAudioManager) {
+        if (this._myAudioManage != null && Globals.getAudioManager(this.engine) == this._myAudioManager) {
             Globals.removeAudioManager(this.engine);
         }
     }
