@@ -1,6 +1,6 @@
 {
     "name": "wle-pplayground",
-    "version": "0.4.0",
+    "version": "0.4.1",
     "author": "Pipo",
     "description": "Playground template project for the Wonderland Engine",
     "homepage": "https://github.com/signorpipo/wle-pplaygrounds",
@@ -15,18 +15,18 @@
         "@wonderlandengine/components": "~1.1.5",
         "gl-matrix": "^3.4.3",
         "howler": "^2.2.4",
-        "wle-pp": "0.7.3"
+        "wle-pp": "0.7.4"
     },
     "devDependencies": {
-        "eslint": "^9.13.0",
+        "eslint": "^9.15.0",
         "globals": "^15.11.0",
-        "typescript": "^5.6.3",
-        "typescript-eslint": "^8.12.2"
+        "typescript": "^5.7.2",
+        "typescript-eslint": "^8.16.0"
     },
     "optionalDependencies": {
-        "@playkostudios/wle-cleaner": "^0.7.2"
+        "@playkostudios/wle-cleaner": "^0.8.0"
     },
     "scripts": {
-        "clean-projects": "wle-cleaner \"./*.wlp\" -r -e dev/wle-tool-utils/editor-bundle-extras.js --no-legacy-preamble"
+        "clean-projects": "wle-cleaner \"./*.wlp\" -r -e dev/wle-tool-utils/editor-bundle-extras.js"
     }
 }
