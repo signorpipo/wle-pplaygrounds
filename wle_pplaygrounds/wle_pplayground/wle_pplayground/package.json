@@ -24,7 +24,7 @@
         "typescript-eslint": "^8.16.0"
     },
     "optionalDependencies": {
-        "@playkostudios/wle-cleaner": "^0.8.0"
+        "@playkostudios/wle-cleaner": "^0.8.1"
     },
     "scripts": {
         "clean-projects": "wle-cleaner \"./*.wlp\" -r -e dev/wle-tool-utils/editor-bundle-extras.js"
