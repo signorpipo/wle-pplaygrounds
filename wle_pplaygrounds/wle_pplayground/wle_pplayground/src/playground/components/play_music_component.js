@@ -18,4 +18,16 @@ export class PlayMusicComponent extends Component {
             }
         }
     }
+
+    onActivate() {
+        if (this._myStarted) {
+            this._myMusic.resume();
+        }
+    }
+
+    onDeactivate() {
+        if (this._myStarted) {
+            this._myMusic.pause();
+        }
+    }
 }

@@ -8,8 +8,9 @@ export class AddWLToWindowComponent extends Component {
         _myAdd: Property.bool(true)
     };
 
-    init() {
-        if (this.markedActive && this._myAdd) {
+    start() {
+        this._myWL = null;
+        if (this._myAdd) {
             this._myWL = {};
             this._addProperties(WLAPI);
             this._addProperties(WLComponents);

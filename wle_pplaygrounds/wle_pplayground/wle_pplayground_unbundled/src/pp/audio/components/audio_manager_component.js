@@ -6,7 +6,7 @@ export class AudioManagerComponent extends Component {
     static TypeName = "pp-audio-manager";
     static Properties = {
         _myPreloadAudio: Property.bool(false),
-        _myCleanUpAudioSourcesOnActivate: Property.bool(false)
+        _myStopAudioOnDeactivate: Property.bool(false)
     };
 
     start() {
@@ -15,17 +15,17 @@ export class AudioManagerComponent extends Component {
 
     onActivate() {
         if (!Globals.hasAudioManager(this.engine)) {
-            if (this._myCleanUpAudioSourcesOnActivate) {
-                this._myAudioManager.unloadAllAudioSources();
-            }
-
             Globals.setAudioManager(this._myAudioManager, this.engine);
         }
     }
 
     onDeactivate() {
-        if (this._myAudioManage != null && Globals.getAudioManager(this.engine) == this._myAudioManager) {
+        if (this._myAudioManager != null && Globals.getAudioManager(this.engine) == this._myAudioManager) {
             Globals.removeAudioManager(this.engine);
+
+            if (this._myStopAudioOnDeactivate) {
+                this._myAudioManager.stop();
+            }
         }
     }
 }

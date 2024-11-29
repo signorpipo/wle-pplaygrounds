@@ -641,7 +641,7 @@ export class PlayerTransformManager {
     public forceTeleportAndReset(teleportPosition: Readonly<Vector3>, teleportRotationQuat: Readonly<Quaternion>, forceTeleportSkipCollisionCheck: boolean = false, useHighestHeight: boolean = false, collisionCheckParams?: CollisionCheckParams, outCollisionRuntimeParams: CollisionRuntimeParams | null = null): void {
         this.teleportPositionRotationQuat(teleportPosition, teleportRotationQuat, true, forceTeleportSkipCollisionCheck, useHighestHeight, collisionCheckParams, outCollisionRuntimeParams);
 
-        this.resetReal(true, true, undefined, undefined, undefined, true);
+        this.resetReal(true, true, undefined, true, undefined, true);
     }
 
     public rotateQuat(rotationQuat: Readonly<Quaternion>): void {
