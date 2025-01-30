@@ -23,15 +23,20 @@ await waitWindowLoad;
 
 /* wle:auto-constants:start */
 const Constants = {
-    ProjectName: 'wle-pp-dev-pplayground',
+    ProjectName: 'wle-pplayground-unbundled',
     RuntimeBaseName: 'WonderlandRuntime',
     WebXRRequiredFeatures: ['local',],
-    WebXROptionalFeatures: ['local', 'local-floor', 'hand-tracking', 'hit-test',],
+    WebXROptionalFeatures: ['local','local-floor','hand-tracking','hit-test',],
 };
 const RuntimeOptions = {
     physx: true,
     loader: false,
     xrFramebufferScaleFactor: 1,
+    xrOfferSession: {
+        mode: 'auto',
+        features: Constants.WebXRRequiredFeatures,
+        optionalFeatures: Constants.WebXROptionalFeatures,
+    },
     canvas: 'canvas',
 } as const;
 /* wle:auto-constants:end */
