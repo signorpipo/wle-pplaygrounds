@@ -15,7 +15,7 @@ export class TeleportOnTrackedHandsComponent extends Component {
             this._myDelayFrameCountdown--;
         }
 
-        if (XRUtils.isSessionActive(this.engine) && Globals.getPlayerLocomotion(this.engine)!.getPlayerHeadManager().isSynced() && this._myDelayFrameCountdown == 0) {
+        if (XRUtils.isSessionActive(this.engine) && Globals.getPlayerLocomotion(this.engine)?.getPlayerHeadManager().isSynced() && this._myDelayFrameCountdown == 0) {
             if (Globals.getLeftHandPose(this.engine)!.getInputSourceType() != null && Globals.getRightHandPose(this.engine)!.getInputSourceType() != null) {
                 if (Globals.getLeftHandPose(this.engine)!.getInputSourceType() == InputSourceType.TRACKED_HAND && Globals.getRightHandPose(this.engine)!.getInputSourceType() == InputSourceType.TRACKED_HAND) {
                     if (!this._myUsingTrackedHands) {

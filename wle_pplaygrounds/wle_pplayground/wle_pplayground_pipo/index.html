@@ -1,14 +1,39 @@
 <!DOCTYPE html>
+
 <html xmlns="http://www.w3.org/1999/xhtml">
+
+<script type="importmap">
+    {
+        "imports": {
+            "@wonderlandengine/api": "/node_modules/@wonderlandengine/api/index.js",
+            "@wonderlandengine/api/decorators.js": "/node_modules/@wonderlandengine/api/index.js"
+        }
+    }
+</script>
 
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="{{ settings.runtime.xrButtonColor }}">
+    
+    <meta property="og:title" content="{{ settings.project.name }}" />
+    <meta property="og:type" content="{{ settings.project.type }}" />
+    <meta property="og:description" content="{{ settings.project.description }}" />
+
+    <meta property="twitter:description" content="{{ settings.project.description }}" />
+    <meta property="twitter:title" content="{{ settings.project.name }}" />
+    <meta property="twitter:card" content="summary_large_image" />
 
     <title>{{ settings.project.name }}</title>
 
     <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+    <link rel="modulepreload" href="{{ settings.scripting.application.output }}" as="script">
+    {{ if settings.scripting.components.bundling != 'none' }}
+    {{ if settings.scripting.components.output != '' }}
+    <link rel="modulepreload" href="{{ settings.scripting.components.output }}" as="script">
+    {{ end }}
+    {{ end }}
 
     {{ if settings.runtime.pwa.enable }}
     <link rel="manifest" href="manifest.json">
@@ -21,7 +46,7 @@
     </script>
     {{ end }}
 
-    <script type="module" src="{{ settings.project.name }}-bundle.js"></script>
+    <script type="module" src="{{ settings.scripting.application.output }}"></script>
 
     {{ if settings.runtime.googleAnalytics != "" }}
     <script async src="https://www.googletagmanager.com/gtag/js?id={{ settings.runtime.googleAnalytics }}"></script>
@@ -126,7 +151,7 @@
     <canvas id="canvas" style="width: 100%; height: 100%; display: block;" tabindex="0"></canvas>
 
     <div id="xr-buttons-container">
-        {{ if settings.vr.enable }}
+        {{ if settings.xr.vr.enable }}
         <a id="vr-button" class="xr-button">
             <div class="xr-button-svg-container">
                 <svg class="xr-button-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 109.41 65">
@@ -138,7 +163,7 @@
         </a>
         {{ end }}
 
-        {{ if settings.ar.enable }}
+        {{ if settings.xr.ar.enable }}
         <a id="ar-button" class="xr-button">
             <div class="xr-button-svg-container">
                 <svg class="xr-button-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 109.41 65">

@@ -3057,302 +3057,21 @@
             }
         }
     },
-    "materials": {
-        "DefaultFontMaterial": {
+    "images": {
+        "d1550dc2-2b9c-4c80-a575-22f58d3850d8": {
             "link": {
-                "name": "DefaultFontMaterial",
-                "file": "default"
+                "name": "icon.png",
+                "file": "assets\\textures\\pp\\icon.png"
             },
-            "Text": {
-                "font": "f5ed4fb0-a0a2-47f4-8b4d-a3e02ea4898e"
-            }
-        },
-        "cffc8c8c-c158-4950-88b3-de627375c2ed": {
-            "name": "Flat Opaque",
-            "pipeline": "6e3da297-ea04-4d73-a0c7-3889145038df"
-        },
-        "e972069e-66ee-4d9c-959d-8a78d9ddb9f9": {
-            "name": "Phong Opaque",
-            "pipeline": "313227a6-182e-4b31-9838-632a9291f4d2",
-            "Phong": {
-                "ambientColor": [
-                    0.5,
-                    0.5,
-                    0.5,
-                    1.0
-                ]
-            }
-        },
-        "f791ea4a-29da-46c4-80a2-09027d17fa30": {
-            "name": "Flat Transparent No Depth",
-            "pipeline": "cac99800-8c59-4748-8014-03df6ad16252"
-        },
-        "04b7f97e-2921-4f88-91f3-20e62ec5c355": {
-            "name": "Text",
-            "pipeline": "5959fca9-9575-43d8-b76f-603dcaa66ebd",
-            "Text": {
-                "font": "f5ed4fb0-a0a2-47f4-8b4d-a3e02ea4898e"
-            }
-        },
-        "dfa19ab9-7e1c-45b6-b3c8-b0959fd9c50d": {
+            "compression": "none",
+            "stream": false
+        }
+    },
+    "textures": {
+        "0fdcef6b-36ae-44c7-b4ed-082696d8376f": {
             "link": {
-                "name": "Gamepad Body",
-                "file": "assets\\models\\pp\\meta_quest_1_gamepads_credits_Jezza3D.fbx"
-            },
-            "Phong": {
-                "specularColor": [
-                    1.0,
-                    1.0,
-                    1.0,
-                    0.5
-                ],
-                "shininess": 2,
-                "ambientColor": [
-                    0.5,
-                    0.5,
-                    0.5,
-                    1.0
-                ],
-                "diffuseColor": [
-                    0.0784313,
-                    0.0784313,
-                    0.0784313,
-                    1.0
-                ]
-            }
-        },
-        "8056c698-b1c4-4a6f-838f-f80fb4b37a9f": {
-            "link": {
-                "name": "Gamepad Button",
-                "file": "assets\\models\\pp\\meta_quest_1_gamepads_credits_Jezza3D.fbx"
-            },
-            "Phong": {
-                "shininess": 2,
-                "specularColor": [
-                    1.0,
-                    1.0,
-                    1.0,
-                    0.5
-                ],
-                "ambientColor": [
-                    0.5,
-                    0.5,
-                    0.5,
-                    1.0
-                ],
-                "diffuseColor": [
-                    0.9411764,
-                    0.9411764,
-                    0.9411764,
-                    1.0
-                ]
-            }
-        },
-        "f9c59c9d-4599-40d6-abdb-8caadc0bee21": {
-            "name": "Tracked Hand Joint",
-            "Phong": {
-                "ambientColor": [
-                    0.5,
-                    0.5,
-                    0.5,
-                    1.0
-                ],
-                "diffuseColor": [
-                    0.0784,
-                    0.0784,
-                    0.0784,
-                    1.0
-                ],
-                "specularColor": [
-                    1.0,
-                    1.0,
-                    1.0,
-                    0.5
-                ],
-                "fogColor": [
-                    1.0,
-                    1.0,
-                    1.0,
-                    0.0
-                ]
-            }
-        },
-        "6c7363ad-f7ee-465b-9031-541e40292fff": {
-            "name": "Gold",
-            "Phong": {
-                "diffuseColor": [
-                    1.0,
-                    0.5882353,
-                    0.1843137,
-                    1.0
-                ],
-                "ambientColor": [
-                    0.5,
-                    0.5,
-                    0.5,
-                    1.0
-                ],
-                "shininess": 2,
-                "specularColor": [
-                    1.0,
-                    1.0,
-                    1.0,
-                    0.3921568
-                ]
-            }
-        },
-        "90348bdc-8768-4244-9398-b89361708289": {
-            "name": "Cyan",
-            "Phong": {
-                "ambientColor": [
-                    0.5,
-                    0.5,
-                    0.5,
-                    1.0
-                ],
-                "diffuseColor": [
-                    0.345098,
-                    1.0,
-                    0.8823529,
-                    1.0
-                ],
-                "specularColor": [
-                    1.0,
-                    1.0,
-                    1.0,
-                    0.3921568
-                ]
-            }
-        },
-        "3699d0b5-ea21-4ec3-8d94-7f02ef40eec8": {
-            "link": {
-                "name": "Wondermelon Peel",
-                "file": "assets\\models\\playground\\wondermelon.fbx"
-            },
-            "Phong": {
-                "diffuseColor": [
-                    0.0,
-                    0.5294117,
-                    0.317647,
-                    1.0
-                ],
-                "specularColor": [
-                    1.0,
-                    1.0,
-                    1.0,
-                    0.3921568
-                ],
-                "shininess": 2,
-                "ambientColor": [
-                    0.5,
-                    0.5,
-                    0.5,
-                    1.0
-                ]
-            }
-        },
-        "d23946e0-f9ca-4612-bd2a-863f0c6c1ba9": {
-            "link": {
-                "name": "Wondermelon Rind",
-                "file": "assets\\models\\playground\\wondermelon.fbx"
-            },
-            "Phong": {
-                "diffuseColor": [
-                    1.0,
-                    0.8,
-                    0.6666666,
-                    1.0
-                ],
-                "specularColor": [
-                    1.0,
-                    1.0,
-                    1.0,
-                    0.3921568
-                ],
-                "shininess": 2,
-                "ambientColor": [
-                    0.5,
-                    0.5,
-                    0.5,
-                    1.0
-                ]
-            }
-        },
-        "98b39842-0708-4c3a-b23e-55b686e09186": {
-            "link": {
-                "name": "Wondermelon Pulp",
-                "file": "assets\\models\\playground\\wondermelon.fbx"
-            },
-            "Phong": {
-                "diffuseColor": [
-                    0.8627451,
-                    0.117647,
-                    0.345098,
-                    1.0
-                ],
-                "specularColor": [
-                    1.0,
-                    1.0,
-                    1.0,
-                    0.3921568
-                ],
-                "shininess": 2,
-                "ambientColor": [
-                    0.5,
-                    0.5,
-                    0.5,
-                    1.0
-                ]
-            }
-        },
-        "70411200-8fd5-41e1-86bd-6790741273e5": {
-            "link": {
-                "name": "Wondermelon Seed",
-                "file": "assets\\models\\playground\\wondermelon.fbx"
-            },
-            "Phong": {
-                "diffuseColor": [
-                    0.0980392,
-                    0.0980392,
-                    0.0980392,
-                    1.0
-                ],
-                "specularColor": [
-                    1.0,
-                    1.0,
-                    1.0,
-                    0.3921568
-                ],
-                "shininess": 2,
-                "ambientColor": [
-                    0.5,
-                    0.5,
-                    0.5,
-                    1.0
-                ]
-            }
-        },
-        "fdd04da3-6300-46e4-afad-fb76a6e26dfd": {
-            "name": "Sky",
-            "pipeline": "6a25dc7c-d12d-45a0-8e15-ace3bd9637e6"
-        },
-        "eb68d1ad-89df-45b0-a7ff-d270e70a6ffe": {
-            "name": "Outline Text",
-            "pipeline": "5959fca9-9575-43d8-b76f-603dcaa66ebd",
-            "Text": {
-                "font": "f1dfcad7-d12a-42a0-804d-7b69d6dd0569",
-                "color": [
-                    1.0,
-                    1.0,
-                    1.0,
-                    0.0
-                ],
-                "effectColor": [
-                    0.8999999,
-                    0.5294117,
-                    0.1658823,
-                    1.0
-                ]
+                "name": "icon.png",
+                "file": "assets\\textures\\pp\\icon.png"
             }
         }
     },
@@ -3548,86 +3267,337 @@
                 "name": "lib\\PhysicalBSDF.glsl",
                 "file": "default"
             }
+        },
+        "1e16efeb-f00b-4736-b952-352199ecbdc4": {
+            "link": {
+                "name": "AtmosphericSky.frag",
+                "file": "default"
+            }
+        },
+        "f7d5f6b4-2cac-4aff-85b4-756bca1e396f": {
+            "link": {
+                "name": "lib\\SkyProcedural.glsl",
+                "file": "default"
+            }
         }
     },
-    "settings": {
-        "project": {
-            "name": "wle-pplayground-unbundled",
-            "version": [
-                1,
-                2,
-                4
-            ],
-            "customIndexHtml": true,
-            "type": "game"
-        },
-        "rendering": {
-            "clearColor": [
-                0.4235294,
-                1.0,
-                0.8705882,
-                1.0
-            ],
-            "hdr": {
-                "exposure": 1.5
+    "materials": {
+        "DefaultFontMaterial": {
+            "link": {
+                "name": "DefaultFontMaterial",
+                "file": "default"
+            },
+            "Text": {
+                "font": "f5ed4fb0-a0a2-47f4-8b4d-a3e02ea4898e"
             }
         },
-        "runtime": {
-            "xrButtonColor": "white",
-            "webxr": {
-                "optionalFeatures": {
-                    "hand-tracking": true,
-                    "local-floor": true
-                }
-            },
-            "viewObject": "8022bc4c-dcb9-461f-9f47-70f2c9ab943a",
-            "pwa": {
-                "enable": true,
-                "customServiceWorker": true,
-                "customManifest": true,
-                "appIcon": "d1550dc2-2b9c-4c80-a575-22f58d3850d8"
+        "cffc8c8c-c158-4950-88b3-de627375c2ed": {
+            "name": "Flat Opaque",
+            "pipeline": "6e3da297-ea04-4d73-a0c7-3889145038df"
+        },
+        "e972069e-66ee-4d9c-959d-8a78d9ddb9f9": {
+            "name": "Phong Opaque",
+            "pipeline": "313227a6-182e-4b31-9838-632a9291f4d2",
+            "Phong": {
+                "ambientColor": [
+                    0.5,
+                    0.5,
+                    0.5,
+                    1.0
+                ]
             }
         },
-        "scripting": {
-            "sourcePaths": [
-                "src",
-                "src/pp/index.ts",
-                "src/playground/components"
-            ],
-            "bundlingType": "esbuild",
-            "libraryPaths": [
-                "/js/lib/"
-            ],
-            "entryPoint": "src/index.ts"
+        "f791ea4a-29da-46c4-80a2-09027d17fa30": {
+            "name": "Flat Transparent No Depth",
+            "pipeline": "cac99800-8c59-4748-8014-03df6ad16252"
         },
-        "vr": {
-            "leftEyeObject": "bfeccf36-046b-49b5-b355-da4ede4daf21",
-            "rightEyeObject": "665488c7-f768-473e-8fe7-8b4ccd5bc647"
+        "04b7f97e-2921-4f88-91f3-20e62ec5c355": {
+            "name": "Text",
+            "pipeline": "5959fca9-9575-43d8-b76f-603dcaa66ebd",
+            "Text": {
+                "font": "f5ed4fb0-a0a2-47f4-8b4d-a3e02ea4898e"
+            }
         },
-        "editor": {
-            "camera": {
-                "near": 0.0099999,
-                "far": 10000.0
+        "dfa19ab9-7e1c-45b6-b3c8-b0959fd9c50d": {
+            "link": {
+                "name": "Gamepad Body",
+                "file": "assets\\models\\pp\\meta_quest_1_gamepads_credits_Jezza3D.fbx"
             },
-            "ids": "uuid"
+            "Phong": {
+                "specularColor": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    0.5
+                ],
+                "shininess": 2,
+                "ambientColor": [
+                    0.5,
+                    0.5,
+                    0.5,
+                    1.0
+                ],
+                "diffuseColor": [
+                    0.0784313,
+                    0.0784313,
+                    0.0784313,
+                    1.0
+                ]
+            }
         },
-        "physx": {
-            "enable": true,
-            "groupNames": {
-                "0": "Player",
-                "1": "Solid",
-                "2": "Interactable",
-                "3": "UI",
-                "4": "Group 4",
-                "5": "Group 5",
-                "6": "Group 6",
-                "7": "Group 7"
+        "8056c698-b1c4-4a6f-838f-f80fb4b37a9f": {
+            "link": {
+                "name": "Gamepad Button",
+                "file": "assets\\models\\pp\\meta_quest_1_gamepads_credits_Jezza3D.fbx"
+            },
+            "Phong": {
+                "shininess": 2,
+                "specularColor": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    0.5
+                ],
+                "ambientColor": [
+                    0.5,
+                    0.5,
+                    0.5,
+                    1.0
+                ],
+                "diffuseColor": [
+                    0.9411764,
+                    0.9411764,
+                    0.9411764,
+                    1.0
+                ]
+            }
+        },
+        "f9c59c9d-4599-40d6-abdb-8caadc0bee21": {
+            "name": "Tracked Hand Joint",
+            "Phong": {
+                "ambientColor": [
+                    0.5,
+                    0.5,
+                    0.5,
+                    1.0
+                ],
+                "diffuseColor": [
+                    0.0784,
+                    0.0784,
+                    0.0784,
+                    1.0
+                ],
+                "specularColor": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    0.5
+                ],
+                "fogColor": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    0.0
+                ]
+            },
+            "pipeline": "313227a6-182e-4b31-9838-632a9291f4d2"
+        },
+        "6c7363ad-f7ee-465b-9031-541e40292fff": {
+            "name": "Gold",
+            "Phong": {
+                "diffuseColor": [
+                    1.0,
+                    0.5882353,
+                    0.1843137,
+                    1.0
+                ],
+                "ambientColor": [
+                    0.5,
+                    0.5,
+                    0.5,
+                    1.0
+                ],
+                "shininess": 2,
+                "specularColor": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    0.3921568
+                ]
+            },
+            "pipeline": "313227a6-182e-4b31-9838-632a9291f4d2"
+        },
+        "90348bdc-8768-4244-9398-b89361708289": {
+            "name": "Cyan",
+            "Phong": {
+                "ambientColor": [
+                    0.5,
+                    0.5,
+                    0.5,
+                    1.0
+                ],
+                "diffuseColor": [
+                    0.345098,
+                    1.0,
+                    0.8823529,
+                    1.0
+                ],
+                "specularColor": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    0.3921568
+                ]
+            },
+            "pipeline": "313227a6-182e-4b31-9838-632a9291f4d2"
+        },
+        "3699d0b5-ea21-4ec3-8d94-7f02ef40eec8": {
+            "link": {
+                "name": "Wondermelon Peel",
+                "file": "assets\\models\\playground\\wondermelon.fbx"
+            },
+            "Phong": {
+                "diffuseColor": [
+                    0.0,
+                    0.5294117,
+                    0.317647,
+                    1.0
+                ],
+                "specularColor": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    0.3921568
+                ],
+                "shininess": 2,
+                "ambientColor": [
+                    0.5,
+                    0.5,
+                    0.5,
+                    1.0
+                ]
+            }
+        },
+        "d23946e0-f9ca-4612-bd2a-863f0c6c1ba9": {
+            "link": {
+                "name": "Wondermelon Rind",
+                "file": "assets\\models\\playground\\wondermelon.fbx"
+            },
+            "Phong": {
+                "diffuseColor": [
+                    1.0,
+                    0.8,
+                    0.6666666,
+                    1.0
+                ],
+                "specularColor": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    0.3921568
+                ],
+                "shininess": 2,
+                "ambientColor": [
+                    0.5,
+                    0.5,
+                    0.5,
+                    1.0
+                ]
+            }
+        },
+        "98b39842-0708-4c3a-b23e-55b686e09186": {
+            "link": {
+                "name": "Wondermelon Pulp",
+                "file": "assets\\models\\playground\\wondermelon.fbx"
+            },
+            "Phong": {
+                "diffuseColor": [
+                    0.8627451,
+                    0.117647,
+                    0.345098,
+                    1.0
+                ],
+                "specularColor": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    0.3921568
+                ],
+                "shininess": 2,
+                "ambientColor": [
+                    0.5,
+                    0.5,
+                    0.5,
+                    1.0
+                ]
+            }
+        },
+        "70411200-8fd5-41e1-86bd-6790741273e5": {
+            "link": {
+                "name": "Wondermelon Seed",
+                "file": "assets\\models\\playground\\wondermelon.fbx"
+            },
+            "Phong": {
+                "diffuseColor": [
+                    0.0980392,
+                    0.0980392,
+                    0.0980392,
+                    1.0
+                ],
+                "specularColor": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    0.3921568
+                ],
+                "shininess": 2,
+                "ambientColor": [
+                    0.5,
+                    0.5,
+                    0.5,
+                    1.0
+                ]
+            }
+        },
+        "fdd04da3-6300-46e4-afad-fb76a6e26dfd": {
+            "name": "Sky",
+            "pipeline": "6a25dc7c-d12d-45a0-8e15-ace3bd9637e6"
+        },
+        "eb68d1ad-89df-45b0-a7ff-d270e70a6ffe": {
+            "name": "Outline Text",
+            "pipeline": "5959fca9-9575-43d8-b76f-603dcaa66ebd",
+            "Text": {
+                "font": "f1dfcad7-d12a-42a0-804d-7b69d6dd0569",
+                "color": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    0.0
+                ],
+                "effectColor": [
+                    0.8999999,
+                    0.5294117,
+                    0.1658823,
+                    1.0
+                ]
             }
         }
     },
     "animations": {},
     "skins": {},
     "pipelines": {
+        "db2e77f7-8680-4a52-b7a2-72840aca6440": {
+            "link": {
+                "name": "MeshVisualizer",
+                "file": "default"
+            }
+        },
+        "e315536e-27b7-4d15-b229-0228a292799d": {
+            "link": {
+                "name": "TileFeedback",
+                "file": "default"
+            }
+        },
         "bdd1dff9-1f51-491a-9356-abff93fe5a19": {
             "link": {
                 "name": "Depth",
@@ -3650,15 +3620,6 @@
             "link": {
                 "name": "Flat Opaque Textured",
                 "file": "default"
-            },
-            "features": {
-                "ALPHA_MASKED": true
-            }
-        },
-        "db2e77f7-8680-4a52-b7a2-72840aca6440": {
-            "link": {
-                "name": "MeshVisualizer",
-                "file": "default"
             }
         },
         "313227a6-182e-4b31-9838-632a9291f4d2": {
@@ -3670,48 +3631,6 @@
         "2762071d-3ed2-487d-9b98-0bf0a6e8f24c": {
             "link": {
                 "name": "Phong Opaque Textured",
-                "file": "default"
-            },
-            "features": {
-                "ALPHA_MASKED": true
-            }
-        },
-        "34d9e3a1-e64c-4786-b7ef-581ce83aaf88": {
-            "link": {
-                "name": "Foliage",
-                "file": "default"
-            }
-        },
-        "b8d672a6-da28-4516-bf27-c5a97c029987": {
-            "link": {
-                "name": "Particle",
-                "file": "default"
-            }
-        },
-        "2d2fb7df-35f2-4ea3-a493-70fe1235b94f": {
-            "link": {
-                "name": "Physical Opaque",
-                "file": "default"
-            }
-        },
-        "9104535f-2c03-4d28-8052-347735487f59": {
-            "link": {
-                "name": "Physical Opaque Textured",
-                "file": "default"
-            },
-            "features": {
-                "ALPHA_MASKED": true
-            }
-        },
-        "5959fca9-9575-43d8-b76f-603dcaa66ebd": {
-            "link": {
-                "name": "Text",
-                "file": "default"
-            }
-        },
-        "6a25dc7c-d12d-45a0-8e15-ace3bd9637e6": {
-            "link": {
-                "name": "Sky",
                 "file": "default"
             }
         },
@@ -3727,9 +3646,57 @@
                 "file": "default"
             }
         },
-        "e315536e-27b7-4d15-b229-0228a292799d": {
+        "2d2fb7df-35f2-4ea3-a493-70fe1235b94f": {
             "link": {
-                "name": "TileFeedback",
+                "name": "Physical Opaque",
+                "file": "default"
+            },
+            "features": {
+                "SEPARATE_OCCLUSION_TEXTURE": true
+            }
+        },
+        "9104535f-2c03-4d28-8052-347735487f59": {
+            "link": {
+                "name": "Physical Opaque Textured",
+                "file": "default"
+            },
+            "features": {
+                "SEPARATE_OCCLUSION_TEXTURE": true
+            }
+        },
+        "34d9e3a1-e64c-4786-b7ef-581ce83aaf88": {
+            "link": {
+                "name": "Foliage",
+                "file": "default"
+            }
+        },
+        "b8d672a6-da28-4516-bf27-c5a97c029987": {
+            "link": {
+                "name": "Particle",
+                "file": "default"
+            }
+        },
+        "5959fca9-9575-43d8-b76f-603dcaa66ebd": {
+            "link": {
+                "name": "Text",
+                "file": "default"
+            }
+        },
+        "6a25dc7c-d12d-45a0-8e15-ace3bd9637e6": {
+            "link": {
+                "name": "Sky",
+                "file": "default"
+            },
+            "features": {
+                "TEXTURED": true,
+                "ENVIRONMENT_PROBE": false,
+                "GRADIENT": true,
+                "GRADIENT_4_STOPS": true
+            }
+        },
+        "99894a5c-7295-463c-a8ad-a8d23614a462": {
+            "link": {
+                "name": "AtmosphericSky",
                 "file": "default"
             }
         },
@@ -3746,38 +3713,6 @@
             "blendSrcAlpha": "one minus destination alpha",
             "blendDestRgb": "one minus source alpha",
             "blendDestAlpha": "one"
-        }
-    },
-    "textures": {
-        "0fdcef6b-36ae-44c7-b4ed-082696d8376f": {
-            "link": {
-                "name": "icon.png",
-                "file": "assets\\textures\\pp\\icon.png"
-            }
-        }
-    },
-    "images": {
-        "d1550dc2-2b9c-4c80-a575-22f58d3850d8": {
-            "link": {
-                "name": "icon.png",
-                "file": "assets\\textures\\pp\\icon.png"
-            },
-            "compression": "none",
-            "stream": false
-        }
-    },
-    "files": {
-        "69feadb3-3dce-463a-b4ca-2264f5b4ca6e": {
-            "fileName": "assets/models/pp/meta_quest_1_gamepads_credits_Jezza3D.fbx",
-            "importerName": "AssimpImporter"
-        },
-        "e1065340-f593-4feb-84a8-50e33152649e": {
-            "fileName": "assets/models/playground/wondermelon.fbx",
-            "importerName": "AssimpImporter"
-        },
-        "88ef22f2-9f2d-4c27-83b8-70f49921b282": {
-            "fileName": "assets/textures/pp/icon.png",
-            "importerName": ""
         }
     },
     "fonts": {
@@ -3797,6 +3732,100 @@
             "outlineSize": 0.075
         }
     },
+    "morphTargets": {},
+    "files": {
+        "69feadb3-3dce-463a-b4ca-2264f5b4ca6e": {
+            "fileName": "assets/models/pp/meta_quest_1_gamepads_credits_Jezza3D.fbx",
+            "importerName": "AssimpImporter"
+        },
+        "e1065340-f593-4feb-84a8-50e33152649e": {
+            "fileName": "assets/models/playground/wondermelon.fbx",
+            "importerName": "AssimpImporter"
+        },
+        "88ef22f2-9f2d-4c27-83b8-70f49921b282": {
+            "fileName": "assets/textures/pp/icon.png",
+            "importerName": ""
+        }
+    },
     "languages": {},
-    "morphTargets": {}
+    "settings": {
+        "project": {
+            "name": "wle-pplayground-unbundled",
+            "version": [
+                1,
+                3,
+                0
+            ],
+            "description": "Playground template project for the Wonderland Engine",
+            "type": "game",
+            "customIndexHtml": true
+        },
+        "scripting": {
+            "application": {
+                "output": "wle-pplayground-unbundled-app.js",
+                "bundling": "esbuild",
+                "entryPoint": "src/app.ts"
+            },
+            "components": {
+                "sourcePaths": [
+                    "src",
+                    "src/pp/index.ts",
+                    "src/playground/components"
+                ],
+                "entryPoint": "src/index.ts",
+                "output": "wle-pplayground-unbundled-bundle.js"
+            },
+            "libraryPaths": [
+                "/js/lib/"
+            ]
+        },
+        "rendering": {
+            "clearColor": [
+                0.4235294,
+                1.0,
+                0.8705882,
+                1.0
+            ]
+        },
+        "xr": {
+            "leftEyeObject": "bfeccf36-046b-49b5-b355-da4ede4daf21",
+            "rightEyeObject": "665488c7-f768-473e-8fe7-8b4ccd5bc647",
+            "webxr": {
+                "optionalFeatures": {
+                    "hand-tracking": true,
+                    "local-floor": true
+                }
+            }
+        },
+        "editor": {
+            "camera": {
+                "near": 0.0099999,
+                "far": 1000.0
+            },
+            "ids": "uuid"
+        },
+        "runtime": {
+            "xrButtonColor": "white",
+            "viewObject": "8022bc4c-dcb9-461f-9f47-70f2c9ab943a",
+            "pwa": {
+                "enable": true,
+                "customServiceWorker": true,
+                "customManifest": true,
+                "appIcon": "d1550dc2-2b9c-4c80-a575-22f58d3850d8"
+            }
+        },
+        "physx": {
+            "enable": true,
+            "groupNames": {
+                "0": "Player",
+                "1": "Solid",
+                "2": "Interactable",
+                "3": "UI",
+                "4": "Group 4",
+                "5": "Group 5",
+                "6": "Group 6",
+                "7": "Group 7"
+            }
+        }
+    }
 }
