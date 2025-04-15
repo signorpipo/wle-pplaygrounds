@@ -1,7 +1,7 @@
 {
     "name": "wle-pplayground",
     "short_name": "wle-pplayground",
-    "version": "0.5.1",
+    "version": "0.5.2",
     "author": "Pipo",
     "description": "Playground template project for the Wonderland Engine",
     "homepage_url": "https://github.com/signorpipo/wle-pplayground",
