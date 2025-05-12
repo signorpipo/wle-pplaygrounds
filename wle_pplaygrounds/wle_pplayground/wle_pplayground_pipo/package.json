@@ -11,21 +11,15 @@
     "license": "ISC",
     "type": "module",
     "dependencies": {
-        "@wonderlandengine/api": "~1.3.1",
-        "@wonderlandengine/components": "~1.2.1",
+        "@wonderlandengine/api": "^1.4.0",
+        "@wonderlandengine/components": "^1.2.3",
         "gl-matrix": "^3.4.3",
         "howler": "^2.2.4"
     },
     "devDependencies": {
-        "eslint": "^9.19.0",
-        "globals": "^15.14.0",
-        "typescript": "^5.7.3",
-        "typescript-eslint": "^8.23.0"
-    },
-    "optionalDependencies": {
-        "@playkostudios/wle-cleaner": "^0.8.1"
-    },
-    "scripts": {
-        "clean-projects": "wle-cleaner \"./*.wlp\" -r -e dev/wle-tool-utils/editor-bundle-extras.js"
+        "eslint": "^9.26.0",
+        "globals": "^16.1.0",
+        "typescript": "^5.8.3",
+        "typescript-eslint": "^8.32.0"
     }
 }
