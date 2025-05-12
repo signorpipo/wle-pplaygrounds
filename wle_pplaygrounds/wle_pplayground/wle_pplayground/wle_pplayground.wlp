@@ -3174,7 +3174,7 @@
         },
         "db47625f-c472-4ba6-84f2-92ac04eaef74": {
             "link": {
-                "name": "lib\\Compatibility.frag",
+                "name": "lib\\Compatibility.glsl",
                 "file": "default"
             }
         },
@@ -3186,25 +3186,25 @@
         },
         "93ae94dd-8359-46a9-997d-c85b1b308ad5": {
             "link": {
-                "name": "lib\\GI.frag",
+                "name": "lib\\GI.glsl",
                 "file": "default"
             }
         },
         "c0a6359a-3165-4ef5-85e2-2e1d3dd3ee33": {
             "link": {
-                "name": "lib\\Inputs.frag",
+                "name": "lib\\Inputs.glsl",
                 "file": "default"
             }
         },
         "f285dce6-4581-44dc-9f0f-cb4bf4c8b830": {
             "link": {
-                "name": "lib\\Lights.frag",
+                "name": "lib\\Lights.glsl",
                 "file": "default"
             }
         },
         "869e83ac-1495-4ca6-b0d0-8240d622714d": {
             "link": {
-                "name": "lib\\Materials.frag",
+                "name": "lib\\Materials.glsl",
                 "file": "default"
             }
         },
@@ -3216,7 +3216,7 @@
         },
         "33337941-e2c3-4a09-b7c0-8bbd998a2f90": {
             "link": {
-                "name": "lib\\Packing.frag",
+                "name": "lib\\Packing.glsl",
                 "file": "default"
             }
         },
@@ -3228,25 +3228,25 @@
         },
         "8c10b2fc-528c-4970-a642-571a618e4c81": {
             "link": {
-                "name": "lib\\Slug.frag",
+                "name": "lib\\Slug.frag.glsl",
                 "file": "default"
             }
         },
         "88f3d9f5-09cd-4bf0-8c7d-8f025ce7f7a7": {
             "link": {
-                "name": "lib\\Slug.vert",
+                "name": "lib\\Slug.vert.glsl",
                 "file": "default"
             }
         },
         "7886dc0b-f76a-4a10-a328-c3aa7b941472": {
             "link": {
-                "name": "lib\\Surface.frag",
+                "name": "lib\\Surface.glsl",
                 "file": "default"
             }
         },
         "aff338d8-4cb8-4e68-8e1c-9f4f4ebeb7e1": {
             "link": {
-                "name": "lib\\Textures.frag",
+                "name": "lib\\Textures.glsl",
                 "file": "default"
             }
         },
@@ -3733,6 +3733,7 @@
         }
     },
     "morphTargets": {},
+    "particleEffects": {},
     "files": {
         "69feadb3-3dce-463a-b4ca-2264f5b4ca6e": {
             "fileName": "assets/models/pp/meta_quest_1_gamepads_credits_Jezza3D.fbx",
@@ -3753,8 +3754,8 @@
             "name": "wle-pplayground",
             "version": [
                 1,
-                3,
-                1
+                4,
+                0
             ],
             "description": "Playground template project for the Wonderland Engine",
             "type": "game",
