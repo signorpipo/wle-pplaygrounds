@@ -51,6 +51,7 @@ import {SwitchHandObjectComponent} from './pp/index.js';
 import {ToolCursorComponent} from './pp/index.js';
 import {TrackedHandDrawAllJointsComponent} from './pp/index.js';
 import {VirtualGamepadComponent} from './pp/index.js';
+import {WLCursorTargetWrapperComponent} from './pp/index.js';
 /* wle:auto-imports:end */
 
 export default function (engine: Readonly<WonderlandEngine>): void {
@@ -95,5 +96,6 @@ engine.registerComponent(SwitchHandObjectComponent);
 engine.registerComponent(ToolCursorComponent);
 engine.registerComponent(TrackedHandDrawAllJointsComponent);
 engine.registerComponent(VirtualGamepadComponent);
+engine.registerComponent(WLCursorTargetWrapperComponent);
 /* wle:auto-register:end */
 }

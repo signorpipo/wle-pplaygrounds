@@ -2430,6 +2430,12 @@
                 },
                 {
                     "type": "pp-adjust-hierarchy-physx-scale"
+                },
+                {
+                    "type": "pp-wl-cursor-target-wrapper",
+                    "pp-wl-cursor-target-wrapper": {
+                        "_myIsSurface": true
+                    }
                 }
             ]
         },
