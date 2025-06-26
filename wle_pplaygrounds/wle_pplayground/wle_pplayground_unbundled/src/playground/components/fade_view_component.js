@@ -1,5 +1,5 @@
 import { Component, Property } from "@wonderlandengine/api";
-import { EasingFunction, Globals, Timer, VisualMesh, VisualMeshParams, vec3_create, vec4_create } from "wle-pp";
+import { EasingFunction, Globals, Timer, VisualMesh, VisualMeshParams, XRUtils, vec3_create, vec4_create } from "wle-pp";
 
 export class FadeViewComponent extends Component {
     static TypeName = "fade-view";
@@ -12,6 +12,8 @@ export class FadeViewComponent extends Component {
     start() {
         this._myFadeVisual = null;
         this._myFirstUpdate = true;
+
+        this._myRegisterXREvents = false;
     }
 
     _start() {
@@ -34,18 +36,23 @@ export class FadeViewComponent extends Component {
         fadeVisualParams.myMaterial = this._myFadeMaterial;
         fadeVisualParams.myParent = this._myFadeParentObject;
         fadeVisualParams.myLocal = true;
-        fadeVisualParams.myTransform.mat4_setScale(vec3_create(0.1, 0.1, 0.1));
+        fadeVisualParams.myTransform.mat4_setScale(vec3_create(1));
         this._myFadeVisual = new VisualMesh(fadeVisualParams);
         this._myFadeVisual.setVisible(true);
 
-        this._myFadeParentObject.pp_setParent(Globals.getPlayerObjects(this.engine).myHead, false);
-        this._myFadeParentObject.pp_resetTransformLocal();
+        this._myFadeParentObject.pp_setParent(Globals.getPlayerObjects(this.engine).myCameraNonXR, false);
+
     }
 
     update(dt) {
         if (this._myFirstUpdate) {
             this._start();
             this._myFirstUpdate = false;
+        }
+
+        if (this._myRegisterXREvents) {
+            XRUtils.registerSessionStartEndEventListeners(this, this._onXRSessionStart.bind(this), this._onXRSessionEnd.bind(this), true, false, this.engine);
+            this._myRegisterXREvents = false;
         }
 
         if (this._myStartTimer.isRunning()) {
@@ -64,16 +71,28 @@ export class FadeViewComponent extends Component {
         }
     }
 
+    _onXRSessionStart() {
+        this._myFadeParentObject.pp_setParent(Globals.getPlayerObjects(this.engine).myEyeLeft, false);
+    }
+
+    _onXRSessionEnd() {
+        this._myFadeParentObject.pp_setParent(Globals.getPlayerObjects(this.engine).myCameraNonXR, false);
+    }
+
     onActivate() {
         if (this._myFadeVisual != null) {
             this._myFadeVisual.setVisible(true);
         }
+
+        this._myRegisterXREvents = true;
     }
 
     onDeactivate() {
         if (this._myFadeVisual != null) {
             this._myFadeVisual.setVisible(false);
         }
+
+        XRUtils.unregisterSessionStartEndEventListeners(this, this.engine);
     }
 
     onDestroy() {

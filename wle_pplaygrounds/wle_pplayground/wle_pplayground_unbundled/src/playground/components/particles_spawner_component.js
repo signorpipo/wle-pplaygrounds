@@ -14,7 +14,7 @@ export class ParticlesSpawnerComponent extends Component {
     }
 
     _start() {
-        this._myParticles = this._myParticlesContainer.pp_getChildren();
+        this._myParticles = this._myParticlesContainer?.pp_getChildren() ?? [];
 
         this._myObjectPoolManagerPrefix = "particles_spawner_" + Math.pp_randomUUID() + "_particle_";
         this._myParticlePoolIDs = new Map();
@@ -48,7 +48,7 @@ export class ParticlesSpawnerComponent extends Component {
     }
 
     spawn(position) {
-        if (this._myStartFrameCountdown == 0) {
+        if (this._myStartFrameCountdown == 0 && this._myParticles.length > 0) {
             let amount = Math.pp_randomInt(15, 30);
 
             for (let i = 0; i < amount; i++) {

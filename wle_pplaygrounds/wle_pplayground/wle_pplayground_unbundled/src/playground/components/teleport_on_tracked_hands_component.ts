@@ -11,6 +11,8 @@ export class TeleportOnTrackedHandsComponent extends Component {
     private _myDelayFrameCountdown: number = 3;
 
     public override update(dt: number): void {
+        if (this._myTeleportTargetObject == null) return;
+
         if (this._myDelayFrameCountdown > 0) {
             this._myDelayFrameCountdown--;
         }
