@@ -257,17 +257,6 @@
             "components": [
                 {
                     "type": "pp-set-hand-local-transform"
-                },
-                {
-                    "type": "pp-gamepad-mesh-animator",
-                    "pp-gamepad-mesh-animator": {
-                        "_mySelect": "7fc51146-3466-473e-b902-b24e76db5d74",
-                        "_mySqueeze": "eee4fde8-c0f1-4509-9421-d53f28b8cd62",
-                        "_myThumbstick": "8984159e-e77c-4868-80da-0e1ba158b6f2",
-                        "_myTopButton": "2c631628-a33e-44fc-ad0b-cfee9a9024e1",
-                        "_myBottomButton": "5258a1cb-41fb-4c28-b468-ef03f5319216",
-                        "_myUsePressForSqueeze": true
-                    }
                 }
             ],
             "translation": [
@@ -348,18 +337,6 @@
                 {
                     "type": "pp-set-hand-local-transform",
                     "pp-set-hand-local-transform": {
-                        "_myHandedness": "Right"
-                    }
-                },
-                {
-                    "type": "pp-gamepad-mesh-animator",
-                    "pp-gamepad-mesh-animator": {
-                        "_mySelect": "8642fcf2-a358-4c33-9778-be39d581c0c1",
-                        "_mySqueeze": "dddb489f-647f-4f64-9da4-f1476d782764",
-                        "_myThumbstick": "03073d0b-7ab4-4473-8cd9-2fd726e946d7",
-                        "_myTopButton": "ba9789dc-704f-48e4-aeaf-05879fb8db53",
-                        "_myBottomButton": "24aab85e-ecd1-43af-9770-3a98bc6725b9",
-                        "_myUsePressForSqueeze": true,
                         "_myHandedness": "Right"
                     }
                 }
@@ -478,6 +455,19 @@
                 1.0,
                 1.0,
                 1.0
+            ],
+            "components": [
+                {
+                    "type": "pp-gamepad-mesh-animator",
+                    "pp-gamepad-mesh-animator": {
+                        "_mySelect": "7fc51146-3466-473e-b902-b24e76db5d74",
+                        "_mySqueeze": "eee4fde8-c0f1-4509-9421-d53f28b8cd62",
+                        "_myThumbstick": "8984159e-e77c-4868-80da-0e1ba158b6f2",
+                        "_myTopButton": "2c631628-a33e-44fc-ad0b-cfee9a9024e1",
+                        "_myBottomButton": "5258a1cb-41fb-4c28-b468-ef03f5319216",
+                        "_myUsePressForSqueeze": true
+                    }
+                }
             ]
         },
         "97340755-3bb1-4d78-91d1-128772f0ea64": {
@@ -600,6 +590,20 @@
                 1.0,
                 1.0,
                 1.0
+            ],
+            "components": [
+                {
+                    "type": "pp-gamepad-mesh-animator",
+                    "pp-gamepad-mesh-animator": {
+                        "_mySelect": "8642fcf2-a358-4c33-9778-be39d581c0c1",
+                        "_mySqueeze": "dddb489f-647f-4f64-9da4-f1476d782764",
+                        "_myThumbstick": "03073d0b-7ab4-4473-8cd9-2fd726e946d7",
+                        "_myTopButton": "ba9789dc-704f-48e4-aeaf-05879fb8db53",
+                        "_myBottomButton": "24aab85e-ecd1-43af-9770-3a98bc6725b9",
+                        "_myUsePressForSqueeze": true,
+                        "_myHandedness": "Right"
+                    }
+                }
             ]
         },
         "c2dc2ede-1d99-4a4a-899b-685f926bd473": {
@@ -733,6 +737,12 @@
                 {
                     "type": "pp-mute-everything",
                     "active": false
+                },
+                {
+                    "type": "teleport-on-tracked-hands",
+                    "teleport-on-tracked-hands": {
+                        "_myTeleportTargetObject": "fc705769-0aef-4b0b-9fe0-88197eceff56"
+                    }
                 }
             ]
         },
@@ -1431,7 +1441,7 @@
         },
         "d299a8fa-0a3b-424f-9932-0bb22d4a1b8c": {
             "name": "Grabber",
-            "parent": "f0cbb5f3-92cc-4f20-941c-2e7a438f166c",
+            "parent": "21e6e4ba-b097-4abb-97b4-a7d82fb86986",
             "rotation": [
                 0.258819,
                 0.0,
@@ -1463,12 +1473,12 @@
             "translation": [
                 0.009961,
                 -0.0367996,
-                0.0715687
+                0.0715675
             ]
         },
         "afe97702-6055-4861-b4ce-9a75e0bac39a": {
             "name": "Grabber",
-            "parent": "f51fe37d-3aea-4317-af6b-e76b64a41b54",
+            "parent": "ead4fe79-25ef-49b0-8feb-c0487bc6378f",
             "rotation": [
                 0.258819,
                 0.0,
@@ -1500,8 +1510,8 @@
             ],
             "translation": [
                 -0.009961,
-                -0.0365258,
-                0.0717282
+                -0.0365256,
+                0.0717272
             ]
         },
         "77886081-ef34-42db-a661-373faee1eef3": {
@@ -2225,8 +2235,9 @@
                 {
                     "type": "pp-set-active",
                     "pp-set-active": {
-                        "_mySetActiveWhen": "Enter XR",
-                        "_mySetActiveOn": "Descendants"
+                        "_mySetActiveWhen": "First Update",
+                        "_mySetActiveOn": "Descendants",
+                        "_myActive": false
                     }
                 },
                 {
@@ -2240,9 +2251,8 @@
                 {
                     "type": "pp-set-active",
                     "pp-set-active": {
-                        "_myActive": false,
                         "_mySetActiveOn": "Descendants",
-                        "_mySetActiveWhen": "First Update"
+                        "_mySetActiveWhen": "Enter XR"
                     }
                 }
             ]
@@ -2655,8 +2665,8 @@
             ]
         },
         "0ec54f31-8d6e-466c-ad61-6b5d8fe48472": {
-            "name": "Default Cursor",
-            "parent": "4470cf2d-650d-4c38-be1b-2434a74c4ff1",
+            "name": "Cursor",
+            "parent": "21e6e4ba-b097-4abb-97b4-a7d82fb86986",
             "rotation": [
                 0.258819,
                 0.0,
@@ -2666,7 +2676,7 @@
             "translation": [
                 0.009961,
                 -0.0240263,
-                0.050078
+                0.0500774
             ]
         },
         "8f116677-15c2-4d71-a7dc-90239c83ece8": {
@@ -2720,12 +2730,12 @@
             ]
         },
         "b99ae9d4-2bdb-45ff-8ec9-bd933e26ef99": {
-            "name": "Default Cursor",
-            "parent": "58ca914f-fc95-4265-8c31-4b3ca58859f4",
+            "name": "Cursor",
+            "parent": "ead4fe79-25ef-49b0-8feb-c0487bc6378f",
             "translation": [
                 -0.009961,
-                -0.0240255,
-                0.0500775
+                -0.0240254,
+                0.0500764
             ],
             "rotation": [
                 0.258819,
@@ -2785,51 +2795,33 @@
             ]
         },
         "af1d4177-40e8-454c-a24a-93da1f68a80b": {
-            "name": "Finger Cursor",
-            "parent": "58ca914f-fc95-4265-8c31-4b3ca58859f4",
+            "name": "Cursor",
+            "parent": "836077c0-3e6f-447e-ba52-d9e52b9cd182",
             "components": [
                 {
                     "type": "pp-finger-cursor",
                     "pp-finger-cursor": {
                         "_myHandedness": "Right",
-                        "_myDefaultCursorObject": "b99ae9d4-2bdb-45ff-8ec9-bd933e26ef99",
                         "_myCollisionFlags": "0, 0, 0, 1, 0, 0, 0, 0"
                     }
                 }
             ]
         },
-        "58ca914f-fc95-4265-8c31-4b3ca58859f4": {
-            "name": "Cursors",
-            "parent": "f51fe37d-3aea-4317-af6b-e76b64a41b54"
-        },
         "833e4681-737c-43da-bf86-c01c56017931": {
-            "name": "Finger Cursor",
-            "parent": "4470cf2d-650d-4c38-be1b-2434a74c4ff1",
+            "name": "Cursor",
+            "parent": "00bc279b-2a05-400e-8c6f-738f7627c931",
             "components": [
                 {
                     "type": "pp-finger-cursor",
                     "pp-finger-cursor": {
-                        "_myDefaultCursorObject": "0ec54f31-8d6e-466c-ad61-6b5d8fe48472",
                         "_myCollisionFlags": "0, 0, 0, 1, 0, 0, 0, 0"
                     }
                 }
             ]
         },
-        "4470cf2d-650d-4c38-be1b-2434a74c4ff1": {
-            "name": "Cursors",
-            "parent": "f0cbb5f3-92cc-4f20-941c-2e7a438f166c"
-        },
         "fc705769-0aef-4b0b-9fe0-88197eceff56": {
             "name": "Tracked Hands Teleport Target",
             "parent": "62bb96e5-dca3-4608-8f0c-c546219e5bdc",
-            "components": [
-                {
-                    "type": "teleport-on-tracked-hands",
-                    "teleport-on-tracked-hands": {
-                        "_myTeleportTargetObject": "fc705769-0aef-4b0b-9fe0-88197eceff56"
-                    }
-                }
-            ],
             "translation": [
                 0.0,
                 0.85,
@@ -2902,6 +2894,74 @@
                 0.0,
                 0.0,
                 0.0099995
+            ]
+        },
+        "ce6f3c8b-f05d-4851-9b33-0f4991aaade1": {
+            "name": "Grabber",
+            "parent": "00bc279b-2a05-400e-8c6f-738f7627c931",
+            "components": [
+                {
+                    "type": "physx",
+                    "physx": {
+                        "sphere": {
+                            "radius": 0.0299999
+                        },
+                        "gravity": false,
+                        "kinematic": true,
+                        "groups": 4,
+                        "block": 4,
+                        "trigger": true,
+                        "allowSimulation": false
+                    }
+                },
+                {
+                    "type": "pp-grabber-hand",
+                    "pp-grabber-hand": {
+                        "_myMaxNumberOfObjects": 9999,
+                        "_myGrabButton": "Select"
+                    }
+                },
+                {
+                    "type": "pp-set-tracked-hand-joint-local-transform",
+                    "pp-set-tracked-hand-joint-local-transform": {
+                        "_myJointID": "Index Phalanx Distal"
+                    }
+                }
+            ]
+        },
+        "330fab61-da11-468f-9f50-4139cabd51cb": {
+            "name": "Grabber",
+            "parent": "836077c0-3e6f-447e-ba52-d9e52b9cd182",
+            "components": [
+                {
+                    "type": "physx",
+                    "physx": {
+                        "sphere": {
+                            "radius": 0.0299999
+                        },
+                        "gravity": false,
+                        "kinematic": true,
+                        "groups": 4,
+                        "block": 4,
+                        "trigger": true,
+                        "allowSimulation": false
+                    }
+                },
+                {
+                    "type": "pp-grabber-hand",
+                    "pp-grabber-hand": {
+                        "_myMaxNumberOfObjects": 9999,
+                        "_myHandedness": "Right",
+                        "_myGrabButton": "Select"
+                    }
+                },
+                {
+                    "type": "pp-set-tracked-hand-joint-local-transform",
+                    "pp-set-tracked-hand-joint-local-transform": {
+                        "_myJointID": "Index Phalanx Distal",
+                        "_myHandedness": "Right"
+                    }
+                }
             ]
         }
     },
@@ -3761,7 +3821,7 @@
             "version": [
                 1,
                 4,
-                2
+                5
             ],
             "description": "Playground template project for the Wonderland Engine",
             "type": "game",
